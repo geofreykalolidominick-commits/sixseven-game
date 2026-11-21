@@ -1461,7 +1461,7 @@
       const baseTime = openedAt || Date.now();
       const tick = () => {
         const elapsedSec = Math.floor((Date.now() - baseTime) / 1000);
-        secondsLeft = Math.max(0, 180 - elapsedSec);
+        secondsLeft = Math.max(0, 90 - elapsedSec);
         updateTimerLabel();
         if (secondsLeft <= 0) {
           stopTimer();
