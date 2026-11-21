@@ -1330,13 +1330,11 @@
       used: {},
       roomCode: "",
       gameOver: false,
-      activeLock: null // { player: 1|2, key: "r-c", openedAt: number }
+      activeLock: null, // { player: 1|2, rIdx, cIdx, key, openedAt, hintShown, selectedOption, answerSubmitted, chosenOption }
+      questionOpenedAt: null
     };
 
-    let mySeat = 1; // 1 = Player 1 device, 2 = Player 2 device
-    let activeQuestion = null;
-    let selectedOptionIndex = null;
-    let answerSubmitted = false;
+    let mySeat = 1;
     let timerInterval = null;
     let secondsLeft = 180;
     let db = null;
@@ -1403,15 +1401,21 @@
       return String(val || "").replace(/\D/g, "").slice(0, 4);
     }
 
-    function canThisDeviceAct() {
+    function isMyTurnToPick() {
       if (state.gameOver) return false;
       if (state.activeLock) return false;
       if (state.mode === "1p") return true;
       return state.currentTurn === mySeat;
     }
 
+    function isActivePlayerOnThisDevice() {
+      if (state.mode === "1p") return true;
+      const activePlayer = state.activeLock ? state.activeLock.player : state.currentTurn;
+      return activePlayer === mySeat;
+    }
+
     function renderBoard() {
-      const canAct = canThisDeviceAct();
+      const canPick = isMyTurnToPick();
       els.boardRows.innerHTML = "";
 
       TOPICS.forEach((topic, rIdx) => {
@@ -1429,14 +1433,123 @@
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = `q-btn${isUsed ? " used" : ""}`;
-          btn.disabled = isUsed || !canAct;
-          btn.innerHTML = `<span>${item.pts} Marks</span><span class="pts">${isUsed ? "Used" : (canAct ? "Select" : "Wait")}</span>`;
+          btn.disabled = isUsed || !canPick;
+          btn.innerHTML = `<span>${item.pts} Marks</span><span class="pts">${isUsed ? "Used" : (canPick ? "Select" : "Locked")}</span>`;
           btn.addEventListener("click", () => openQuestion(rIdx, cIdx));
           row.appendChild(btn);
         });
 
         els.boardRows.appendChild(row);
       });
+    }
+
+    function updateTimerLabel() {
+      const mins = String(Math.floor(Math.max(0, secondsLeft) / 60)).padStart(2, "0");
+      const secs = String(Math.max(0, secondsLeft) % 60).padStart(2, "0");
+      els.timerBadge.textContent = `${mins}:${secs}`;
+    }
+
+    function stopTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    function startSyncedTimer(openedAt) {
+      stopTimer();
+      const baseTime = openedAt || Date.now();
+      const tick = () => {
+        const elapsedSec = Math.floor((Date.now() - baseTime) / 1000);
+        secondsLeft = Math.max(0, 180 - elapsedSec);
+        updateTimerLabel();
+        if (secondsLeft <= 0) {
+          stopTimer();
+          if (state.activeLock && !state.activeLock.answerSubmitted && isActivePlayerOnThisDevice()) {
+            handleTurnTimeout();
+          }
+        }
+      };
+      tick();
+      timerInterval = setInterval(tick, 1000);
+    }
+
+    function syncQuestionModalFromState() {
+      if (!state.activeLock || typeof state.activeLock.rIdx !== "number" || typeof state.activeLock.cIdx !== "number") {
+        stopTimer();
+        els.questionModal.classList.remove("open");
+        return;
+      }
+
+      const { rIdx, cIdx, player, hintShown, selectedOption, answerSubmitted, chosenOption, openedAt } = state.activeLock;
+      const topic = TOPICS[rIdx];
+      const item = topic?.questions?.[cIdx];
+      if (!topic || !item) return;
+
+      const canControl = isActivePlayerOnThisDevice();
+      const turnPlayerName = player === 1 ? state.p1Name : state.p2Name;
+
+      els.qModalTitle.textContent = `${topic.name} • ${item.pts} Marks`;
+      els.qModalTurnInfo.textContent = canControl
+        ? `${turnPlayerName}'s Turn — Select an option and submit before time runs out.`
+        : `Viewing ${turnPlayerName}'s selected question live on this device.`;
+      els.qModalText.textContent = item.q;
+
+      els.mcqOptions.innerHTML = "";
+      item.options.forEach((optText, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mcq-option-btn";
+        btn.textContent = optText;
+
+        if (!answerSubmitted) {
+          btn.disabled = !canControl;
+          if (selectedOption === idx) {
+            btn.classList.add("selected");
+          }
+          btn.addEventListener("click", () => {
+            if (!canControl || !state.activeLock || state.activeLock.answerSubmitted) return;
+            state.activeLock.selectedOption = idx;
+            syncQuestionModalFromState();
+            syncOut();
+          });
+        } else {
+          btn.disabled = true;
+          if (idx === item.correct) {
+            btn.classList.add("correct-choice");
+          } else if (idx === chosenOption && chosenOption !== item.correct) {
+            btn.classList.add("wrong-choice");
+          }
+        }
+
+        els.mcqOptions.appendChild(btn);
+      });
+
+      els.qHintBox.textContent = `Clinical Hint: ${item.hint}`;
+      els.qHintBox.classList.toggle("visible", Boolean(hintShown));
+      els.hintBtn.disabled = !canControl || Boolean(hintShown);
+
+      if (answerSubmitted) {
+        const isCorrect = chosenOption === item.correct;
+        const prefix = chosenOption === null
+          ? "Time expired! "
+          : (isCorrect ? `Correct (+${item.pts} pts)! ` : "Incorrect (0 pts). ");
+        els.qAnswerBox.textContent = `${prefix}Correct Answer: ${item.options[item.correct]} — ${item.explanation}`;
+        els.qAnswerBox.classList.add("visible");
+        els.submitMcqBtn.style.display = "none";
+        els.closeQBtn.style.display = canControl ? "inline-block" : "none";
+        els.closeQBtn.textContent = "Continue to Next Turn";
+      } else {
+        els.qAnswerBox.textContent = "";
+        els.qAnswerBox.classList.remove("visible");
+        els.submitMcqBtn.style.display = canControl ? "inline-block" : "none";
+        els.submitMcqBtn.disabled = !canControl || typeof selectedOption !== "number";
+        els.closeQBtn.style.display = canControl ? "inline-block" : "none";
+        els.closeQBtn.textContent = "End Turn / Close (0 pts)";
+      }
+
+      els.questionModal.classList.add("open");
+      startSyncedTimer(openedAt);
     }
 
     function updateUI() {
@@ -1476,7 +1589,7 @@
 
       if (state.roomCode) {
         els.roomCodeInput.value = state.roomCode;
-        els.roomStatusText.textContent = `Room ${state.roomCode} active • Share ${state.roomCode} with your friend.`;
+        els.roomStatusText.textContent = `Room ${state.roomCode} active • Selected questions display on all devices in room ${state.roomCode}.`;
       } else if (is2P) {
         els.roomStatusText.textContent = "Generating 4-digit room code...";
       } else {
@@ -1490,19 +1603,20 @@
       } else if (state.activeLock) {
         const lockerName = state.activeLock.player === 1 ? state.p1Name : state.p2Name;
         els.boardBanner.className = "board-banner waiting";
-        els.boardBannerText.textContent = `${lockerName} selected a question — board locked until turn finishes.`;
-        els.boardBannerRule.textContent = "Turn In Progress";
+        els.boardBannerText.textContent = `${lockerName} selected a question — displayed across connected devices.`;
+        els.boardBannerRule.textContent = "Question Open";
       } else if (is2P && state.currentTurn !== mySeat) {
         els.boardBanner.className = "board-banner waiting";
         els.boardBannerText.textContent = `Waiting for ${currentName}'s turn. Your tiles unlock automatically once ${currentName} finishes.`;
         els.boardBannerRule.textContent = "Opponent's Turn";
       } else {
         els.boardBanner.className = "board-banner your-turn";
-        els.boardBannerText.textContent = `${currentName}'s turn — tap a question tile. Opening a question consumes your turn.`;
+        els.boardBannerText.textContent = `${currentName}'s turn — tap a question tile to open it on all devices.`;
         els.boardBannerRule.textContent = "Your Turn";
       }
 
       renderBoard();
+      syncQuestionModalFromState();
     }
 
     function checkTurnLimitAndWinner() {
@@ -1519,6 +1633,7 @@
 
     function showWinnerModal() {
       stopTimer();
+      els.questionModal.classList.remove("open");
       const s1 = state.scores[1];
       const s2 = state.scores[2];
 
@@ -1543,157 +1658,71 @@
       els.winnerModal.classList.add("open");
     }
 
-    function startTimer() {
-      stopTimer();
-      secondsLeft = 180;
-      updateTimerLabel();
-      timerInterval = setInterval(() => {
-        secondsLeft -= 1;
-        updateTimerLabel();
-        if (secondsLeft <= 0) {
-          stopTimer();
-          handleTurnTimeout();
-        }
-      }, 1000);
-    }
-
-    function stopTimer() {
-      if (timerInterval) {
-        clearInterval(timerInterval);
-        timerInterval = null;
-      }
-    }
-
-    function updateTimerLabel() {
-      const mins = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
-      const secs = String(secondsLeft % 60).padStart(2, "0");
-      els.timerBadge.textContent = `${mins}:${secs}`;
-    }
-
-    function renderMcqOptions(item) {
-      els.mcqOptions.innerHTML = "";
-      item.options.forEach((optText, idx) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "mcq-option-btn";
-        btn.textContent = optText;
-        btn.addEventListener("click", () => {
-          if (answerSubmitted) return;
-          selectedOptionIndex = idx;
-          els.mcqOptions.querySelectorAll(".mcq-option-btn").forEach((b, bIdx) => {
-            b.classList.toggle("selected", bIdx === idx);
-          });
-          els.submitMcqBtn.disabled = false;
-        });
-        els.mcqOptions.appendChild(btn);
-      });
-    }
-
     function openQuestion(rIdx, cIdx) {
-      if (!canThisDeviceAct()) return;
+      if (!isMyTurnToPick()) return;
       const key = `${rIdx}-${cIdx}`;
       if (state.used[key]) return;
 
-      const topic = TOPICS[rIdx];
-      const item = topic.questions[cIdx];
-
-      // Immediately mark the tile used & lock the turn so selecting a question always counts as a turn
+      const openedAt = Date.now();
       state.used[key] = true;
       state.activeLock = {
         player: state.currentTurn,
+        rIdx,
+        cIdx,
         key,
-        openedAt: Date.now()
+        openedAt,
+        hintShown: false,
+        selectedOption: null,
+        answerSubmitted: false,
+        chosenOption: null
       };
 
-      activeQuestion = { rIdx, cIdx, key, topicName: topic.name, ...item };
-      selectedOptionIndex = null;
-      answerSubmitted = false;
-
-      const turnPlayerName = state.currentTurn === 1 ? state.p1Name : state.p2Name;
-      els.qModalTitle.textContent = `${topic.name} • ${item.pts} Marks`;
-      els.qModalTurnInfo.textContent = `${turnPlayerName}'s Turn — Question locked. Closing or timing out ends your turn with 0 pts.`;
-      els.qModalText.textContent = item.q;
-      renderMcqOptions(item);
-
-      els.qHintBox.textContent = `Clinical Hint: ${item.hint}`;
-      els.qHintBox.classList.remove("visible");
-      els.qAnswerBox.textContent = "";
-      els.qAnswerBox.classList.remove("visible");
-
-      els.submitMcqBtn.disabled = true;
-      els.submitMcqBtn.style.display = "inline-block";
-      els.closeQBtn.textContent = "End Turn / Close (0 pts)";
-
-      els.questionModal.classList.add("open");
       updateUI();
       syncOut();
-      startTimer();
-    }
-
-    function revealResultAndHighlight(chosenIdx) {
-      if (!activeQuestion) return;
-      const correctIdx = activeQuestion.correct;
-      const optionBtns = els.mcqOptions.querySelectorAll(".mcq-option-btn");
-
-      optionBtns.forEach((btn, idx) => {
-        btn.disabled = true;
-        if (idx === correctIdx) {
-          btn.classList.add("correct-choice");
-        } else if (idx === chosenIdx && chosenIdx !== correctIdx) {
-          btn.classList.add("wrong-choice");
-        }
-      });
-
-      const isCorrect = chosenIdx === correctIdx;
-      const correctLetter = activeQuestion.options[correctIdx];
-      const prefix = chosenIdx === null
-        ? "Time expired! "
-        : (isCorrect ? `Correct (+${activeQuestion.pts} pts)! ` : "Incorrect (0 pts). ");
-
-      els.qAnswerBox.textContent = `${prefix}Correct Answer: ${correctLetter} — ${activeQuestion.explanation}`;
-      els.qAnswerBox.classList.add("visible");
-      els.submitMcqBtn.style.display = "none";
-      els.closeQBtn.textContent = "Continue to Next Turn";
     }
 
     function submitSelectedMcq() {
-      if (!activeQuestion || answerSubmitted || selectedOptionIndex === null) return;
-      answerSubmitted = true;
-      stopTimer();
+      if (!state.activeLock || !isActivePlayerOnThisDevice() || state.activeLock.answerSubmitted) return;
+      const chosen = state.activeLock.selectedOption;
+      if (typeof chosen !== "number") return;
 
-      const isCorrect = selectedOptionIndex === activeQuestion.correct;
-      if (isCorrect) {
-        state.scores[state.currentTurn] = (state.scores[state.currentTurn] || 0) + activeQuestion.pts;
+      const item = TOPICS[state.activeLock.rIdx]?.questions?.[state.activeLock.cIdx];
+      if (!item) return;
+
+      stopTimer();
+      state.activeLock.answerSubmitted = true;
+      state.activeLock.chosenOption = chosen;
+
+      if (chosen === item.correct) {
+        const p = state.activeLock.player || state.currentTurn;
+        state.scores[p] = (state.scores[p] || 0) + item.pts;
       }
 
-      revealResultAndHighlight(selectedOptionIndex);
       updateUI();
       syncOut();
     }
 
     function handleTurnTimeout() {
-      if (!activeQuestion || answerSubmitted) return;
-      answerSubmitted = true;
-      revealResultAndHighlight(null);
+      if (!state.activeLock || state.activeLock.answerSubmitted) return;
+      stopTimer();
+      state.activeLock.answerSubmitted = true;
+      state.activeLock.chosenOption = null;
       updateUI();
       syncOut();
     }
 
     function completeTurnAndCloseModal() {
+      if (!isActivePlayerOnThisDevice() && state.activeLock) return;
       stopTimer();
       els.questionModal.classList.remove("open");
 
-      if (activeQuestion || state.activeLock) {
+      if (state.activeLock) {
         state.activeLock = null;
         state.completedTurns += 1;
         if (state.mode === "2p") {
           state.currentTurn = state.currentTurn === 1 ? 2 : 1;
         }
       }
-
-      activeQuestion = null;
-      selectedOptionIndex = null;
-      answerSubmitted = false;
 
       checkTurnLimitAndWinner();
       updateUI();
@@ -1715,7 +1744,9 @@
       };
       state.used = incoming.used && typeof incoming.used === "object" ? incoming.used : {};
       state.gameOver = Boolean(incoming.gameOver);
-      state.activeLock = incoming.activeLock && typeof incoming.activeLock === "object" ? incoming.activeLock : null;
+      state.activeLock = incoming.activeLock && typeof incoming.activeLock === "object"
+        ? { ...incoming.activeLock }
+        : null;
 
       updateUI();
       if (state.gameOver) {
@@ -1810,9 +1841,6 @@
       stopTimer();
       els.questionModal.classList.remove("open");
       els.winnerModal.classList.remove("open");
-      activeQuestion = null;
-      selectedOptionIndex = null;
-      answerSubmitted = false;
       state.completedTurns = 0;
       state.currentTurn = 1;
       state.scores = { 1: 0, 2: 0 };
@@ -1887,7 +1915,10 @@
     });
 
     els.hintBtn.addEventListener("click", () => {
-      els.qHintBox.classList.add("visible");
+      if (!state.activeLock || !isActivePlayerOnThisDevice()) return;
+      state.activeLock.hintShown = true;
+      updateUI();
+      syncOut();
     });
 
     els.submitMcqBtn.addEventListener("click", submitSelectedMcq);
