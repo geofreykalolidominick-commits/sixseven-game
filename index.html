@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrine Disorders Trivia Game</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+}
+
+/* Smooth entrance animation for modals and feedback banners */
+@keyframes modalPop {
+0% {
+opacity: 0;
+transform: scale(0.96) translateY(10px);
+}
+100% {
+opacity: 1;
+transform: scale(1) translateY(0);
+}
+}
+
+.animate-modal-pop {
+animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle hover lift for active mark buttons */
+.mark-btn-hover {
+transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+.mark-btn-hover:not(:disabled):hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 18px -4px rgba(37, 99, 235, 0.25), 0 4px 6px -2px rgba(37, 99, 235, 0.12);
+}
+
+.mark-btn-hover:not(:disabled):active {
+transform: translateY(0);
+}
+
+/* Hint chevron rotation */
+.hint-chevron {
+transition: transform 0.2s ease;
+}
+
+.hint-chevron.rotated {
+transform: rotate(90deg);
+}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between selection:bg-blue-200 selection:text-blue-900">
+
+<!-- Top Header & Live Statistics Bar -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-4">
+<!-- Title Row & Reset Control -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-3 text-center sm:text-left">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-md shrink-0">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+</svg>
+</div>
+<div>
+<h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900">
+Endocrine Disorders Trivia Game
+</h1>
+<p class="text-xs sm:text-sm text-slate-500 font-medium">
+3-minute timer per question • Tiered clinical challenges from 10 to 50 marks
+</p>
+</div>
+</div>
+
+<button
+id="resetBtn"
+type="button"
+class="px-4 py-2.5 rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-rose-600 border border-slate-300 hover:border-rose-300 font-semibold text-sm transition-colors flex items-center gap-1.5 shadow-2xs cursor-pointer shrink-0"
+>
+<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+</svg>
+<span>Reset Game</span>
+</button>
+</div>
+
+<!-- Score & Tracking Counters Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
+<!-- Score -->
+<div class="col-span-2 sm:col-span-1 bg-blue-50 border border-blue-200 rounded-xl px-3.5 py-2.5 flex flex-col justify-center">
+<span class="text-[11px] font-bold uppercase tracking-wider text-blue-600">Score</span>
+<span id="scoreDisplay" class="text-lg sm:text-xl font-extrabold text-blue-950">0 / 300 pts</span>
+</div>
+
+<!-- Attempted -->
+<div class="bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2.5 flex flex-col justify-center">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Attempted</span>
+<span id="attemptedDisplay" class="text-lg sm:text-xl font-extrabold text-slate-900">0 / 10</span>
+</div>
+
+<!-- Correct -->
+<div class="bg-emerald-50 border border-emerald-200 rounded-xl px-3.5 py-2.5 flex flex-col justify-center">
+<span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Correct</span>
+<span id="correctDisplay" class="text-lg sm:text-xl font-extrabold text-emerald-900">0</span>
+</div>
+
+<!-- Incorrect -->
+<div class="bg-rose-50 border border-rose-200 rounded-xl px-3.5 py-2.5 flex flex-col justify-center">
+<span class="text-[11px] font-bold uppercase tracking-wider text-rose-700">Incorrect</span>
+<span id="incorrectDisplay" class="text-lg sm:text-xl font-extrabold text-rose-900">0</span>
+</div>
+
+<!-- Out of Time -->
+<div class="bg-amber-50 border border-amber-200 rounded-xl px-3.5 py-2.5 flex flex-col justify-center">
+<span class="text-[11px] font-bold uppercase tracking-wider text-amber-800">Out of Time</span>
+<span id="timedOutDisplay" class="text-lg sm:text-xl font-extrabold text-amber-950">0</span>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Main Game Board Area -->
+<main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-9 flex flex-col justify-center">
+
+<!-- Status Notification Toast/Banner (e.g., when a question times out automatically) -->
+<div id="statusNotice" class="hidden mb-5 rounded-xl border px-4 py-3.5 flex items-center justify-between gap-3 shadow-xs animate-modal-pop" role="status">
+<div class="flex items-center gap-2.5 text-sm font-semibold">
+<span id="statusNoticeIcon" class="shrink-0"></span>
+<span id="statusNoticeText"></span>
+</div>
+<button id="dismissNoticeBtn" type="button" class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg hover:bg-black/5 cursor-pointer">
+Dismiss
+</button>
+</div>
+
+<!-- Completion Banner (Shown once all 10 questions are resolved) -->
+<div id="completionBanner" class="hidden mb-7 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl animate-modal-pop">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs font-bold uppercase tracking-wider mb-2.5">
+<span>Round Complete</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-extrabold mb-2">
+Final Score: <span id="finalScoreText">0 / 300 pts</span>
+</h2>
+<p id="finalSummaryText" class="text-slate-200 text-sm sm:text-base max-w-2xl"></p>
+</div>
+<button
+id="playAgainBtn"
+type="button"
+class="px-6 py-3.5 rounded-xl bg-white text-slate-900 hover:bg-blue-50 font-extrabold text-base shadow-lg transition-transform hover:scale-105 cursor-pointer shrink-0"
+>
+Play Again
+</button>
+</div>
+</div>
+
+<!-- Hand-Drawn Layout Board: Topic Rows & Marks Range Columns -->
+<div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+<div class="bg-slate-900 text-white px-5 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-2">
+<span class="font-bold tracking-wide text-sm sm:text-base uppercase text-slate-100">Game Board</span>
+<span class="text-xs text-slate-300">10 Marks (Basic Recall) → 50 Marks (Complex Emergency) • 3:00 Limit Each</span>
+</div>
+
+<div class="overflow-x-auto">
+<table class="w-full border-collapse min-w-[700px]">
+<thead>
+<tr class="bg-slate-100 border-b border-slate-300">
+<th rowspan="2" class="w-48 sm:w-56 p-4 text-left align-middle border-r-2 border-rose-300 bg-slate-100/90">
+<span class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-0.5">Category</span>
+<span class="text-lg sm:text-xl font-extrabold text-slate-800">Topic</span>
+</th>
+<th colspan="5" class="py-2.5 px-4 text-center border-b border-slate-200 bg-blue-50/70">
+<span class="text-sm font-extrabold uppercase tracking-wider text-blue-900">Marks Range</span>
+</th>
+</tr>
+<tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+<th class="py-2 px-2 text-center border-r border-slate-200">10 Marks • Recall</th>
+<th class="py-2 px-2 text-center border-r border-slate-200">20 Marks • Apply</th>
+<th class="py-2 px-2 text-center border-r border-slate-200">30 Marks • Differentiate</th>
+<th class="py-2 px-2 text-center border-r border-slate-200">40 Marks • Clinical</th>
+<th class="py-2 px-2 text-center">50 Marks • Emergency</th>
+</tr>
+</thead>
+<tbody id="gameBoardBody" class="divide-y divide-slate-200">
+<!-- Dynamically rendered via JavaScript -->
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Tile Legend -->
+<div class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm text-slate-600 px-1">
+<div class="flex flex-wrap items-center gap-4">
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-blue-600 inline-block"></span> Available (3:00 Timer)
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-emerald-500 inline-block"></span> Correct (+Marks)
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-rose-500 inline-block"></span> Incorrect (0 Marks)
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-amber-500 inline-block"></span> Out of Time (0 Marks)
+</span>
+</div>
+<p class="text-slate-400">Opening a tile counts it as Attempted and starts the 3:00 countdown.</p>
+</div>
+</main>
+
+<!-- Question Modal with 3-Minute Countdown Timer & Hint Toggle -->
+<div
+id="questionModal"
+class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+role="dialog"
+aria-modal="true"
+aria-labelledby="modalQuestionTitle"
+>
+<div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-auto animate-modal-pop">
+
+<!-- Modal Top Header -->
+<div class="bg-slate-900 text-white px-5 sm:px-7 py-4 flex items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-2">
+<span id="modalTopicBadge" class="px-3 py-1 rounded-lg bg-blue-600 text-white text-xs sm:text-sm font-bold">
+Thyroid Disorders
+</span>
+<span id="modalMarksBadge" class="px-3 py-1 rounded-lg bg-amber-400 text-slate-950 text-xs sm:text-sm font-extrabold">
+10 Marks • Basic Recall
+</span>
+</div>
+<button
+id="closeModalIconBtn"
+type="button"
+aria-label="Close question modal"
+class="text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+>
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
+
+<!-- Live 3-Minute Countdown Timer Bar -->
+<div id="timerSection" class="bg-slate-50 border-b border-slate-200 px-5 sm:px-7 py-3">
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+<span>Time Remaining</span>
+</span>
+<span id="timerCountdownText" class="font-mono text-base sm:text-lg font-extrabold text-slate-900">
+03:00
+</span>
+</div>
+<div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
+<div id="timerProgressBar" class="h-full bg-blue-600 rounded-full transition-all duration-500" style="width: 100%;"></div>
+</div>
+</div>
+
+<!-- Modal Body -->
+<div class="p-5 sm:p-7 space-y-5">
+<!-- Question Text -->
+<h2 id="modalQuestionTitle" class="text-base sm:text-lg md:text-xl font-bold text-slate-900 leading-relaxed">
+Question text appears here...
+</h2>
+
+<!-- Expandable Hint Arrow Control -->
+<div class="rounded-xl border border-amber-200 bg-amber-50/60 overflow-hidden">
+<button
+id="hintToggleBtn"
+type="button"
+aria-expanded="false"
+aria-controls="hintPanel"
+class="w-full px-4 py-2.5 flex items-center justify-between text-left text-sm font-bold text-amber-950 hover:bg-amber-100/70 transition-colors cursor-pointer"
+>
+<span class="flex items-center gap-2">
+<svg
+id="hintArrowIcon"
+xmlns="http://www.w3.org/2000/svg"
+class="w-4 h-4 text-amber-700 hint-chevron"
+viewBox="0 0 20 20"
+fill="currentColor"
+>
+<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+</svg>
+<span>Hint</span>
+</span>
+<span id="hintToggleLabel" class="text-xs font-semibold text-amber-700">Tap arrow to view</span>
+</button>
+<div id="hintPanel" class="hidden px-4 pb-3.5 pt-1 text-sm text-amber-950 border-t border-amber-200/80 leading-relaxed">
+<span id="hintText"></span>
+</div>
+</div>
+
+<!-- 4 Multiple Choice Options -->
+<div id="optionsContainer" class="space-y-3">
+<!-- Populated via JavaScript -->
+</div>
+
+<!-- Post-Answer Feedback & Clinical Explanation -->
+<div id="feedbackContainer" class="hidden rounded-xl p-4 sm:p-5 border">
+<div class="flex items-center gap-2.5 mb-2">
+<span id="feedbackIcon" class="shrink-0"></span>
+<h3 id="feedbackHeading" class="font-extrabold text-base sm:text-lg"></h3>
+</div>
+<p id="feedbackExplanation" class="text-sm sm:text-base leading-relaxed text-slate-700"></p>
+</div>
+</div>
+
+<!-- Modal Footer -->
+<div class="bg-slate-50 px-5 sm:px-7 py-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+<span id="modalStatusHint" class="text-xs sm:text-sm text-slate-500 font-medium text-center sm:text-left">
+Select an answer before the 3:00 timer expires.
+</span>
+<button
+id="backToBoardBtn"
+type="button"
+class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm sm:text-base shadow-xs transition-colors cursor-pointer"
+>
+Back to Board
+</button>
+</div>
+</div>
+</div>
+
+<!-- Custom Confirmation Modal for Resetting the Game -->
+<div
+id="resetConfirmModal"
+class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4"
+role="dialog"
+aria-modal="true"
+>
+<div class="bg-white max-w-md w-full rounded-2xl p-6 shadow-2xl border border-slate-200 animate-modal-pop">
+<h3 class="text-lg font-extrabold text-slate-900 mb-2">Reset Game Progress?</h3>
+<p class="text-sm text-slate-600 mb-6">
+This will reset your score to 0 and clear all Attempted, Correct, Incorrect, and Out of Time records.
+</p>
+<div class="flex items-center justify-end gap-3">
+<button
+id="cancelResetBtn"
+type="button"
+class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 font-semibold text-sm cursor-pointer"
+>
+Cancel
+</button>
+<button
+id="confirmResetBtn"
+type="button"
+class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm shadow-xs cursor-pointer"
+>
+Reset Game
+</button>
+</div>
+</div>
+</div>
+
+<script>
+/**
+* Duration for each question countdown in seconds (3 minutes = 180 seconds).
+*/
+const QUESTION_DURATION_SECONDS = 180;
+
+/**
+* Structured Topic & Question Data.
+* To add a new topic later: append a new object to GAME_DATA with a unique id,
+* topic name, subtitle, and 5 questions ordered by marks (10, 20, 30, 40, 50).
+*/
+const GAME_DATA = [
+{
+id: "thyroid",
+topic: "Thyroid Disorders",
+subtitle: "Hypothyroidism, Thyrotoxicosis & Emergencies",
+questions: [
+{
+marks: 10,
+difficultyLabel: "Basic Recall",
+question: "Which of the following is the most common cause of primary hypothyroidism in iodine-sufficient populations?",
+hint: "Think of a chronic autoimmune condition involving lymphocytic infiltration that gradually damages thyroid follicular cells.",
+options: {
+A: "Graves' disease",
+B: "Subacute (de Quervain) thyroiditis",
+C: "Hashimoto thyroiditis",
+D: "Toxic multinodular goitre"
+},
+correct: "C",
+explanation: "Hashimoto thyroiditis is a chronic autoimmune thyroid inflammation characterized by lymphocytic infiltration and progressive follicular destruction. It represents the single most common cause of primary hypothyroidism in iodine-sufficient populations."
+},
+{
+marks: 20,
+difficultyLabel: "Basic Application & TFT Interpretation",
+question: "A 54-year-old patient presents with fatigue, weight gain, and cold intolerance. Routine blood work reveals a serum TSH of 14.2 mIU/L (elevated) and a Free T4 (FT4) below the normal reference range. How is this biochemical pattern classified?",
+hint: "Look at the direction of both TSH and Free T4: TSH is high while circulating FT4 has already fallen below normal.",
+options: {
+A: "Overt primary hypothyroidism",
+B: "Subclinical hypothyroidism",
+C: "Central hypothyroidism",
+D: "Overt primary thyrotoxicosis"
+},
+correct: "A",
+explanation: "An elevated TSH level accompanied by a low Free T4 (FT4) level defines overt primary hypothyroidism, reflecting intrinsic failure of the thyroid gland to maintain adequate circulating hormone levels."
+},
+{
+marks: 30,
+difficultyLabel: "Intermediate Differentiation",
+question: "A clinician is evaluating a patient with symptoms of thyrotoxicosis. Which feature specifically distinguishes true hyperthyroidism (such as Graves' disease) from destructive release thyrotoxicosis (such as subacute thyroiditis)?",
+hint: "Focus on whether the thyroid gland is actively synthesizing new hormone or leaking pre-formed hormone due to tissue injury.",
+options: {
+A: "Clinical presence of sinus tachycardia and fine distal tremor",
+B: "Demonstration of increased de novo hormone synthesis and secretion by the thyroid gland",
+C: "Suppression of circulating serum TSH levels on biochemical testing",
+D: "Elevation of circulating serum Free T4 and Free T3 levels"
+},
+correct: "B",
+explanation: "Hyperthyroidism specifically refers to thyrotoxicosis caused by increased de novo synthesis and secretion of hormones by the gland itself. In contrast, destructive thyroiditis involves follicular inflammation causing passive leakage of pre-stored hormone into circulation, typically exhibiting low radioiodine uptake."
+},
+{
+marks: 40,
+difficultyLabel: "Advanced Clinical Scenario & Critical Care",
+question: "A 42-year-old patient with untreated hyperthyroidism is admitted to the ICU in severe thyroid storm (fever 39.6°C, delirium, atrial fibrillation with rapid ventricular response). Which therapeutic rule is mandatory regarding the timing of antithyroid drug administration?",
+hint: "Consider what happens if extra iodine is supplied before hormone synthesis is blocked—and why aspirin is avoided in thyroid storm.",
+options: {
+A: "Administer inorganic iodine immediately, followed 1 hour later by propylthiouracil (PTU)",
+B: "Administer a thionamide (PTU or MMI) at least 1 hour before initiating inorganic iodine therapy",
+C: "Administer high-dose aspirin for fever control prior to initiating antithyroid medications",
+D: "Administer therapeutic radioactive iodine (¹³¹I) immediately to ablate the gland"
+},
+correct: "B",
+explanation: "Thionamides (PTU or Methimazole) must be given at least 1 hour prior to inorganic iodine therapy. This ensures that new hormone synthesis within the gland is blocked before iodine is introduced; giving iodine first without thionamide blockade can provide substrate to produce more thyroid hormone, worsening the storm. Aspirin is strictly avoided because it displaces bound thyroid hormone from serum proteins."
+},
+{
+marks: 50,
+difficultyLabel: "Complex Mechanism & Emergency Sequence",
+question: "A 74-year-old woman is brought to the Emergency Department with profound hypothermia (32.6°C), severe bradycardia, hypotension, and altered mental status, diagnosed clinically as myxoedema coma. Which rationale explains the mandatory therapeutic sequence for this emergency?",
+hint: "Think about two critical safety rules in myxoedema coma: protecting against adrenal crisis and avoiding sudden vasodilation from rapid external warming.",
+options: {
+A: "Administer high-dose IV Levothyroxine immediately without hydrocortisone, and apply active peripheral heat lamps",
+B: "Administer IV hydrocortisone before or concurrently with IV Levothyroxine, and utilize passive rewarming rather than aggressive active warming",
+C: "Apply active external heating blankets first to normalize core body temperature before giving any thyroid or steroid medications",
+D: "Administer high-dose oral Propylthiouracil alongside active peripheral rewarming to restore basal metabolic rate"
+},
+correct: "B",
+explanation: "Stress-dose IV hydrocortisone must be administered before or with thyroid hormone replacement to avoid precipitating an acute, fatal adrenal crisis if co-existing adrenal insufficiency is present. Furthermore, hypothermia must be managed with passive rewarming measures only; aggressive active peripheral warming can cause sudden vasodilation leading to severe hypotension and cardiovascular collapse."
+}
+ ]
+},
+{
+id: "adrenal",
+topic: "Adrenal Disorders",
+subtitle: "Adrenal Insufficiency, Cushing & Phaeochromocytoma",
+questions: [
+{
+marks: 10,
+difficultyLabel: "Basic Recall",
+question: "Which anatomical zone of the adrenal cortex is primarily responsible for synthesizing and secreting aldosterone?",
+hint: "Aldosterone is a mineralocorticoid produced in the outermost cortical layer—remember 'GFR' from outside to inside (Glomerulosa, Fasciculata, Reticularis).",
+options: {
+A: "Zona fasciculata",
+B: "Zona glomerulosa",
+C: "Zona reticularis",
+D: "Adrenal medulla"
+},
+correct: "B",
+explanation: "The zona glomerulosa is the outermost zone of the adrenal cortex, responsible for aldosterone production under the primary regulation of the renin–angiotensin system and serum potassium levels."
+},
+{
+marks: 20,
+difficultyLabel: "Basic Application & Diagnostic Differentiation",
+question: "Evaluation of a patient with weakness, fatigue, and low morning cortisol reveals an elevated plasma ACTH level, generalized skin hyperpigmentation, hyperkalemia, and hyponatremia. What is the most likely underlying condition?",
+hint: "Notice both high ACTH (driving pigmentation) and electrolyte shifts (hyponatremia and hyperkalemia) pointing to mineralocorticoid loss.",
+options: {
+A: "Primary adrenal insufficiency (Addison disease)",
+B: "Secondary adrenal insufficiency (Pituitary failure)",
+C: "Tertiary adrenal insufficiency (Hypothalamic disease)",
+D: "ACTH-dependent Cushing syndrome"
+},
+correct: "A",
+explanation: "Primary adrenal insufficiency results from adrenal gland failure, causing cortisol and mineralocorticoid (aldosterone) deficiency alongside a compensatory rise in plasma ACTH. The high ACTH/POMC peptides drive hyperpigmentation, while aldosterone deficiency causes salt wasting, hyponatremia, and hyperkalemia."
+},
+{
+marks: 30,
+difficultyLabel: "Intermediate Differentiation",
+question: "A patient is evaluated for suspected hypercortisolism (Cushing syndrome) presenting with central obesity, hypertension, and purple striae. Which test is explicitly NOT appropriate as an initial screening test for Cushing syndrome?",
+hint: "Cortisol follows a strong diurnal/circadian rhythm throughout the day, making a single unscheduled spot check unreliable.",
+options: {
+A: "1 mg overnight dexamethasone suppression test",
+B: "24-hour urinary free cortisol",
+C: "Late-night salivary cortisol",
+D: "Random serum cortisol measurement"
+},
+correct: "D",
+explanation: "Random serum cortisol measurements are not appropriate screening tests for Cushing syndrome due to normal physiological circadian fluctuations. Appropriate initial screening tests include the 1 mg overnight dexamethasone suppression test, late-night salivary cortisol, or 24-hour urinary free cortisol."
+},
+{
+marks: 40,
+difficultyLabel: "Advanced Clinical Management & Surgical Rules",
+question: "A 36-year-old patient with paroxysmal hypertension, headaches, and palpitations has confirmed phaeochromocytoma with a 4.5 cm adrenal lesion on CT. What is the mandatory pharmacological rule before proceeding to surgical resection?",
+hint: "In a catecholamine-secreting tumor, blocking beta receptors first leaves alpha-1 vasoconstriction unopposed.",
+options: {
+A: "Initiate beta-blockers first to control tachycardia, followed by alpha-blockers 48 hours prior to surgery",
+B: "Perform an immediate fine-needle aspiration biopsy of the mass to confirm histological diagnosis",
+C: "Establish adequate alpha-adrenergic blockade prior to initiating any beta-blocker therapy",
+D: "Administer high-dose fludrocortisone for 14 days before surgical excision"
+},
+correct: "C",
+explanation: "Preoperative alpha-adrenergic blockade (e.g., phenoxybenzamine or doxazosin) is essential for 7–14 days prior to surgery, and must always precede beta-blockade to avoid unopposed alpha-receptor vasoconstriction causing a severe hypertensive crisis. In addition, biopsy of an adrenal mass is strictly contraindicated until phaeochromocytoma is excluded."
+},
+{
+marks: 50,
+difficultyLabel: "Complex Emergency Protocol & Pathophysiology",
+question: "A 30-year-old patient with known Addison disease is brought to the ED in profound shock (BP 70/40 mmHg), severe abdominal pain, vomiting, and confusion following a viral illness. Blood work shows glucose 2.8 mmol/L, sodium 125 mmol/L, and potassium 6.2 mmol/L. Which protocol represents the immediate life-saving management?",
+hint: "In acute adrenal crisis with shock and hypoglycemia, immediate IV steroid replacement, isotonic volume resuscitation, and glucose correction come first.",
+options: {
+A: "Administer hydrocortisone 100 mg IV immediately, initiate rapid isotonic saline resuscitation, and correct hypoglycemia without delaying for test results",
+B: "Delay steroid administration until a formal high-dose ACTH stimulation test is completed, while infusing hypotonic D5W fluids",
+C: "Administer oral Prednisolone 5 mg, initiate spironolactone for hyperkalemia, and request an outpatient endocrine consult",
+D: "Administer IV broad-spectrum antibiotics and high-dose oral Levothyroxine while strictly restricting fluid intake"
+},
+correct: "A",
+explanation: "Adrenal crisis is an acute life-threatening emergency requiring immediate IV hydrocortisone (100 mg bolus) and rapid volume expansion with IV isotonic saline. Treatment must never be delayed for confirmatory diagnostic testing. Concurrent hypoglycemia must be corrected promptly with IV glucose."
+}
+ ]
+}
+];
+
+/**
+* Game State:
+* - score: total marks earned
+* - attemptedSet: Set of tile keys ("topicIndex-questionIndex") that have been opened
+* - outcomes: map of tileKey -> { status: "correct" | "incorrect" | "timed_out", selectedOption: string | null }
+* - activeTile: { topicIndex, questionIndex } | null
+* - secondsRemaining: countdown value for currently open question
+* - timerIntervalId: interval handle for active 3-minute timer
+*/
+const state = {
+score: 0,
+attemptedSet: new Set(),
+outcomes: {},
+activeTile: null,
+secondsRemaining: QUESTION_DURATION_SECONDS,
+timerIntervalId: null
+};
+
+// DOM Elements
+const gameBoardBody = document.getElementById("gameBoardBody");
+const scoreDisplay = document.getElementById("scoreDisplay");
+const attemptedDisplay = document.getElementById("attemptedDisplay");
+const correctDisplay = document.getElementById("correctDisplay");
+const incorrectDisplay = document.getElementById("incorrectDisplay");
+const timedOutDisplay = document.getElementById("timedOutDisplay");
+
+const statusNotice = document.getElementById("statusNotice");
+const statusNoticeIcon = document.getElementById("statusNoticeIcon");
+const statusNoticeText = document.getElementById("statusNoticeText");
+const dismissNoticeBtn = document.getElementById("dismissNoticeBtn");
+
+const completionBanner = document.getElementById("completionBanner");
+const finalScoreText = document.getElementById("finalScoreText");
+const finalSummaryText = document.getElementById("finalSummaryText");
+
+const questionModal = document.getElementById("questionModal");
+const modalTopicBadge = document.getElementById("modalTopicBadge");
+const modalMarksBadge = document.getElementById("modalMarksBadge");
+const timerSection = document.getElementById("timerSection");
+const timerCountdownText = document.getElementById("timerCountdownText");
+const timerProgressBar = document.getElementById("timerProgressBar");
+const modalQuestionTitle = document.getElementById("modalQuestionTitle");
+
+const hintToggleBtn = document.getElementById("hintToggleBtn");
+const hintArrowIcon = document.getElementById("hintArrowIcon");
+const hintToggleLabel = document.getElementById("hintToggleLabel");
+const hintPanel = document.getElementById("hintPanel");
+const hintText = document.getElementById("hintText");
+
+const optionsContainer = document.getElementById("optionsContainer");
+const feedbackContainer = document.getElementById("feedbackContainer");
+const feedbackIcon = document.getElementById("feedbackIcon");
+const feedbackHeading = document.getElementById("feedbackHeading");
+const feedbackExplanation = document.getElementById("feedbackExplanation");
+const modalStatusHint = document.getElementById("modalStatusHint");
+const backToBoardBtn = document.getElementById("backToBoardBtn");
+const closeModalIconBtn = document.getElementById("closeModalIconBtn");
+
+const resetBtn = document.getElementById("resetBtn");
+const playAgainBtn = document.getElementById("playAgainBtn");
+const resetConfirmModal = document.getElementById("resetConfirmModal");
+const cancelResetBtn = document.getElementById("cancelResetBtn");
+const confirmResetBtn = document.getElementById("confirmResetBtn");
+
+/**
+* Formats seconds into MM:SS string (e.g., 180 -> "03:00").
+*/
+function formatTimeMMSS(totalSeconds) {
+const safeSeconds = Math.max(0, totalSeconds);
+const mins = Math.floor(safeSeconds / 60);
+const secs = safeSeconds % 60;
+return ${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")};
+}
+
+/**
+* Updates the visual MM:SS timer and progress bar inside the modal.
+*/
+function renderTimerDisplay() {
+timerCountdownText.textContent = formatTimeMMSS(state.secondsRemaining);
+const pct = Math.max(0, Math.min(100, (state.secondsRemaining / QUESTION_DURATION_SECONDS) * 100));
+timerProgressBar.style.width = ${pct}%`;
+
+// Color shifts as time runs low (< 30s = amber/rose warning)
+if (state.secondsRemaining <= 30) {
+timerCountdownText.className = "font-mono text-base sm:text-lg font-extrabold text-rose-600";
+timerProgressBar.className = "h-full bg-rose-600 rounded-full transition-all duration-500";
+} else if (state.secondsRemaining <= 60) {
+timerCountdownText.className = "font-mono text-base sm:text-lg font-extrabold text-amber-600";
+timerProgressBar.className = "h-full bg-amber-500 rounded-full transition-all duration-500";
+} else {
+timerCountdownText.className = "font-mono text-base sm:text-lg font-extrabold text-slate-900";
+timerProgressBar.className = "h-full bg-blue-600 rounded-full transition-all duration-500";
+}
+}
+
+/**
+* Clears any running countdown interval.
+*/
+function stopTimer() {
+if (state.timerIntervalId !== null) {
+clearInterval(state.timerIntervalId);
+state.timerIntervalId = null;
+}
+}
+
+/**
+* Starts the 3-minute (180-second) countdown for the currently opened question.
+*/
+function startTimer() {
+stopTimer();
+state.secondsRemaining = QUESTION_DURATION_SECONDS;
+renderTimerDisplay();
+
+state.timerIntervalId = setInterval(() => {
+state.secondsRemaining -= 1;
+renderTimerDisplay();
+
+if (state.secondsRemaining <= 0) {
+stopTimer();
+handleQuestionTimeout();
+}
+}, 1000);
+}
+
+/**
+* Triggered automatically when the 3-minute timer hits 00:00:
+* Marks the question as 'Out of Time', hides/closes the question modal,
+* keeps it counted in 'Attempted', and updates the board and stats.
+*/
+function handleQuestionTimeout() {
+if (!state.activeTile) return;
+const { topicIndex, questionIndex } = state.activeTile;
+const tileKey = ``${topicIndex}-${questionIndex};
+
+// Only mark timed out if not already answered
+if (!state.outcomes[tileKey]) {
+state.attemptedSet.add(tileKey);
+state.outcomes[tileKey] = {
+status: "timed_out",
+selectedOption: null
+};
+}
+
+const topicObj = GAME_DATA[topicIndex];
+const qObj = topicObj.questions[questionIndex];
+
+// Hide question view immediately
+questionModal.classList.add("hidden");
+state.activeTile = null;
+resetHintState();
+
+// Refresh UI & display timeout banner
+renderBoard();
+updateStats();
+showStatusNotice(
+"timeout",
+Time's up! "${topicObj.topic} — ${qObj.marks} Marks" was marked as Out of Time (0 marks awarded).
+);
+}
+
+/**
+* Displays a prominent status notice above the game board.
+*/
+function showStatusNotice(type, message) {
+statusNotice.classList.remove("hidden");
+statusNoticeText.textContent = message;
+
+if (type === "timeout") {
+statusNotice.className =
+"mb-5 rounded-xl border-2 border-amber-300 bg-amber-50 text-amber-950 px-4 py-3.5 flex items-center justify-between gap-3 shadow-xs animate-modal-pop";
+statusNoticeIcon.innerHTML = &lt;svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-600" viewBox="0 0 20 20" fill="currentColor"&gt; &lt;path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" /&gt; &lt;/svg&gt;;
+} else {
+statusNotice.className =
+"mb-5 rounded-xl border border-blue-200 bg-blue-50 text-blue-950 px-4 py-3.5 flex items-center justify-between gap-3 shadow-xs animate-modal-pop";
+statusNoticeIcon.innerHTML = "";
+}
+}
+
+function hideStatusNotice() {
+statusNotice.classList.add("hidden");
+}
+
+/**
+* Resets the expandable hint arrow & panel to collapsed state.
+*/
+function resetHintState() {
+hintToggleBtn.setAttribute("aria-expanded", "false");
+hintArrowIcon.classList.remove("rotated");
+hintPanel.classList.add("hidden");
+hintToggleLabel.textContent = "Tap arrow to view";
+}
+
+/**
+* Toggles the hint panel when the user taps the hint arrow button.
+*/
+function toggleHintPanel() {
+const isExpanded = hintToggleBtn.getAttribute("aria-expanded") === "true";
+const nextState = !isExpanded;
+
+hintToggleBtn.setAttribute("aria-expanded", String(nextState));
+if (nextState) {
+hintArrowIcon.classList.add("rotated");
+hintPanel.classList.remove("hidden");
+hintToggleLabel.textContent = "Tap arrow to hide";
+} else {
+hintArrowIcon.classList.remove("rotated");
+hintPanel.classList.add("hidden");
+hintToggleLabel.textContent = "Tap arrow to view";
+}
+}
+
+/**
+* Renders the main game board matching the hand-drawn Topic rows and 10-50 Marks columns.
+*/
+function renderBoard() {
+gameBoardBody.innerHTML = "";
+
+GAME_DATA.forEach((topicObj, topicIndex) => {
+const tr = document.createElement("tr");
+tr.className = "hover:bg-slate-50/50 transition-colors";
+
+// Topic Label Cell
+const topicTd = document.createElement("td");
+topicTd.className = "p-4 sm:p-5 border-r-2 border-rose-300 bg-slate-50/70 align-middle";
+topicTd.innerHTML = &lt;div class="font-extrabold text-base sm:text-lg text-slate-900 leading-snug"&gt;${topicObj.topic}</div>
+<div class="text-xs text-slate-500 mt-1 font-medium">${topicObj.subtitle}&lt;/div&gt;;
+tr.appendChild(topicTd);
+
+// Marks Cells (10, 20, 30, 40, 50)
+topicObj.questions.forEach((qObj, questionIndex) => {
+const tileKey = ``${topicIndex}-${questionIndex};
+const outcome = state.outcomes[tileKey];
+
+const td = document.createElement("td");
+td.className = "p-2.5 sm:p-3.5 text-center align-middle border-r last:border-r-0 border-slate-200";
+
+const btn = document.createElement("button");
+btn.type = "button";
+btn.setAttribute("aria-label", ``${topicObj.topic} - ${qObj.marks} Marks);
+
+if (!outcome) {
+// Unresolved Tile
+btn.className = "mark-btn-hover w-full py-4 sm:py-5 px-2 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-xs border border-blue-800/20 flex flex-col items-center justify-center cursor-pointer";
+btn.innerHTML = &lt;span class="text-xl sm:text-2xl font-extrabold tracking-tight leading-none"&gt;${qObj.marks}</span>
+<span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-100 mt-1">Marks</span>
+; } else if (outcome.status === "correct") { // Answered Correctly btn.className = "w-full py-4 sm:py-5 px-2 rounded-xl bg-emerald-50 text-emerald-900 border-2 border-emerald-400 flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100/70 transition-colors"; btn.innerHTML =
+<span class="text-lg sm:text-xl font-extrabold text-emerald-700 leading-none">+latex
+{qObj.marks} pts&lt;/span&gt; &lt;span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mt-1"&gt;Correct&lt;/span&gt; `; } else if (outcome.status === "incorrect") { // Answered Incorrectly btn.className = "w-full py-4 sm:py-5 px-2 rounded-xl bg-rose-50 text-rose-900 border-2 border-rose-300 flex flex-col items-center justify-center cursor-pointer hover:bg-rose-100/70 transition-colors"; btn.innerHTML = ` &lt;span class="text-lg sm:text-xl font-extrabold text-rose-700 leading-none"&gt;0 pts&lt;/span&gt; &lt;span class="text-[11px] font-bold uppercase tracking-wider text-rose-700 mt-1"&gt;Incorrect (
+
+{qObj.marks}m)</span>
+; } else { // Timed Out ("timed_out") btn.className = "w-full py-4 sm:py-5 px-2 rounded-xl bg-amber-50 text-amber-950 border-2 border-amber-400 flex flex-col items-center justify-center cursor-pointer hover:bg-amber-100/70 transition-colors"; btn.innerHTML =
+<span class="text-sm sm:text-base font-extrabold text-amber-800 leading-tight">Out of Time</span>
+<span class="text-[11px] font-bold uppercase tracking-wider text-amber-700 mt-1">0 pts • ${qObj.marks}m&lt;/span&gt;;
+}
+
+btn.addEventListener("click", () => openQuestionModal(topicIndex, questionIndex));
+td.appendChild(btn);
+tr.appendChild(td);
+});
+
+gameBoardBody.appendChild(tr);
+});
+}
+
+/**
+* Updates Score, Attempted, Correct, Incorrect, and Out of Time counters.
+*/
+function updateStats() {
+const totalQuestions = GAME_DATA.reduce((sum, t) => sum + t.questions.length, 0);
+const maxPossibleScore = GAME_DATA.reduce(
+(sum, t) => sum + t.questions.reduce((qSum, q) => qSum + q.marks, 0),
+0
+);
+
+const outcomeValues = Object.values(state.outcomes);
+const attemptedCount = state.attemptedSet.size;
+const correctCount = outcomeValues.filter((o) => o.status === "correct").length;
+const incorrectCount = outcomeValues.filter((o) => o.status === "incorrect").length;
+const timedOutCount = outcomeValues.filter((o) => o.status === "timed_out").length;
+const resolvedCount = outcomeValues.length;
+
+scoreDisplay.textContent = ${state.score} / $`{maxPossibleScore} pts`; attemptedDisplay.textContent =${attemptedCount} / ${totalQuestions};
+correctDisplay.textContent = String(correctCount);
+incorrectDisplay.textContent = String(incorrectCount);
+timedOutDisplay.textContent = String(timedOutCount);
+
+if (resolvedCount === totalQuestions) {
+finalScoreText.textContent = ``${state.score} / {attemptedCount}/{correctCount} • Incorrect: {timedOutCount}. Click any tile to review explanations or reset to play again.`;
+completionBanner.classList.remove("hidden");
+} else {
+completionBanner.classList.add("hidden");
+}
+}
+
+/**
+* Opens the question modal, increments Attempted once upon opening,
+* resets the hint arrow, and starts the 3-minute countdown if unresolved.
+*/
+function openQuestionModal(topicIndex, questionIndex) {
+stopTimer();
+resetHintState();
+
+state.activeTile = { topicIndex, questionIndex };
+const topicObj = GAME_DATA[topicIndex];
+const qObj = topicObj.questions[questionIndex];
+const tileKey = ${topicIndex}-${questionIndex};
+const existingOutcome = state.outcomes[tileKey];
+
+// Count as Attempted as soon as the question is opened (no duplicate increment)
+state.attemptedSet.add(tileKey);
+
+modalTopicBadge.textContent = topicObj.topic;
+modalMarksBadge.textContent = ${qObj.marks} Marks • ${qObj.difficultyLabel};
+modalQuestionTitle.textContent = qObj.question;
+hintText.textContent = qObj.hint;
+
+renderModalOptions(qObj, existingOutcome);
+
+if (existingOutcome) {
+// Already resolved (correct, incorrect, or timed_out) — do not restart countdown
+timerSection.classList.add("hidden");
+showFeedback(qObj, existingOutcome);
+modalStatusHint.textContent = "This question is already recorded. Review the explanation below.";
+} else {
+// Active question — start 3-minute countdown
+timerSection.classList.remove("hidden");
+feedbackContainer.classList.add("hidden");
+modalStatusHint.textContent = "Select an option before the 3:00 timer runs out.";
+startTimer();
+}
+
+updateStats();
+questionModal.classList.remove("hidden");
+}
+
+/**
+* Renders the 4 multiple-choice option buttons.
+*/
+function renderModalOptions(qObj, existingOutcome) {
+optionsContainer.innerHTML = "";
+const letters = ["A", "B", "C", "D"];
+
+letters.forEach((letter) => {
+const btn = document.createElement("button");
+btn.type = "button";
+
+let rowClass = "w-full text-left p-3.5 sm:p-4 rounded-xl border-2 transition-all flex items-start gap-3.5 ";
+let badgeClass = "w-8 h-8 rounded-lg flex items-center justify-center font-extrabold text-sm shrink-0 mt-0.5 ";
+
+if (!existingOutcome) {
+rowClass += "border-slate-200 bg-white hover:border-blue-500 hover:bg-blue-50/50 text-slate-800 cursor-pointer";
+badgeClass += "bg-slate-100 text-slate-700";
+} else {
+btn.disabled = true;
+const isCorrectOption = letter === qObj.correct;
+const isSelectedOption = letter === existingOutcome.selectedOption;
+
+if (isCorrectOption) {
+rowClass += "border-emerald-500 bg-emerald-50 text-emerald-950 font-semibold";
+badgeClass += "bg-emerald-600 text-white";
+} else if (isSelectedOption && existingOutcome.status === "incorrect") {
+rowClass += "border-rose-500 bg-rose-50 text-rose-950";
+badgeClass += "bg-rose-600 text-white";
+} else {
+rowClass += "border-slate-200 bg-slate-50 text-slate-400 opacity-75";
+badgeClass += "bg-slate-200 text-slate-500";
+}
+}
+
+btn.className = rowClass;
+btn.innerHTML = &lt;span class="${badgeClass}">${letter}&lt;/span&gt; &lt;span class="text-sm sm:text-base leading-snug pt-1"&gt;${qObj.options[letter]}</span>
+`;
+
+if (!existingOutcome) {
+btn.addEventListener("click", () => handleAnswerClick(letter));
+}
+
+optionsContainer.appendChild(btn);
+});
+}
+
+/**
+* Handles selecting a multiple-choice answer before the timer expires.
+*/
+function handleAnswerClick(selectedLetter) {
+if (!state.activeTile) return;
+const { topicIndex, questionIndex } = state.activeTile;
+const tileKey = ``${topicIndex}-${questionIndex};
+
+if (state.outcomes[tileKey]) return;
+
+stopTimer();
+timerSection.classList.add("hidden");
+
+const qObj = GAME_DATA[topicIndex].questions[questionIndex];
+const isCorrect = selectedLetter === qObj.correct;
+
+state.attemptedSet.add(tileKey);
+state.outcomes[tileKey] = {
+status: isCorrect ? "correct" : "incorrect",
+selectedOption: selectedLetter
+};
+
+if (isCorrect) {
+state.score += qObj.marks;
+}
+
+renderModalOptions(qObj, state.outcomes[tileKey]);
+showFeedback(qObj, state.outcomes[tileKey]);
+modalStatusHint.textContent = "Response recorded. Click 'Back to Board' to continue.";
+
+renderBoard();
+updateStats();
+}
+
+/**
+* Displays result feedback and the clinical explanation inside the modal.
+*/
+function showFeedback(qObj, outcome) {
+feedbackContainer.classList.remove("hidden");
+
+if (outcome.status === "correct") {
+feedbackContainer.className = "rounded-xl p-4 sm:p-5 border-2 border-emerald-300 bg-emerald-50 text-emerald-950 animate-modal-pop";
+feedbackIcon.innerHTML = &lt;span class="w-7 h-7 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm"&gt;✓&lt;/span&gt;;
+feedbackHeading.className = "font-extrabold text-base sm:text-lg text-emerald-900";
+feedbackHeading.textContent = Correct! +${qObj.marks} pts awarded; } else if (outcome.status === "incorrect") { feedbackContainer.className = "rounded-xl p-4 sm:p-5 border-2 border-rose-300 bg-rose-50 text-rose-950 animate-modal-pop"; feedbackIcon.innerHTML =
+<span class="w-7 h-7 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-sm">✕</span>
+; feedbackHeading.className = "font-extrabold text-base sm:text-lg text-rose-900"; feedbackHeading.textContent =Incorrect! 0 pts awarded (Correct Answer: latex
+{qObj.correct})`; } else { feedbackContainer.className = "rounded-xl p-4 sm:p-5 border-2 border-amber-300 bg-amber-50 text-amber-950 animate-modal-pop"; feedbackIcon.innerHTML = ` &lt;span class="w-7 h-7 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-sm"&gt;!&lt;/span&gt; `; feedbackHeading.className = "font-extrabold text-base sm:text-lg text-amber-900"; feedbackHeading.textContent = `Out of Time! 0 pts awarded (Correct Answer: 
+
+{qObj.correct})`;
+}
+
+feedbackExplanation.innerHTML = <strong class="font-bold text-slate-900"&gt;Clinical Explanation:&lt;/strong&gt; ${qObj.explanation};
+}
+
+/**
+* Closes the question modal cleanly and stops any active timer.
+*/
+function closeQuestionModal() {
+stopTimer();
+questionModal.classList.add("hidden");
+state.activeTile = null;
+resetHintState();
+}
+
+/**
+* Resets all scores, attempts, outcomes, and timers back to initial state.
+*/
+function resetGame() {
+stopTimer();
+state.score = 0;
+state.attemptedSet.clear();
+state.outcomes = {};
+state.activeTile = null;
+state.secondsRemaining = QUESTION_DURATION_SECONDS;
+
+resetConfirmModal.classList.add("hidden");
+questionModal.classList.add("hidden");
+resetHintState();
+hideStatusNotice();
+
+renderBoard();
+updateStats();
+}
+
+// Event Listeners
+hintToggleBtn.addEventListener("click", toggleHintPanel);
+backToBoardBtn.addEventListener("click", closeQuestionModal);
+closeModalIconBtn.addEventListener("click", closeQuestionModal);
+dismissNoticeBtn.addEventListener("click", hideStatusNotice);
+
+questionModal.addEventListener("click", (e) => {
+if (e.target === questionModal) {
+closeQuestionModal();
+}
+});
+
+resetBtn.addEventListener("click", () => {
+resetConfirmModal.classList.remove("hidden");
+});
+
+cancelResetBtn.addEventListener("click", () => {
+resetConfirmModal.classList.add("hidden");
+});
+
+confirmResetBtn.addEventListener("click", resetGame);
+playAgainBtn.addEventListener("click", resetGame);
+
+document.addEventListener("keydown", (e) => {
+if (e.key === "Escape") {
+if (!resetConfirmModal.classList.contains("hidden")) {
+resetConfirmModal.classList.add("hidden");
+} else if (!questionModal.classList.contains("hidden")) {
+closeQuestionModal();
+}
+}
+});
+
+// Initial Render
+window.addEventListener("DOMContentLoaded", () => {
+renderBoard();
+updateStats();
+});
+</script>
+</body>
+</html>
