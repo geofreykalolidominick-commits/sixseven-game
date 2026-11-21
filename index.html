@@ -38,6 +38,122 @@
       margin: 0 auto;
     }
 
+    /* Floating Top Chatbox */
+    .floating-chat {
+      position: sticky;
+      top: 10px;
+      z-index: 40;
+      width: 100%;
+      max-width: 540px;
+      margin: 0 auto 14px;
+      background: rgba(10, 23, 42, 0.96);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.65);
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 9px 12px;
+      background: rgba(21, 41, 70, 0.95);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chat-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .chat-badge {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.16);
+      color: #bae6fd;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+
+    .chat-toggle-btn {
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      border-radius: 8px;
+    }
+
+    .chat-body {
+      padding: 10px 12px;
+    }
+
+    .floating-chat.minimized .chat-body {
+      display: none;
+    }
+
+    .floating-chat.minimized .chat-header {
+      border-bottom: none;
+    }
+
+    .chat-messages {
+      max-height: 150px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-right: 4px;
+      margin-bottom: 8px;
+    }
+
+    .chat-msg {
+      background: rgba(21, 41, 70, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 9px;
+      padding: 6px 9px;
+      font-size: 0.85rem;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .chat-msg-meta {
+      font-size: 0.74rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .chat-empty {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 8px 4px;
+    }
+
+    .chat-form {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .chat-input {
+      flex: 1;
+      min-width: 0;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 8px 10px;
+      font-size: 0.86rem;
+    }
+
+    .chat-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
     header {
       background: rgba(14, 30, 52, 0.92);
       border: 1px solid var(--border);
@@ -518,10 +634,37 @@
 </head>
 <body>
   <div class="app">
+    <!-- Floating Top Chatbox -->
+    <aside id="floatingChat" class="floating-chat" aria-label="Room Chat">
+      <div class="chat-header">
+        <div class="chat-title-wrap">
+          <span>Player Chat</span>
+          <span id="chatCountBadge" class="chat-badge">0 msgs</span>
+        </div>
+        <button id="toggleChatBtn" class="chat-toggle-btn" type="button" aria-expanded="true">Minimize</button>
+      </div>
+      <div id="chatBody" class="chat-body">
+        <div id="chatMessages" class="chat-messages">
+          <div class="chat-empty">No messages yet. Send a quick note to players in the room!</div>
+        </div>
+        <form id="chatForm" class="chat-form">
+          <input
+            id="chatInput"
+            class="chat-input"
+            type="text"
+            maxlength="240"
+            placeholder="Write a message to everyone..."
+            aria-label="Chat message"
+          />
+          <button type="submit" class="primary" style="padding: 8px 12px;">Send</button>
+        </form>
+      </div>
+    </aside>
+
     <header>
       <div class="brand">
         <h1>Sixseven game</h1>
-        <p>Clinical Endocrine MCQ Challenge • Strict Turn Rotation • 4-Digit Room Sync</p>
+        <p>Clinical Endocrine MCQ Challenge • Full-Roster Turn Rotation • 4-Digit Room Sync</p>
       </div>
       <div class="top-actions">
         <button id="endNowBtn" type="button">Finish &amp; Show Winner</button>
@@ -544,7 +687,7 @@
           <button id="removePlayerBtn" type="button">- Remove Player</button>
         </div>
 
-        <div class="card-title" style="margin-top: 12px; margin-bottom: 6px;">Game Ends After Turns</div>
+        <div class="card-title" style="margin-top: 12px; margin-bottom: 6px;">Game Ends After Full Turns</div>
         <div class="turns-row" id="turnLimitButtons">
           <button type="button" data-turns="5">5 Turns</button>
           <button type="button" data-turns="8">8 Turns</button>
@@ -1369,16 +1512,19 @@
     const state = {
       mode: "1p", // "1p" or "multi" (2 to 6 players)
       players: makePlayers(MIN_MULTI_PLAYERS),
-      currentTurn: 1, // 1-based player index
-      completedTurns: 0,
+      currentTurn: 1, // 1-based active player index
+      roundPlays: 0, // number of players who have played in the current full turn cycle
+      completedTurns: 0, // increments once every registered player has played once
       maxTurns: 10,
       used: {},
       roomCode: "",
       gameOver: false,
-      activeLock: null // { player: 1..6, rIdx, cIdx, key, openedAt, hintShown, selectedOption, answerSubmitted, chosenOption }
+      activeLock: null, // { player: 1..6, rIdx, cIdx, key, openedAt, hintShown, selectedOption, answerSubmitted, chosenOption }
+      chatMessages: [] // { id, sender, text, time }
     };
 
     let mySeat = 1;
+    let chatMinimized = false;
     let timerInterval = null;
     let secondsLeft = QUESTION_DURATION_SECONDS;
     let db = null;
@@ -1394,6 +1540,12 @@
     }
 
     const els = {
+      floatingChat: document.getElementById("floatingChat"),
+      toggleChatBtn: document.getElementById("toggleChatBtn"),
+      chatCountBadge: document.getElementById("chatCountBadge"),
+      chatMessages: document.getElementById("chatMessages"),
+      chatForm: document.getElementById("chatForm"),
+      chatInput: document.getElementById("chatInput"),
       boardRows: document.getElementById("boardRows"),
       boardBanner: document.getElementById("boardBanner"),
       boardBannerText: document.getElementById("boardBannerText"),
@@ -1455,6 +1607,43 @@
     function getPlayerByIndex(idx) {
       const roster = getActiveRoster();
       return roster.find((p) => p.index === idx) || roster[0];
+    }
+
+    function getSenderName() {
+      if (state.mode === "1p") {
+        return getActiveRoster()[0]?.name || "Player 1";
+      }
+      const seatPlayer = getPlayerByIndex(mySeat);
+      return seatPlayer ? seatPlayer.name : `Player ${mySeat}`;
+    }
+
+    function renderChat() {
+      const msgs = Array.isArray(state.chatMessages) ? state.chatMessages : [];
+      els.chatCountBadge.textContent = `${msgs.length} ${msgs.length === 1 ? "msg" : "msgs"}`;
+
+      if (msgs.length === 0) {
+        els.chatMessages.innerHTML = `<div class="chat-empty">No messages yet. Send a quick note to players in the room!</div>`;
+        return;
+      }
+
+      els.chatMessages.innerHTML = "";
+      msgs.slice(-40).forEach((m) => {
+        const box = document.createElement("div");
+        box.className = "chat-msg";
+
+        const meta = document.createElement("div");
+        meta.className = "chat-msg-meta";
+        meta.textContent = `${m.sender || "Player"} • ${m.time || ""}`;
+
+        const text = document.createElement("div");
+        text.textContent = m.text || "";
+
+        box.appendChild(meta);
+        box.appendChild(text);
+        els.chatMessages.appendChild(box);
+      });
+
+      els.chatMessages.scrollTop = els.chatMessages.scrollHeight;
     }
 
     function isMyTurnToPick() {
@@ -1686,7 +1875,11 @@
       });
 
       const limitLabel = state.maxTurns === 0 ? "50 (All)" : `${state.maxTurns}`;
-      els.turnProgressText.textContent = `Completed turns: ${state.completedTurns} / ${limitLabel}`;
+      if (isMulti) {
+        els.turnProgressText.textContent = `Completed turns: ${state.completedTurns} / ${limitLabel} • Current turn progress: ${state.roundPlays} / ${playerCount} players played`;
+      } else {
+        els.turnProgressText.textContent = `Completed turns: ${state.completedTurns} / ${limitLabel}`;
+      }
 
       if (isMulti) {
         els.seatBar.classList.add("visible");
@@ -1732,6 +1925,7 @@
         els.boardBannerRule.textContent = "Your Turn";
       }
 
+      renderChat();
       renderScoresGrid();
       renderBoard();
       syncQuestionModalFromState();
@@ -1770,7 +1964,7 @@
           els.winnerNameText.textContent = leaders[0].name;
           els.winnerScoreSummary.textContent = `Winning Score: ${leaders[0].score} pts`;
         }
-        els.finalBreakdownText.textContent = `Standings (${state.completedTurns} turns): ${sorted.map((p) => `${p.name}: ${p.score} pts`).join(" • ")}`;
+        els.finalBreakdownText.textContent = `Standings (${state.completedTurns} full turns): ${sorted.map((p) => `${p.name}: ${p.score} pts`).join(" • ")}`;
       }
 
       els.winnerModal.classList.add("open");
@@ -1839,10 +2033,16 @@
 
       if (state.activeLock) {
         state.activeLock = null;
-        state.completedTurns += 1;
         if (state.mode === "multi") {
           const count = getActiveRoster().length;
+          state.roundPlays = (Number(state.roundPlays) || 0) + 1;
+          if (state.roundPlays >= count) {
+            state.completedTurns += 1;
+            state.roundPlays = 0;
+          }
           state.currentTurn = (state.currentTurn % count) + 1;
+        } else {
+          state.completedTurns += 1;
         }
       }
 
@@ -1864,6 +2064,7 @@
       }
 
       state.currentTurn = Number(incoming.currentTurn) || 1;
+      state.roundPlays = Number(incoming.roundPlays) || 0;
       state.completedTurns = Number(incoming.completedTurns) || 0;
       state.maxTurns = incoming.maxTurns === 0 ? 0 : (Number(incoming.maxTurns) || 10);
       state.used = incoming.used && typeof incoming.used === "object" ? incoming.used : {};
@@ -1871,6 +2072,10 @@
       state.activeLock = incoming.activeLock && typeof incoming.activeLock === "object"
         ? { ...incoming.activeLock }
         : null;
+
+      if (Array.isArray(incoming.chatMessages)) {
+        state.chatMessages = incoming.chatMessages.slice(-40);
+      }
 
       updateUI();
       if (state.gameOver) {
@@ -1884,26 +2089,29 @@
         mode: state.mode,
         players: getActiveRoster().map((p) => ({ ...p })),
         currentTurn: state.currentTurn,
+        roundPlays: state.roundPlays,
         completedTurns: state.completedTurns,
         maxTurns: state.maxTurns,
         used: { ...state.used },
         roomCode: state.roomCode,
         gameOver: state.gameOver,
         activeLock: state.activeLock ? { ...state.activeLock } : null,
+        chatMessages: Array.isArray(state.chatMessages) ? state.chatMessages.slice(-40) : [],
         updatedAt: Date.now()
       };
     }
 
     function syncOut() {
-      if (suppressBroadcast || !state.roomCode) return;
+      if (suppressBroadcast) return;
       const snap = getSnapshot();
+      const keyCode = state.roomCode || "solo";
       try {
-        localStorage.setItem(`sixseven_room_${state.roomCode}`, JSON.stringify(snap));
+        localStorage.setItem(`sixseven_room_${keyCode}`, JSON.stringify(snap));
       } catch (_) {}
       if (channel) {
-        channel.postMessage({ roomCode: state.roomCode, payload: snap });
+        channel.postMessage({ roomCode: keyCode, payload: snap });
       }
-      if (db) {
+      if (db && state.roomCode) {
         set(ref(db, `rooms/${state.roomCode}`), snap).catch((err) => {
           console.warn("Firebase write error:", err);
         });
@@ -1964,6 +2172,7 @@
         state.players = makePlayers(MIN_MULTI_PLAYERS, state.players);
       }
       state.currentTurn = 1;
+      state.roundPlays = 0;
       mySeat = 1;
       if (!state.roomCode || state.roomCode.length !== 4) {
         state.roomCode = random4DigitCode();
@@ -1977,6 +2186,7 @@
       els.questionModal.classList.remove("open");
       els.winnerModal.classList.remove("open");
       state.completedTurns = 0;
+      state.roundPlays = 0;
       state.currentTurn = 1;
       state.players = state.players.map((p) => ({ ...p, score: 0 }));
       state.used = {};
@@ -1989,9 +2199,36 @@
       syncOut();
     }
 
+    els.toggleChatBtn.addEventListener("click", () => {
+      chatMinimized = !chatMinimized;
+      els.floatingChat.classList.toggle("minimized", chatMinimized);
+      els.toggleChatBtn.textContent = chatMinimized ? "Expand" : "Minimize";
+      els.toggleChatBtn.setAttribute("aria-expanded", String(!chatMinimized));
+    });
+
+    els.chatForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const text = els.chatInput.value.trim();
+      if (!text) return;
+
+      const now = new Date();
+      const timeLabel = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      state.chatMessages.push({
+        id: `${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+        sender: getSenderName(),
+        text,
+        time: timeLabel
+      });
+      state.chatMessages = state.chatMessages.slice(-40);
+      els.chatInput.value = "";
+      renderChat();
+      syncOut();
+    });
+
     els.mode1pBtn.addEventListener("click", () => {
       state.mode = "1p";
       state.currentTurn = 1;
+      state.roundPlays = 0;
       mySeat = 1;
       updateUI();
       syncOut();
@@ -2006,6 +2243,7 @@
       const roster = getActiveRoster();
       if (roster.length >= MAX_MULTI_PLAYERS) return;
       state.players = makePlayers(roster.length + 1, roster);
+      state.roundPlays = 0;
       updateUI();
       syncOut();
     });
@@ -2015,6 +2253,7 @@
       const roster = getActiveRoster();
       if (roster.length <= MIN_MULTI_PLAYERS) return;
       state.players = makePlayers(roster.length - 1, roster);
+      state.roundPlays = 0;
       if (state.currentTurn > state.players.length) {
         state.currentTurn = 1;
       }
@@ -2041,6 +2280,7 @@
       }
       mySeat = 1;
       state.currentTurn = 1;
+      state.roundPlays = 0;
       state.roomCode = random4DigitCode();
       subscribeToRoom(state.roomCode, false);
       syncOut();
@@ -2099,7 +2339,8 @@
     if (channel) {
       channel.addEventListener("message", (event) => {
         const msg = event.data;
-        if (msg && msg.roomCode && msg.roomCode === state.roomCode && msg.payload) {
+        const activeKey = state.roomCode || "solo";
+        if (msg && msg.roomCode === activeKey && msg.payload) {
           applyRemoteState(msg.payload);
         }
       });
