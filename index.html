@@ -322,6 +322,16 @@
       font-weight: 700;
     }
 
+    .host-chip {
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.14);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #86efac;
+      font-weight: 700;
+    }
+
     .seat-select {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -342,6 +352,20 @@
     }
 
     .roster-controls.visible {
+      display: flex;
+    }
+
+    .permission-row {
+      margin-top: 8px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .permission-row.visible {
       display: flex;
     }
 
@@ -378,9 +402,9 @@
     .name-input {
       width: 100%;
       background: rgba(7, 17, 31, 0.65);
-      border: 1px solid transparent;
+      border: 1px solid rgba(148, 163, 184, 0.2);
       border-radius: 8px;
-      padding: 4px 8px;
+      padding: 5px 8px;
       font-size: 1rem;
       font-weight: 700;
       margin-bottom: 6px;
@@ -389,6 +413,19 @@
     .name-input:focus {
       outline: none;
       border-color: var(--accent);
+    }
+
+    .name-input:read-only {
+      background: rgba(7, 17, 31, 0.35);
+      border-color: transparent;
+      color: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    .owner-tag {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
 
     .score-value {
@@ -687,6 +724,11 @@
           <button id="removePlayerBtn" type="button">- Remove Player</button>
         </div>
 
+        <div id="permissionRow" class="permission-row">
+          <button id="allowAddToggleBtn" type="button">Allow Others to Add: OFF</button>
+          <span id="addPermissionHint">Only Host can add players</span>
+        </div>
+
         <div class="card-title" style="margin-top: 12px; margin-bottom: 6px;">Game Ends After Full Turns</div>
         <div class="turns-row" id="turnLimitButtons">
           <button type="button" data-turns="5">5 Turns</button>
@@ -718,6 +760,7 @@
         </div>
         <div id="seatBar" class="seat-bar">
           <span id="mySeatChip" class="seat-chip">This Device: Player 1</span>
+          <span id="hostBadgeChip" class="host-chip">Host: Seat 1</span>
           <label for="seatSelect" class="status-line" style="margin: 0;">Seat:</label>
           <select id="seatSelect" class="seat-select" aria-label="Select device player seat"></select>
         </div>
@@ -1512,6 +1555,8 @@
     const state = {
       mode: "1p", // "1p" or "multi" (2 to 6 players)
       players: makePlayers(MIN_MULTI_PLAYERS),
+      hostSeat: 1, // Seat of the player who generated the room
+      allowOthersToAdd: false, // Only host can add players unless host enables this
       currentTurn: 1, // 1-based active player index
       roundPlays: 0, // number of players who have played in the current full turn cycle
       completedTurns: 0, // increments once every registered player has played once
@@ -1557,6 +1602,9 @@
       rosterCountText: document.getElementById("rosterCountText"),
       addPlayerBtn: document.getElementById("addPlayerBtn"),
       removePlayerBtn: document.getElementById("removePlayerBtn"),
+      permissionRow: document.getElementById("permissionRow"),
+      allowAddToggleBtn: document.getElementById("allowAddToggleBtn"),
+      addPermissionHint: document.getElementById("addPermissionHint"),
       turnLimitButtons: document.getElementById("turnLimitButtons"),
       turnProgressText: document.getElementById("turnProgressText"),
       roomCodeInput: document.getElementById("roomCodeInput"),
@@ -1565,6 +1613,7 @@
       roomStatusText: document.getElementById("roomStatusText"),
       seatBar: document.getElementById("seatBar"),
       mySeatChip: document.getElementById("mySeatChip"),
+      hostBadgeChip: document.getElementById("hostBadgeChip"),
       seatSelect: document.getElementById("seatSelect"),
       scoresGrid: document.getElementById("scoresGrid"),
       resetGameBtn: document.getElementById("resetGameBtn"),
@@ -1607,6 +1656,22 @@
     function getPlayerByIndex(idx) {
       const roster = getActiveRoster();
       return roster.find((p) => p.index === idx) || roster[0];
+    }
+
+    function isHostOnThisDevice() {
+      return state.mode === "multi" && mySeat === state.hostSeat;
+    }
+
+    function canAddPlayerOnThisDevice() {
+      if (state.mode !== "multi") return false;
+      const roster = getActiveRoster();
+      if (roster.length >= MAX_MULTI_PLAYERS) return false;
+      return isHostOnThisDevice() || Boolean(state.allowOthersToAdd);
+    }
+
+    function canEditPlayerUsername(playerIndex) {
+      if (state.mode === "1p") return playerIndex === 1;
+      return playerIndex === mySeat;
     }
 
     function getSenderName() {
@@ -1673,12 +1738,26 @@
         }
         card.className = `score-card${extraClass}${isCurrent ? " active-turn" : ""}`;
 
+        const editable = canEditPlayerUsername(p.index);
+        const ownerTag = document.createElement("div");
+        ownerTag.className = "owner-tag";
+        if (state.mode === "1p") {
+          ownerTag.textContent = "Your Username";
+        } else if (editable) {
+          ownerTag.textContent = p.index === state.hostSeat ? "Your Username (Host)" : "Your Username (Editable)";
+        } else {
+          ownerTag.textContent = p.index === state.hostSeat ? "Host Username (Locked)" : "Locked (Only owner can edit)";
+        }
+
         const input = document.createElement("input");
         input.type = "text";
         input.className = "name-input";
         input.value = p.name;
+        input.readOnly = !editable;
+        input.maxLength = 28;
         input.setAttribute("aria-label", `${p.name} Name`);
         input.addEventListener("change", () => {
+          if (!canEditPlayerUsername(p.index)) return;
           const cleanName = input.value.trim() || `Player ${p.index}`;
           state.players[idx] = { ...state.players[idx], name: cleanName };
           updateUI();
@@ -1689,6 +1768,7 @@
         val.className = "score-value";
         val.textContent = `${p.score} pts`;
 
+        card.appendChild(ownerTag);
         card.appendChild(input);
         card.appendChild(val);
         els.scoresGrid.appendChild(card);
@@ -1850,13 +1930,29 @@
       els.modeMultiBtn.classList.toggle("active-mode", isMulti);
       els.rosterControls.classList.toggle("visible", isMulti);
       els.rosterCountText.textContent = `Players in game: ${playerCount} / ${MAX_MULTI_PLAYERS} (Min ${MIN_MULTI_PLAYERS} to start)`;
-      els.addPlayerBtn.disabled = !isMulti || playerCount >= MAX_MULTI_PLAYERS;
-      els.removePlayerBtn.disabled = !isMulti || playerCount <= MIN_MULTI_PLAYERS;
+      els.addPlayerBtn.disabled = !canAddPlayerOnThisDevice();
+      els.removePlayerBtn.disabled = !isMulti || !isHostOnThisDevice() || playerCount <= MIN_MULTI_PLAYERS;
+
+      els.permissionRow.classList.toggle("visible", isMulti);
+      els.allowAddToggleBtn.disabled = !isHostOnThisDevice();
+      els.allowAddToggleBtn.classList.toggle("active-mode", Boolean(state.allowOthersToAdd));
+      els.allowAddToggleBtn.textContent = `Allow Others to Add: ${state.allowOthersToAdd ? "ON" : "OFF"}`;
+      if (isHostOnThisDevice()) {
+        els.addPermissionHint.textContent = state.allowOthersToAdd
+          ? "Other players can add players right now"
+          : "Only you (Host) can add players";
+      } else {
+        els.addPermissionHint.textContent = state.allowOthersToAdd
+          ? "Host allowed others to add players"
+          : "Only Host can add players";
+      }
 
       const currentPlayerObj = isMulti ? getPlayerByIndex(state.currentTurn) : roster[0];
       const currentName = currentPlayerObj ? currentPlayerObj.name : "Player 1";
       const mySeatPlayerObj = getPlayerByIndex(mySeat);
       const mySeatName = mySeatPlayerObj ? mySeatPlayerObj.name : `Player ${mySeat}`;
+      const hostPlayerObj = getPlayerByIndex(state.hostSeat);
+      const hostName = hostPlayerObj ? hostPlayerObj.name : `Player ${state.hostSeat}`;
 
       els.activeTurnBadge.textContent = isMulti ? `Turn: ${currentName}` : `Solo: ${roster[0].name}`;
       if (!isMulti) {
@@ -1884,6 +1980,7 @@
       if (isMulti) {
         els.seatBar.classList.add("visible");
         els.mySeatChip.textContent = `This Device: ${mySeatName} (Seat ${mySeat})`;
+        els.hostBadgeChip.textContent = isHostOnThisDevice() ? "You Are Host" : `Host: ${hostName} (Seat ${state.hostSeat})`;
         els.seatSelect.innerHTML = "";
         roster.forEach((p) => {
           const opt = document.createElement("option");
@@ -1898,7 +1995,7 @@
 
       if (state.roomCode) {
         els.roomCodeInput.value = state.roomCode;
-        els.roomStatusText.textContent = `Room ${state.roomCode} active (${playerCount} of ${MAX_MULTI_PLAYERS} players max) • Selected questions display on all devices.`;
+        els.roomStatusText.textContent = `Room ${state.roomCode} active (${playerCount} of ${MAX_MULTI_PLAYERS} players max) • Host: ${hostName}.`;
       } else if (isMulti) {
         els.roomStatusText.textContent = "Generating 4-digit room code...";
       } else {
@@ -2056,6 +2153,11 @@
       suppressBroadcast = true;
       state.mode = incoming.mode === "multi" ? "multi" : "1p";
 
+      if (typeof incoming.hostSeat === "number" && incoming.hostSeat >= 1 && incoming.hostSeat <= MAX_MULTI_PLAYERS) {
+        state.hostSeat = incoming.hostSeat;
+      }
+      state.allowOthersToAdd = Boolean(incoming.allowOthersToAdd);
+
       if (Array.isArray(incoming.players) && incoming.players.length > 0) {
         const incomingCount = state.mode === "multi"
           ? Math.min(MAX_MULTI_PLAYERS, Math.max(MIN_MULTI_PLAYERS, incoming.players.length))
@@ -2088,6 +2190,8 @@
       return {
         mode: state.mode,
         players: getActiveRoster().map((p) => ({ ...p })),
+        hostSeat: state.hostSeat,
+        allowOthersToAdd: Boolean(state.allowOthersToAdd),
         currentTurn: state.currentTurn,
         roundPlays: state.roundPlays,
         completedTurns: state.completedTurns,
@@ -2171,6 +2275,8 @@
       if (currentCount < MIN_MULTI_PLAYERS || currentCount > MAX_MULTI_PLAYERS) {
         state.players = makePlayers(MIN_MULTI_PLAYERS, state.players);
       }
+      state.hostSeat = 1;
+      state.allowOthersToAdd = false;
       state.currentTurn = 1;
       state.roundPlays = 0;
       mySeat = 1;
@@ -2238,8 +2344,15 @@
       selectMultiplePlayerModeAutoCode();
     });
 
+    els.allowAddToggleBtn.addEventListener("click", () => {
+      if (!isHostOnThisDevice()) return;
+      state.allowOthersToAdd = !state.allowOthersToAdd;
+      updateUI();
+      syncOut();
+    });
+
     els.addPlayerBtn.addEventListener("click", () => {
-      if (state.mode !== "multi") return;
+      if (!canAddPlayerOnThisDevice()) return;
       const roster = getActiveRoster();
       if (roster.length >= MAX_MULTI_PLAYERS) return;
       state.players = makePlayers(roster.length + 1, roster);
@@ -2249,7 +2362,7 @@
     });
 
     els.removePlayerBtn.addEventListener("click", () => {
-      if (state.mode !== "multi") return;
+      if (state.mode !== "multi" || !isHostOnThisDevice()) return;
       const roster = getActiveRoster();
       if (roster.length <= MIN_MULTI_PLAYERS) return;
       state.players = makePlayers(roster.length - 1, roster);
@@ -2278,6 +2391,8 @@
       if (state.players.length < MIN_MULTI_PLAYERS) {
         state.players = makePlayers(MIN_MULTI_PLAYERS, state.players);
       }
+      state.hostSeat = 1;
+      state.allowOthersToAdd = false;
       mySeat = 1;
       state.currentTurn = 1;
       state.roundPlays = 0;
