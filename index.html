@@ -179,6 +179,28 @@
       color: var(--muted);
     }
 
+    .seat-bar {
+      margin-top: 8px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .seat-bar.visible {
+      display: flex;
+    }
+
+    .seat-chip {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #bae6fd;
+      font-weight: 700;
+    }
+
     .scores-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -224,6 +246,31 @@
       font-size: 1.75rem;
       font-weight: 800;
       color: #4ade80;
+    }
+
+    .board-banner {
+      margin-bottom: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(21, 41, 70, 0.85);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .board-banner.waiting {
+      border-color: var(--warn);
+      color: #fde68a;
+    }
+
+    .board-banner.your-turn {
+      border-color: var(--accent-2);
+      color: #bbf7d0;
     }
 
     .board-wrapper {
@@ -309,7 +356,7 @@
 
     .modal {
       width: 100%;
-      max-width: 620px;
+      max-width: 650px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 18px;
@@ -342,9 +389,45 @@
     }
 
     .question-text {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       line-height: 1.5;
       margin: 12px 0;
+    }
+
+    .mcq-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .mcq-option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 11px 14px;
+      border-radius: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-size: 0.94rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .mcq-option-btn.selected {
+      border-color: var(--accent);
+      background: rgba(56, 189, 248, 0.16);
+    }
+
+    .mcq-option-btn.correct-choice {
+      border-color: var(--accent-2);
+      background: rgba(34, 197, 94, 0.22);
+      color: #dcfce7;
+    }
+
+    .mcq-option-btn.wrong-choice {
+      border-color: var(--danger);
+      background: rgba(239, 68, 68, 0.22);
+      color: #fee2e2;
     }
 
     .hint-box {
@@ -368,6 +451,8 @@
       padding: 12px;
       border-radius: 10px;
       margin: 12px 0;
+      font-size: 0.94rem;
+      line-height: 1.45;
       display: none;
     }
 
@@ -403,7 +488,7 @@
     <header>
       <div class="brand">
         <h1>Sixseven game</h1>
-        <p>Endocrine Disorders Trivia • 1P &amp; 2P Turn Mode • Live 4-Digit Room Sync</p>
+        <p>Clinical Endocrine MCQ Challenge • Strict Turn Rotation • 4-Digit Room Sync</p>
       </div>
       <div class="top-actions">
         <button id="endNowBtn" type="button">Finish &amp; Show Winner</button>
@@ -449,19 +534,28 @@
         <div id="roomStatusText" class="status-line">
           Select 2 Players / Team to auto-generate a 4-digit room code and sync devices.
         </div>
+        <div id="seatBar" class="seat-bar">
+          <span id="mySeatChip" class="seat-chip">This Device: Player 1</span>
+          <button id="switchSeatBtn" type="button">Switch Device Seat</button>
+        </div>
       </div>
     </section>
 
     <section class="scores-grid">
       <div id="p1ScoreCard" class="score-card active-turn">
         <input id="p1NameInput" class="name-input" type="text" value="Player 1" aria-label="Player 1 Name" />
-        <div id="p1ScoreValue" class="score-value">0</div>
+        <div id="p1ScoreValue" class="score-value">0 pts</div>
       </div>
       <div id="p2ScoreCard" class="score-card p2-card" style="display: none;">
         <input id="p2NameInput" class="name-input" type="text" value="Player 2" aria-label="Player 2 Name" />
-        <div id="p2ScoreValue" class="score-value">0</div>
+        <div id="p2ScoreValue" class="score-value">0 pts</div>
       </div>
     </section>
+
+    <div id="boardBanner" class="board-banner your-turn">
+      <span id="boardBannerText">Player 1's turn — select any available question tile. Opening a question uses your turn.</span>
+      <span id="boardBannerRule">Rule: Selecting a question locks your turn until resolved.</span>
+    </div>
 
     <main class="board-wrapper">
       <div id="boardRows" class="board-rows"></div>
@@ -477,14 +571,13 @@
       </div>
       <div id="qModalTurnInfo" class="status-line"></div>
       <p id="qModalText" class="question-text"></p>
+      <div id="mcqOptions" class="mcq-options"></div>
       <div id="qHintBox" class="hint-box"></div>
       <div id="qAnswerBox" class="answer-box"></div>
       <div class="modal-actions">
-        <button id="hintBtn" type="button">Show Clinical Hint</button>
-        <button id="revealBtn" type="button">Reveal Answer</button>
-        <button id="correctBtn" type="button" class="success">Correct (+Marks)</button>
-        <button id="wrongBtn" type="button">Incorrect / Pass</button>
-        <button id="closeQBtn" type="button">Close</button>
+        <button id="hintBtn" type="button">Clinical Hint</button>
+        <button id="submitMcqBtn" type="button" class="success" disabled>Submit Selected Answer</button>
+        <button id="closeQBtn" type="button">End Turn / Close (0 pts)</button>
       </div>
     </div>
   </div>
@@ -525,564 +618,126 @@
 
     const TOPICS = [
       {
-        name: "Diabetes Mellitus",
-        questions: [
-          { pts: 10, q: "Which pancreatic hormone lowers blood glucose by promoting cellular uptake?", hint: "Secreted by beta cells in the islets of Langerhans.", a: "Insulin." },
-          { pts: 20, q: "Which acute complication features hyperglycemia, ketonuria, and Kussmaul respirations?", hint: "Most classic in type 1 diabetes.", a: "Diabetic ketoacidosis (DKA)." },
-          { pts: 30, q: "Which HbA1c threshold is generally used to diagnose diabetes mellitus?", hint: "Measured as a percentage of glycated hemoglobin.", a: "6.5% or higher." },
-          { pts: 40, q: "Which drug class increases renal glucose excretion and carries a risk of euglycemic DKA?", hint: "Inhibits sodium-glucose cotransporter-2 in the proximal tubule.", a: "SGLT2 inhibitors (gliflozins)." },
-          { pts: 50, q: "Which syndrome describes morning fasting hyperglycemia following nocturnal hypoglycemia?", hint: "Contrast with the dawn phenomenon.", a: "Somogyi phenomenon (rebound hyperglycemia)." }
-        ]
-      },
-      {
         name: "Thyroid Disorders",
         questions: [
-          { pts: 10, q: "Which lab pattern is typical of primary hypothyroidism?", hint: "Pituitary responds to low thyroid hormone.", a: "High TSH with low free T4." },
-          { pts: 20, q: "Which autoimmune condition is the most common cause of hyperthyroidism?", hint: "Associated with thyroid-stimulating immunoglobulins and orbitopathy.", a: "Graves' disease." },
-          { pts: 30, q: "Which life-threatening emergency combines severe hyperthyroidism, fever, and tachycardia?", hint: "Requires urgent antithyroid drug, beta-blocker, and steroid therapy.", a: "Thyroid storm." },
-          { pts: 40, q: "Which autoantibodies are classically elevated in Hashimoto's thyroiditis?", hint: "Targets an enzyme essential for thyroid hormone synthesis.", a: "Anti-thyroid peroxidase (anti-TPO) antibodies." },
-          { pts: 50, q: "Which thyroid carcinoma is linked to 'Orphan Annie eye' nuclei and psammoma bodies?", hint: "Most common well-differentiated thyroid malignancy.", a: "Papillary thyroid carcinoma." }
+          {
+            pts: 10,
+            q: "Which of the following is the most common cause of primary hypothyroidism in iodine-sufficient populations?",
+            options: [
+              "A) Subacute (de Quervain) thyroiditis",
+              "B) Hashimoto thyroiditis",
+              "C) Toxic multinodular goitre",
+              "D) Graves' disease"
+            ],
+            correct: 1,
+            hint: "Think of a chronic autoimmune thyroiditis with lymphocytic infiltration and anti-TPO antibodies.",
+            explanation: "Hashimoto thyroiditis is a chronic autoimmune thyroiditis characterized by lymphocytic infiltration and progressive follicular destruction, making it the most common cause of primary hypothyroidism in iodine-replete populations."
+          },
+          {
+            pts: 20,
+            q: "Routine blood work for a 68-year-old asymptomatic patient shows a serum TSH level of 8.5 mIU/L (elevated) and a Free T4 level within the normal reference range. Subsequent testing confirms persistent TSH elevation with normal Free T4. What is the correct classification of this biochemical pattern?",
+            options: [
+              "A) Central hypothyroidism",
+              "B) Overt primary hypothyroidism",
+              "C) Subclinical hypothyroidism",
+              "D) Overt primary thyrotoxicosis"
+            ],
+            correct: 2,
+            hint: "Elevated TSH with normal circulating free thyroid hormones defines an early/compensated thyroid state.",
+            explanation: "Subclinical hypothyroidism is defined biochemically as a raised serum TSH level accompanied by Free T4 and Free T3 levels within their normal reference ranges. Central hypothyroidism presents with low/normal TSH and low Free T4."
+          },
+          {
+            pts: 30,
+            q: "A patient evaluated for clinical signs of excessive circulating thyroid hormone is confirmed to have thyrotoxicosis. Which of the following best distinguishes whether this patient has true hyperthyroidism rather than another etiology of thyrotoxicosis (such as destructive thyroiditis)?",
+            options: [
+              "A) Demonstration of increased de novo hormone synthesis and secretion by the thyroid gland",
+              "B) Presence of clinical adrenergic symptoms such as sinus tachycardia and fine distal tremor",
+              "C) Complete suppression of circulating serum TSH levels on laboratory testing",
+              "D) Elevation of circulating serum Free T4 and Free T3 concentrations"
+            ],
+            correct: 0,
+            hint: "Compare active gland biosynthesis (high radioiodine uptake) versus passive hormone leakage from inflamed follicles.",
+            explanation: "Thyrotoxicosis refers to excess thyroid hormone action from any source, whereas true hyperthyroidism specifically refers to increased de novo synthesis and secretion of hormones by the thyroid gland itself (e.g., Graves' disease or toxic nodular goitre)."
+          },
+          {
+            pts: 40,
+            q: "A patient with severe thyrotoxicosis develops high fever (39.8°C), delirium, marked tachycardia, and jaundice, diagnosed clinically as thyroid storm. Which therapeutic principle regarding pharmacological sequence and supportive care is essential in managing this life-threatening emergency?",
+            options: [
+              "A) Administer inorganic iodine immediately, followed 1 hour later by propylthiouracil (PTU), and give high-dose aspirin for fever",
+              "B) Administer a thionamide (PTU or methimazole) at least 1 hour before initiating inorganic iodine therapy, and use paracetamol while strictly avoiding aspirin",
+              "C) Administer therapeutic radioactive iodine (131I) immediately to ablate thyroid tissue, and apply active heating blankets",
+              "D) Give intravenous Levothyroxine immediately to stabilize hormone fluctuations, and withhold steroid therapy"
+            ],
+            correct: 1,
+            hint: "Block new hormone synthesis first before giving iodine, and avoid salicylates that displace bound T4/T3.",
+            explanation: "Thionamides must be given at least 1 hour prior to inorganic iodine to block new hormone synthesis before stored hormone release is inhibited. Paracetamol is used for fever, whereas aspirin is avoided because it displaces bound thyroid hormone from serum proteins."
+          },
+          {
+            pts: 50,
+            q: "A 72-year-old patient is admitted to the ICU in myxoedema coma with severe hypothermia (31.8°C), severe bradycardia, and altered mental status. Which rationale explains the mandatory initial pharmacologic sequence and warming strategy for this condition?",
+            options: [
+              "A) Administer high-dose IV Levothyroxine alone immediately, and initiate aggressive active peripheral warming with heating blankets",
+              "B) Administer stress-dose IV hydrocortisone before or concurrently with IV Levothyroxine, and utilize passive rewarming rather than aggressive active warming",
+              "C) Administer oral Propylthiouracil first, followed by active heating lamps to rapidly elevate core body temperature",
+              "D) Delay steroid and thyroid hormone administration until a formal 24-hour ACTH stimulation test confirms adrenal function"
+            ],
+            correct: 1,
+            hint: "Thyroid hormone accelerates cortisol clearance, and rapid peripheral vasodilation in severe hypothermia triggers shock.",
+            explanation: "Stress-dose IV hydrocortisone must be given before or with IV Levothyroxine because thyroid hormone increases metabolic demand and hepatic steroid clearance, risking fatal adrenal crisis. Passive rewarming prevents sudden peripheral vasodilation and cardiovascular collapse."
+          }
         ]
       },
       {
         name: "Adrenal Disorders",
         questions: [
-          { pts: 10, q: "Which hormone is deficient in primary adrenal insufficiency (Addison's disease)?", hint: "Produced by the adrenal cortex.", a: "Cortisol (along with aldosterone in primary disease)." },
-          { pts: 20, q: "Which finding helps distinguish primary Addison's from secondary adrenal insufficiency?", hint: "Caused by elevated ACTH stimulating melanocytes.", a: "Hyperpigmentation of skin and mucous membranes." },
-          { pts: 30, q: "Which screening test is first-line for Cushing syndrome?", hint: "Late-night salivary cortisol, 24-hour urine free cortisol, or low-dose dexamethasone suppression.", a: "Late-night salivary cortisol, 24-hour urine free cortisol, or overnight 1 mg dexamethasone suppression test." },
-          { pts: 40, q: "Which catecholamine-secreting tumor causes paroxysmal hypertension, headaches, and sweating?", hint: "Rule of 10s tumor of chromaffin tissue.", a: "Pheochromocytoma." },
-          { pts: 50, q: "Which electrolyte pattern is classic for primary hyperaldosteronism (Conn syndrome)?", hint: "Aldosterone retains sodium and excretes potassium/hydrogen.", a: "Hypokalemia with mild metabolic alkalosis and hypertension." }
-        ]
-      },
-      {
-        name: "Pituitary Disorders",
-        questions: [
-          { pts: 10, q: "Which visual field defect classically occurs with a pituitary macroadenoma compressing the chiasm?", hint: "Affects crossing nasal fibers.", a: "Bitemporal hemianopsia." },
-          { pts: 20, q: "Which condition causes polyuria and polydipsia due to ADH deficiency or resistance?", hint: "Serum sodium tends to run high or high-normal.", a: "Diabetes insipidus (arginine vasopressin deficiency/resistance)." },
-          { pts: 30, q: "Excess growth hormone in adulthood after epiphyseal closure causes which condition?", hint: "Enlarged hands, feet, jaw, and coarsened facial features.", a: "Acromegaly." },
-          { pts: 40, q: "Which dopamine agonist is first-line medical therapy for most prolactinomas?", hint: "Ergot derivative with high D2 receptor affinity.", a: "Cabergoline." },
-          { pts: 50, q: "Which condition is severe postpartum hypopituitarism following obstetric hemorrhage?", hint: "Failure to lactate and amenorrhea after delivery.", a: "Sheehan syndrome." }
-        ]
-      },
-      {
-        name: "Calcium & Parathyroid",
-        questions: [
-          { pts: 10, q: "What is the primary overall effect of parathyroid hormone (PTH) on serum calcium?", hint: "Acts on bone, kidney, and indirectly gut via calcitriol.", a: "Increases serum calcium (and lowers serum phosphate)." },
-          { pts: 20, q: "Which lab pair is classic for primary hyperparathyroidism?", hint: "Inappropriately normal or high PTH.", a: "Elevated serum calcium with elevated or inappropriately normal PTH." },
-          { pts: 30, q: "Which bedside signs indicate neuromuscular excitability from hypocalcemia?", hint: "Facial twitching vs. carpal spasm with blood pressure cuff.", a: "Chvostek sign and Trousseau sign." },
-          { pts: 40, q: "Which hormone activates 25-hydroxyvitamin D into calcitriol in the kidney?", hint: "1-alpha-hydroxylase enzyme.", a: "Parathyroid hormone (PTH)." },
-          { pts: 50, q: "Which hereditary condition features hypocalcemia, hyperphosphatemia, and blunted PTH response?", hint: "Associated with GNAS mutation and Albright hereditary osteodystrophy features.", a: "Pseudohypoparathyroidism." }
-        ]
-      },
-      {
-        name: "Gonadal & Reproductive",
-        questions: [
-          { pts: 10, q: "Which two anterior pituitary hormones regulate gonadal steroid production and gametogenesis?", hint: "Gonadotropins.", a: "LH (luteinizing hormone) and FSH (follicle-stimulating hormone)." },
-          { pts: 20, q: "Which syndrome features hyperandrogenism, ovulatory dysfunction, and polycystic ovaries?", hint: "Rotterdam criteria condition.", a: "Polycystic ovary syndrome (PCOS)." },
-          { pts: 30, q: "In primary testicular failure, what happens to LH/FSH and testosterone?", hint: "Negative feedback is lost.", a: "High LH and FSH with low testosterone." },
-          { pts: 40, q: "Which karyotype is classic for Klinefelter syndrome?", hint: "Associated with tall stature, gynecomastia, and small testes.", a: "47,XXY." },
-          { pts: 50, q: "Which condition combines hypogonadotropic hypogonadism with anosmia?", hint: "Failure of GnRH neuron migration.", a: "Kallmann syndrome." }
-        ]
-      },
-      {
-        name: "Hypoglycemia & Metabolism",
-        questions: [
-          { pts: 10, q: "What are the three components of Whipple's triad for true hypoglycemia?", hint: "Symptoms, low glucose, and resolution.", a: "Low plasma glucose, symptoms consistent with hypoglycemia, and relief of symptoms when glucose rises." },
-          { pts: 20, q: "Which counter-regulatory hormone acts rapidly in minutes to raise blood glucose via glycogenolysis?", hint: "Secreted by pancreatic alpha cells.", a: "Glucagon." },
-          { pts: 30, q: "Which lab pattern suggests factitious or sulfonylurea-induced hypoglycemia?", hint: "Insulin secretagogue stimulates both insulin and C-peptide.", a: "High insulin, high C-peptide, and low glucose." },
-          { pts: 40, q: "Which metabolic syndrome component is defined by excess visceral adiposity and insulin resistance?", hint: "Increases cardiovascular and type 2 diabetes risk.", a: "Central (abdominal) obesity." },
-          { pts: 50, q: "Which rare pancreatic neuroendocrine tumor causes fasting hypoglycemia and high insulin/C-peptide?", hint: "Often presents with neuroglycopenic symptoms.", a: "Insulinoma." }
-        ]
-      },
-      {
-        name: "Water & Sodium Balance",
-        questions: [
-          { pts: 10, q: "Where is antidiuretic hormone (ADH / vasopressin) synthesized?", hint: "Transported down axons to the posterior pituitary.", a: "Hypothalamus (supraoptic and paraventricular nuclei)." },
-          { pts: 20, q: "Which classic triad characterizes SIADH?", hint: "Euvolemic hyponatremia with concentrated urine.", a: "Hypotonic hyponatremia, inappropriately concentrated urine (high urine osmolality), and euvolemia." },
-          { pts: 30, q: "Why must chronic hyponatremia be corrected slowly?", hint: "Osmotic demyelination risk in the pons.", a: "To prevent osmotic demyelination syndrome (ODS)." },
-          { pts: 40, q: "Which hormone promotes free water retention in the renal collecting duct?", hint: "Inserts aquaporin-2 channels.", a: "Antidiuretic hormone (ADH / arginine vasopressin)." },
-          { pts: 50, q: "Which condition causes renal sodium wasting and volume depletion alongside intracranial disease?", hint: "Contrast fluid status with SIADH.", a: "Cerebral salt wasting (CSW)." }
-        ]
-      },
-      {
-        name: "Bone & Metabolic",
-        questions: [
-          { pts: 10, q: "Which DXA T-score defines osteoporosis in postmenopausal women and older men?", hint: "Compared to young adult reference mean.", a: "T-score of -2.5 or lower." },
-          { pts: 20, q: "What is the main mechanism of action of bisphosphonates?", hint: "Affects bone-resorbing cells.", a: "Inhibits osteoclast-mediated bone resorption." },
-          { pts: 30, q: "Which vitamin D deficiency disorder causes defective bone mineralization in adults?", hint: "Associated with bone pain, proximal weakness, and low/normal calcium and phosphate.", a: "Osteomalacia (rickets in children)." },
-          { pts: 40, q: "Which monoclonal antibody inhibits RANKL to reduce osteoclast formation?", hint: "Given as a subcutaneous injection every 6 months.", a: "Denosumab." },
-          { pts: 50, q: "Which disorder features excessive, disorganized bone remodeling with elevated alkaline phosphatase?", hint: "Often monostotic or polyostotic with normal calcium and phosphate.", a: "Paget disease of bone." }
-        ]
-      },
-      {
-        name: "MEN & Endocrine Emergencies",
-        questions: [
-          { pts: 10, q: "Which three main glands are classically affected in MEN1 ('3 Ps')?", hint: "Parathyroid, pituitary, and pancreas.", a: "Parathyroid, anterior pituitary, and pancreatic islet cells." },
-          { pts: 20, q: "Which two tumors define MEN2A along with medullary thyroid carcinoma?", hint: "Parathyroid and adrenal medulla.", a: "Pheochromocytoma and primary hyperparathyroidism." },
-          { pts: 30, q: "Which hormone is a key tumor marker for medullary thyroid carcinoma?", hint: "Secreted by parafollicular C cells.", a: "Calcitonin (along with CEA)." },
-          { pts: 40, q: "What is the immediate first-line treatment for suspected acute adrenal crisis?", hint: "Do not delay treatment for diagnostic testing.", a: "IV hydrocortisone and rapid IV isotonic fluids (0.9% sodium chloride)." },
-          { pts: 50, q: "Which emergency requires IV regular insulin, potassium monitoring, and aggressive hydration without DKA acidosis?", hint: "Marked hyperglycemia and high serum osmolality, often in type 2 diabetes.", a: "Hyperosmolar hyperglycemic state (HHS)." }
-        ]
-      }
-    ];
-
-    const state = {
-      mode: "1p", // "1p" or "2p"
-      currentTurn: 1, // 1 or 2
-      completedTurns: 0,
-      maxTurns: 10, // 0 means all questions
-      p1Name: "Player 1",
-      p2Name: "Player 2",
-      scores: { 1: 0, 2: 0 },
-      used: {}, // key: "rowIdx-colIdx" -> true
-      roomCode: "",
-      gameOver: false
-    };
-
-    let activeQuestion = null;
-    let timerInterval = null;
-    let secondsLeft = 180;
-    let db = null;
-    let unsubscribeRoom = null;
-    let suppressBroadcast = false;
-    const channel = typeof BroadcastChannel !== "undefined" ? new BroadcastChannel("sixseven-game-room") : null;
-
-    try {
-      const app = initializeApp(FIREBASE_CONFIG);
-      db = getDatabase(app);
-    } catch (err) {
-      console.warn("Firebase init fallback:", err);
-    }
-
-    const els = {
-      boardRows: document.getElementById("boardRows"),
-      mode1pBtn: document.getElementById("mode1pBtn"),
-      mode2pBtn: document.getElementById("mode2pBtn"),
-      activeTurnBadge: document.getElementById("activeTurnBadge"),
-      turnLimitButtons: document.getElementById("turnLimitButtons"),
-      turnProgressText: document.getElementById("turnProgressText"),
-      roomCodeInput: document.getElementById("roomCodeInput"),
-      generateRoomBtn: document.getElementById("generateRoomBtn"),
-      joinRoomBtn: document.getElementById("joinRoomBtn"),
-      roomStatusText: document.getElementById("roomStatusText"),
-      p1ScoreCard: document.getElementById("p1ScoreCard"),
-      p2ScoreCard: document.getElementById("p2ScoreCard"),
-      p1NameInput: document.getElementById("p1NameInput"),
-      p2NameInput: document.getElementById("p2NameInput"),
-      p1ScoreValue: document.getElementById("p1ScoreValue"),
-      p2ScoreValue: document.getElementById("p2ScoreValue"),
-      resetGameBtn: document.getElementById("resetGameBtn"),
-      endNowBtn: document.getElementById("endNowBtn"),
-      questionModal: document.getElementById("questionModal"),
-      qModalTitle: document.getElementById("qModalTitle"),
-      qModalTurnInfo: document.getElementById("qModalTurnInfo"),
-      qModalText: document.getElementById("qModalText"),
-      qHintBox: document.getElementById("qHintBox"),
-      qAnswerBox: document.getElementById("qAnswerBox"),
-      timerBadge: document.getElementById("timerBadge"),
-      hintBtn: document.getElementById("hintBtn"),
-      revealBtn: document.getElementById("revealBtn"),
-      correctBtn: document.getElementById("correctBtn"),
-      wrongBtn: document.getElementById("wrongBtn"),
-      closeQBtn: document.getElementById("closeQBtn"),
-      winnerModal: document.getElementById("winnerModal"),
-      winnerNameText: document.getElementById("winnerNameText"),
-      winnerScoreSummary: document.getElementById("winnerScoreSummary"),
-      finalBreakdownText: document.getElementById("finalBreakdownText"),
-      playAgainBtn: document.getElementById("playAgainBtn"),
-      closeWinnerBtn: document.getElementById("closeWinnerBtn")
-    };
-
-    function random4DigitCode() {
-      return String(Math.floor(1000 + Math.random() * 9000));
-    }
-
-    function normalizeCode(val) {
-      return String(val || "").replace(/\D/g, "").slice(0, 4);
-    }
-
-    function renderBoard() {
-      els.boardRows.innerHTML = "";
-      TOPICS.forEach((topic, rIdx) => {
-        const row = document.createElement("div");
-        row.className = "topic-row";
-
-        const label = document.createElement("div");
-        label.className = "topic-label";
-        label.textContent = topic.name;
-        row.appendChild(label);
-
-        topic.questions.forEach((item, cIdx) => {
-          const key = `${rIdx}-${cIdx}`;
-          const isUsed = Boolean(state.used[key]);
-          const btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = `q-btn${isUsed ? " used" : ""}`;
-          btn.disabled = isUsed || state.gameOver;
-          btn.innerHTML = `<span>${item.pts} Marks</span><span class="pts">${isUsed ? "Answered" : "Select"}</span>`;
-          btn.addEventListener("click", () => openQuestion(rIdx, cIdx));
-          row.appendChild(btn);
-        });
-
-        els.boardRows.appendChild(row);
-      });
-    }
-
-    function updateUI() {
-      const is2P = state.mode === "2p";
-      els.mode1pBtn.classList.toggle("active-mode", !is2P);
-      els.mode2pBtn.classList.toggle("active-mode", is2P);
-      els.p2ScoreCard.style.display = is2P ? "block" : "none";
-
-      els.p1NameInput.value = state.p1Name;
-      els.p2NameInput.value = state.p2Name;
-      els.p1ScoreValue.textContent = `${state.scores[1]} pts`;
-      els.p2ScoreValue.textContent = `${state.scores[2]} pts`;
-
-      const currentName = state.currentTurn === 1 ? state.p1Name : state.p2Name;
-      els.activeTurnBadge.textContent = is2P ? `Turn: ${currentName}` : `Solo: ${state.p1Name}`;
-      els.activeTurnBadge.className = `turn-pill ${state.currentTurn === 1 ? "p1" : "p2"}`;
-
-      els.p1ScoreCard.classList.toggle("active-turn", !is2P || state.currentTurn === 1);
-      els.p2ScoreCard.classList.toggle("active-turn", is2P && state.currentTurn === 2);
-
-      els.turnLimitButtons.querySelectorAll("button").forEach((btn) => {
-        const val = Number(btn.dataset.turns);
-        btn.classList.toggle("active-mode", val === state.maxTurns);
-      });
-
-      const limitLabel = state.maxTurns === 0 ? "50 (All)" : `${state.maxTurns}`;
-      els.turnProgressText.textContent = `Completed turns: ${state.completedTurns} / ${limitLabel}`;
-
-      if (state.roomCode) {
-        els.roomCodeInput.value = state.roomCode;
-        els.roomStatusText.textContent = `Room ${state.roomCode} active • Share ${state.roomCode} with your friend on their phone.`;
-      } else if (is2P) {
-        els.roomStatusText.textContent = "Generating 4-digit room code...";
-      } else {
-        els.roomStatusText.textContent = "1-Player mode active. Tap '2 Players / Team' to auto-generate a 4-digit room code.";
-      }
-
-      renderBoard();
-    }
-
-    function checkTurnLimitAndWinner() {
-      const totalQuestions = TOPICS.length * 5;
-      const usedCount = Object.keys(state.used).length;
-      const reachedTurnCap = state.maxTurns > 0 && state.completedTurns >= state.maxTurns;
-      const allUsed = usedCount >= totalQuestions;
-
-      if (reachedTurnCap || allUsed) {
-        state.gameOver = true;
-        showWinnerModal();
-      }
-    }
-
-    function showWinnerModal() {
-      stopTimer();
-      const s1 = state.scores[1];
-      const s2 = state.scores[2];
-
-      if (state.mode === "1p") {
-        els.winnerNameText.textContent = state.p1Name;
-        els.winnerScoreSummary.textContent = `Final Score: ${s1} pts (${state.completedTurns} turns completed)`;
-        els.finalBreakdownText.textContent = "Great solo round! Tap Play Again to start a fresh match.";
-      } else if (s1 > s2) {
-        els.winnerNameText.textContent = state.p1Name;
-        els.winnerScoreSummary.textContent = `${s1} pts vs ${s2} pts`;
-        els.finalBreakdownText.textContent = `${state.p1Name} wins over ${state.p2Name} after ${state.completedTurns} turns.`;
-      } else if (s2 > s1) {
-        els.winnerNameText.textContent = state.p2Name;
-        els.winnerScoreSummary.textContent = `${s2} pts vs ${s1} pts`;
-        els.finalBreakdownText.textContent = `${state.p2Name} wins over ${state.p1Name} after ${state.completedTurns} turns.`;
-      } else {
-        els.winnerNameText.textContent = "It's a Tie!";
-        els.winnerScoreSummary.textContent = `${state.p1Name}: ${s1} pts • ${state.p2Name}: ${s2} pts`;
-        els.finalBreakdownText.textContent = `Both players finished level after ${state.completedTurns} turns.`;
-      }
-
-      els.winnerModal.classList.add("open");
-    }
-
-    function startTimer() {
-      stopTimer();
-      secondsLeft = 180;
-      updateTimerLabel();
-      timerInterval = setInterval(() => {
-        secondsLeft -= 1;
-        updateTimerLabel();
-        if (secondsLeft <= 0) {
-          stopTimer();
-        }
-      }, 1000);
-    }
-
-    function stopTimer() {
-      if (timerInterval) {
-        clearInterval(timerInterval);
-        timerInterval = null;
-      }
-    }
-
-    function updateTimerLabel() {
-      const mins = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
-      const secs = String(secondsLeft % 60).padStart(2, "0");
-      els.timerBadge.textContent = `${mins}:${secs}`;
-    }
-
-    function openQuestion(rIdx, cIdx) {
-      if (state.gameOver) return;
-      const key = `${rIdx}-${cIdx}`;
-      if (state.used[key]) return;
-
-      const topic = TOPICS[rIdx];
-      const item = topic.questions[cIdx];
-      activeQuestion = { rIdx, cIdx, key, topicName: topic.name, ...item };
-
-      const turnPlayerName = state.currentTurn === 1 ? state.p1Name : state.p2Name;
-      els.qModalTitle.textContent = `${topic.name} • ${item.pts} Marks`;
-      els.qModalTurnInfo.textContent = state.mode === "2p" ? `Active Turn: ${turnPlayerName}` : `Solo Attempt: ${state.p1Name}`;
-      els.qModalText.textContent = item.q;
-      els.qHintBox.textContent = `Hint: ${item.hint}`;
-      els.qHintBox.classList.remove("visible");
-      els.qAnswerBox.textContent = `Answer: ${item.a}`;
-      els.qAnswerBox.classList.remove("visible");
-      els.correctBtn.textContent = `Correct (+${item.pts})`;
-
-      els.questionModal.classList.add("open");
-      startTimer();
-    }
-
-    function closeQuestionModal() {
-      stopTimer();
-      els.questionModal.classList.remove("open");
-      activeQuestion = null;
-    }
-
-    function finishTurn(awardedPoints) {
-      if (!activeQuestion) return;
-      const { key, pts } = activeQuestion;
-
-      if (!state.used[key]) {
-        state.used[key] = true;
-        if (awardedPoints) {
-          state.scores[state.currentTurn] = (state.scores[state.currentTurn] || 0) + pts;
-        }
-        state.completedTurns += 1;
-        if (state.mode === "2p") {
-          state.currentTurn = state.currentTurn === 1 ? 2 : 1;
-        }
-      }
-
-      closeQuestionModal();
-      checkTurnLimitAndWinner();
-      updateUI();
-      syncOut();
-    }
-
-    function applyRemoteState(incoming) {
-      if (!incoming || typeof incoming !== "object") return;
-      suppressBroadcast = true;
-      state.mode = incoming.mode === "2p" ? "2p" : "1p";
-      state.currentTurn = incoming.currentTurn === 2 ? 2 : 1;
-      state.completedTurns = Number(incoming.completedTurns) || 0;
-      state.maxTurns = incoming.maxTurns === 0 ? 0 : (Number(incoming.maxTurns) || 10);
-      state.p1Name = incoming.p1Name || "Player 1";
-      state.p2Name = incoming.p2Name || "Player 2";
-      state.scores = {
-        1: Number(incoming.scores?.[1]) || 0,
-        2: Number(incoming.scores?.[2]) || 0
-      };
-      state.used = incoming.used && typeof incoming.used === "object" ? incoming.used : {};
-      state.gameOver = Boolean(incoming.gameOver);
-      updateUI();
-      if (state.gameOver) {
-        showWinnerModal();
-      }
-      suppressBroadcast = false;
-    }
-
-    function getSnapshot() {
-      return {
-        mode: state.mode,
-        currentTurn: state.currentTurn,
-        completedTurns: state.completedTurns,
-        maxTurns: state.maxTurns,
-        p1Name: state.p1Name,
-        p2Name: state.p2Name,
-        scores: { ...state.scores },
-        used: { ...state.used },
-        roomCode: state.roomCode,
-        gameOver: state.gameOver,
-        updatedAt: Date.now()
-      };
-    }
-
-    function syncOut() {
-      if (suppressBroadcast || !state.roomCode) return;
-      const snap = getSnapshot();
-      try {
-        localStorage.setItem(`sixseven_room_${state.roomCode}`, JSON.stringify(snap));
-      } catch (_) {}
-      if (channel) {
-        channel.postMessage({ roomCode: state.roomCode, payload: snap });
-      }
-      if (db) {
-        set(ref(db, `rooms/${state.roomCode}`), snap).catch((err) => {
-          console.warn("Firebase write error:", err);
-        });
-      }
-    }
-
-    function subscribeToRoom(code) {
-      const clean = normalizeCode(code);
-      if (clean.length !== 4) return;
-      state.roomCode = clean;
-      els.roomCodeInput.value = clean;
-
-      if (typeof unsubscribeRoom === "function") {
-        unsubscribeRoom();
-        unsubscribeRoom = null;
-      }
-
-      try {
-        const cached = localStorage.getItem(`sixseven_room_${clean}`);
-        if (cached) {
-          applyRemoteState(JSON.parse(cached));
-        }
-      } catch (_) {}
-
-      if (db) {
-        const roomRef = ref(db, `rooms/${clean}`);
-        unsubscribeRoom = onValue(roomRef, (snapshot) => {
-          const val = snapshot.val();
-          if (val) {
-            applyRemoteState(val);
-          } else {
-            syncOut();
-          }
-        });
-      } else {
-        syncOut();
-      }
-
-      updateUI();
-    }
-
-    function selectTwoPlayerModeAutoCode() {
-      state.mode = "2p";
-      state.currentTurn = 1;
-      if (!state.roomCode || state.roomCode.length !== 4) {
-        state.roomCode = random4DigitCode();
-      }
-      subscribeToRoom(state.roomCode);
-      syncOut();
-    }
-
-    function resetGame(keepRoom = true) {
-      stopTimer();
-      closeQuestionModal();
-      els.winnerModal.classList.remove("open");
-      state.completedTurns = 0;
-      state.currentTurn = 1;
-      state.scores = { 1: 0, 2: 0 };
-      state.used = {};
-      state.gameOver = false;
-      if (!keepRoom) {
-        state.roomCode = "";
-      }
-      updateUI();
-      syncOut();
-    }
-
-    els.mode1pBtn.addEventListener("click", () => {
-      state.mode = "1p";
-      state.currentTurn = 1;
-      updateUI();
-      syncOut();
-    });
-
-    els.mode2pBtn.addEventListener("click", () => {
-      selectTwoPlayerModeAutoCode();
-    });
-
-    els.turnLimitButtons.addEventListener("click", (e) => {
-      const btn = e.target.closest("button[data-turns]");
-      if (!btn) return;
-      state.maxTurns = Number(btn.dataset.turns);
-      checkTurnLimitAndWinner();
-      updateUI();
-      syncOut();
-    });
-
-    els.generateRoomBtn.addEventListener("click", () => {
-      state.mode = "2p";
-      state.roomCode = random4DigitCode();
-      subscribeToRoom(state.roomCode);
-      syncOut();
-    });
-
-    els.joinRoomBtn.addEventListener("click", () => {
-      const clean = normalizeCode(els.roomCodeInput.value);
-      if (clean.length !== 4) {
-        els.roomStatusText.textContent = "Enter a valid 4-digit room code (example: 4829).";
-        return;
-      }
-      state.mode = "2p";
-      subscribeToRoom(clean);
-    });
-
-    els.roomCodeInput.addEventListener("input", () => {
-      els.roomCodeInput.value = normalizeCode(els.roomCodeInput.value);
-    });
-
-    els.p1NameInput.addEventListener("change", () => {
-      state.p1Name = els.p1NameInput.value.trim() || "Player 1";
-      updateUI();
-      syncOut();
-    });
-
-    els.p2NameInput.addEventListener("change", () => {
-      state.p2Name = els.p2NameInput.value.trim() || "Player 2";
-      updateUI();
-      syncOut();
-    });
-
-    els.hintBtn.addEventListener("click", () => {
-      els.qHintBox.classList.add("visible");
-    });
-
-    els.revealBtn.addEventListener("click", () => {
-      els.qAnswerBox.classList.add("visible");
-    });
-
-    els.correctBtn.addEventListener("click", () => finishTurn(true));
-    els.wrongBtn.addEventListener("click", () => finishTurn(false));
-    els.closeQBtn.addEventListener("click", closeQuestionModal);
-
-    els.endNowBtn.addEventListener("click", () => {
-      state.gameOver = true;
-      updateUI();
-      syncOut();
-      showWinnerModal();
-    });
-
-    els.resetGameBtn.addEventListener("click", () => resetGame(true));
-    els.playAgainBtn.addEventListener("click", () => resetGame(true));
-    els.closeWinnerBtn.addEventListener("click", () => {
-      els.winnerModal.classList.remove("open");
-    });
-
-    if (channel) {
-      channel.addEventListener("message", (event) => {
-        const msg = event.data;
-        if (msg && msg.roomCode && msg.roomCode === state.roomCode && msg.payload) {
-          applyRemoteState(msg.payload);
-        }
-      });
-    }
-
-    updateUI();
-  </script>
-</body>
-</html>
+          {
+            pts: 10,
+            q: "Which zone of the adrenal cortex is primarily responsible for synthesizing and secreting mineralocorticoids, specifically aldosterone?",
+            options: [
+              "A) Zona fasciculata",
+              "B) Zona reticularis",
+              "C) Zona glomerulosa",
+              "D) Adrenal medulla"
+            ],
+            correct: 2,
+            hint: "Recall the outermost cortical layer ('GFR': Glomerulosa, Fasciculata, Reticularis).",
+            explanation: "The outer zona glomerulosa synthesizes aldosterone under the regulation of angiotensin II and serum potassium to control sodium retention and blood pressure."
+          },
+          {
+            pts: 20,
+            q: "Evaluation of a patient presenting with progressive fatigue, involuntary weight loss, and low morning serum cortisol reveals a markedly elevated plasma ACTH level, hyperkalemia, and dark brown mucosal hyperpigmentation. Which diagnosis is supported by this clinical and biochemical pattern?",
+            options: [
+              "A) Secondary adrenal insufficiency (pituitary ACTH deficiency)",
+              "B) Primary adrenal insufficiency (Addison disease)",
+              "C) Tertiary adrenal insufficiency (hypothalamic CRH suppression)",
+              "D) ACTH-dependent Cushing disease"
+            ],
+            correct: 1,
+            hint: "High ACTH + hyperkalemia + mucosal pigmentation points to intrinsic adrenal cortex failure.",
+            explanation: "Primary adrenal insufficiency causes both cortisol and aldosterone deficiency (leading to hyperkalemia) plus loss of negative feedback, driving elevated ACTH/POMC-derived peptides and mucosal hyperpigmentation."
+          },
+          {
+            pts: 30,
+            q: "A 38-year-old patient is evaluated for suspected Cushing syndrome, presenting with central weight gain, facial rounding, hypertension, and wide (>1 cm) reddish-purple abdominal striae. Which of the following laboratory measurements is explicitly NOT appropriate as an initial screening test for endogenous Cushing syndrome?",
+            options: [
+              "A) 1 mg overnight dexamethasone suppression test",
+              "B) 24-hour urinary free cortisol",
+              "C) Late-night salivary cortisol",
+              "D) Random serum cortisol concentration"
+            ],
+            correct: 3,
+            hint: "Normal diurnal/circadian variation makes a single untimed blood cortisol unreliable.",
+            explanation: "Random serum cortisol measurements are not appropriate screening tests because normal circadian fluctuations render isolated levels unreliable. Valid screening tests are the 1 mg overnight dexamethasone suppression test, late-night salivary cortisol, or 24-hour urinary free cortisol."
+          },
+          {
+            pts: 40,
+            q: "A 45-year-old patient with paroxysmal hypertension, episodic headaches, sweating, and palpitations has confirmed phaeochromocytoma on plasma free metanephrine testing and CT imaging. What is the mandatory pharmacological rule before proceeding to surgical resection?",
+            options: [
+              "A) Initiate beta-blocker therapy immediately to control tachycardia, followed by an alpha-blocker 48 hours prior to surgery",
+              "B) Establish adequate alpha-adrenergic blockade for 7–14 days prior to initiating any beta-blocker therapy or surgery",
+              "C) Perform a CT-guided fine-needle aspiration biopsy of the adrenal mass to confirm tumor histology prior to operation",
+              "D) Administer high-dose fludrocortisone for 14 days before surgical excision"
+            ],
+            correct: 1,
+            hint: "Beta-blockade without prior alpha-blockade causes unopposed alpha-mediated vasoconstriction.",
+            explanation
