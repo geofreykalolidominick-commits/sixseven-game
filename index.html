@@ -1009,6 +1009,7 @@
       roomCode: "",
       gameOver: false,
       activeLock: null,
+      lastAdvancedLockId: null,
       chatMessages: []
     };
 
@@ -1242,13 +1243,13 @@
       if (state.gameOver || state.page !== "board") return false;
       if (state.activeLock) return false;
       if (state.mode === "1p") return true;
-      return state.currentTurn === mySeat;
+      return Number(state.currentTurn) === Number(mySeat);
     }
 
     function isActivePlayerOnThisDevice() {
       if (state.mode === "1p") return true;
       const activePlayer = state.activeLock ? state.activeLock.player : state.currentTurn;
-      return activePlayer === mySeat;
+      return Number(activePlayer) === Number(mySeat);
     }
 
     function renderScoresGrid() {
@@ -1369,18 +1370,24 @@
       stopTimer();
       els.questionModal.classList.remove("open");
 
-      if (state.activeLock) {
+      const currentLock = state.activeLock;
+      if (currentLock) {
+        const lid = currentLock.lockId || `${currentLock.openedAt}_${currentLock.player}_${currentLock.rIdx}_${currentLock.cIdx}`;
         state.activeLock = null;
-        if (state.mode === "multi") {
-          const count = getActiveRoster().length;
-          state.roundPlays = (Number(state.roundPlays) || 0) + 1;
-          if (state.roundPlays >= count) {
+
+        if (state.lastAdvancedLockId !== lid) {
+          state.lastAdvancedLockId = lid;
+          if (state.mode === "multi") {
+            const count = getActiveRoster().length;
+            state.roundPlays = (Number(state.roundPlays) || 0) + 1;
+            if (state.roundPlays >= count) {
+              state.completedTurns += 1;
+              state.roundPlays = 0;
+            }
+            state.currentTurn = (Number(state.currentTurn) % count) + 1;
+          } else {
             state.completedTurns += 1;
-            state.roundPlays = 0;
           }
-          state.currentTurn = (state.currentTurn % count) + 1;
-        } else {
-          state.completedTurns += 1;
         }
       }
 
@@ -1593,7 +1600,7 @@
         els.boardBanner.className = "board-banner waiting";
         els.boardBannerText.textContent = `${lockerName} selected a ${subjLabel} question — displayed across connected devices.`;
         els.boardBannerRule.textContent = "Question Open";
-      } else if (isMulti && state.currentTurn !== mySeat) {
+      } else if (isMulti && Number(state.currentTurn) !== Number(mySeat)) {
         els.boardBanner.className = "board-banner waiting";
         els.boardBannerText.textContent = `Waiting for ${currentName}'s turn in ${subjLabel}. Your tiles unlock automatically once ${currentName} finishes.`;
         els.boardBannerRule.textContent = "Opponent's Turn";
@@ -1657,8 +1664,11 @@
       if (state.used[key]) return;
 
       const openedAt = Date.now();
+      const lockId = `${openedAt}_${state.currentTurn}_${rIdx}_${cIdx}`;
+
       state.used[key] = true;
       state.activeLock = {
+        lockId,
         player: state.currentTurn,
         rIdx,
         cIdx,
@@ -1748,6 +1758,7 @@
       state.maxTurns = incoming.maxTurns === 0 ? 0 : (Number(incoming.maxTurns) || 10);
       state.used = incoming.used && typeof incoming.used === "object" ? incoming.used : {};
       state.gameOver = Boolean(incoming.gameOver);
+      state.lastAdvancedLockId = incoming.lastAdvancedLockId || state.lastAdvancedLockId;
       state.activeLock = incoming.activeLock && typeof incoming.activeLock === "object"
         ? { ...incoming.activeLock }
         : null;
@@ -1781,6 +1792,7 @@
         used: { ...state.used },
         roomCode: state.roomCode,
         gameOver: state.gameOver,
+        lastAdvancedLockId: state.lastAdvancedLockId,
         activeLock: state.activeLock ? { ...state.activeLock } : null,
         chatMessages: Array.isArray(state.chatMessages) ? state.chatMessages.slice(-40) : [],
         updatedAt: Date.now()
@@ -1827,11 +1839,12 @@
 
       if (!opts.preserveLocalSeat && isJoiningExisting) {
         const roster = getActiveRoster();
-        const nextFreeSeat = Math.min(roster.length, 2);
-        mySeat = nextFreeSeat;
         if (!remoteFound && roster.length < MIN_MULTI_PLAYERS) {
           state.players = makePlayers(MIN_MULTI_PLAYERS, state.players);
-          mySeat = 2;
+        }
+        mySeat = Number(state.hostSeat) === 1 ? 2 : 1;
+        if (mySeat > getActiveRoster().length) {
+          mySeat = getActiveRoster().length;
         }
       }
 
@@ -1877,6 +1890,7 @@
       state.completedTurns = 0;
       state.roundPlays = 0;
       state.currentTurn = 1;
+      state.lastAdvancedLockId = null;
       state.players = state.players.map((p) => ({ ...p, score: 0 }));
       state.used = {};
       state.gameOver = false;
@@ -1902,6 +1916,7 @@
       state.completedTurns = 0;
       state.roundPlays = 0;
       state.currentTurn = 1;
+      state.lastAdvancedLockId = null;
       state.activeLock = null;
       els.subjectConfirmModal.classList.remove("open");
       subjectDropdownOpen = false;
