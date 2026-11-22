@@ -1,0 +1,697 @@
+[
+  {
+    "name": "Chest Radiography & Pulmonary Infections",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which radiographic sign on a chest X-ray is characterized by visible air-filled bronchi outlined against surrounding opacified, consolidated alveoli?",
+        "options": [
+          "A) Silhouette sign",
+          "B) Air bronchogram sign",
+          "C) Deep sulcus sign",
+          "D) Westermark sign"
+        ],
+        "correct": 1,
+        "hint": "Air in the conducting airways becomes visible when adjacent airspaces fill with fluid or pus.",
+        "explanation": "An air bronchogram occurs when air-filled bronchi become visible because the surrounding alveoli are opacified by fluid, pus, or cells (alveolar consolidation)."
+      },
+      {
+        "pts": 20,
+        "q": "Loss of the normal right heart border on a frontal chest radiograph specifically localizes pathology to which pulmonary lobe?",
+        "options": [
+          "A) Right upper lobe",
+          "B) Right middle lobe",
+          "C) Right lower lobe",
+          "D) Left lingula"
+        ],
+        "correct": 1,
+        "hint": "Apply the silhouette sign: structures in direct anatomical contact obliterate each other's border.",
+        "explanation": "The medial segment of the right middle lobe lies directly adjacent to the right atrium; consolidation or collapse here obliterates the right heart border (Silhouette sign)."
+      },
+      {
+        "pts": 30,
+        "q": "Which radiographic appearance is classically associated with a lung abscess containing both fluid and gas within a thick-walled cavity?",
+        "options": [
+          "A) Meniscus sign",
+          "B) Air-fluid level",
+          "C) Kerley B lines",
+          "D) Golden S sign"
+        ],
+        "correct": 1,
+        "hint": "Upright imaging reveals a flat horizontal interface between gas above and liquid pus below.",
+        "explanation": "An upright chest radiograph or CT of a lung abscess classically demonstrates a thick-walled cavitary lesion containing a horizontal air-fluid level."
+      },
+      {
+        "pts": 40,
+        "q": "On an upright chest radiograph of a patient with suspected lobar pneumonia, the left hemidiaphragm is obscured while the left heart border remains sharply defined. Which lobe is consolidated?",
+        "options": [
+          "A) Left upper lobe (anterior segment)",
+          "B) Lingula",
+          "C) Left lower lobe",
+          "D) Right middle lobe"
+        ],
+        "correct": 2,
+        "hint": "The lingula borders the left heart border, whereas the lower lobe rests on the diaphragm.",
+        "explanation": "The left lower lobe sits directly atop the left hemidiaphragm; consolidation there effaces the diaphragmatic contour while sparing the left heart border (which abuts the lingula)."
+      },
+      {
+        "pts": 50,
+        "q": "A 58-year-old chronic smoker presents with right upper lobe collapse. On the frontal chest radiograph, the minor fissure is elevated medially and convex inferiorly around a central hilar mass, forming a reverse 'S' contour. What is this classic radiographic sign and its primary significance?",
+        "options": [
+          "A) Luftsichel sign; indicates benign pleural thickening",
+          "B) Golden S sign; strongly suggests an obstructing central bronchogenic carcinoma",
+          "C) Rigler sign; indicates pneumoperitoneum",
+          "D) Hampton hump; confirms pulmonary embolism"
+        ],
+        "correct": 1,
+        "hint": "The central mass prevents the medial portion of the minor fissure from collapsing upward.",
+        "explanation": "The Golden S sign occurs in right upper lobe collapse caused by a central mass (most commonly bronchogenic carcinoma); the lateral fissure bows upward while the central mass creates a downward convexity."
+      }
+    ]
+  },
+  {
+    "name": "Pneumothorax & Pleural Effusion",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "On an upright chest X-ray, what is the classic radiographic appearance of a moderate free-flowing pleural effusion?",
+        "options": [
+          "A) Absent lung markings with a visible visceral pleural line",
+          "B) Blunting of the costophrenic angle with an upward concave meniscus",
+          "C) Hyperlucent lung field with ipsilateral mediastinal shift",
+          "D) Perihilar bat-wing opacities"
+        ],
+        "correct": 1,
+        "hint": "Fluid collects in the most dependent part of the hemithorax and tracks up the lateral chest wall.",
+        "explanation": "Free pleural fluid gravitates to the dependent costophrenic sulcus, blunting the sharp costophrenic angle and forming a classic concave meniscus sign."
+      },
+      {
+        "pts": 20,
+        "q": "On a supine chest radiograph in a trauma patient, which sign indicates an anterior-inferior pneumothorax when pleural air collects in the deep costophrenic recess?",
+        "options": [
+          "A) Deep sulcus sign",
+          "B) Air crescent sign",
+          "C) Finger-in-glove sign",
+          "D) Water-bottle sign"
+        ],
+        "correct": 0,
+        "hint": "Air rises to the anterior costophrenic angle in a supine patient, making that recess unusually lucent and deep.",
+        "explanation": "In supine patients, pleural air rises to the non-dependent anterior costophrenic sulcus, creating an abnormally deep, lucent lateral costophrenic angle known as the deep sulcus sign."
+      },
+      {
+        "pts": 30,
+        "q": "Which radiographic finding distinguishes a TENSION pneumothorax from a simple pneumothorax and mandates immediate needle decompression before further imaging?",
+        "options": [
+          "A) Mild apical visceral pleural line (< 1 cm)",
+          "B) Contralateral shift of the trachea and mediastinum with depression/inversion of the ipsilateral hemidiaphragm",
+          "C) Ipsilateral volume loss and tracheal deviation toward the affected side",
+          "D) Bilateral Kerley B lines"
+        ],
+        "correct": 1,
+        "hint": "Positive intrapleural pressure pushes mediastinal structures away from the affected hemithorax.",
+        "explanation": "Tension pneumothorax produces high positive intrapleural pressure that pushes the trachea, heart, and mediastinum toward the contralateral side and flattens or inverts the ipsilateral diaphragm."
+      },
+      {
+        "pts": 40,
+        "q": "Approximately how much pleural fluid is required to blunt the lateral costophrenic angle on a standard upright posterior-anterior (PA) chest radiograph?",
+        "options": [
+          "A) 10 to 25 mL",
+          "B) 50 to 75 mL",
+          "C) 200 to 300 mL",
+          "D) Over 1,000 mL"
+        ],
+        "correct": 2,
+        "hint": "A lateral view detects ~50–75 mL posteriorly, whereas the PA lateral sulcus needs more volume.",
+        "explanation": "While as little as 50–75 mL can blunt the deeper posterior costophrenic sulcus on a lateral film, approximately 200–300 mL is needed to blunt the lateral costophrenic angle on an upright PA chest X-ray."
+      },
+      {
+        "pts": 50,
+        "q": "A 42-year-old patient with a complete opacification ('white-out') of the left hemithorax demonstrates marked shift of the trachea and cardiomediastinal silhouette to the RIGHT side. What is the underlying cause of this white-out?",
+        "options": [
+          "A) Total left lung atelectasis from endobronchial mucus plugging",
+          "B) Massive left pleural effusion or large left intrathoracic mass",
+          "C) Prior left pneumonectomy",
+          "D) Left diaphragmatic paralysis"
+        ],
+        "correct": 1,
+        "hint": "Atelectasis and pneumonectomy pull the mediastinum toward the opaque side; space-occupying fluid or mass pushes it away.",
+        "explanation": "A hemithorax white-out with contralateral mediastinal shift indicates a space-occupying process—most commonly a massive pleural effusion or large intrathoracic tumor—pushing the mediastinum away."
+      }
+    ]
+  },
+  {
+    "name": "Cardiovascular Radiology",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the upper limit of normal for the cardiothoracic ratio (CTR) on a standard upright posterior-anterior (PA) chest radiograph in an adult?",
+        "options": ["A) 0.35", "B) 0.50", "C) 0.65", "D) 0.75"],
+        "correct": 1,
+        "hint": "The transverse cardiac diameter should be less than half the internal thoracic width on a PA film.",
+        "explanation": "On an upright PA chest X-ray, a cardiothoracic ratio (maximum cardiac width divided by maximum internal thoracic width) greater than 0.50 indicates cardiomegaly."
+      },
+      {
+        "pts": 20,
+        "q": "Which imaging modality is the first-line gold standard diagnostic test for confirming acute pulmonary embolism (PE) in a hemodynamically stable patient?",
+        "options": [
+          "A) Non-contrast chest CT",
+          "B) CT Pulmonary Angiography (CTPA)",
+          "C) Supine abdominal radiograph",
+          "D) Bone scintigraphy"
+        ],
+        "correct": 1,
+        "hint": "Timed intravenous contrast opacifies the pulmonary arterial tree to show intraluminal filling defects.",
+        "explanation": "CT Pulmonary Angiography (CTPA) is the first-line diagnostic imaging study for acute PE, directly demonstrating intraluminal filling defects within the pulmonary arteries."
+      },
+      {
+        "pts": 30,
+        "q": "What is the classic chest radiographic appearance of a large pericardial effusion?",
+        "options": [
+          "A) Boot-shaped heart (coeur en sabot)",
+          "B) Water-bottle (globular) cardiac silhouette",
+          "C) Egg-on-a-string silhouette",
+          "D) Snowman (figure-of-8) configuration"
+        ],
+        "correct": 1,
+        "hint": "Symmetrical fluid accumulation around the heart widens the cardiac contour inferiorly like a flask.",
+        "explanation": "A large pericardial effusion produces symmetrical enlargement of the cardiopericardial silhouette with a narrow vascular pedicle, resembling a water bottle or flask."
+      },
+      {
+        "pts": 40,
+        "q": "In congestive heart failure, which radiographic sequence accurately reflects progressively rising pulmonary venous pressure?",
+        "options": [
+          "A) Bat-wing alveolar edema -> Kerley B lines -> Upper lobe venous diversion (cephalization)",
+          "B) Upper lobe venous diversion (cephalization) -> Interstitial edema (Kerley B lines) -> Perihilar bat-wing alveolar edema",
+          "C) Deep sulcus sign -> Pneumomediastinum -> Subcutaneous emphysema",
+          "D) Hyperinflated lungs -> Flattened diaphragms -> Sabre-sheath trachea"
+        ],
+        "correct": 1,
+        "hint": "Vascular redistribution occurs first (~12–18 mmHg), followed by interstitial fluid (~18–25 mmHg), then alveolar flooding (>25 mmHg).",
+        "explanation": "Rising pulmonary capillary wedge pressure progresses sequentially from upper lobe pulmonary venous diversion (cephalization), to interstitial edema (Kerley B lines and peribronchial cuffing), and finally to bilateral perihilar alveolar ('bat-wing') edema."
+      },
+      {
+        "pts": 50,
+        "q": "A 64-year-old hypertensive man presents with sudden tearing interscapular back pain. Contrast-enhanced CT angiography of the chest reveals an intimal flap separating true and false lumens beginning distal to the left subclavian artery and extending into the descending thoracic aorta without involving the ascending aorta. How is this classified and what is the primary initial management?",
+        "options": [
+          "A) Stanford Type A dissection; immediate emergency open surgical repair",
+          "B) Stanford Type B dissection; aggressive medical blood pressure and heart rate control (beta-blockade)",
+          "C) Abdominal aortic aneurysm; routine ultrasound in 6 months",
+          "D) Pulmonary artery pseudoaneurysm; systemic thrombolysis"
+        ],
+        "correct": 1,
+        "hint": "Stanford Type A involves the ascending aorta; Type B spares the ascending aorta.",
+        "explanation": "Dissections sparing the ascending aorta (distal to the left subclavian artery) are Stanford Type B. Uncomplicated Type B dissections are managed primarily with strict medical impulse/blood pressure control (IV beta-blockers) rather than immediate open surgery."
+      }
+    ]
+  },
+  {
+    "name": "Abdominal & Gastrointestinal Radiology",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which radiographic view is most sensitive for detecting small amounts of free intraperitoneal gas (pneumoperitoneum) on plain X-ray?",
+        "options": [
+          "A) Supine abdominal radiograph",
+          "B) Erect (upright) chest radiograph",
+          "C) Prone pelvic radiograph",
+          "D) Oblique lumbar spine radiograph"
+        ],
+        "correct": 1,
+        "hint": "Free air rises under the right hemidiaphragm when the patient stands upright.",
+        "explanation": "An upright chest radiograph (or left lateral decubitus view if the patient cannot stand) is best for detecting free air beneath the right hemidiaphragm, detecting as little as 1–2 mL of free gas."
+      },
+      {
+        "pts": 20,
+        "q": "What is Rigler's sign on a supine abdominal radiograph?",
+        "options": [
+          "A) Gas outlining both the luminal and serosal (outer) walls of the bowel loop",
+          "B) A dilated, gas-filled appendix",
+          "C) Calcified gallstones in the right upper quadrant",
+          "D) Air within the intrahepatic biliary ducts"
+        ],
+        "correct": 0,
+        "hint": "Also called the 'double-wall sign' because air is present both inside and outside the bowel wall.",
+        "explanation": "Rigler's (double-wall) sign occurs in pneumoperitoneum when free intraperitoneal gas outlines the outer serosal surface of the bowel while intraluminal gas outlines the inner mucosal wall."
+      },
+      {
+        "pts": 30,
+        "q": "Which radiographic finding helps differentiate large bowel obstruction (LBO) from small bowel obstruction (SBO) on a plain abdominal radiograph?",
+        "options": [
+          "A) Central dilated loops > 3 cm with valvulae conniventes crossing the entire bowel lumen",
+          "B) Peripheral dilated loops > 6 cm (> 9 cm at cecum) with haustral markings that do not cross the full lumen",
+          "C) Gasless abdomen with normal psoas shadows",
+          "D) Double-bubble sign in the epigastrium"
+        ],
+        "correct": 1,
+        "hint": "Compare central plicae circulares (complete bands) with peripheral haustra (incomplete folds).",
+        "explanation": "Large bowel obstruction typically shows peripheral colon dilatation (>6 cm, cecum >9 cm) with incomplete haustral folds, whereas SBO shows central loops (>3 cm) with complete transverse valvulae conniventes."
+      },
+      {
+        "pts": 40,
+        "q": "A 72-year-old nursing home resident presents with severe abdominal distension and obstipation. Supine abdominal X-ray demonstrates a massively dilated, inverted U-shaped loop of colon arising from the pelvis and extending toward the right upper quadrant with loss of haustral markings ('coffee bean' sign). What is the diagnosis?",
+        "options": [
+          "A) Cecal volvulus",
+          "B) Sigmoid volvulus",
+          "C) Ileocecal intussusception",
+          "D) Acute pancreatitis"
+        ],
+        "correct": 1,
+        "hint": "The twisted loop originates in the left lower quadrant/pelvis and points toward the RUQ.",
+        "explanation": "Sigmoid volvulus produces a massively dilated, ahaustral loop of sigmoid colon arising from the pelvis and pointing toward the RUQ, classically resembling a coffee bean."
+      },
+      {
+        "pts": 50,
+        "q": "A 55-year-old woman with a history of gallstones presents with bilious vomiting and abdominal distension. Abdominal CT reveals pneumobilia (air in the biliary tree), dilated small bowel loops, and a 3.2 cm calcified ectopic stone impacted at the ileocecal valve. What is this triad called and what is its underlying mechanism?",
+        "options": [
+          "A) Charcot triad; ascending bacterial cholangitis",
+          "B) Rigler triad of gallstone ileus; cholecystoenteric fistula allowing a large stone to enter and obstruct the distal ileum",
+          "C) Murphy triad; acute calculous cholecystitis",
+          "D) Mirizzi syndrome; extrinsic compression of the common hepatic duct"
+        ],
+        "correct": 1,
+        "hint": "Pneumobilia + small bowel obstruction + ectopic gallstone.",
+        "explanation": "Rigler's triad (pneumobilia, small bowel obstruction, and an ectopic gallstone) is diagnostic of gallstone ileus, which occurs when a large gallstone erodes through a cholecystoduodenal fistula and impacts at the narrow ileocecal valve."
+      }
+    ]
+  },
+  {
+    "name": "Hepatobiliary & Pancreatic Imaging",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the initial first-line imaging modality of choice for evaluating suspected acute calculous cholecystitis?",
+        "options": [
+          "A) Right upper quadrant (RUQ) Ultrasound",
+          "B) Plain abdominal radiograph",
+          "C) Non-contrast MRI of the abdomen",
+          "D) Barium meal"
+        ],
+        "correct": 0,
+        "hint": "Radiation-free bedside modality with high sensitivity for gallstones and gallbladder wall edema.",
+        "explanation": "RUQ ultrasound is the first-line imaging test for acute cholecystitis, demonstrating gallstones, gallbladder wall thickening (>3 mm), pericholecystic fluid, and a positive sonographic Murphy sign."
+      },
+      {
+        "pts": 20,
+        "q": "Which acoustic artifact appears posterior to a calcified gallstone on ultrasound and confirms its solid, calcified nature?",
+        "options": [
+          "A) Posterior acoustic enhancement",
+          "B) Clean posterior acoustic shadowing",
+          "C) Ring-down (comet-tail) artifact",
+          "D) Mirror-image artifact"
+        ],
+        "correct": 1,
+        "hint": "Sound waves are strongly reflected/absorbed by the stone, leaving a dark band behind it.",
+        "explanation": "Calcified gallstones strongly reflect and attenuate ultrasound waves, casting a distinct dark band known as clean posterior acoustic shadowing."
+      },
+      {
+        "pts": 30,
+        "q": "Which non-invasive MRI technique is the gold standard for visualizing the biliary and pancreatic ductal anatomy without ionizing radiation or endoscopic instrumentation?",
+        "options": [
+          "A) HIDA cholescintigraphy",
+          "B) Magnetic Resonance Cholangiopancreatography (MRCP)",
+          "C) Triple-phase hepatic angiography",
+          "D) Intravenous urography"
+        ],
+        "correct": 1,
+        "hint": "Heavily T2-weighted MRI sequences highlight stationary fluid inside the bile and pancreatic ducts.",
+        "explanation": "MRCP uses heavily T2-weighted MRI sequences to non-invasively image fluid within the biliary tree and pancreatic duct with diagnostic accuracy comparable to ERCP."
+      },
+      {
+        "pts": 40,
+        "q": "On a triphasic contrast-enhanced CT of the liver, a cirrhotic patient has a 3.5 cm hepatic mass that shows brisk arterial-phase hyperenhancement followed by portal venous/delayed-phase 'washout' and an enhancing capsule. What is the most likely diagnosis?",
+        "options": [
+          "A) Hepatic hemangioma",
+          "B) Hepatocellular carcinoma (HCC)",
+          "C) Simple hepatic cyst",
+          "D) Focal nodular hyperplasia (FNH)"
+        ],
+        "correct": 1,
+        "hint": "Arterial hyperenhancement plus venous washout in a cirrhotic liver is the LI-RADS hallmark.",
+        "explanation": "Hepatocellular carcinoma receives predominantly hepatic arterial blood supply, causing intense arterial-phase enhancement followed by washout on portal venous and delayed phases."
+      },
+      {
+        "pts": 50,
+        "q": "A 48-year-old man with severe acute gallstone pancreatitis worsens on day 6 of admission with persistent fever and leukocytosis. Contrast-enhanced CT of the abdomen reveals a large, well-defined non-enhancing area of the pancreatic body/tail containing pockets of intralesional gas. What complication has developed and what is indicated?",
+        "options": [
+          "A) Uncomplicated interstitial edematous pancreatitis; continue conservative observation only",
+          "B) Infected pancreatic necrosis; initiate broad-spectrum carbapenem antibiotics and plan step-up drainage/necrosectomy",
+          "C) Simple pancreatic pseudocyst; discharge with oral analgesics",
+          "D) Normal post-pancreatitis resolution; no intervention required"
+        ],
+        "correct": 1,
+        "hint": "Non-enhancing parenchyma indicates necrosis, and gas within necrosis strongly signals bacterial superinfection.",
+        "explanation": "Lack of parenchymal enhancement indicates pancreatic necrosis, and the presence of gas bubbles within the necrotic collection is pathognomonic for infected pancreatic necrosis, requiring targeted IV antibiotics and step-up drainage/debridement."
+      }
+    ]
+  },
+  {
+    "name": "Neuroradiology (Stroke & Head Trauma)",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the mandatory first-line emergent neuroimaging study in a patient presenting with acute focal neurological deficits (suspected stroke) to exclude intracranial hemorrhage before thrombolysis?",
+        "options": [
+          "A) Non-contrast CT (NCCT) of the head",
+          "B) Contrast-enhanced MRI with gadolinium",
+          "C) Skull X-ray series",
+          "D) Carotid Doppler ultrasound"
+        ],
+        "correct": 0,
+        "hint": "Fastest scan to immediately rule out acute blood before administering tPA.",
+        "explanation": "Non-contrast head CT is fast, widely available, and highly sensitive for acute intracranial hemorrhage, which is an absolute contraindication to intravenous thrombolysis."
+      },
+      {
+        "pts": 20,
+        "q": "Which classic CT shape distinguishes an acute EPIDURAL hematoma from an acute SUBDURAL hematoma?",
+        "options": [
+          "A) Crescentic (concave) collection crossing suture lines",
+          "B) Biconvex (lentiform / lens-shaped) hyperdense collection that does NOT cross cranial sutures",
+          "C) Star-shaped hyperdensity filling the basal cisterns",
+          "D) Punctate hemorrhages at the gray-white junction"
+        ],
+        "correct": 1,
+        "hint": "Periosteal dura is tightly attached at cranial sutures, creating a lens-shaped collection.",
+        "explanation": "An epidural hematoma (often from middle meningeal artery laceration) forms a biconvex/lentiform shape limited by dural attachments at cranial sutures, whereas a subdural hematoma is crescentic and crosses sutures."
+      },
+      {
+        "pts": 30,
+        "q": "Which MRI sequence is most sensitive for detecting acute cytotoxic edema within minutes of ischemic stroke onset?",
+        "options": [
+          "A) T1-weighted spin echo",
+          "B) Diffusion-Weighted Imaging (DWI) with ADC map",
+          "C) T2-weighted spin echo",
+          "D) Time-of-flight MR venography"
+        ],
+        "correct": 1,
+        "hint": "Cell swelling restricts water molecule diffusion, appearing bright on this sequence and dark on ADC.",
+        "explanation": "Diffusion-Weighted Imaging (DWI) detects restricted water diffusion from cytotoxic edema within minutes of ischemia, appearing hyperintense on DWI and hypointense on the corresponding ADC map."
+      },
+      {
+        "pts": 40,
+        "q": "A 46-year-old woman presents with a sudden-onset 'thunderclap' headache. Non-contrast head CT shows hyperdense blood filling the suprasellar cistern, Sylvian fissures, and interhemispheric fissure. What is the diagnosis and the next diagnostic imaging study?",
+        "options": [
+          "A) Subarachnoid hemorrhage (SAH); obtain CT Angiography (CTA) of the circle of Willis to identify a ruptured berry aneurysm",
+          "B) Chronic subdural hematoma; perform lumbar puncture",
+          "C) Normal pressure hydrocephalus; obtain skull X-ray",
+          "D) Glioblastoma multiforme; perform bone scan"
+        ],
+        "correct": 0,
+        "hint": "Hyperdensity in the basal cisterns and Sylvian fissures indicates blood in the subarachnoid space.",
+        "explanation": "Hyperdense blood in the basal cisterns and Sylvian fissures confirms acute subarachnoid hemorrhage, most commonly from a ruptured saccular (berry) aneurysm best localized with CT angiography."
+      },
+      {
+        "pts": 50,
+        "q": "A 68-year-old man presents 2 hours after acute onset of right hemiplegia and global aphasia. Non-contrast head CT excludes hemorrhage and shows a 'hyperdense left middle cerebral artery (MCA) sign' with an ASPECTS score of 9. CT angiography confirms proximal left M1 occlusion. What is the optimal evidence-based reperfusion strategy?",
+        "options": [
+          "A) Administer aspirin only and repeat CT in 48 hours",
+          "B) Administer IV thrombolysis (alteplase/tenecteplase) immediately and proceed to mechanical thrombectomy",
+          "C) Infuse mannitol and withhold all antithrombotic or endovascular therapy",
+          "D) Perform immediate decompressive craniectomy prior to vascular imaging"
+        ],
+        "correct": 1,
+        "hint": "Within 4.5 hours with no hemorrhage, high ASPECTS, and proximal M1 large-vessel occlusion.",
+        "explanation": "The patient has an acute left M1 large-vessel occlusion within the thrombolytic window with minimal early ischemic changes (ASPECTS 9); standard of care is immediate IV thrombolysis bridged to mechanical thrombectomy."
+      }
+    ]
+  },
+  {
+    "name": "Musculoskeletal & Trauma Radiology",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which incomplete pediatric fracture involves buckling/compression of one cortex without cortical disruption, commonly seen at the distal radius?",
+        "options": [
+          "A) Spiral fracture",
+          "B) Torus (buckle) fracture",
+          "C) Comminuted fracture",
+          "D) Pathologic avulsion fracture"
+        ],
+        "correct": 1,
+        "hint": "Named after the bulging base of a classical architectural column.",
+        "explanation": "A torus (buckle) fracture is an incomplete pediatric fracture caused by axial loading that buckles the porous metaphyseal cortex without breaking it."
+      },
+      {
+        "pts": 20,
+        "q": "In the Salter-Harris classification of pediatric physeal fractures, what does a Type II fracture involve?",
+        "options": [
+          "A) Fracture straight across the physis only",
+          "B) Fracture extending through the physis and into the metaphysis (above the growth plate)",
+          "C) Fracture extending through the physis into the epiphysis and joint space",
+          "D) Crush injury of the entire germinal zone of the physis"
+        ],
+        "correct": 1,
+        "hint": "Use the SALTER mnemonic: S = Straight across, A = Above (metaphysis).",
+        "explanation": "Salter-Harris Type II (the most common type) extends along the physis and exits through the metaphysis ('Above' the growth plate), producing the Thurston-Holland fragment."
+      },
+      {
+        "pts": 30,
+        "q": "On a lateral elbow radiograph in a child after a fall on an outstretched hand, elevation of the anterior fat pad ('sail sign') and visibility of the posterior fat pad without an obvious fracture line most strongly suggest what occult injury?",
+        "options": [
+          "A) Occult supracondylar humeral fracture (or radial head fracture in adults)",
+          "B) Anterior shoulder dislocation",
+          "C) Midshaft clavicular fracture",
+          "D) Olecranon bursitis without joint effusion"
+        ],
+        "correct": 0,
+        "hint": "A visible posterior fat pad always indicates an intra-articular elbow hemarthrosis/effusion.",
+        "explanation": "Displacement of the elbow fat pads indicates hemarthrosis from an intra-articular fracture—most commonly an occult supracondylar fracture in children or radial head fracture in adults."
+      },
+      {
+        "pts": 40,
+        "q": "Which radiographic bone lesion appearance—characterized by a wide zone of transition, cortical destruction, and perpendicular 'sunburst' or 'hair-on-end' periosteal reaction in the distal femoral metaphysis of an adolescent—is classic for osteosarcoma?",
+        "options": [
+          "A) Well-circumscribed geographic lesion with a narrow sclerotic rim",
+          "B) Aggressive permeative/moth-eaten lesion with Codman triangle and sunburst periosteal reaction",
+          "C) Smooth cortical thickening with a central lucent nidus < 1.5 cm",
+          "D) Ground-glass medullary expansion without periosteal reaction"
+        ],
+        "correct": 1,
+        "hint": "Rapidly growing malignant bone tumors lift the periosteum and produce aggressive spiculated reactions.",
+        "explanation": "Osteosarcoma typically arises in the metaphysis around the knee in adolescents and shows an ill-defined, destructive lesion with cortical breakthrough, Codman triangle, and sunburst periosteal reaction."
+      },
+      {
+        "pts": 50,
+        "q": "A 24-year-old man falls onto an outstretched hand and complains of anatomic snuffbox tenderness. Initial scaphoid radiographs are normal. Why is repeat imaging (or MRI) at 10–14 days with thumb spica immobilization mandatory?",
+        "options": [
+          "A) To prevent carpal tunnel syndrome",
+          "B) Scaphoid waist fractures have retrograde blood supply, so missed fractures carry a high risk of proximal pole avascular necrosis (AVN) and nonunion",
+          "C) Because scaphoid fractures always heal spontaneously within 3 days",
+          "D) To rule out distal phalangeal osteomyelitis"
+        ],
+        "correct": 1,
+        "hint": "Blood enters the scaphoid distally and flows proximally.",
+        "explanation": "The scaphoid receives retrograde blood supply from branches of the radial artery entering distally; an untreated scaphoid waist fracture disrupts perfusion to the proximal pole, causing avascular necrosis and nonunion."
+      }
+    ]
+  },
+  {
+    "name": "Genitourinary & Obstetric Ultrasound",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which ultrasound measurement in the first trimester (before 14 weeks gestation) is most accurate for establishing or dating gestational age?",
+        "options": [
+          "A) Crown-rump length (CRL)",
+          "B) Biparietal diameter (BPD)",
+          "C) Femur length (FL)",
+          "D) Amniotic fluid index (AFI)"
+        ],
+        "correct": 0,
+        "hint": "Measured in the sagittal plane from the top of the fetal head to the bottom of the rump.",
+        "explanation": "Crown-rump length (CRL) between 7 and 13+6 weeks is the single most accurate biometric parameter for pregnancy dating, accurate to within ±5 days."
+      },
+      {
+        "pts": 20,
+        "q": "What is the primary diagnostic imaging modality of choice for evaluating acute testicular pain to rule out testicular torsion?",
+        "options": [
+          "A) Scrotal Color and Spectral Doppler Ultrasound",
+          "B) Non-contrast CT of the pelvis",
+          "C) Pelvic radiograph",
+          "D) Intravenous pyelogram"
+        ],
+        "correct": 0,
+        "hint": "Assesses intratesticular arterial and venous blood flow in real time without radiation.",
+        "explanation": "Scrotal Doppler ultrasound is the gold standard imaging modality for acute scrotum, showing absent or markedly reduced intratesticular blood flow in torsion versus hyperemia in epididymo-orchitis."
+      },
+      {
+        "pts": 30,
+        "q": "In a patient with suspected obstructive urolithiasis (renal colic), which imaging study has the highest sensitivity and specificity (~97–99%) for detecting urinary tract calculi of virtually all compositions?",
+        "options": [
+          "A) Non-contrast helical CT of the abdomen and pelvis (CT KUB)",
+          "B) Plain KUB radiograph alone",
+          "C) Voiding cystourethrogram (VCUG)",
+          "D) Tc-99m DMSA renal scan"
+        ],
+        "correct": 0,
+        "hint": "Detects both radiopaque calcium stones and radiolucent uric acid stones.",
+        "explanation": "Non-contrast CT KUB is the gold standard for urolithiasis, detecting almost all stones (including uric acid stones missed on X-ray) as well as secondary signs of obstruction like hydronephrosis and perinephric stranding."
+      },
+      {
+        "pts": 40,
+        "q": "In a pregnant woman with a positive serum beta-hCG (> 2,000 mIU/mL), transvaginal ultrasound demonstrates an empty uterine cavity, complex free fluid in the pouch of Douglas, and an adnexal 'ring of fire' mass separate from the ovary. What is the diagnosis?",
+        "options": [
+          "A) Normal intrauterine twin gestation",
+          "B) Ectopic pregnancy (likely ruptured or leaking)",
+          "C) Complete hydatidiform mole",
+          "D) Degenerating uterine fibroid"
+        ],
+        "correct": 1,
+        "hint": "Empty uterus above the discriminatory zone plus an extra-ovarian adnexal ring and hemoperitoneum.",
+        "explanation": "An empty uterus with beta-hCG above the discriminatory zone, an adnexal tubal ring separate from the ovary, and free pelvic fluid (hemoperitoneum) is diagnostic of ectopic pregnancy."
+      },
+      {
+        "pts": 50,
+        "q": "A 32-year-old G3P2 woman with two prior cesarean deliveries presents at 34 weeks gestation for targeted obstetric ultrasound. The placenta covers the internal cervical os, and color Doppler shows loss of the normal retroplacental clear space, multiple large placental lacunae ('Swiss-cheese' appearance), and hypervascular bridging vessels crossing the uterine serosa-bladder interface. What is the diagnosis and key delivery plan?",
+        "options": [
+          "A) Marginal abruption; induce vaginal delivery immediately",
+          "B) Placenta previa with Placenta Accreta Spectrum (percreta/increta); schedule multidisciplinary cesarean hysterectomy at 34–35+6 weeks without attempting placental removal",
+          "C) Vasa previa; perform external cephalic version",
+          "D) Normal anterior placenta; routine term vaginal birth"
+        ],
+        "correct": 1,
+        "hint": "Prior C-sections + placenta previa + loss of clear zone + placental lacunae.",
+        "explanation": "Placenta previa over a prior cesarean scar with loss of the retroplacental hypoechoic zone, turbulent placental lacunae, and serosal hypervascularity indicates Placenta Accreta Spectrum, requiring planned preterm cesarean hysterectomy at a tertiary center without detaching the placenta."
+      }
+    ]
+  },
+  {
+    "name": "Pediatric Radiology",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which classic radiographic sign is seen on an anterior-posterior (AP) neck radiograph in a child with viral croup (laryngotracheobronchitis)?",
+        "options": [
+          "A) Thumbprint sign",
+          "B) Steeple sign (subglottic narrowing)",
+          "C) Double-bubble sign",
+          "D) Bat-wing sign"
+        ],
+        "correct": 1,
+        "hint": "Subglottic edema tapers the upper trachea into a pointed church-spire shape.",
+        "explanation": "Subglottic mucosal edema in viral croup narrows the subglottic trachea on an AP neck X-ray, producing the classic 'steeple sign'."
+      },
+      {
+        "pts": 20,
+        "q": "In a 4-week-old infant with projectile non-bilious vomiting and a palpable 'olive' mass, what is the diagnostic ultrasound threshold for hypertrophic pyloric stenosis (HPS)?",
+        "options": [
+          "A) Pyloric muscle wall thickness >= 3 mm and channel length >= 15–17 mm",
+          "B) Pyloric wall thickness < 1 mm and channel length < 5 mm",
+          "C) Gallbladder wall thickness > 5 mm",
+          "D) Appendix diameter > 10 mm"
+        ],
+        "correct": 0,
+        "hint": "Remember the 'pi' rule: muscle thickness >= 3 mm and length >= 14–17 mm.",
+        "explanation": "Ultrasound confirms hypertrophic pyloric stenosis when single pyloric muscle thickness is >= 3 mm and pyloric canal length is >= 15–17 mm with failure of gastric contents to pass."
+      },
+      {
+        "pts": 30,
+        "q": "Which ultrasound sign is pathognomonic for ileocolic intussusception in a toddler presenting with intermittent colicky abdominal pain and 'currant jelly' stools?",
+        "options": [
+          "A) Target (doughnut) sign on transverse view and pseudokidney sign on longitudinal view",
+          "B) Double-bubble sign",
+          "C) Rigler double-wall sign",
+          "D) Water-lily sign"
+        ],
+        "correct": 0,
+        "hint": "Concentric alternating layers of invaginated bowel wall and mesentery.",
+        "explanation": "Invagination of the ileum into the colon produces concentric alternating hyperechoic and hypoechoic rings on transverse ultrasound ('target' or 'doughnut' sign) and a 'pseudokidney' sign longitudinally."
+      },
+      {
+        "pts": 40,
+        "q": "A 3-day-old preterm neonate fed formula develops abdominal distension, feeding intolerance, and bloody stools. Supine abdominal X-ray demonstrates linear and bubbly intramural gas within the bowel wall. What is this radiographic sign and diagnosis?",
+        "options": [
+          "A) Pneumatosis intestinalis; Necrotizing Enterocolitis (NEC)",
+          "B) Chilaiditi sign; benign hepatodiaphragmatic interposition",
+          "C) Double-bubble sign; duodenal atresia",
+          "D) Steeple sign; acute epiglottitis"
+        ],
+        "correct": 0,
+        "hint": "Gas dissecting into the subserosal and submucosal layers of ischemic neonatal bowel.",
+        "explanation": "Pneumatosis intestinalis (gas within the bowel wall) on an abdominal radiograph in a preterm infant is pathognomonic for Necrotizing Enterocolitis (NEC)."
+      },
+      {
+        "pts": 50,
+        "q": "A 5-day-old full-term newborn presents with bilious vomiting. Plain radiograph shows a distended stomach and proximal duodenum with scant distal gas. Upper GI contrast series reveals the duodenojejunal junction (ligament of Treitz) located to the RIGHT of the spine and a 'corkscrew' appearance of the proximal jejunum. What is the diagnosis and immediate management?",
+        "options": [
+          "A) Duodenal atresia; outpatient oral rehydration",
+          "B) Intestinal malrotation with midgut volvulus; emergent surgical Ladd procedure after immediate resuscitation",
+          "C) Hypertrophic pyloric stenosis; barium enema reduction",
+          "D) Meconium plug syndrome; oral laxatives"
+        ],
+        "correct": 1,
+        "hint": "Bilious vomiting in a neonate + abnormal position of the ligament of Treitz + corkscrew sign is a surgical emergency.",
+        "explanation": "Abnormal right-sided position of the duodenojejunal junction and a 'corkscrew' duodenum/jejunum on upper GI series confirm intestinal malrotation complicated by midgut volvulus, a surgical emergency requiring immediate resuscitation and Ladd's procedure to prevent complete midgut necrosis."
+      }
+    ]
+  },
+  {
+    "name": "Radiation Safety & Contrast Media",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What does the core radiation protection principle 'ALARA' stand for?",
+        "options": [
+          "A) All Levels Always Radiated Accurately",
+          "B) As Low As Reasonably Achievable",
+          "C) Always Limit All Radiological Assessments",
+          "D) Automated Low-Angle Radiation Adjustment"
+        ],
+        "correct": 1,
+        "hint": "Minimizing ionizing radiation exposure while preserving diagnostic image quality.",
+        "explanation": "ALARA stands for 'As Low As Reasonably Achievable'—the guiding principle of radiation safety that minimizes radiation dose to patients and staff without compromising diagnostic accuracy."
+      },
+      {
+        "pts": 20,
+        "q": "Which two imaging modalities do NOT use ionizing radiation and are therefore preferred in pregnant patients and children when clinically appropriate?",
+        "options": [
+          "A) Computed Tomography (CT) and Fluoroscopy",
+          "B) Ultrasound and Magnetic Resonance Imaging (MRI)",
+          "C) Plain Radiography and PET-CT",
+          "D) Digital Subtraction Angiography and Mammography"
+        ],
+        "correct": 1,
+        "hint": "One uses high-frequency sound waves; the other uses strong magnetic fields and radiofrequency pulses.",
+        "explanation": "Ultrasound (acoustic waves) and MRI (magnetic fields and radiofrequency waves) use non-ionizing energy, avoiding ionizing radiation exposure."
+      },
+      {
+        "pts": 30,
+        "q": "What are the three cardinal physical factors used by healthcare workers to reduce occupational exposure to ionizing radiation?",
+        "options": [
+          "A) Temperature, humidity, and altitude",
+          "B) Time, distance, and shielding",
+          "C) Contrast volume, injection rate, and needle gauge",
+          "D) Sedation, fasting, and hydration"
+        ],
+        "correct": 1,
+        "hint": "Minimize duration, maximize separation (inverse square law), and use lead barriers.",
+        "explanation": "Minimizing exposure Time, maximizing Distance from the radiation source (inverse square law), and using appropriate Shielding (lead aprons, thyroid collars, lead glass) are the three pillars of radiation protection."
+      },
+      {
+        "pts": 40,
+        "q": "Which serious systemic fibrosing complication is associated with administering older linear Group I gadolinium-based MRI contrast agents to patients with severe renal insufficiency (eGFR < 30 mL/min/1.73 m2)?",
+        "options": [
+          "A) Nephrogenic Systemic Fibrosis (NSF)",
+          "B) Stevens-Johnson Syndrome",
+          "C) Malignant hyperthermia",
+          "D) Thyroid storm"
+        ],
+        "correct": 0,
+        "hint": "Causes progressive skin tightening, joint contractures, and internal organ fibrosis in severe kidney failure.",
+        "explanation": "Nephrogenic Systemic Fibrosis (NSF) is a rare, debilitating fibrosing disorder triggered by impaired clearance of unstable gadolinium chelates in patients with severe acute or chronic kidney injury."
+      },
+      {
+        "pts": 50,
+        "q": "Two minutes after intravenous injection of low-osmolality iodinated contrast media for an abdominal CT, a 39-year-old patient develops diffuse urticaria, facial angioedema, inspiratory stridor, bronchospasm, and blood pressure dropping to 74/42 mmHg. What is the single most critical first-line medication and route of administration?",
+        "options": [
+          "A) Oral diphenhydramine 25 mg",
+          "B) Intramuscular Epinephrine (0.3–0.5 mg of 1:1,000 solution) into the anterolateral mid-thigh",
+          "C) Intravenous furosemide 40 mg",
+          "D) Subcutaneous insulin 10 units"
+        ],
+        "correct": 1,
+        "hint": "Severe anaphylactoid contrast reaction with airway compromise and hypotension.",
+        "explanation": "Severe contrast-induced anaphylaxis presenting with stridor, bronchospasm, and hypotension requires immediate intramuscular Epinephrine (0.3–0.5 mg of 1 mg/mL [1:1,000]) in the mid-outer thigh, followed by IV fluids, oxygen, and airway support."
+      }
+    ]
+  }
+]
