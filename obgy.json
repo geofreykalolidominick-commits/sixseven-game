@@ -1,0 +1,702 @@
+[
+  {
+    "name": "Antenatal Care & Gestational Dating",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Using Naegele's rule for a woman with a regular 28-day menstrual cycle whose last menstrual period (LMP) began on 10 March, what is her estimated due date (EDD)?",
+        "options": [
+          "A) 17 December",
+          "B) 10 November",
+          "C) 3 January",
+          "D) 17 October"
+        ],
+        "correct": 0,
+        "hint": "Add 7 days to the first day of the LMP and subtract 3 months (adding 1 year).",
+        "explanation": "Applying Naegele's rule to a 28-day cycle starting on 10 March: +7 days gives 17, and -3 months (+1 year) gives December—yielding an estimated due date of 17 December."
+      },
+      {
+        "pts": 20,
+        "q": "Which ultrasound measurement in the first trimester (before 14 weeks) is most accurate for establishing or dating gestational age?",
+        "options": [
+          "A) Crown-rump length (CRL)",
+          "B) Biparietal diameter (BPD)",
+          "C) Femur length (FL)",
+          "D) Amniotic fluid index (AFI)"
+        ],
+        "correct": 0,
+        "hint": "Fetal size variation is minimal in early pregnancy before biological growth differences widen later.",
+        "explanation": "Crown-rump length (CRL) measured in the first trimester (typically 7–13+6 weeks) is the most accurate method for gestational age dating, with precision within roughly +/- 5 to 7 days."
+      },
+      {
+        "pts": 30,
+        "q": "Which daily dose of folic acid is recommended preconceptionally and through the first 12 weeks of pregnancy for a woman at standard (low) risk for neural tube defects?",
+        "options": [
+          "A) 0.4 mg (400 micrograms) daily",
+          "B) 0.05 mg (50 micrograms) daily",
+          "C) 10 mg daily",
+          "D) 25 mg daily"
+        ],
+        "correct": 0,
+        "hint": "Neural tube closure occurs within the first 28 days post-conception, before many women realize they are pregnant.",
+        "explanation": "Standard preconceptional and early-pregnancy folic acid supplementation is 0.4 mg (400 mcg) daily to reduce the risk of neural tube defects (women with a prior affected pregnancy or high-risk factors typically receive 4–5 mg daily)."
+      },
+      {
+        "pts": 40,
+        "q": "Which combination of first-trimester screening markers is used in the combined screening test for trisomy 21 (Down syndrome) around 11–13+6 weeks?",
+        "options": [
+          "A) Nuchal translucency (NT), free beta-hCG, and PAPP-A",
+          "B) Maternal serum AFP, unconjugated estriol, and inhibin A only",
+          "C) Amniotic fluid acetylcholinesterase and karyotype alone",
+          "D) Third-trimester middle cerebral artery Doppler alone"
+        ],
+        "correct": 0,
+        "hint": "Combines an early ultrasound thickness measurement with pregnancy-associated plasma protein-A and free beta-hCG.",
+        "explanation": "First-trimester combined screening evaluates fetal nuchal translucency (NT) thickness alongside maternal serum free beta-hCG and pregnancy-associated plasma protein-A (PAPP-A)."
+      },
+      {
+        "pts": 50,
+        "q": "A 29-year-old G2P1 at 28 weeks gestation presents with a fundal height of 33 cm (exceeding dates), and ultrasound reveals diamniotic monochorionic twins with a single shared placenta, a 'T-sign' at the intertwin membrane insertion, oligohydramnios in Twin A (deepest pocket 1.2 cm), and polyhydramnios in Twin B (deepest pocket 9.5 cm) with discordance in bladder filling. Which condition is present, and what is the primary pathophysiological mechanism?",
+        "options": [
+          "A) Twin-to-twin transfusion syndrome (TTTS) driven by unbalanced placental anastomoses (especially arteriovenous anastomoses)",
+          "B) Twin anemia-polycythemia sequence (TAPS) caused exclusively by large superficial arterio-arterial shunts without amniotic fluid discordance",
+          "C) Monoamniotic cord entanglement with normal amniotic fluid volumes in both sacs",
+          "D) Dichorionic twin gestation with normal physiological variation"
+        ],
+        "correct": 0,
+        "hint": "Monochorionic diamniotic ('T-sign') twins with donor oligohydramnios/small bladder and recipient polyhydramnios/distended bladder define TTTS.",
+        "explanation": "TTTS occurs in monochorionic diamniotic pregnancies due to net unbalanced blood flow across deep placental arteriovenous (AV) anastomoses from the donor twin to the recipient twin. The donor becomes hypovolemic and oliguric (oligohydramnios, collapsed bladder), whereas the recipient experiences hypervolemia, polyuria, and polyhydramnios."
+      }
+    ]
+  },
+  {
+    "name": "Hypertensive Disorders of Pregnancy",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which minimum blood pressure threshold at or after 20 weeks of gestation defines gestational hypertension or preeclampsia?",
+        "options": [
+          "A) Systolic BP >= 140 mmHg and/or diastolic BP >= 90 mmHg",
+          "B) Systolic BP >= 120 mmHg and/or diastolic BP >= 70 mmHg",
+          "C) Systolic BP >= 160 mmHg and/or diastolic BP >= 110 mmHg only",
+          "D) Systolic BP >= 130 mmHg and/or diastolic BP >= 80 mmHg"
+        ],
+        "correct": 0,
+        "hint": "Standard diagnostic threshold is 140/90 mmHg measured on two occasions.",
+        "explanation": "Hypertensive disorders of pregnancy after 20 weeks are defined by systolic BP >= 140 mmHg and/or diastolic BP >= 90 mmHg on two occasions at least 4 hours apart (or a single severe reading >= 160/110 mmHg)."
+      },
+      {
+        "pts": 20,
+        "q": "Which medication is the anticonvulsant of choice for preventing and treating seizures in severe preeclampsia and eclampsia?",
+        "options": [
+          "A) Magnesium sulfate",
+          "B) Phenytoin",
+          "C) Diazepam",
+          "D) Carbamazepine"
+        ],
+        "correct": 0,
+        "hint": "Superior to phenytoin and diazepam in preventing seizure recurrence and avoiding heavy maternal/fetal sedation.",
+        "explanation": "Magnesium sulfate is the first-line agent for preventing eclampsia in severe preeclampsia and controlling eclamptic seizures, outperforming phenytoin and diazepam in clinical trials."
+      },
+      {
+        "pts": 30,
+        "q": "Which three laboratory findings define HELLP syndrome in a patient with severe preeclampsia?",
+        "options": [
+          "A) Hemolysis, Elevated Liver enzymes, Low Platelets",
+          "B) Hypoglycemia, Elevated Lactate, Low Potassium",
+          "C) Hypercalcemia, Elevated Lipase, Low Phosphate",
+          "D) Hypoxia, Elevated Leukocytes, Low Sodium"
+        ],
+        "correct": 0,
+        "hint": "Microangiopathic hemolytic anemia + hepatocellular injury + thrombocytopenia.",
+        "explanation": "HELLP syndrome stands for Hemolysis (e.g., schistocytes, elevated LDH, low haptoglobin), Elevated Liver enzymes (AST/ALT), and Low Platelets (typically < 100 x 10^9/L)."
+      },
+      {
+        "pts": 40,
+        "q": "A woman receiving intravenous magnesium sulfate for severe preeclampsia becomes lethargic, has absent patellar deep tendon reflexes, and has a respiratory rate of 9 breaths/min. Which antidote must be administered immediately after stopping the magnesium infusion?",
+        "options": [
+          "A) 10 mL of 10% calcium gluconate (1 g) slowly IV over 3 minutes",
+          "B) Intravenous protamine sulfate",
+          "C) Intravenous naloxone",
+          "D) Oral potassium chloride"
+        ],
+        "correct": 0,
+        "hint": "Calcium antagonizes magnesium at the neuromuscular junction.",
+        "explanation": "Loss of patellar reflexes and respiratory depression (<12 breaths/min) indicate magnesium toxicity; stop the infusion immediately and give 10 mL of 10% calcium gluconate (1 g) slowly IV over 3–5 minutes."
+      },
+      {
+        "pts": 50,
+        "q": "A 33-year-old G1P0 at 35+2 weeks with severe preeclampsia (BP 174/112 mmHg) is stabilized on IV labetalol and magnesium sulfate. Two hours later she develops sudden severe right upper quadrant/epigastric pain radiating to the shoulder, tachycardia (HR 128 bpm), BP 92/58 mmHg, hemoglobin dropping from 11.8 to 7.4 g/dL, AST 640 U/L, and platelets 54 x 10^9/L. What life-threatening complication must be suspected immediately, and what is the priority action?",
+        "options": [
+          "A) Subcapsular liver hematoma or hepatic rupture; perform urgent resuscitation/blood transfusion, imaging or immediate laparotomy if unstable/ruptured, and expeditious delivery",
+          "B) Uncomplicated reflux esophagitis; increase oral antacids and continue expectant management for 4 weeks",
+          "C) Acute cholecystitis; discharge on oral amoxicillin and schedule elective induction at 39 weeks",
+          "D) Magnesium sulfate toxicity alone; administer IV calcium gluconate and delay delivery"
+        ],
+        "correct": 0,
+        "hint": "Severe RUQ/epigastric pain + falling hemoglobin + shock in HELLP/severe preeclampsia warns of hepatic capsule stretch, hematoma, or rupture.",
+        "explanation": "Epigastric or right upper quadrant pain in severe preeclampsia/HELLP reflects perihepatic edema and Glisson's capsule distension, which can progress to a subcapsular hematoma or catastrophic hepatic rupture. Hemodynamic shock with falling hemoglobin requires urgent resuscitation, blood product support, prompt evaluation (bedside ultrasound/CT if stable), and immediate delivery/surgical intervention."
+      }
+    ]
+  },
+  {
+    "name": "First-Trimester Bleeding & Ectopic Pregnancy",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Where is the most common anatomical implantation site for an ectopic pregnancy?",
+        "options": [
+          "A) Ampullary segment of the fallopian tube",
+          "B) Interstitial (intramural) segment of the fallopian tube",
+          "C) Ovary",
+          "D) Cervix"
+        ],
+        "correct": 0,
+        "hint": "The wide mid-portion of the fallopian tube where fertilization typically occurs.",
+        "explanation": "Over 90% of ectopic pregnancies implant in the fallopian tube, with the ampullary segment being the most common site (~70–80% of tubal ectopics)."
+      },
+      {
+        "pts": 20,
+        "q": "What is the hallmark ultrasound finding that confirms an intrauterine pregnancy and makes an uncomplicated tubal ectopic pregnancy far less likely?",
+        "options": [
+          "A) An intrauterine gestational sac containing a yolk sac or embryo with cardiac activity",
+          "B) A thin endometrial stripe of 2 mm with an empty uterus",
+          "C) A simple functional corpus luteum cyst on the ovary",
+          "D) Free fluid in the pouch of Douglas alone"
+        ],
+        "correct": 0,
+        "hint": "Do not confuse a pseudosac/decidual cast with a true gestational sac containing a yolk sac or fetal pole.",
+        "explanation": "Visualizing a definite intrauterine pregnancy—evidenced by a gestational sac containing a yolk sac or embryo—virtually rules out a concurrent spontaneous tubal ectopic pregnancy in natural conception (heterotopic pregnancy is rare except after assisted reproduction)."
+      },
+      {
+        "pts": 30,
+        "q": "Which of the following is an absolute contraindication to medical management of a tubal ectopic pregnancy with methotrexate?",
+        "options": [
+          "A) Hemodynamic instability or signs of ruptured ectopic pregnancy / hemoperitoneum",
+          "B) Unruptured tubal mass <= 3.5 cm with absent fetal cardiac activity",
+          "C) Serum beta-hCG < 5000 mIU/mL",
+          "D) Confirmed absence of an intrauterine pregnancy on transvaginal ultrasound"
+        ],
+        "correct": 0,
+        "hint": "Methotrexate takes days to act and is strictly for hemodynamically stable, unruptured candidates.",
+        "explanation": "Hemodynamic instability or suspected tubal rupture requires immediate surgical intervention (laparoscopy/laparotomy), making instability an absolute contraindication to methotrexate (alongside active immunodeficiency, significant hepatic/renal/hematologic disease, active peptic ulcer disease, or breastfeeding)."
+      },
+      {
+        "pts": 40,
+        "q": "In a Rh-negative woman presenting with first-trimester threatened or incomplete miscarriage or ectopic pregnancy, what is the purpose of administering anti-D immunoglobulin?",
+        "options": [
+          "A) To prevent maternal Rh(D) alloimmunization that could cause hemolytic disease of the fetus and newborn in future pregnancies",
+          "B) To stop active uterine bleeding directly by contracting myometrial fibers",
+          "C) To dissolve retained products of conception medically",
+          "D) To treat maternal iron-deficiency anemia"
+        ],
+        "correct": 0,
+        "hint": "Fetomaternal hemorrhage can occur even in early pregnancy losses or procedures.",
+        "explanation": "Anti-D immunoglobulin neutralizes fetal Rh(D)-positive red blood cells that enter the maternal circulation during miscarriage, ectopic pregnancy, or uterine evacuation, preventing maternal anti-D antibody formation."
+      },
+      {
+        "pts": 50,
+        "q": "A 27-year-old woman with 6 weeks of amenorrhea presents with sharp right lower quadrant pain, shoulder-tip pain, dizziness, HR 124 bpm, BP 80/46 mmHg, and generalized abdominal tenderness with rebound. Urine pregnancy test is positive, and transvaginal ultrasound shows an empty uterus with moderate-to-large echogenic free fluid in the hepatorenal recess and pouch of Douglas. What is the immediate priority management?",
+        "options": [
+          "A) Immediate resuscitation with IV crystalloids/blood products and emergency surgery (laparoscopy or laparotomy) for ruptured ectopic pregnancy—without waiting for serial quantitative beta-hCG",
+          "B) Administer intramuscular methotrexate and discharge home with return precautions",
+          "C) Order serial 48-hour quantitative serum beta-hCG levels before making any intervention decision",
+          "D) Perform an outpatient diagnostic hysteroscopy"
+        ],
+        "correct": 0,
+        "hint": "Shoulder-tip pain (diaphragmatic irritation from hemoperitoneum) + shock + free fluid = surgical emergency.",
+        "explanation": "Hemodynamic instability with peritoneal signs and ultrasound evidence of hemoperitoneum indicates a ruptured ectopic pregnancy. Immediate resuscitation and urgent surgical exploration (salpingectomy or salpingostomy) are mandatory; delaying for serial beta-hCG levels risks fatal hemorrhage."
+      }
+    ]
+  },
+  {
+    "name": "Antepartum Hemorrhage",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "How is antepartum hemorrhage (APH) clinically defined?",
+        "options": [
+          "A) Genital tract bleeding from 24 weeks of gestation until the birth of the baby",
+          "B) Vaginal bleeding occurring exclusively after delivery of the placenta",
+          "C) Any spotting occurring during the first 6 weeks of pregnancy",
+          "D) Bleeding occurring only during the second stage of labor"
+        ],
+        "correct": 0,
+        "hint": "Starts at the threshold of fetal viability (traditionally 24 weeks) and ends before delivery.",
+        "explanation": "Antepartum hemorrhage is commonly defined as bleeding from or into the genital tract from 24+0 weeks of gestation prior to the birth of the baby."
+      },
+      {
+        "pts": 20,
+        "q": "Which classic clinical feature helps differentiate placenta previa from placental abruption?",
+        "options": [
+          "A) Placenta previa classically causes painless bright-red bleeding with a soft, non-tender uterus, whereas abruption typically causes painful bleeding with a tender/hypertonic uterus",
+          "B) Placenta previa always causes severe abdominal rigidity and fetal death, whereas abruption is always painless",
+          "C) Placenta previa occurs only in women with prior cesarean section, whereas abruption never occurs in hypertension",
+          "D) Neither condition is associated with antepartum bleeding"
+        ],
+        "correct": 0,
+        "hint": "Pain and uterine hypertonicity point toward placental separation (abruption).",
+        "explanation": "Placenta previa classically presents with painless, unprovoked bright-red vaginal bleeding and a relaxed uterus (often with malpresentation/high presenting part), whereas placental abruption typically presents with painful bleeding, uterine tenderness/contractions, and potential fetal distress."
+      },
+      {
+        "pts": 30,
+        "q": "A pregnant patient at 34 weeks gestation presents with painless bright-red vaginal bleeding. Which examination MUST be avoided prior to placental localization by ultrasound?",
+        "options": [
+          "A) Digital vaginal examination (which can provoke severe, life-threatening hemorrhage from an undiagnosed placenta previa)",
+          "B) External abdominal palpation of fundal height",
+          "C) Maternal blood pressure and pulse measurement",
+          "D) Cardiotocography (CTG) / fetal heart rate auscultation"
+        ],
+        "correct": 0,
+        "hint": "Inserting a finger into the cervix can tear an overlying placental edge or vasa previa.",
+        "explanation": "Digital vaginal examination is contraindicated in antepartum hemorrhage until placenta previa (and vasa previa) has been excluded by ultrasound, as palpating or disrupting placental tissue can trigger massive hemorrhage."
+      },
+      {
+        "pts": 40,
+        "q": "What is vasa previa, and why is it immediately dangerous during rupture of membranes?",
+        "options": [
+          "A) Fetal blood vessels running within the fetal membranes over or near the internal cervical os without placental/cord protection, risking rapid exsanguination when membranes rupture",
+          "B) Maternal varicose veins of the vulva causing minor external bleeding",
+          "C) Adhesion of chorionic villi deep into the uterine myometrium",
+          "D) Premature separation of a normally located placenta"
+        ],
+        "correct": 0,
+        "hint": "Bleeding comes from the fetus (fetal blood volume is small), causing rapid fetal bradycardia/exsanguination.",
+        "explanation": "In vasa previa, unprotected fetal vessels traverse the membranes across or within 2 cm of the internal os; membrane rupture can tear these fetal vessels, causing rapid fetal hemorrhage and death."
+      },
+      {
+        "pts": 50,
+        "q": "A 36-year-old G4P3 at 35 weeks with two prior cesarean deliveries presents with a concealed and revealed placental abruption, severe constant abdominal pain, a hard 'woody' tender uterus, absent fetal heart tones, oozing from IV venipuncture sites, fibrinogen 0.7 g/L, INR 2.1, and platelets 62 x 10^9/L. What coagulopathy is occurring, and what is essential during resuscitation and delivery?",
+        "options": [
+          "A) Disseminated intravascular coagulation (DIC) with severe hypofibrinogenemia; resuscitate with blood products (including fibrinogen replacement/cryoprecipitate or FFP and PRBCs) and expedite delivery while monitoring for postpartum hemorrhage",
+          "B) Isolated mild iron deficiency; give oral ferrous sulfate and await spontaneous labor at 41 weeks",
+          "C) Primary thrombocythemia; administer aspirin and delay delivery",
+          "D) Heparin-induced thrombocytopenia; start unfractionated heparin"
+        ],
+        "correct": 0,
+        "hint": "Release of tissue thromboplastin from retroplacental clot + oozing + low fibrinogen (<1 g/L) signals obstetric DIC.",
+        "explanation": "Large placental abruption can trigger consumption coagulopathy / DIC, marked by plummeting fibrinogen, prolonged clotting times, and clinical bleeding. Management requires aggressive resuscitation with packed RBCs and hemostatic replacement (fibrinogen concentrate/cryoprecipitate or FFP) alongside prompt delivery and active PPH prevention."
+      }
+    ]
+  },
+  {
+    "name": "Labor Induction, Dystocia & Fetal Monitoring",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which clinical parameters are combined to calculate the Bishop score before cervical ripening and induction of labor?",
+        "options": [
+          "A) Cervical dilation, effacement, consistency, position, and station of the presenting part",
+          "B) Maternal blood pressure, heart rate, temperature, respiratory rate, and oxygen saturation",
+          "C) Fetal biparietal diameter, head circumference, abdominal circumference, femur length, and AFI",
+          "D) Apgar scores at 1, 5, 10, 15, and 20 minutes"
+        ],
+        "correct": 0,
+        "hint": "Four cervical features plus one station measurement (total score 0–13).",
+        "explanation": "The Bishop score assesses cervical dilation, effacement (length), consistency, and position together with fetal station; a low score (<6) indicates an unfavorable cervix that typically benefits from cervical ripening before oxytocin."
+      },
+      {
+        "pts": 20,
+        "q": "Which definition applies to the active first stage of labor in modern obstetric practice?",
+        "options": [
+          "A) Regular painful uterine contractions with progressive cervical change starting from approximately 5–6 cm dilation until full dilation (10 cm)",
+          "B) Rupture of membranes without contractions at 2 cm dilation",
+          "C) Full cervical dilation (10 cm) until birth of the baby",
+          "D) Delivery of the baby until expulsion of the placenta"
+        ],
+        "correct": 0,
+        "hint": "Modern labor curves recognize that rapid cervical dilation typically accelerates around 5–6 cm.",
+        "explanation": "The active first stage of labor is characterized by regular, strong uterine contractions and progressive cervical dilation beginning around 5–6 cm up to full dilation (10 cm)."
+      },
+      {
+        "pts": 30,
+        "q": "On fetal cardiotocography (CTG), what do repetitive late decelerations typically indicate?",
+        "options": [
+          "A) Uteroplacental insufficiency / fetal hypoxia (decelerations begin at or after the peak of a contraction and recover after the contraction ends)",
+          "B) Head compression alone with normal placental oxygenation",
+          "C) Normal reassuring fetal acid-base status",
+          "D) Fetal sleep cycle without any hypoxia"
+        ],
+        "correct": 0,
+        "hint": "Late onset relative to the contraction wave + delayed recovery points to impaired uteroplacental gas exchange.",
+        "explanation": "Late decelerations have a gradual onset, nadir after the contraction peak, and delayed return to baseline, reflecting uteroplacental insufficiency and potential fetal hypoxemia/acidemia."
+      },
+      {
+        "pts": 40,
+        "q": "During vaginal delivery, the fetal head delivers ('turtling' against the perineum) but restitution and descent of the shoulders fail to occur. Which emergency is present, and what is the recommended initial maneuver?",
+        "options": [
+          "A) Shoulder dystocia; call for help and perform McRoberts maneuver (hyperflexion and abduction of maternal hips) with suprapubic pressure",
+          "B) Umbilical cord prolapse; perform immediate vacuum extraction with fundal pressure",
+          "C) Breech presentation; apply gentle downward traction on the fetal head",
+          "D) Uterine inversion; administer high-dose intravenous oxytocin before replacing the uterus"
+        ],
+        "correct": 0,
+        "hint": "Avoid fundal pressure or excessive downward head traction; widen the pelvic inlet and direct the anterior shoulder under the symphysis.",
+        "explanation": "Shoulder dystocia occurs when the anterior shoulder impacts against the maternal pubic symphysis (or posterior shoulder against the sacral promontory). Initial steps include calling for assistance, McRoberts positioning, and suprapubic pressure—avoiding fundal pressure, which worsens impaction and risks uterine rupture."
+      },
+      {
+        "pts": 50,
+        "q": "A G3P2 at 39+4 weeks undergoing oxytocin augmentation develops frequent contractions (7 in 10 minutes), followed by sudden sharp constant abdominal pain, recession of the presenting part on vaginal exam, maternal tachycardia (HR 126 bpm), BP 84/52 mmHg, and prolonged fetal bradycardia at 65 bpm. What is the most likely diagnosis, and what is the immediate action?",
+        "options": [
+          "A) Uterine rupture; stop oxytocin immediately, resuscitate the mother, and perform immediate emergency cesarean/laparotomy delivery",
+          "B) Normal second-stage pushing; continue oxytocin and observe for 2 hours",
+          "C) Mild Braxton Hicks contractions; give oral terbutaline and send home",
+          "D) Physiological fetal sleep; perform scalp stimulation and continue oxytocin"
+        ],
+        "correct": 0,
+        "hint": "Tachysystole + sudden tearing/sharp pain + loss of station + maternal shock + sudden fetal bradycardia = uterine rupture.",
+        "explanation": "Sudden abdominal pain, loss of station of the presenting part, hemodynamic instability, and abrupt severe fetal bradycardia in a patient receiving uterotonics (especially with prior uterine surgery or multiparity) strongly indicate uterine rupture, requiring immediate cessation of oxytocin, resuscitation, and emergency operative delivery."
+      }
+    ]
+  },
+  {
+    "name": "Postpartum Hemorrhage (PPH) & Puerperium",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the traditional definition of primary postpartum hemorrhage (PPH)?",
+        "options": [
+          "A) Blood loss of 500 mL or more from the genital tract within 24 hours of birth (or >= 1000 mL in some major PPH classifications)",
+          "B) Blood loss occurring between 6 weeks and 6 months postpartum",
+          "C) Normal lochia rubra lasting 3 days after vaginal delivery",
+          "D) Blood loss of less than 200 mL after cesarean section"
+        ],
+        "correct": 0,
+        "hint": "Occurs within the first 24 hours after delivery.",
+        "explanation": "Primary PPH traditionally refers to blood loss >= 500 mL within 24 hours after birth, while major PPH is commonly defined as blood loss > 1000 mL (moderate 1000–2000 mL, severe > 2000 mL) or bleeding causing hemodynamic instability."
+      },
+      {
+        "pts": 20,
+        "q": "What are the 'Four Ts' used to systematically identify the causes of postpartum hemorrhage?",
+        "options": [
+          "A) Tone, Trauma, Tissue, Thrombin",
+          "B) Tension, Torsion, Thrombus, Toxemia",
+          "C) Temperature, Tachypnea, Tachycardia, Tonus",
+          "D) Thyroid, Thymus, Tonsils, Testis"
+        ],
+        "correct": 0,
+        "hint": "Uterine atony is the most common cause under the first 'T'.",
+        "explanation": "The 'Four Ts' of PPH are Tone (uterine atony, ~70–80% of cases), Trauma (lacerations, hematoma, uterine rupture/inversion), Tissue (retained placenta or clots), and Thrombin (coagulopathy)."
+      },
+      {
+        "pts": 30,
+        "q": "Which uterotonic medication is generally recommended as the first-line agent for both preventing and treating uterine atony after childbirth?",
+        "options": [
+          "A) Oxytocin",
+          "B) Magnesium sulfate",
+          "C) Terbutaline",
+          "D) Nifedipine"
+        ],
+        "correct": 0,
+        "hint": "Stimulates rhythmic uterine contractions via oxytocin receptors in the myometrium.",
+        "explanation": "Oxytocin is the first-line uterotonic for PPH prevention and initial treatment of uterine atony (with adjuncts such as ergometrine, misoprostol, or carboprost used when needed, subject to contraindications like hypertension or asthma)."
+      },
+      {
+        "pts": 40,
+        "q": "A woman on day 8 postpartum presents with foul-smelling lochia, fever (38.8°C), lower abdominal pain, and a tender, subinvoluted uterus. Which diagnosis is most likely, and which antibiotic regimen is typically indicated?",
+        "options": [
+          "A) Postpartum endometritis; treat with broad-spectrum intravenous antibiotics covering polymicrobial aerobes and anaerobes (e.g., clindamycin plus gentamicin, or ampicillin-sulbactam)",
+          "B) Mastitis; treat with warm compresses alone and stop breastfeeding",
+          "C) Normal puerperal involution; reassure and give no antibiotics",
+          "D) Pudendal neuralgia; prescribe gabapentin"
+        ],
+        "correct": 0,
+        "hint": "Polymicrobial ascending genital tract infection involving anaerobes, streptococci, and Gram-negative bacilli.",
+        "explanation": "Postpartum endometritis typically presents in the first postpartum week with fever, uterine tenderness, and foul-smelling lochia, requiring broad-spectrum parenteral antibiotics targeting anaerobes and enteric/genital flora."
+      },
+      {
+        "pts": 50,
+        "q": "Forty minutes after a difficult manual removal of a partially adherent placenta, a patient develops sudden severe lower abdominal pain, brisk vaginal bleeding, shock (BP 76/44 mmHg), a smooth firm mass protruding into the vagina, and absence of the uterine fundus in its normal abdominal position. What emergency is occurring, and what is the correct sequence of management?",
+        "options": [
+          "A) Acute uterine inversion; stop uterotonics immediately, resuscitate aggressively, and attempt immediate gentle manual replacement (Johnson maneuver) before the cervical ring constricts—with surgical/hydrostatic reduction if unsuccessful",
+          "B) Normal uterine contraction; administer high-dose IV oxytocin and ergometrine immediately to contract the inverted mass",
+          "C) Pudendal nerve block; perform episiotomy and discharge",
+          "D) Expectant observation for 12 hours without IV access"
+        ],
+        "correct": 0,
+        "hint": "Do NOT pull on a still-attached placenta or give uterotonics before replacing an inverted uterus, as contraction traps it.",
+        "explanation": "Acute uterine inversion is a life-threatening obstetric emergency presenting with severe pain, shock, a vaginal mass, and a non-palpable abdominal fundus. Uterotonics must be stopped/avoided initially while replacing the uterus promptly (and removing a still-adherent placenta only after replacement or during surgery if it cannot be replaced, to avoid massive hemorrhage)."
+      }
+    ]
+  },
+  {
+    "name": "Infections in Pregnancy & Vertical Transmission",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which bacterial infection is screened for in late pregnancy (typically 36–37+6 weeks) because intrapartum transmission can cause early-onset neonatal sepsis, pneumonia, or meningitis?",
+        "options": [
+          "A) Group B Streptococcus (GBS / Streptococcus agalactiae)",
+          "B) Treponema pallidum alone",
+          "C) Plasmodium falciparum alone",
+          "D) Toxoplasma gondii alone"
+        ],
+        "correct": 0,
+        "hint": "Intrapartum IV penicillin is given during labor to colonized women or those with risk factors.",
+        "explanation": "Late-pregnancy rectovaginal Group B Streptococcus (GBS) screening or risk-based protocol identifies women who need intrapartum antibiotic prophylaxis (typically IV penicillin or ampicillin) to prevent early-onset neonatal GBS disease."
+      },
+      {
+        "pts": 20,
+        "q": "In a pregnant woman with confirmed syphilis, which medication class is the only proven effective therapy to treat the fetus and prevent congenital syphilis?",
+        "options": [
+          "A) Parenteral penicillin G (benzathine penicillin G regimens according to stage)",
+          "B) Oral doxycycline",
+          "C) Oral ciprofloxacin",
+          "D) Oral azithromycin as routine first-line"
+        ],
+        "correct": 0,
+        "hint": "Tetracyclines are contraindicated in pregnancy, and penicillin crosses the placenta to treat fetal infection.",
+        "explanation": "Parenteral penicillin G is the treatment of choice in pregnancy for preventing vertical transmission and treating congenital syphilis (with desensitization performed if a true penicillin allergy exists)."
+      },
+      {
+        "pts": 30,
+        "q": "Which intervention is essential at birth for an infant born to a mother who is Hepatitis B surface antigen (HBsAg)-positive?",
+        "options": [
+          "A) Hepatitis B immune globulin (HBIG) plus the first dose of recombinant Hepatitis B vaccine within 12 hours of birth at different injection sites",
+          "B) Delaying all vaccines until 6 months of age",
+          "C) Administering oral acyclovir for 6 weeks",
+          "D) Prohibiting breastfeeding permanently"
+        ],
+        "correct": 0,
+        "hint": "Passive-active immunoprophylaxis given promptly within 12 hours prevents ~90% of vertical HBV transmission.",
+        "explanation": "Administering both HBIG and the first dose of Hepatitis B vaccine within 12 hours of birth (at separate sites) provides immediate passive antibodies and active immunity, preventing vertical transmission in ~85–95% of exposed newborns."
+      },
+      {
+        "pts": 40,
+        "q": "Which triad of congenital abnormalities is classically associated with congenital toxoplasmosis when primary maternal infection occurs during pregnancy?",
+        "options": [
+          "A) Chorioretinitis, hydrocephalus, and intracranial calcifications",
+          "B) Hutchinson teeth, saddle nose, and saber shins",
+          "C) Phocomelia, cleft palate, and renal agenesis",
+          "D) Micrognathia, glossoptosis, and cleft palate"
+        ],
+        "correct": 0,
+        "hint": "Think CNS calcifications + hydrocephalus + chorioretinitis.",
+        "explanation": "Congenital toxoplasmosis classically presents with chorioretinitis, hydrocephalus, and diffuse intracranial calcifications (though many infected infants are asymptomatic at birth and develop late ocular or neurodevelopmental sequelae)."
+      },
+      {
+        "pts": 50,
+        "q": "A pregnant woman at 26 weeks gestation presents with fever (38.7°C), maternal tachycardia (HR 118 bpm), fetal tachycardia (baseline 176 bpm with minimal variability), purulent/malodorous cervical discharge, and uterine fundal tenderness. What is the diagnosis, and what is the cornerstone of management?",
+        "options": [
+          "A) Intraamniotic infection (chorioamnionitis); initiate prompt broad-spectrum intravenous antibiotics and expedite delivery regardless of gestational age",
+          "B) Asymptomatic bacteriuria; prescribe a single dose of oral nitrofurantoin and delay delivery to 40 weeks",
+          "C) Round ligament pain; give oral acetaminophen and perform expectant monitoring for 2 weeks",
+          "D) Physiological labor; withhold antibiotics until after delivery"
+        ],
+        "correct": 0,
+        "hint": "Maternal fever + maternal/fetal tachycardia + uterine tenderness/purulent discharge = chorioamnionitis, which requires delivery rather than prolongation.",
+        "explanation": "Chorioamnionitis (intraamniotic infection) presents with maternal fever and features such as maternal or fetal tachycardia, uterine tenderness, or purulent fluid. Management requires prompt broad-spectrum IV antibiotics and delivery (expedited rather than prolonged) to prevent maternal sepsis and neonatal infection."
+      }
+    ]
+  },
+  {
+    "name": "Menstrual Disorders, PCOS & Endometriosis",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Before evaluating abnormal uterine bleeding or amenorrhea in a reproductive-aged woman, which test must ALWAYS be performed first?",
+        "options": [
+          "A) A urine or serum pregnancy test (beta-hCG)",
+          "B) Diagnostic hysteroscopy",
+          "C) Pelvic MRI with contrast",
+          "D) Laparoscopic ovarian drilling"
+        ],
+        "correct": 0,
+        "hint": "Pregnancy-related bleeding or missed periods must be ruled out before any other workup.",
+        "explanation": "A pregnancy test is mandatory first in any woman of reproductive age presenting with abnormal uterine bleeding or secondary amenorrhea."
+      },
+      {
+        "pts": 20,
+        "q": "Under the Rotterdam criteria for diagnosing polycystic ovary syndrome (PCOS), at least how many of the three key features are required (after excluding mimic disorders)?",
+        "options": [
+          "A) At least 2 of 3: ovulatory dysfunction (oligo/amenorrhea), clinical/biochemical hyperandrogenism, and polycystic ovarian morphology on ultrasound",
+          "B) All 3 features plus elevated serum prolactin",
+          "C) Endometrial biopsy hyperplasia plus elevated FSH > 40 IU/L",
+          "D) Pelvic ultrasound findings alone without clinical or endocrine assessment"
+        ],
+        "correct": 0,
+        "hint": "Two out of three Rotterdam criteria after excluding thyroid disease, hyperprolactinemia, and non-classic CAH.",
+        "explanation": "PCOS is diagnosed when at least two of three Rotterdam features are present—oligo-ovulation/anovulation, clinical or biochemical hyperandrogenism, and polycystic ovaries on ultrasound—after ruling out other causes."
+      },
+      {
+        "pts": 30,
+        "q": "Which classic clinical triad is characteristic of endometriosis?",
+        "options": [
+          "A) Dysmenorrhea, deep dyspareunia, and chronic pelvic pain (often accompanied by subfertility)",
+          "B) Galactorrhea, hot flashes, and vaginal dryness",
+          "C) Painless postmenopausal bleeding, obesity, and hypertension",
+          "D) Acute right iliac fossa guarding, rebound tenderness, and fever"
+        ],
+        "correct": 0,
+        "hint": "Ectopic endometrial-like glands and stroma outside the uterine cavity cause cyclic and chronic pelvic pain.",
+        "explanation": "Endometriosis classically causes secondary/progressive dysmenorrhea, deep dyspareunia, and chronic pelvic pain, and is strongly associated with subfertility and ovarian endometriomas ('chocolate cysts')."
+      },
+      {
+        "pts": 40,
+        "q": "In a woman with chronic anovulation (such as PCOS) who has unopposed estrogen stimulation of the endometrium, why is cyclic or continuous progestin (or combined hormonal contraception) important even if she does not desire immediate pregnancy?",
+        "options": [
+          "A) To induce regular secretory transformation/shedding of the endometrium and protect against endometrial hyperplasia and endometrial cancer",
+          "B) To shrink pre-existing uterine fibroids to zero within 2 weeks",
+          "C) To permanently cure type 1 diabetes mellitus",
+          "D) To close the fallopian tubes"
+        ],
+        "correct": 0,
+        "hint": "Unopposed estrogen promotes endometrial proliferation; progesterone opposes it.",
+        "explanation": "Chronic anovulation exposes the endometrium to unopposed estrogen, increasing the risk of endometrial hyperplasia and endometrial adenocarcinoma; progestin therapy opposes estrogenic stimulation and induces regular withdrawal bleeding."
+      },
+      {
+        "pts": 50,
+        "q": "A 26-year-old woman with a known 6 cm right ovarian endometrioma presents with sudden-onset severe right lower quadrant pain, nausea, and vomiting. Transvaginal ultrasound with Doppler shows an enlarged right ovary with peripheral follicles, stromal edema, and absent or markedly diminished internal ovarian venous/arterial flow alongside a 'whirlpool' twisted pedicle. What is the diagnosis, and what is the surgical priority?",
+        "options": [
+          "A) Ovarian torsion; perform urgent diagnostic laparoscopy to detorse and preserve the ovary (oophorectomy is reserved only for clearly non-viable/necrotic tissue)",
+          "B) Physiological ovulation pain; prescribe ibuprofen and schedule routine follow-up in 3 months",
+          "C) Pelvic inflammatory disease alone; treat exclusively with oral doxycycline for 14 days without surgery",
+          "D) Threatened abortion; perform immediate dilatation and curettage"
+        ],
+        "correct": 0,
+        "hint": "Sudden severe unilateral pelvic pain + nausea/vomiting + adnexal mass + Doppler flow loss = ovarian torsion; prioritize ovarian salvage via detorsion.",
+        "explanation": "Ovarian torsion occurs when the ovary twists on its infundibulopelvic and ovarian ligaments, compromising venous and then arterial blood supply. Urgent laparoscopy is required to detorse the ovary and preserve ovarian reserve and fertility, even when the ovary appears dark/congested initially, as many recover viability after detorsion."
+      }
+    ]
+  },
+  {
+    "name": "Contraception & Family Planning",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which category of contraceptives includes copper intrauterine devices (Cu-IUD) and levonorgestrel-releasing intrauterine systems (LNG-IUD)?",
+        "options": [
+          "A) Long-acting reversible contraceptives (LARC)",
+          "B) Barrier methods only",
+          "C) Permanent surgical sterilization only",
+          "D) Emergency oral pills only"
+        ],
+        "correct": 0,
+        "hint": "High-efficacy methods requiring action once every several years that are rapidly reversible upon removal.",
+        "explanation": "Intrauterine devices (copper and levonorgestrel) and subdermal progestin implants are long-acting reversible contraceptives (LARCs) with very low typical-use failure rates (<1%)."
+      },
+      {
+        "pts": 20,
+        "q": "Which medical condition is a classic contraindication (MEC Category 4 — unacceptable health risk) to combined estrogen-progestin contraceptives?",
+        "options": [
+          "A) Migraine with aura (or history of venous thromboembolism / ischemic heart disease / uncontrolled severe hypertension)",
+          "B) Mild primary dysmenorrhea in a healthy 22-year-old non-smoker",
+          "C) Iron-deficiency anemia without cardiovascular disease",
+          "D) Irregular cycles in a healthy non-smoking adolescent"
+        ],
+        "correct": 0,
+        "hint": "Estrogen increases prothrombotic clotting factors and stroke risk in migraine with aura.",
+        "explanation": "Combined estrogen-progestin contraceptives are contraindicated (WHO MEC Category 4) in women with migraine with aura due to elevated ischemic stroke risk, as well as in those with deep vein thrombosis/pulmonary embolism, complicated valvular/ischemic heart disease, or BP >= 160/100 mmHg."
+      },
+      {
+        "pts": 30,
+        "q": "How does a copper-bearing intrauterine device (Cu-IUD) primarily exert its contraceptive effect?",
+        "options": [
+          "A) By inducing a sterile foreign-body inflammatory reaction in the endometrium and releasing copper ions that are toxic to sperm and ova, impairing fertilization",
+          "B) By suppressing ovulation via pituitary LH/FSH inhibition in all cycles",
+          "C) By blocking androgen receptors in the hypothalamus",
+          "D) By mechanically ligating the fallopian tubes"
+        ],
+        "correct": 0,
+        "hint": "Non-hormonal spermicidal/anti-fertilization action in the uterine cavity.",
+        "explanation": "Copper ions create an environment hostile to sperm motility and viability and alter endometrial/tubal fluid to prevent fertilization; most women continue to ovulate normally."
+      },
+      {
+        "pts": 40,
+        "q": "A 23-year-old woman requests emergency contraception 48 hours after unprotected intercourse. Which method is the most effective overall for emergency contraception?",
+        "options": [
+          "A) Copper intrauterine device (Cu-IUD) inserted within up to 5 days (120 hours) of unprotected intercourse",
+          "B) Daily standard low-dose combined oral contraceptive pill taken once only",
+          "C) Post-coital vaginal douching with water",
+          "D) Routine weekly tetanus toxoid injection"
+        ],
+        "correct": 0,
+        "hint": "Offers >99% effectiveness and provides ongoing long-term contraception afterward.",
+        "explanation": "A copper IUD is the most effective form of emergency contraception (reducing pregnancy risk by >99% when placed within 5 days of unprotected sex) and can remain in place for ongoing contraception, alongside oral options like ulipristal acetate or levonorgestrel."
+      },
+      {
+        "pts": 50,
+        "q": "A 35-year-old woman with systemic lupus erythematosus (SLE) who tests positive for antiphospholipid antibodies (lupus anticoagulant, anticardiolipin, and anti-beta2-glycoprotein I) requests contraception. Why must combined hormonal contraceptives (containing estrogen) be avoided, and which options are appropriate?",
+        "options": [
+          "A) Estrogen is contraindicated (MEC Category 4) due to high thrombotic risk in antiphospholipid antibody-positive SLE; progestin-only methods (such as LNG-IUD or implant) or copper IUD are preferred after individualized risk assessment",
+          "B) High-dose estrogen is first-line to prevent lupus flares and thrombosis",
+          "C) Combined oral pills are mandatory for all SLE patients regardless of antiphospholipid status",
+          "D) No contraception is needed because SLE causes absolute infertility"
+        ],
+        "correct": 0,
+        "hint": "Antiphospholipid syndrome carries high arterial and venous thrombosis risk that is compounded by exogenous estrogen.",
+        "explanation": "In SLE patients with positive (or unknown) antiphospholipid antibodies, estrogen-containing contraceptives carry an unacceptable risk of thromboembolism (MEC Category 4). Progestin-only methods (especially LNG-IUD or implant) or a copper IUD are generally preferred following clinical evaluation."
+      }
+    ]
+  },
+  {
+    "name": "Gynecologic Oncology & Cervical Screening",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which infectious agent is the necessary underlying cause of nearly all cases of cervical cancer and high-grade cervical intraepithelial neoplasia (CIN 2/3)?",
+        "options": [
+          "A) Persistent infection with high-risk Human Papillomavirus (hrHPV), especially types 16 and 18",
+          "B) Trichomonas vaginalis",
+          "C) Candida albicans",
+          "D) Hepatitis A virus"
+        ],
+        "correct": 0,
+        "hint": "Oncogenic E6 and E7 viral proteins inactivate p53 and retinoblastoma (Rb) tumor suppressors.",
+        "explanation": "Persistent infection with high-risk HPV genotypes (most notably HPV 16 and 18) drives cervical carcinogenesis via viral E6 and E7 oncoproteins disrupting p53 and pRb cell-cycle regulation."
+      },
+      {
+        "pts": 20,
+        "q": "Which symptom in a postmenopausal woman (who is not on sequential hormone therapy) warrants prompt evaluation to rule out endometrial hyperplasia or endometrial carcinoma?",
+        "options": [
+          "A) Any postmenopausal vaginal bleeding",
+          "B) Mild physiological age-related vaginal dryness alone",
+          "C) Gradual graying of hair",
+          "D) Occasional mild constipation"
+        ],
+        "correct": 0,
+        "hint": "Bleeding after menopause is an early warning sign requiring endometrial assessment (transvaginal ultrasound and/or endometrial sampling).",
+        "explanation": "Postmenopausal bleeding is the classic presenting symptom of endometrial cancer (occurring early in ~90% of cases) and requires prompt evaluation with pelvic assessment, transvaginal ultrasound (endometrial thickness), and/or endometrial biopsy."
+      },
+      {
+        "pts": 30,
+        "q": "Which serum tumor marker is most commonly monitored alongside pelvic imaging in evaluating epithelial ovarian masses in postmenopausal women?",
+        "options": [
+          "A) CA-125",
+          "B) Human chorionic gonadotropin (hCG) alone",
+          "C) Thyroglobulin",
+          "D) Amylase"
+        ],
+        "correct": 0,
+        "hint": "Elevated in many non-mucinous epithelial ovarian cancers, though also elevated in benign conditions like endometriosis or fibroids.",
+        "explanation": "CA-125 is a glycoprotein tumor marker commonly used alongside transvaginal ultrasound and risk-of-malignancy assessment in evaluating adnexal masses and monitoring epithelial ovarian cancer response/recurrence."
+      },
+      {
+        "pts": 40,
+        "q": "What is the hallmark clinical and ultrasound finding of a complete hydatidiform mole (molar pregnancy)?",
+        "options": [
+          "A) Markedly elevated serum beta-hCG out of proportion to dates with a 'snowstorm' / vesicular appearance on ultrasound and absence of embryonic/fetal tissues",
+          "B) A normal singleton fetus with a single umbilical artery and low beta-hCG",
+          "C) A calcified uterine leiomyoma with normal beta-hCG",
+          "D) A simple follicular ovarian cyst with beta-hCG < 5 mIU/mL"
+        ],
+        "correct": 0,
+        "hint": "Hydropic villi and trophoblastic proliferation produce very high hCG without a fetus in a complete mole.",
+        "explanation": "A complete hydatidiform mole results from androgenetic diploid conception (typically empty ovum fertilized by one sperm that duplicates or two sperm), producing markedly elevated hCG, hydropic 'snowstorm' villi on ultrasound, and no fetal parts."
+      },
+      {
+        "pts": 50,
+        "q": "Two weeks after suction evacuation of a complete hydatidiform mole, a 31-year-old woman's serum beta-hCG plateaus across four weekly measurements (days 1, 7, 14, 21) and then rises on day 28, accompanied by irregular vaginal bleeding and chest radiograph showing small cannonball pulmonary nodules. What is the diagnosis, and what is the primary treatment approach?",
+        "options": [
+          "A) Post-molar gestational trophoblastic neoplasia (GTN) with pulmonary metastasis; perform FIGO risk scoring and initiate chemotherapy (single-agent methotrexate/actinomycin D for low-risk disease, or multi-agent EMA-CO for high-risk disease)",
+          "B) Normal molar regression; give no treatment and discharge from follow-up",
+          "C) Acute appendicitis; perform appendectomy without checking hCG",
+          "D) Molar pregnancy recurrence treated with oral progesterone alone"
+        ],
+        "correct": 0,
+        "hint": "Plateaued or rising post-molar hCG defines gestational trophoblastic neoplasia (GTN); treatment depends on FIGO prognostic score.",
+        "explanation": "A plateau (<=10% change across >=4 values over 3 weeks) or rise (>=10% increase across >=3 values over 2 weeks) in hCG after molar evacuation—or metastasis—diagnoses gestational trophoblastic neoplasia (GTN). Staging and FIGO prognostic scoring guide chemotherapy, which achieves very high cure rates even in metastatic disease."
+      }
+    ]
+  }
+]
