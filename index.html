@@ -1354,13 +1354,39 @@
         updateTimerLabel();
         if (secondsLeft <= 0) {
           stopTimer();
-          if (state.activeLock && !state.activeLock.answerSubmitted && isActivePlayerOnThisDevice()) {
+          if (state.activeLock && !state.activeLock.answerSubmitted) {
             handleTurnTimeout();
+          } else if (state.activeLock && state.activeLock.answerSubmitted) {
+            syncQuestionModalFromState();
           }
         }
       };
       tick();
       timerInterval = setInterval(tick, 1000);
+    }
+
+    function forceAdvanceStuckTurn() {
+      stopTimer();
+      els.questionModal.classList.remove("open");
+
+      if (state.activeLock) {
+        state.activeLock = null;
+        if (state.mode === "multi") {
+          const count = getActiveRoster().length;
+          state.roundPlays = (Number(state.roundPlays) || 0) + 1;
+          if (state.roundPlays >= count) {
+            state.completedTurns += 1;
+            state.roundPlays = 0;
+          }
+          state.currentTurn = (state.currentTurn % count) + 1;
+        } else {
+          state.completedTurns += 1;
+        }
+      }
+
+      checkTurnLimitAndWinner();
+      updateUI();
+      syncOut();
     }
 
     function syncQuestionModalFromState() {
@@ -1384,6 +1410,8 @@
       const canControl = isActivePlayerOnThisDevice();
       const turnPlayer = getPlayerByIndex(player);
       const turnPlayerName = turnPlayer ? turnPlayer.name : `Player ${player}`;
+      const elapsedSec = Math.floor((Date.now() - (openedAt || Date.now())) / 1000);
+      const timeExpired = elapsedSec >= QUESTION_DURATION_SECONDS || Boolean(answerSubmitted);
 
       els.qModalTitle.textContent = `${topic.name} • ${item.pts} Marks`;
       els.qModalTurnInfo.textContent = canControl
@@ -1398,7 +1426,7 @@
         btn.className = "mcq-option-btn";
         btn.textContent = optText;
 
-        if (!answerSubmitted) {
+        if (!answerSubmitted && !timeExpired) {
           btn.disabled = !canControl;
           if (selectedOption === idx) {
             btn.classList.add("selected");
@@ -1423,17 +1451,18 @@
 
       els.qHintBox.textContent = `Clinical Hint: ${item.hint}`;
       els.qHintBox.classList.toggle("visible", Boolean(hintShown));
-      els.hintBtn.disabled = !canControl || Boolean(hintShown);
+      els.hintBtn.disabled = !canControl || Boolean(hintShown) || timeExpired;
 
-      if (answerSubmitted) {
+      if (answerSubmitted || timeExpired) {
         const isCorrect = chosenOption === item.correct;
-        const prefix = chosenOption === null
+        const prefix = chosenOption === null || chosenOption === undefined
           ? "Time expired! "
           : (isCorrect ? `Correct (+${item.pts} pts)! ` : "Incorrect (0 pts). ");
         els.qAnswerBox.textContent = `${prefix}Correct Answer: ${item.options[item.correct]} — ${item.explanation}`;
         els.qAnswerBox.classList.add("visible");
         els.submitMcqBtn.style.display = "none";
-        els.closeQBtn.style.display = canControl ? "inline-block" : "none";
+        els.closeQBtn.style.display = (canControl || elapsedSec >= QUESTION_DURATION_SECONDS + 5) ? "inline-block" : "none";
+        els.closeQBtn.disabled = false;
         els.closeQBtn.textContent = "Continue to Next Turn";
       } else {
         els.qAnswerBox.textContent = "";
@@ -1441,6 +1470,7 @@
         els.submitMcqBtn.style.display = canControl ? "inline-block" : "none";
         els.submitMcqBtn.disabled = !canControl || typeof selectedOption !== "number";
         els.closeQBtn.style.display = canControl ? "inline-block" : "none";
+        els.closeQBtn.disabled = false;
         els.closeQBtn.textContent = "End Turn / Close (0 pts)";
       }
 
@@ -1675,32 +1705,20 @@
       state.activeLock.answerSubmitted = true;
       state.activeLock.chosenOption = null;
       updateUI();
-      syncOut();
+      if (isActivePlayerOnThisDevice()) {
+        syncOut();
+      }
     }
 
     function completeTurnAndCloseModal() {
-      if (!isActivePlayerOnThisDevice() && state.activeLock) return;
-      stopTimer();
-      els.questionModal.classList.remove("open");
-
-      if (state.activeLock) {
-        state.activeLock = null;
-        if (state.mode === "multi") {
-          const count = getActiveRoster().length;
-          state.roundPlays = (Number(state.roundPlays) || 0) + 1;
-          if (state.roundPlays >= count) {
-            state.completedTurns += 1;
-            state.roundPlays = 0;
-          }
-          state.currentTurn = (state.currentTurn % count) + 1;
-        } else {
-          state.completedTurns += 1;
-        }
-      }
-
-      checkTurnLimitAndWinner();
-      updateUI();
-      syncOut();
+      const elapsedSec = state.activeLock?.openedAt
+        ? Math.floor((Date.now() - state.activeLock.openedAt) / 1000)
+        : 0;
+      const canAdvance = isActivePlayerOnThisDevice() ||
+        Boolean(state.activeLock?.answerSubmitted) ||
+        elapsedSec >= QUESTION_DURATION_SECONDS + 5;
+      if (!canAdvance && state.activeLock) return;
+      forceAdvanceStuckTurn();
     }
 
     function applyRemoteState(incoming, options = {}) {
