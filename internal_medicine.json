@@ -1,0 +1,772 @@
+[
+  {
+    "name": "Thyroid Disorders",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which of the following is the most common cause of primary hypothyroidism in iodine-sufficient populations?",
+        "options": [
+          "A) Subacute (de Quervain) thyroiditis",
+          "B) Hashimoto thyroiditis",
+          "C) Toxic multinodular goitre",
+          "D) Graves' disease"
+        ],
+        "correct": 1,
+        "hint": "Think of a chronic autoimmune thyroiditis with lymphocytic infiltration and follicular destruction.",
+        "explanation": "Hashimoto thyroiditis is a chronic autoimmune thyroiditis characterized by lymphocytic infiltration and progressive follicular destruction. It represents the most common cause of primary hypothyroidism in iodine-sufficient populations."
+      },
+      {
+        "pts": 20,
+        "q": "Routine blood work for an asymptomatic patient shows an elevated serum TSH level of 8.5 mIU/L with a Free T4 level within the normal reference range. Subsequent testing confirms persistent TSH elevation with normal Free T4. What is the correct classification of this biochemical pattern?",
+        "options": [
+          "A) Central hypothyroidism",
+          "B) Overt primary hypothyroidism",
+          "C) Subclinical hypothyroidism",
+          "D) Overt primary thyrotoxicosis"
+        ],
+        "correct": 2,
+        "hint": "Elevated TSH with normal Free T4 and Free T3 defines a compensated/subclinical thyroid state.",
+        "explanation": "Subclinical hypothyroidism is defined biochemically as a raised serum TSH level accompanied by normal Free T4 and Free T3 levels. In contrast, central hypothyroidism presents with a low or inappropriately normal TSH alongside a low Free T4 level."
+      },
+      {
+        "pts": 30,
+        "q": "Which feature specifically distinguishes true hyperthyroidism (such as Graves' disease) from destructive release thyrotoxicosis (such as subacute thyroiditis)?",
+        "options": [
+          "A) Demonstration of increased de novo hormone synthesis and secretion by the thyroid gland",
+          "B) Elevation of circulating serum Free T4 and Free T3 levels",
+          "C) Complete suppression of circulating serum TSH levels",
+          "D) Presence of clinical adrenergic symptoms such as sinus tachycardia and tremor"
+        ],
+        "correct": 0,
+        "hint": "Distinguish active new hormone biosynthesis in the gland from passive leakage of preformed hormone.",
+        "explanation": "Thyrotoxicosis refers broadly to excess thyroid hormone action from any source. Hyperthyroidism specifically refers to thyrotoxicosis caused by increased de novo synthesis and secretion of hormones by the thyroid gland itself. Destructive thyroiditis involves passive release of stored hormone from inflamed follicles without increased synthesis."
+      },
+      {
+        "pts": 40,
+        "q": "In managing a patient with severe thyrotoxicosis admitted in thyroid storm, which pharmacological rule governs the administration of thionamides and inorganic iodine?",
+        "options": [
+          "A) Inorganic iodine must be administered at least 1 hour before starting thionamides",
+          "B) A thionamide (PTU or MMI) must be administered at least 1 hour before initiating inorganic iodine therapy",
+          "C) Therapeutic radioactive iodine (131I) must be administered immediately prior to beta-blockade",
+          "D) High-dose aspirin should be given first to manage hyperpyrexia before thionamides"
+        ],
+        "correct": 1,
+        "hint": "Block new hormone synthesis before giving iodine, and avoid salicylates that displace protein-bound hormone.",
+        "explanation": "In thyroid storm, thionamides (PTU or MMI) must be given at least 1 hour prior to inorganic iodine therapy to block new hormone synthesis before stored hormone release is inhibited. Administering iodine first without thionamide blockade can provide substrate for increased hormone synthesis. Paracetamol and cooling measures are used for fever, while aspirin is strictly avoided because it displaces bound thyroid hormone from serum proteins."
+      },
+      {
+        "pts": 50,
+        "q": "A 72-year-old patient is admitted to the ICU in myxoedema coma with severe hypothermia (31.8°C), bradycardia, and altered consciousness. Which rationale explains the mandatory initial pharmacological sequence and temperature control strategy for this condition?",
+        "options": [
+          "A) Administer stress-dose IV hydrocortisone before or concurrently with IV Levothyroxine, and use passive rewarming",
+          "B) Administer high-dose IV Levothyroxine alone immediately, and apply aggressive active peripheral warming",
+          "C) Administer oral Propylthiouracil first, followed by active heating lamps",
+          "D) Withhold thyroid hormone and hydrocortisone until a formal 24-hour ACTH stimulation test is completed"
+        ],
+        "correct": 0,
+        "hint": "Cover potential adrenal insufficiency before levothyroxine, and avoid rapid peripheral vasodilation from active warming.",
+        "explanation": "Stress-dose IV hydrocortisone must be administered before or with IV Levothyroxine to prevent precipitating an acute, fatal adrenal crisis if co-existing adrenal insufficiency is present. Hypothermia must be managed with passive rewarming measures only; aggressive active peripheral warming causes sudden vasodilation, leading to severe hypotension and cardiovascular collapse."
+      }
+    ]
+  },
+  {
+    "name": "Adrenal Disorders",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which anatomical zone of the adrenal cortex is responsible for synthesizing and secreting mineralocorticoids, specifically aldosterone?",
+        "options": [
+          "A) Zona fasciculata",
+          "B) Zona reticularis",
+          "C) Zona glomerulosa",
+          "D) Adrenal medulla"
+        ],
+        "correct": 2,
+        "hint": "Outer cortical layer regulated by angiotensin II and serum potassium.",
+        "explanation": "The adrenal cortex consists of three zones: the zona glomerulosa, zona fasciculata, and zona reticularis. The outer zona glomerulosa is specifically responsible for synthesizing aldosterone under the primary regulation of angiotensin II and serum potassium levels."
+      },
+      {
+        "pts": 20,
+        "q": "Evaluation of a patient presenting with progressive fatigue, low morning cortisol, hyperkalemia, and dark brown mucosal hyperpigmentation supports which diagnosis?",
+        "options": [
+          "A) Secondary adrenal insufficiency",
+          "B) Primary adrenal insufficiency (Addison disease)",
+          "C) Tertiary adrenal insufficiency",
+          "D) ACTH-dependent Cushing disease"
+        ],
+        "correct": 1,
+        "hint": "Low cortisol + high ACTH/POMC pigmentation + hyperkalemia from aldosterone loss.",
+        "explanation": "Primary adrenal insufficiency features low cortisol, elevated plasma ACTH, hyperpigmentation (from excess POMC-derived peptides), and hyperkalemia due to concurrent mineralocorticoid deficiency. Secondary adrenal insufficiency lacks hyperpigmentation and hyperkalemia because ACTH is low and aldosterone is preserved."
+      },
+      {
+        "pts": 30,
+        "q": "Which laboratory measurement is explicitly NOT appropriate as an initial screening test for endogenous Cushing syndrome?",
+        "options": [
+          "A) 1 mg overnight dexamethasone suppression test",
+          "B) 24-hour urinary free cortisol",
+          "C) Late-night salivary cortisol",
+          "D) Random serum cortisol"
+        ],
+        "correct": 3,
+        "hint": "Circadian variation makes an untimed single serum cortisol unreliable.",
+        "explanation": "Random serum cortisol and ACTH measurements are not appropriate screening tests for Cushing syndrome because normal physiological circadian fluctuations render single isolated cortisol levels unreliable. Recommended screening tests include the 1 mg overnight dexamethasone suppression test, late-night salivary cortisol, and 24-hour urinary free cortisol."
+      },
+      {
+        "pts": 40,
+        "q": "Prior to surgical resection of a confirmed phaeochromocytoma, what is the mandatory sequence for adrenergic blockade?",
+        "options": [
+          "A) Initiate beta-blockers first to control tachycardia, followed by alpha-blockers",
+          "B) Establish adequate alpha-adrenergic blockade for 7–14 days before starting beta-blocker therapy",
+          "C) Perform an immediate CT-guided fine-needle aspiration biopsy before initiating medications",
+          "D) Administer high-dose fludrocortisone for 14 days before surgery"
+        ],
+        "correct": 1,
+        "hint": "Alpha blockade first for 7–14 days before beta blockade prevents unopposed alpha vasoconstriction.",
+        "explanation": "Preoperative alpha-adrenergic blockade for 7–14 days is essential prior to phaeochromocytoma surgery. Alpha-blockade must always precede beta-blockers; starting beta-blockers first can cause unopposed alpha-receptor stimulation, resulting in a severe hypertensive crisis. Biopsy is strictly contraindicated until phaeochromocytoma is excluded."
+      },
+      {
+        "pts": 50,
+        "q": "A patient with primary adrenal insufficiency presents in acute adrenal crisis with hypotension (BP 75/45 mmHg), hypoglycemia, and hyperkalemia. Which management protocol represents the immediate life-saving intervention?",
+        "options": [
+          "A) Immediate IV bolus of 100 mg hydrocortisone, rapid IV isotonic saline, and prompt glucose correction",
+          "B) Delay hydrocortisone until a formal ACTH stimulation test is completed while infusing hypotonic fluids",
+          "C) Administer oral prednisolone and spironolactone for hyperkalemia",
+          "D) Administer oral Levothyroxine and perform immediate fluid restriction"
+        ],
+        "correct": 0,
+        "hint": "Never wait for confirmatory blood tests before giving IV hydrocortisone, isotonic saline, and glucose.",
+        "explanation": "Adrenal crisis is an acute life-threatening emergency requiring immediate hydrocortisone 100 mg IV/IM, rapid volume expansion with IV isotonic saline, and IV glucose for hypoglycemia. Treatment must never be delayed to perform diagnostic or confirmatory endocrine blood work."
+      }
+    ]
+  },
+  {
+    "name": "Acromegaly and Dwarfism",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the fundamental developmental milestone that determines whether excess growth hormone (GH) secretion results in gigantism versus acromegaly?",
+        "options": [
+          "A) Closure of the cranial sutures",
+          "B) Epiphyseal growth plate fusion",
+          "C) Onset of pubertal Tanner Stage 3",
+          "D) Involution of the thymus gland"
+        ],
+        "correct": 1,
+        "hint": "Before vs. after growth plate closure.",
+        "explanation": "Growth hormone excess occurring before epiphyseal fusion leads to increased linear bone growth and gigantism. In contrast, GH excess occurring after epiphyseal closure produces acromegaly, which causes acral and soft-tissue enlargement without long-bone lengthening."
+      },
+      {
+        "pts": 20,
+        "q": "A 46-year-old patient presents with progressive enlargement of the hands and feet, coarsening facial features, and new-onset hypertension. Which initial biochemical test is recommended to screen for suspected acromegaly?",
+        "options": [
+          "A) Single random serum growth hormone (GH) level",
+          "B) Age-adjusted serum IGF-1 concentration",
+          "C) 24-hour urinary free cortisol excretion",
+          "D) Fasting plasma glucagon concentration"
+        ],
+        "correct": 1,
+        "hint": "GH is pulsatile; measure the stable hepatic mediator adjusted for age.",
+        "explanation": "Because GH secretion is highly pulsatile, a single random GH measurement is not a reliable screening test. Measuring an age-adjusted serum IGF-1 level serves as the initial screening test of choice."
+      },
+      {
+        "pts": 30,
+        "q": "A patient with physical signs of acromegaly has an elevated age-adjusted serum IGF-1 level. Which dynamic laboratory test is required to confirm the biochemical diagnosis of growth hormone excess?",
+        "options": [
+          "A) 1 mg overnight dexamethasone suppression test",
+          "B) 75-g oral glucose tolerance test (OGTT) with GH measurement",
+          "C) Insulin tolerance test measuring cortisol response",
+          "D) Short ACTH (Synacthen) stimulation test"
+        ],
+        "correct": 1,
+        "hint": "Hyperglycemia normally suppresses GH during a glucose load test.",
+        "explanation": "In individuals without acromegaly, an oral glucose load (75 g) induces hyperglycemia that suppresses serum GH. Failure of serum GH to suppress after documented hyperglycemia during an OGTT confirms the biochemical diagnosis of acromegaly."
+      },
+      {
+        "pts": 40,
+        "q": "A 7-year-old child is evaluated for severe short stature. Physical examination reveals proximal (rhizomelic) limb shortening, macrocephaly with frontal bossing, midface retrusion, lumbar lordosis, and a trident configuration of the hands, alongside normal cognitive development. How is this growth disorder classified?",
+        "options": [
+          "A) Proportionate short stature due to Growth Hormone Deficiency (GHD)",
+          "B) Proportionate short stature due to constitutional delay of growth and puberty",
+          "C) Disproportionate short stature due to achondroplasia (skeletal dysplasia)",
+          "D) Disproportionate short stature due to primary hypothyroidism"
+        ],
+        "correct": 2,
+        "hint": "Short limbs relative to trunk + macrocephaly + frontal bossing + trident hands.",
+        "explanation": "Short stature is divided into proportionate (trunk and limbs reduced equally, such as in GHD or systemic disease) and disproportionate (limbs or trunk disproportionately short, as in skeletal dysplasias). Rhizomelic limb shortening, macrocephaly, frontal bossing, midface retrusion, and trident hands are classic features of achondroplasia, a skeletal dysplasia causing disproportionate short stature."
+      },
+      {
+        "pts": 50,
+        "q": "A 50-year-old patient with confirmed acromegaly is found on contrast-enhanced pituitary MRI to have a 1.8 cm GH-secreting somatotroph macroadenoma that compresses the optic chiasm, causing bitemporal hemianopia. What is the recommended first-line intervention for this patient?",
+        "options": [
+          "A) Primary long-term medical therapy with somatostatin receptor ligands (e.g., octreotide)",
+          "B) Immediate stereotactic pituitary radiotherapy",
+          "C) Transsphenoidal pituitary surgery",
+          "D) High-dose cabergoline monotherapy"
+        ],
+        "correct": 2,
+        "hint": "Chiasmal compression with a resectable adenoma calls for surgical tumor debulking/decompression first.",
+        "explanation": "Transsphenoidal pituitary surgery is the first-line treatment for most patients with acromegaly, particularly when a resectable adenoma is present or when tumor mass effect (such as visual field compromise) requires prompt surgical decompression. Medical therapy (somatostatin receptor ligands, pegvisomant) and radiotherapy are generally utilized when surgery is incomplete, contraindicated, or unfeasible."
+      }
+    ]
+  },
+  {
+    "name": "Diabetes Mellitus",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "According to accepted diagnostic criteria in non-pregnant adults, which fasting plasma glucose (FPG) threshold defines diabetes mellitus after at least 8 hours of no caloric intake?",
+        "options": [
+          "A) FPG >= 5.6 mmol/L (100 mg/dL)",
+          "B) FPG >= 6.1 mmol/L (110 mg/dL)",
+          "C) FPG >= 7.0 mmol/L (126 mg/dL)",
+          "D) FPG >= 11.1 mmol/L (200 mg/dL)"
+        ],
+        "correct": 2,
+        "hint": "Fasting cutoff is 7.0 mmol/L (126 mg/dL).",
+        "explanation": "In non-pregnant adults, diabetes mellitus is diagnosed by a fasting plasma glucose (FPG) level >= 7.0 mmol/L (>= 126 mg/dL), a 2-hour post-OGTT plasma glucose >= 11.1 mmol/L (>= 200 mg/dL), an HbA1c >= 6.5% (>= 48 mmol/mol), or a random glucose >= 11.1 mmol/L accompanied by classic symptoms."
+      },
+      {
+        "pts": 20,
+        "q": "A 52-year-old patient with newly diagnosed Type 2 Diabetes Mellitus (HbA1c 7.8%) has an eGFR of 65 mL/min/1.73 m^2 and no contraindications. Which oral pharmacological agent is recommended as first-line therapy?",
+        "options": [
+          "A) Gliclazide (Sulfonylurea)",
+          "B) Metformin (Biguanide)",
+          "C) Pioglitazone (Thiazolidinedione)",
+          "D) Sitagliptin (DPP-4 inhibitor)"
+        ],
+        "correct": 1,
+        "hint": "Reduces hepatic glucose production and is standard initial therapy when eGFR > 30 mL/min/1.73 m^2.",
+        "explanation": "Metformin is the established first-line oral pharmacological therapy for Type 2 Diabetes Mellitus. It works primarily by reducing hepatic glucose output, is weight-neutral or associated with slight weight loss, and is safe when eGFR is above 30 mL/min/1.73 m^2."
+      },
+      {
+        "pts": 30,
+        "q": "A patient presenting with severe hyperglycemia is evaluated in the Emergency Department. Which biochemical combination specifically distinguishes Diabetic Ketoacidosis (DKA) from Hyperosmolar Hyperglycaemic State (HHS)?",
+        "options": [
+          "A) Glucose >= 33.3 mmol/L, effective osmolality > 300 mOsm/kg, and absence of significant acidosis",
+          "B) Ketonemia (beta-hydroxybutyrate >= 3.0 mmol/L) and metabolic acidosis (pH < 7.3 or bicarbonate < 18 mmol/L)",
+          "C) Hyperglycemia with a normal serum anion gap and high serum sodium",
+          "D) Severe dehydration with negative urine ketones and normal arterial pH"
+        ],
+        "correct": 1,
+        "hint": "Look for ketones plus low pH / low bicarbonate.",
+        "explanation": "DKA is characterized by the triad of hyperglycemia, significant ketonemia (beta-hydroxybutyrate >= 3.0 mmol/L or heavy ketonuria), and metabolic acidosis (pH < 7.3 and/or bicarbonate < 18 mmol/L). HHS presents with marked hyperglycemia (often >= 33.3 mmol/L), high serum osmolality, and severe dehydration with minimal or no significant ketoacidosis."
+      },
+      {
+        "pts": 40,
+        "q": "Routine annual screening in a 60-year-old patient with Type 2 Diabetes reveals persistent albuminuria (urine albumin-to-creatinine ratio [UACR] 150 mg/g) and an eGFR of 54 mL/min/1.73 m^2. In addition to optimizing blood pressure with an ACE inhibitor or ARB, which glucose-lowering drug class with proven kidney benefit is specifically recommended?",
+        "options": [
+          "A) Sulfonylureas (e.g., gliclazide)",
+          "B) SGLT2 inhibitors (e.g., dapagliflozin)",
+          "C) DPP-4 inhibitors (e.g., sitagliptin)",
+          "D) Thiazolidinediones (e.g., pioglitazone)"
+        ],
+        "correct": 1,
+        "hint": "Glucosuric agent class proven to slow CKD progression and reduce heart failure/renal outcomes.",
+        "explanation": "Persistent UACR >= 30 mg/g or reduced eGFR indicates diabetic kidney disease. Guidelines recommend optimizing blood pressure with an ACE inhibitor or ARB and adding an SGLT2 inhibitor with demonstrated kidney benefit to reduce renal disease progression and cardiovascular events."
+      },
+      {
+        "pts": 50,
+        "q": "A 22-year-old patient with Type 1 Diabetes presents to the Emergency Department in severe DKA (venous pH 7.10, bicarbonate 10 mmol/L, glucose 26 mmol/L, ketones 4.8 mmol/L). Initial laboratory results reveal a serum potassium level of 3.1 mmol/L. What is the mandatory immediate management priority regarding fluid and insulin therapy?",
+        "options": [
+          "A) Administer an immediate IV bolus of regular insulin (0.1 units/kg) before starting fluid resuscitation",
+          "B) Initiate rapid isotonic crystalloid resuscitation and IV potassium replacement, delaying insulin until potassium is >= 3.5 mmol/L",
+          "C) Administer an IV sodium bicarbonate infusion immediately before giving fluids or potassium",
+          "D) Administer subcutaneous basal insulin and withhold IV fluids until urine output is documented"
+        ],
+        "correct": 1,
+        "hint": "Potassium < 3.5 mmol/L requires replacement before insulin drives potassium intracellularly.",
+        "explanation": "In DKA management, serum potassium must be checked before initiating insulin. If serum potassium is < 3.5 mmol/L, insulin therapy must be delayed while potassium replacement is initiated alongside isotonic crystalloid fluid resuscitation. Administering insulin when hypokalemia is present drives potassium into cells, which can trigger life-threatening cardiac arrhythmias or cardiac arrest."
+      }
+    ]
+  },
+  {
+    "name": "Cardiovascular Disorders & Heart Failure",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which left ventricular ejection fraction (LVEF) cutoff defines Heart Failure with reduced Ejection Fraction (HFrEF)?",
+        "options": [
+          "A) LVEF <= 40%",
+          "B) LVEF >= 50%",
+          "C) LVEF 41%–49% exclusively",
+          "D) LVEF >= 65%"
+        ],
+        "correct": 0,
+        "hint": "Reduced EF is <= 40%, mildly reduced is 41%–49%, and preserved is >= 50%.",
+        "explanation": "Heart failure with reduced ejection fraction (HFrEF) is defined by clinical signs/symptoms of heart failure with an LVEF <= 40%."
+      },
+      {
+        "pts": 20,
+        "q": "Which four foundational medication pillars form the core guideline-directed medical therapy (GDMT) for chronic HFrEF?",
+        "options": [
+          "A) ARNI/ACEi/ARB, evidence-based beta-blocker, MRA (mineralocorticoid receptor antagonist), and SGLT2 inhibitor",
+          "B) Digoxin, high-dose aspirin, warfarin, and amiodarone",
+          "C) Non-dihydropyridine calcium channel blocker, hydralazine alone, atorvastatin, and clopidogrel",
+          "D) Ivabradine alone, oral corticosteroids, spironolactone alone, and furosemide alone"
+        ],
+        "correct": 0,
+        "hint": "Four neurohormonal/cardiorenal classes that reduce mortality and heart failure hospitalizations.",
+        "explanation": "Foundational GDMT for HFrEF comprises an ARNI (or ACEi/ARB), an evidence-based beta-blocker (carvedilol, metoprolol succinate, or bisoprolol), an MRA (spironolactone or eplerenone), and an SGLT2 inhibitor, alongside loop diuretics for volume congestion."
+      },
+      {
+        "pts": 30,
+        "q": "In a patient presenting with acute STEMI, which initial pharmacological and reperfusion strategy is time-critical?",
+        "options": [
+          "A) Aspirin, P2Y12 inhibitor, anticoagulation, and timely reperfusion (primary PCI within target window, or fibrinolysis if PCI cannot be achieved in time)",
+          "B) Oral acetaminophen and outpatient stress testing in 2 weeks",
+          "C) Immediate high-dose intravenous beta-blocker in cardiogenic shock",
+          "D) Withholding antiplatelets until troponin turns negative"
+        ],
+        "correct": 0,
+        "hint": "Rapid antithrombotic therapy + restoring coronary blood flow ('time is muscle').",
+        "explanation": "Acute STEMI requires prompt dual antiplatelet/anticoagulant therapy and immediate reperfusion—primarily percutaneous coronary intervention (PCI), or fibrinolytic therapy when timely primary PCI is not available."
+      },
+      {
+        "pts": 40,
+        "q": "A patient with persistent atrial fibrillation and a CHA2DS2-VASc score of 4 requires stroke prevention. Which anticoagulant class is generally preferred over warfarin in eligible non-valvular patients?",
+        "options": [
+          "A) Direct oral anticoagulants (DOACs, such as apixaban or rivaroxaban)",
+          "B) Low-dose aspirin monotherapy",
+          "C) Oral clopidogrel monotherapy",
+          "D) Subcutaneous unfractionated heparin long-term"
+        ],
+        "correct": 0,
+        "hint": "DOACs offer predictable pharmacokinetics and lower intracranial bleeding risk than warfarin in non-valvular AF.",
+        "explanation": "For stroke prevention in non-valvular atrial fibrillation with elevated thromboembolic risk, direct oral anticoagulants (DOACs) are generally preferred over warfarin due to lower intracranial hemorrhage risk and no need for routine INR monitoring (except in mechanical heart valves or moderate-to-severe mitral stenosis, where warfarin is indicated)."
+      },
+      {
+        "pts": 50,
+        "q": "A 66-year-old man 4 days after an anterior STEMI develops acute dyspnea, hypotension (BP 78/50 mmHg), jugular venous distension, clear lung fields on auscultation, and a new harsh holosystolic murmur loudest at the lower left sternal border accompanied by a thrill. Which mechanical post-infarction complication is most likely, and what is its hemodynamic profile?",
+        "options": [
+          "A) Ventricular septal rupture (VSR), causing a left-to-right shunt, right ventricular volume overload, and a step-up in oxygen saturation from the right atrium to the right ventricle",
+          "B) Dressler syndrome, causing painless pericardial effusion without a murmur",
+          "C) Papillary muscle rupture, causing a soft early-diastolic rumble with clear lungs",
+          "D) Left ventricular pseudoaneurysm with normal right-sided pressures"
+        ],
+        "correct": 0,
+        "hint": "Harsh holosystolic murmur at the lower left sternal border with a thrill after anterior MI + O2 saturation step-up in the RV.",
+        "explanation": "Ventricular septal rupture typically occurs within the first week after transmural MI and presents with acute hemodynamic collapse and a harsh holosystolic murmur/thrill near the lower left sternal border. Blood shunts left-to-right across the septum, producing an oxygen saturation step-up between the right atrium and right ventricle on right heart catheterization."
+      }
+    ]
+  },
+  {
+    "name": "Respiratory Medicine & Acute Lung Injury",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "On spirometry, which finding defines obstructive airway disease such as COPD or asthma?",
+        "options": [
+          "A) Reduced post-bronchodilator FEV1/FVC ratio (< 0.70 or below the lower limit of normal)",
+          "B) Normal or increased FEV1/FVC ratio with reduced total lung capacity (TLC)",
+          "C) Isolated elevated diffusing capacity of the lung for carbon monoxide (DLCO) with normal spirometry",
+          "D) Increased FEV1 with zero FVC"
+        ],
+        "correct": 0,
+        "hint": "Airflow limitation reduces expiratory flow (FEV1) more than vital capacity (FVC).",
+        "explanation": "Obstructive ventilatory defects are characterized by a reduced FEV1/FVC ratio reflecting expiratory airflow limitation, whereas restrictive lung diseases typically show a normal or increased FEV1/FVC ratio with reduced lung volumes."
+      },
+      {
+        "pts": 20,
+        "q": "In a patient with an acute severe asthma exacerbation who has hypoxemia, which immediate therapy is essential alongside inhaled short-acting beta-2 agonists (SABA) and systemic corticosteroids?",
+        "options": [
+          "A) Controlled supplemental oxygen titrated to maintain target oxygen saturation (typically 93%–95% in acute asthma)",
+          "B) Routine empirical intravenous vancomycin",
+          "C) Nebulized hypertonic saline as sole bronchodilator",
+          "D) Oral antihistamines as primary rescue therapy"
+        ],
+        "correct": 0,
+        "hint": "Relieve bronchospasm (SABA), reduce airway inflammation (systemic steroids), and correct hypoxemia.",
+        "explanation": "Acute asthma exacerbations are treated with titrated oxygen for hypoxemia, nebulized/MDI SABA, and systemic corticosteroids (with ipratropium bromide added in moderate-to-severe exacerbations)."
+      },
+      {
+        "pts": 30,
+        "q": "Which clinical scoring tool is commonly used on admission to assess severity and site-of-care decisions in community-acquired pneumonia (CAP)?",
+        "options": [
+          "A) CURB-65 (Confusion, Urea > 7 mmol/L, Respiratory rate >= 30/min, BP < 90 systolic or <= 60 diastolic, Age >= 65 years)",
+          "B) Child-Pugh score",
+          "C) Glasgow-Blatchford score",
+          "D) Wells score for DVT alone"
+        ],
+        "correct": 0,
+        "hint": "Five bedside/laboratory criteria abbreviated C-U-R-B-65.",
+        "explanation": "CURB-65 evaluates Confusion, elevated Urea (>7 mmol/L), tachypnea (>=30/min), hypotension (SBP <90 or DBP <=60 mmHg), and age >=65 years to estimate CAP mortality risk and guide inpatient vs. ICU or outpatient care."
+      },
+      {
+        "pts": 40,
+        "q": "In a patient with hypercapnic COPD exacerbations who is at risk of CO2 retention, how should supplemental oxygen be administered?",
+        "options": [
+          "A) Controlled low-flow oxygen titrated carefully to a target SpO2 of 88%–92% while monitoring arterial blood gases",
+          "B) Unmonitored 15 L/min non-rebreather mask kept at SpO2 100% regardless of PaCO2",
+          "C) Withholding all oxygen even when SpO2 is 78%",
+          "D) Giving intravenous sodium bicarbonate to correct mild chronic hypercapnia"
+        ],
+        "correct": 0,
+        "hint": "Target 88%–92% SpO2 to prevent worsening hypercapnia from V/Q mismatch and Haldane/drive effects while avoiding dangerous hypoxemia.",
+        "explanation": "In COPD patients prone to hypercapnic respiratory failure, supplemental oxygen should be titrated to a target SpO2 of 88%–92% with blood gas monitoring so hypoxemia is corrected without precipitating worsening hypercapnia and respiratory acidosis."
+      },
+      {
+        "pts": 50,
+        "q": "A 44-year-old patient with severe pancreatitis develops acute hypoxemic respiratory failure (PaO2/FiO2 ratio 135 mmHg on PEEP 5 cmH2O) within 48 hours. Chest radiograph shows bilateral diffuse infiltrates not fully explained by cardiac failure or fluid overload, and echocardiography shows normal left ventricular function without left atrial hypertension. Which syndrome is present, and what lung-protective ventilation principle is foundational?",
+        "options": [
+          "A) Acute Respiratory Distress Syndrome (ARDS); use low tidal volume ventilation (around 6 mL/kg predicted body weight) and limit plateau pressure (<= 30 cmH2O) to prevent barotrauma/volutrauma",
+          "B) Uncomplicated cardiogenic pulmonary edema; use high tidal volume ventilation (12 mL/kg predicted body weight) and withhold PEEP",
+          "C) Primary spontaneous pneumothorax; treat with oral bronchodilators alone",
+          "D) Asthma exacerbation; use 12 mL/kg tidal volume with zero PEEP"
+        ],
+        "correct": 0,
+        "hint": "Acute onset (<1 week) + bilateral opacities not explained by hydrostatic edema + PaO2/FiO2 <= 300 with PEEP >= 5 cmH2O = ARDS; protect the 'baby lung' with low tidal volume.",
+        "explanation": "This presentation meets criteria for ARDS (moderate severity given PaO2/FiO2 100–200 mmHg). Lung-protective mechanical ventilation with low tidal volumes (~6 mL/kg predicted body weight) and plateau pressure limitation (<=30 cmH2O) reduces ventilator-induced lung injury and improves survival."
+      }
+    ]
+  },
+  {
+    "name": "Renal Medicine & Acid-Base Disorders",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "According to KDIGO criteria, which change in serum creatinine defines Acute Kidney Injury (AKI)?",
+        "options": [
+          "A) Increase in serum creatinine by >= 26.5 umol/L (0.3 mg/dL) within 48 hours, or >= 1.5 times baseline within 7 days (or urine output < 0.5 mL/kg/h for >= 6 hours)",
+          "B) Any serum creatinine above 90 umol/L regardless of baseline",
+          "C) Decrease in serum creatinine by 50% over 3 months",
+          "D) Isolated microscopic hematuria with normal creatinine and normal urine output"
+        ],
+        "correct": 0,
+        "hint": "Look for the 48-hour creatinine rise threshold, 7-day baseline multiplier, or oliguria duration.",
+        "explanation": "KDIGO defines AKI by an increase in serum creatinine >= 26.5 umol/L (0.3 mg/dL) within 48 hours, an increase to >= 1.5 times baseline known or presumed to have occurred within 7 days, or urine output < 0.5 mL/kg/h for at least 6 hours."
+      },
+      {
+        "pts": 20,
+        "q": "Which formula calculates the standard serum anion gap from routine electrolytes?",
+        "options": [
+          "A) Anion Gap = [Na+] - ([Cl-] + [HCO3-])",
+          "B) Anion Gap = ([Na+] + [K+]) + ([Cl-] - [HCO3-])",
+          "C) Anion Gap = [HCO3-] - ([Na+] + [Cl-])",
+          "D) Anion Gap = 2 x [Na+] + [Glucose]/18 + [BUN]/2.8"
+        ],
+        "correct": 0,
+        "hint": "Measured cations minus measured anions (sodium minus chloride plus bicarbonate).",
+        "explanation": "The standard serum anion gap is calculated as [Na+] - ([Cl-] + [HCO3-]), with a typical reference range around 8–12 mmol/L (adjusted downward if hypoalbuminemia is present)."
+      },
+      {
+        "pts": 30,
+        "q": "Which of the following is a classic cause of a high anion gap metabolic acidosis (HAGMA)?",
+        "options": [
+          "A) Lactic acidosis, diabetic ketoacidosis, renal failure/uremia, or toxic alcohols (methanol/ethylene glycol)",
+          "B) Severe diarrhea causing gastrointestinal bicarbonate loss",
+          "C) Type 1 (distal) renal tubular acidosis with normal anion gap",
+          "D) Primary hyperaldosteronism causing metabolic alkalosis"
+        ],
+        "correct": 0,
+        "hint": "Accumulation of unmeasured fixed acids (lactate, ketoacids, uremic acids, toxic metabolites) widens the anion gap.",
+        "explanation": "High anion gap metabolic acidosis results from accumulation of unmeasured anions such as lactate, beta-hydroxybutyrate/acetoacetate in DKA, retained acids in renal failure, or toxic alcohol metabolites, whereas GI bicarbonate loss or RTA typically causes a normal anion gap (hyperchloremic) metabolic acidosis."
+      },
+      {
+        "pts": 40,
+        "q": "A patient with hyperkalemia (serum K+ 6.6 mmol/L) has peaked T waves and widened QRS complexes on ECG. Which immediate intervention stabilizes the cardiac membrane first?",
+        "options": [
+          "A) Intravenous calcium gluconate (or calcium chloride) immediately",
+          "B) Oral sodium polystyrene sulfonate alone as the first step",
+          "C) Restricting dietary potassium next week without acute IV therapy",
+          "D) Administering loop diuretics only while withholding membrane stabilization"
+        ],
+        "correct": 0,
+        "hint": "Stabilize myocardial excitability immediately with IV calcium before shifting K+ intracellularly or removing it from the body.",
+        "explanation": "When hyperkalemia causes ECG changes (peaked T waves, PR prolongation, QRS widening), IV calcium is given immediately to antagonize potassium's membrane excitability effect, followed by potassium-shifting agents (insulin/glucose, beta-2 agonists) and potassium elimination measures."
+      },
+      {
+        "pts": 50,
+        "q": "A patient has arterial blood gas results showing pH 7.28, PaCO2 24 mmHg, HCO3- 11 mmol/L, serum Na+ 138 mmol/L, Cl- 100 mmol/L, and K+ 4.0 mmol/L. Applying Winter's formula (Expected PaCO2 = 1.5 x [HCO3-] + 8 +/- 2), what is the acid-base interpretation?",
+        "options": [
+          "A) Primary metabolic acidosis (high anion gap: AG = 27 mmol/L) with appropriate respiratory compensation (expected PaCO2 ~24.5 mmHg, range 22.5–26.5 mmHg)",
+          "B) Primary uncompensated respiratory acidosis",
+          "C) Primary metabolic alkalosis with hypoventilation",
+          "D) Pure respiratory alkalosis without metabolic acidosis"
+        ],
+        "correct": 0,
+        "hint": "Low pH + low HCO3- + low PaCO2; check AG = 138 - (100 + 11) = 27, and Winter's expected PaCO2 = 1.5(11) + 8 = 24.5 +/- 2.",
+        "explanation": "Acidemia (pH 7.28 < 7.35) with low HCO3- (11 mmol/L) indicates a primary metabolic acidosis. The anion gap is 138 - (100 + 11) = 27 mmol/L (elevated), and Winter's formula predicts PaCO2 of 24.5 +/- 2 mmHg (22.5–26.5 mmHg); because measured PaCO2 is 24 mmHg, respiratory compensation is appropriate."
+      }
+    ]
+  },
+  {
+    "name": "Gastroenterology & Hepatology",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which hepatic synthetic marker and coagulation parameter most directly reflect acute hepatic synthetic dysfunction in liver disease?",
+        "options": [
+          "A) Prothrombin time / INR (and serum albumin in more chronic settings)",
+          "B) Serum alkaline phosphatase alone",
+          "C) Indirect unconjugated bilirubin alone",
+          "D) Serum amylase"
+        ],
+        "correct": 0,
+        "hint": "Clotting factors II, VII, IX, and X are synthesized in the liver and have short half-lives.",
+        "explanation": "Prothrombin time / INR is a key indicator of hepatic synthetic function because the liver synthesizes coagulation factors, and INR rises relatively early when synthetic capacity is impaired (albumin also reflects synthetic capacity but has a longer half-life of ~20 days)."
+      },
+      {
+        "pts": 20,
+        "q": "In evaluating ascites from portal hypertension, which ascitic fluid calculation is most reliable for distinguishing portal hypertension-related ascites from non-portal causes?",
+        "options": [
+          "A) Serum-Ascites Albumin Gradient (SAAG) >= 1.1 g/dL",
+          "B) Ascitic amylase < 10 U/L",
+          "C) Ascitic pH > 7.80",
+          "D) Ascitic glucose > 15 mmol/L"
+        ],
+        "correct": 0,
+        "hint": "SAAG = Serum albumin minus Ascites albumin; >= 1.1 g/dL indicates portal hypertension.",
+        "explanation": "A Serum-Ascites Albumin Gradient (SAAG) >= 1.1 g/dL indicates portal hypertension (such as cirrhosis or heart failure), whereas a SAAG < 1.1 g/dL suggests non-portal causes such as peritoneal carcinomatosis or tuberculous peritonitis."
+      },
+      {
+        "pts": 30,
+        "q": "Which diagnostic paracentesis finding confirms Spontaneous Bacterial Peritonitis (SBP) in a patient with cirrhotic ascites?",
+        "options": [
+          "A) Ascitic fluid polymorphonuclear (PMN / neutrophil) count >= 250 cells/mm^3",
+          "B) Ascitic fluid protein > 50 g/L with chylous appearance",
+          "C) Ascitic fluid amylase 5 times serum level",
+          "D) Normal cell count with zero red blood cells"
+        ],
+        "correct": 0,
+        "hint": "Neutrophil count >= 250 cells/mm^3 in ascitic fluid without a secondary surgical source diagnoses SBP.",
+        "explanation": "SBP is diagnosed when ascitic fluid absolute neutrophil (PMN) count is >= 250 cells/mm^3 (in the absence of an intra-abdominal surgical source of infection) and requires prompt empiric antibiotic therapy (e.g., a third-generation cephalosporin) plus albumin in high-risk patients."
+      },
+      {
+        "pts": 40,
+        "q": "In a patient presenting with suspected acute upper gastrointestinal bleeding (hematemesis or melena), what is the immediate initial priority?",
+        "options": [
+          "A) Airway protection/assessment, hemodynamic resuscitation with IV fluids and restrictive blood transfusion strategy as indicated, followed by timely upper endoscopy (EGD)",
+          "B) Discharging home on oral iron without resuscitation",
+          "C) Performing a colonoscopy before upper endoscopy in all cases",
+          "D) Giving oral high-dose NSAIDs for comfort"
+        ],
+        "correct": 0,
+        "hint": "Resuscitate first, start appropriate empiric therapy (such as IV PPI or vasoactive therapy/antibiotics in suspected variceal bleed), then perform EGD.",
+        "explanation": "Initial management of acute upper GI bleeding prioritizes resuscitation and stabilization (airway, two large-bore IV lines, fluid/blood resuscitation), targeted pharmacotherapy (e.g., PPI; vasoactive agent and antibiotic prophylaxis if variceal bleeding is suspected), and upper endoscopy within 24 hours (or sooner if unstable/ongoing bleeding)."
+      },
+      {
+        "pts": 50,
+        "q": "A 48-year-old patient with decompensated cirrhosis presents with asterixis (flapping tremor), confusion, disorientation, and drowsiness (West Haven Grade 2–3 hepatic encephalopathy) alongside a new onset of tense ascites and fever. Which precipitating factor must be actively sought and treated alongside lactulose therapy?",
+        "options": [
+          "A) An underlying trigger such as infection (e.g., SBP or UTI), GI bleeding, constipation, dehydration/electrolyte disturbance, or sedative medications",
+          "B) High-protein diet supplementation as the sole treatment",
+          "C) Stopping all lactulose because ammonia is beneficial",
+          "D) Immediate liver transplantation without evaluating infection or GI bleeding"
+        ],
+        "correct": 0,
+        "hint": "Hepatic encephalopathy in cirrhosis is frequently precipitated by an acute event like infection, GI bleed, dehydration, or constipation.",
+        "explanation": "Overt hepatic encephalopathy in cirrhosis is often precipitated by infection (such as SBP), gastrointestinal hemorrhage, electrolyte/volume disturbances (e.g., hypokalemia, dehydration from over-diuresis), constipation, or psychoactive drugs. Identifying and treating precipitants alongside lactulose (and rifaximin for recurrence prevention) is essential."
+      }
+    ]
+  },
+  {
+    "name": "Infectious Diseases & Sepsis",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "According to Sepsis-3 definitions, what is the fundamental mechanism of sepsis?",
+        "options": [
+          "A) Life-threatening organ dysfunction caused by a dysregulated host response to infection",
+          "B) Any positive blood culture without clinical illness or organ dysfunction",
+          "C) Fever > 38°C caused strictly by non-infectious autoimmune disease",
+          "D) Mild localized skin redness without systemic signs"
+        ],
+        "correct": 0,
+        "hint": "Dysregulated host response to infection leading to organ dysfunction.",
+        "explanation": "Sepsis-3 defines sepsis as life-threatening organ dysfunction caused by a dysregulated host response to infection (operationalized clinically by an acute increase in SOFA score >= 2 points)."
+      },
+      {
+        "pts": 20,
+        "q": "Which two clinical/hemodynamic features define septic shock under Sepsis-3?",
+        "options": [
+          "A) Sepsis with persistent hypotension requiring vasopressors to maintain MAP >= 65 mmHg AND serum lactate > 2 mmol/L despite adequate volume resuscitation",
+          "B) Fever alone with normal blood pressure and normal lactate",
+          "C) Hypothermia with hypertension and normal perfusion",
+          "D) Positive urine dipstick without hypotension or organ dysfunction"
+        ],
+        "correct": 0,
+        "hint": "Vasopressor requirement for MAP >= 65 mmHg + elevated serum lactate (>2 mmol/L) after fluid resuscitation.",
+        "explanation": "Septic shock is a subset of sepsis with profound circulatory, cellular, and metabolic abnormalities—specifically requiring vasopressors to maintain MAP >= 65 mmHg and having a serum lactate > 2 mmol/L in the absence of hypovolemia."
+      },
+      {
+        "pts": 30,
+        "q": "In a patient with suspected sepsis or septic shock, which actions belong to the immediate initial resuscitation bundle?",
+        "options": [
+          "A) Measure lactate, obtain blood cultures before antimicrobials (without delaying antibiotics), administer prompt broad-spectrum IV antimicrobials, and give balanced IV crystalloids for hypotension/hypoperfusion",
+          "B) Delay broad-spectrum antibiotics until 72-hour culture susceptibilities return",
+          "C) Avoid IV fluids completely in hypotensive septic shock",
+          "D) Use routine oral antibiotics for severe septic shock"
+        ],
+        "correct": 0,
+        "hint": "Cultures first if rapid, immediate broad-spectrum IV antibiotics, lactate, and crystalloid resuscitation.",
+        "explanation": "Early sepsis care emphasizes measuring serum lactate, obtaining blood cultures prior to starting antimicrobials (without delaying antibiotic administration), administering prompt empiric IV broad-spectrum antimicrobials, and giving IV crystalloids for hypoperfusion/hypotension."
+      },
+      {
+        "pts": 40,
+        "q": "Which vasopressor is recommended as first-line therapy in septic shock when fluid resuscitation fails to restore a mean arterial pressure (MAP) >= 65 mmHg?",
+        "options": [
+          "A) Norepinephrine",
+          "B) Oral midodrine alone",
+          "C) Intravenous nitroglycerin",
+          "D) Routine low-dose dopamine for 'renal protection'"
+        ],
+        "correct": 0,
+        "hint": "Potent alpha and beta-1 adrenergic agonist preferred over dopamine due to lower arrhythmia and mortality risk.",
+        "explanation": "Norepinephrine is the first-line vasopressor for septic shock to maintain a target MAP of >= 65 mmHg (with vasopressin or epinephrine added if needed for refractory shock)."
+      },
+      {
+        "pts": 50,
+        "q": "A 29-year-old patient presents with high fever, severe headache, neck stiffness, photophobia, and petechial rash, with GCS dropping from 15 to 11. Lumbar puncture is delayed pending a head CT due to focal neurological signs/altered sensorium. What must be done immediately before the head CT and LP?",
+        "options": [
+          "A) Draw blood cultures and immediately administer empiric IV broad-spectrum antibiotics (plus dexamethasone per protocol for suspected bacterial meningitis) without waiting for CT or LP",
+          "B) Wait for lumbar puncture results before giving any antibiotics",
+          "C) Give oral paracetamol only and discharge home",
+          "D) Administer anticoagulants immediately"
+        ],
+        "correct": 0,
+        "hint": "Suspected acute bacterial meningitis requires immediate empiric IV antibiotics (and adjunctive dexamethasone) without waiting for imaging or LP.",
+        "explanation": "In suspected acute bacterial meningitis, empiric intravenous antimicrobial therapy (and adjunctive dexamethasone, given before or with the first antibiotic dose in appropriate cases) must be started immediately; if head CT is required prior to lumbar puncture, antimicrobials must not be delayed."
+      }
+    ]
+  },
+  {
+    "name": "Hematology & Oncology Emergencies",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which peripheral blood smear and laboratory pattern is classic for megaloblastic anemia due to vitamin B12 or folate deficiency?",
+        "options": [
+          "A) Macrocytosis (elevated MCV) with oval macrocytes and hypersegmented neutrophils",
+          "B) Microcytic hypochromic cells with low MCV and low ferritin",
+          "C) Target cells and sickled erythrocytes with normal MCV",
+          "D) Pancytopenia with blast cells > 50% on peripheral smear in all cases"
+        ],
+        "correct": 0,
+        "hint": "Large red cells + neutrophils with >= 5 lobes.",
+        "explanation": "Megaloblastic anemia (commonly from vitamin B12 or folate deficiency) impairs nuclear DNA synthesis, producing macrocytosis (high MCV), macro-ovalocytes, and hypersegmented neutrophils on peripheral blood smear."
+      },
+      {
+        "pts": 20,
+        "q": "Which iron studies profile is characteristic of classic iron-deficiency anemia?",
+        "options": [
+          "A) Low serum ferritin, low serum iron, and elevated TIBC / transferrin",
+          "B) High serum ferritin, high serum iron, and very low TIBC",
+          "C) Normal ferritin, high reticulocyte count, and high indirect bilirubin",
+          "D) Elevated serum vitamin B12 and low homocysteine"
+        ],
+        "correct": 0,
+        "hint": "Depleted iron stores lower ferritin while the body increases transferrin/TIBC to capture iron.",
+        "explanation": "Absolute iron deficiency typically shows low serum ferritin (the most specific marker of depleted iron stores), low serum iron, low transferrin saturation, and increased TIBC."
+      },
+      {
+        "pts": 30,
+        "q": "A patient receiving cytotoxic chemotherapy for acute leukemia develops fever (38.5°C) with an absolute neutrophil count (ANC) of 0.35 x 10^9/L (< 0.5 x 10^9/L). What is this condition, and what is required urgently?",
+        "options": [
+          "A) Febrile neutropenia; urgent empirical broad-spectrum intravenous antipseudomonal beta-lactam antibiotic therapy",
+          "B) Benign viral reaction; withhold antibiotics until fever exceeds 40°C for 48 hours",
+          "C) Immune thrombocytopenia; treat with platelet transfusion alone without antibiotics",
+          "D) Polycythemia vera; perform immediate phlebotomy"
+        ],
+        "correct": 0,
+        "hint": "Fever in neutropenia is a medical emergency requiring prompt empiric IV antibiotics covering Pseudomonas and enteric Gram-negatives.",
+        "explanation": "Febrile neutropenia (fever with ANC < 0.5 x 10^9/L, or expected to fall below 0.5 x 10^9/L) carries high risk of rapid progression to sepsis and requires prompt risk assessment and immediate empiric broad-spectrum IV antibacterial therapy."
+      },
+      {
+        "pts": 40,
+        "q": "Which pentad of clinical features classically describes Thrombotic Thrombocytopenic Purpura (TTP)?",
+        "options": [
+          "A) Microangiopathic hemolytic anemia (with schistocytes), thrombocytopenia, fever, neurological symptoms, and renal abnormalities",
+          "B) Hypoglycemia, hyperkalemia, hypertension, bradycardia, and jaundice",
+          "C) Splenomegaly, leukocytosis, gout, tinnitus, and clubbing",
+          "D) Polyuria, polydipsia, hypernatremia, ataxia, and nystagmus"
+        ],
+        "correct": 0,
+        "hint": "MAHA + low platelets + fever + neuro + renal findings due to severe ADAMTS13 deficiency.",
+        "explanation": "TTP is a thrombotic microangiopathy driven by severe ADAMTS13 deficiency leading to ultra-large von Willebrand factor multimers and platelet-rich microthrombi, classically presenting with MAHA (schistocytes), thrombocytopenia, neurological deficits, fever, and renal involvement."
+      },
+      {
+        "pts": 50,
+        "q": "A patient with high-grade non-Hodgkin lymphoma starting cytotoxic chemotherapy develops acute oliguria, muscle cramps/tetany, and laboratory results showing hyperuricemia, hyperkalemia, hyperphosphatemia, and secondary hypocalcemia. Which oncologic emergency is occurring, and what preventive/therapeutic measures are central?",
+        "options": [
+          "A) Tumor Lysis Syndrome (TLS); manage with aggressive IV hydration, uric acid lowering (allopurinol or rasburicase in high-risk/established hyperuricemia), frequent electrolyte/ECG monitoring, and cautious management of hyperkalemia/hypocalcemia",
+          "B) Diabetic ketoacidosis; treat with subcutaneous insulin alone",
+          "C) Myxoedema coma; treat with passive rewarming and levothyroxine",
+          "D) Iron overload; treat with phlebotomy"
+        ],
+        "correct": 0,
+        "hint": "Rapid tumor cell breakdown releases potassium, phosphate, and nucleic acids (uric acid), while phosphate binds calcium.",
+        "explanation": "Tumor Lysis Syndrome results from rapid destruction of malignant cells releasing intracellular potassium, phosphate, and purines (metabolized to uric acid), causing hyperuricemia, hyperkalemia, hyperphosphatemia, and hypocalcemia. Management centers on aggressive hydration, urate-lowering therapy (allopurinol or rasburicase), close electrolyte/ECG monitoring, and avoiding calcium for asymptomatic hypocalcemia unless symptomatic/arrhythmic due to calcium-phosphate precipitation risk."
+      }
+    ]
+  },
+  {
+    "name": "Neurology & Stroke Medicine",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which fast bedside clinical scale is widely used in pre-hospital and acute stroke triage to recognize possible stroke symptoms?",
+        "options": [
+          "A) FAST (Face drooping, Arm weakness, Speech difficulty, Time to call emergency services)",
+          "B) APGAR score",
+          "C) Ranson criteria",
+          "D) Rockall score"
+        ],
+        "correct": 0,
+        "hint": "Face, Arm, Speech, Time.",
+        "explanation": "The FAST mnemonic helps rapidly identify key acute stroke warning signs—facial weakness, arm drift/weakness, and speech disturbance—and emphasizes urgent time-sensitive evaluation."
+      },
+      {
+        "pts": 20,
+        "q": "In a patient presenting with sudden focal neurological deficits of suspected stroke, which initial brain imaging study is performed urgently before giving thrombolytic therapy?",
+        "options": [
+          "A) Non-contrast head CT (or MRI brain per stroke protocol)",
+          "B) Plain cervical spine X-ray",
+          "C) Abdominal ultrasound",
+          "D) DEXA bone scan"
+        ],
+        "correct": 0,
+        "hint": "Must exclude intracranial hemorrhage and stroke mimics rapidly.",
+        "explanation": "Urgent non-contrast head CT is performed immediately in suspected acute stroke to rule out intracranial hemorrhage and evaluate early ischemic changes before administering IV thrombolysis or considering thrombectomy."
+      },
+      {
+        "pts": 30,
+        "q": "How is a Transient Ischemic Attack (TIA) clinically distinguished from an acute ischemic stroke?",
+        "options": [
+          "A) Transient neurological dysfunction caused by focal brain, spinal cord, or retinal ischemia without acute infarction on neuroimaging (and typically resolving rapidly)",
+          "B) Permanent quadriplegia lasting more than 5 years with a large lobar hematoma",
+          "C) Generalized tonic-clonic seizure caused by hypoglycemia",
+          "D) Progressive memory loss over 10 years due to Alzheimer disease"
+        ],
+        "correct": 0,
+        "hint": "Focal ischemia without acute tissue infarction on imaging.",
+        "explanation": "A TIA represents a transient episode of neurological dysfunction caused by focal cerebral, spinal cord, or retinal ischemia without acute infarction, though it carries a high early risk of subsequent ischemic stroke and requires prompt secondary prevention workup."
+      },
+      {
+        "pts": 40,
+        "q": "In a patient presenting with status epilepticus (continuous seizure activity or recurrent seizures without full recovery of consciousness), which medication class is first-line for immediate seizure termination?",
+        "options": [
+          "A) Intravenous benzodiazepines (such as lorazepam or diazepam, or IM midazolam if IV access is not immediately available)",
+          "B) Oral daily vitamin D",
+          "C) Subcutaneous insulin",
+          "D) Intravenous protamine sulfate"
+        ],
+        "correct": 0,
+        "hint": "Rapidly acting GABA-A receptor modulators given first-line alongside airway/oxygen/glucose checks.",
+        "explanation": "Intravenous benzodiazepines (e.g., lorazepam) are first-line acute therapy for status epilepticus, followed by second-line antiseizure medications (such as levetiracetam, fosphenytoin/phenytoin, or valproate) if seizures persist."
+      },
+      {
+        "pts": 50,
+        "q": "A 67-year-old patient arrives 90 minutes after sudden onset of right-sided hemiparesis and expressive aphasia. Non-contrast head CT shows no hemorrhage and no large established infarct, and BP is 172/96 mmHg with blood glucose 6.8 mmol/L and no contraindications to thrombolysis. What is the key principle regarding blood pressure management in eligible acute ischemic stroke patients receiving IV thrombolysis?",
+        "options": [
+          "A) Carefully lower BP to < 185/110 mmHg before and maintain < 180/105 mmHg during/after IV thrombolysis using titratable agents (avoiding abrupt drops that compromise penumbral perfusion)",
+          "B) Drop blood pressure rapidly to < 110/60 mmHg immediately regardless of thrombolysis status",
+          "C) Withhold thrombolysis permanently whenever BP is > 140/90 mmHg",
+          "D) Administer high-dose aspirin immediately before head CT"
+        ],
+        "correct": 0,
+        "hint": "Keep BP < 185/110 mmHg to start thrombolysis and < 180/105 mmHg afterward without causing sharp hypotension that starves the ischemic penumbra.",
+        "explanation": "In acute ischemic stroke candidates eligible for IV thrombolysis, blood pressure is generally controlled below 185/110 mmHg prior to infusion and maintained below 180/105 mmHg for the first 24 hours using gentle, titratable agents, avoiding excessive hypotension that could worsen perfusion to the ischemic penumbra."
+      }
+    ]
+  }
+]
