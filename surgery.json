@@ -1,0 +1,492 @@
+[
+  {
+    "name": "Dysphagia & Esophageal Motility",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which investigation is considered the diagnostic gold standard for esophageal motility disorders such as achalasia?",
+        "options": [
+          "A) Barium swallow",
+          "B) Upper gastrointestinal endoscopy (OGD)",
+          "C) High-resolution manometry",
+          "D) 24-hour pH-impedance monitoring"
+        ],
+        "correct": 2,
+        "hint": "Look for the test that directly measures integrated relaxation pressure (IRP) and esophageal body peristaltic wave patterns.",
+        "explanation": "High-resolution manometry is the diagnostic gold standard for evaluating esophageal motility disorders, providing precise measurement of the integrated relaxation pressure (IRP) and peristaltic wave patterns. Upper GI endoscopy is mandatory as the initial test to exclude mechanical obstruction or pseudoachalasia, while barium swallow demonstrates characteristically supportive radiologic features such as the \"bird's beak\" appearance."
+      },
+      {
+        "pts": 20,
+        "q": "What primary neuropathological defect underlies the failure of lower esophageal sphincter (LOS) relaxation in primary achalasia?",
+        "options": [
+          "A) Hypertrophy of the cricopharyngeus muscle",
+          "B) Loss of inhibitory neurons releasing nitric oxide and VIP in the myenteric plexus",
+          "C) Hypersecretion of acetylcholine from postganglionic parasympathetic fibers",
+          "D) Autoimmune destruction of striated muscle in the upper third of the esophagus"
+        ],
+        "correct": 1,
+        "hint": "Focus on Auerbach's plexus and the loss of smooth-muscle relaxing neurotransmitters while excitatory cholinergic tone remains unopposed.",
+        "explanation": "Primary achalasia is caused by the degeneration and loss of inhibitory postganglionic neurons within the myenteric (Auerbach's) plexus that normally produce nitric oxide and vasoactive intestinal peptide (VIP). Because excitatory cholinergic neurons are preserved, the lower esophageal sphincter loses its ability to relax during swallowing, and normal esophageal peristalsis is abolished."
+      },
+      {
+        "pts": 30,
+        "q": "According to the Chicago classification v4.0, which achalasia subtype is defined by premature (spastic) contractions in 20% or more of swallows and responds best to Peroral Endoscopic Myotomy (POEM)?",
+        "options": [
+          "A) Type I (Classic achalasia)",
+          "B) Type II (Achalasia with panoesophageal pressurisation)",
+          "C) Type III (Spastic achalasia)",
+          "D) Esophagogastric junction outflow obstruction (EGJOO)"
+        ],
+        "correct": 2,
+        "hint": "Distinguish the subtype with premature distal esophageal contractions requiring a longer, tailored proximal myotomy.",
+        "explanation": "Type III (spastic) achalasia is characterized on high-resolution manometry by absent normal peristalsis accompanied by spastic/premature contractions in >= 20% of swallows. It carries the poorest response rates to pneumatic dilatation or standard Heller myotomy, making a tailored, extended endoscopic myotomy via POEM the preferred treatment modality. Type I exhibits a flaccid body without pressurisation, whereas Type II shows panoesophageal pressurisation."
+      },
+      {
+        "pts": 40,
+        "q": "A 72-year-old man presents with high dysphagia, regurgitation of undigested food, halitosis, and a left-sided neck mass that empties on pressure (Boyce's sign). Through which specific anatomical area does this false diverticulum herniate?",
+        "options": [
+          "A) Triangle of Laimer",
+          "B) Killian's dehiscence (triangle)",
+          "C) Killian-Jamieson space",
+          "D) Angle of His"
+        ],
+        "correct": 1,
+        "hint": "Identify the posterior weak triangle between the oblique fibers of the thyropharyngeus and the transverse fibers of the cricopharyngeus.",
+        "explanation": "A Zenker's diverticulum (pharyngeal pouch) is a pulsion mucosal diverticulum that protrudes posteriorly through Killian's dehiscence, a weak triangular anatomical space bounded by the oblique fibers of the thyropharyngeus muscle and the transverse fibers of the cricopharyngeus muscle. Boyce's sign describes the compression and gurgling evacuation of the pouch upon external cervical pressure."
+      },
+      {
+        "pts": 50,
+        "q": "A 68-year-old patient presents with a 6-week history of rapidly progressive dysphagia to both solids and liquids, along with a 14 kg weight loss. A barium swallow shows a dilated esophageal body tapering to a smooth \"bird's beak\" at the lower esophageal sphincter. What is the most critical immediate management step?",
+        "options": [
+          "A) Perform upper GI endoscopy with retroflexion of the cardia and biopsies to exclude pseudoachalasia from cancer",
+          "B) Proceed directly to laparoscopic Heller myotomy with a partial Dor wrap",
+          "C) Perform high-resolution manometry to confirm Type II achalasia before initiating dilatation",
+          "D) Prescribe daily oral nifedipine and schedule pneumatic balloon dilatation"
+        ],
+        "correct": 0,
+        "hint": "Older age (>60), short symptom duration (<6 months), and marked weight loss are red flags for malignancy mimicking achalasia.",
+        "explanation": "In an older patient presenting with a short history (weeks to months) and rapid weight loss, pseudoachalasia caused by adenocarcinoma of the gastric cardia or distal esophagus must be excluded. Malignant infiltration of the myenteric plexus at the gastroesophageal junction can closely mimic achalasia clinically, radiologically, and manometrically, requiring endoscopic inspection with retroflexion, mucosal biopsies, or CT/EUS to exclude malignancy before initiating achalasia treatments."
+      }
+    ]
+  },
+  {
+    "name": "Peptic Ulcer Disease (PUD) & H. pylori",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Histologically, how is a true peptic ulcer distinguished from a gastric erosion?",
+        "options": [
+          "A) An ulcer is confined to the surface epithelium, whereas an erosion involves the muscularis mucosae",
+          "B) An ulcer extends through the muscularis mucosae into the submucosa or deeper, whereas an erosion is limited to the mucosa",
+          "C) An ulcer occurs exclusively in the duodenal bulb, whereas erosions occur only in the fundus",
+          "D) An ulcer heals rapidly without fibrotic scarring, whereas an erosion always forms a permanent scar"
+        ],
+        "correct": 1,
+        "hint": "Compare depth relative to the muscularis mucosae and whether healing leaves fibrotic scarring.",
+        "explanation": "A peptic ulcer is defined as a disruption of the gastrointestinal mucosal lining exposed to acid and pepsin that penetrates through the muscularis mucosae into the submucosa or deeper layers. Conversely, an erosion is a superficial mucosal break that does not cross the muscularis mucosae and heals without scar formation."
+      },
+      {
+        "pts": 20,
+        "q": "How does Helicobacter pylori neutralize local gastric acid and alter gastrin regulation in antral-predominant gastritis?",
+        "options": [
+          "A) It secretes gastrin directly and invades parietal cells to shut down H+/K+ ATPase pumps",
+          "B) It produces urease to create an insulating ammonia cloud and destroys antral D cells, decreasing somatostatin release",
+          "C) It synthesizes prostaglandins that inhibit histamine binding on ECL cells",
+          "D) It irreversibly blocks COX-1 enzymes, stopping hydrochloric acid production"
+        ],
+        "correct": 1,
+        "hint": "Think of the enzyme used in the urea breath test and the loss of somatostatin inhibition on antral G cells.",
+        "explanation": "H. pylori survival in acidic gastric juice relies on its high urease activity, which splits urea into ammonia and CO2 to form a protective neutral microenvironment. In antral-predominant gastritis, H. pylori infection damages somatostatin-producing D cells, lifting the negative feedback brake on G cells and leading to hypergastrinemia and uninhibited acid secretion from the body's parietal cell mass."
+      },
+      {
+        "pts": 30,
+        "q": "A patient completes a 14-day course of bismuth quadruple therapy for H. pylori. Which test should be performed at least 4 weeks post-treatment to confirm cure, and why is serology (IgG) unsuitable?",
+        "options": [
+          "A) Urea breath test; serology is unsuitable because anti-H. pylori IgG antibodies remain persistently positive long after eradication",
+          "B) Stool antigen test; serology is unsuitable because PPI therapy causes false-positive antibody results",
+          "C) Rapid urease (CLO) test; serology is unsuitable because it requires invasive gastric biopsies",
+          "D) Culture; serology is unsuitable because it only detects CagA-negative bacterial strains"
+        ],
+        "correct": 0,
+        "hint": "Non-invasive active-infection testing is required post-eradication, whereas serum antibodies reflect past exposure.",
+        "explanation": "Successful eradication must be confirmed at least 4 weeks after completing treatment using an active infection assay, such as the urea breath test or stool antigen test. Serology (IgG) measures historical immune exposure and remains positive long after the bacterium has been eradicated, making it incapable of distinguishing active infection from past infection or confirming cure."
+      },
+      {
+        "pts": 40,
+        "q": "Under the Johnson classification of gastric ulcers, which type occurs on the lesser curve near the incisura angularis and is associated with normal or low acid output?",
+        "options": [
+          "A) Type I",
+          "B) Type II",
+          "C) Type III",
+          "D) Type IV"
+        ],
+        "correct": 0,
+        "hint": "Recall the most common (~60%) gastric ulcer subtype located at the incisura angularis with mucosal defense failure rather than hyperacidity.",
+        "explanation": "Johnson Type I gastric ulcers are located on the lesser curve at the incisura angularis (~60% of cases) and are characterized by normal or low gastric acid secretion. Types II (gastric body ulcer combined with a duodenal ulcer) and III (prepyloric) are high-acid states that behave clinically like duodenal ulcers. Type IV occurs high on the lesser curve near the gastroesophageal junction, and Type V is drug/NSAID-induced."
+      },
+      {
+        "pts": 50,
+        "q": "A 52-year-old man with a long history of duodenal ulcers presents with recurrent non-bilious projectile vomiting of ingested food, dehydration, and a succussion splash. Blood tests reveal a hypochloraemic, hypokalaemic metabolic alkalosis, yet urinalysis demonstrates acidic urine. What physiological mechanism explains this \"paradoxical aciduria\", and what initial IV resuscitation fluid is indicated?",
+        "options": [
+          "A) Loss of gastric HCl triggers aldosterone-mediated sodium retention; severe potassium depletion forces renal distal tubule Na+/H+ exchange; treat with 0.9% normal saline plus KCl",
+          "B) Hypergastrinemia impairs proximal tubular bicarbonate reabsorption; treat with IV sodium bicarbonate",
+          "C) Ischemic acute tubular necrosis impairs renal clearance of organic acids; treat with 5% dextrose",
+          "D) Direct H. pylori nephrotoxicity inhibits tubular hydrogen ion secretion; treat with IV lactated Ringer's solution"
+        ],
+        "correct": 0,
+        "hint": "Aldosterone conserves sodium in the collecting duct; when intracellular K+ is depleted, H+ is excreted in exchange for Na+.",
+        "explanation": "Gastric outlet obstruction causes severe vomiting of gastric hydrochloric acid, resulting in a hypochloraemic, hypokalaemic metabolic alkalosis. Volume depletion activates aldosterone to conserve sodium in the kidney. As body potassium stores become exhausted from alkalosis and urinary excretion, the distal renal tubules are forced to reabsorb Na+ in exchange for H+ instead of K+, leading to acidic urine (\"paradoxical aciduria\"). Resuscitation requires 0.9% normal saline with potassium chloride to correct the fluid volume, chloride deficiency, and hypokalemia."
+      }
+    ]
+  },
+  {
+    "name": "Acute Appendicitis & Right Iliac Fossa Pain",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Where is McBurney's point, the classic site of maximal tenderness in uncomplicated acute appendicitis, anatomically located?",
+        "options": [
+          "A) Midpoint between the xiphoid process and the umbilicus",
+          "B) One-third of the distance along a line from the right anterior superior iliac spine (ASIS) to the umbilicus",
+          "C) Two-thirds of the distance from the pubic symphysis to the right costal margin",
+          "D) At the intersection of the right midclavicular line and the ninth costal cartilage"
+        ],
+        "correct": 1,
+        "hint": "Measure one-third of the way inward from the right ASIS toward the umbilicus.",
+        "explanation": "McBurney's point is situated one-third of the distance along an imaginary line connecting the right anterior superior iliac spine (ASIS) to the umbilicus, corresponding to the usual surface projection of the base of the vermiform appendix."
+      },
+      {
+        "pts": 20,
+        "q": "What is the most common underlying initiating event in the pathogenesis of acute obstructive appendicitis in adolescents and young adults?",
+        "options": [
+          "A) Lymphoid follicular hyperplasia obstructing the appendiceal lumen",
+          "B) Carcinoid tumor occlusion at the appendiceal tip",
+          "C) Mesenteric arterial embolism to the appendicular artery",
+          "D) Autoimmune vasculitis of the cecal wall"
+        ],
+        "correct": 0,
+        "hint": "Consider why peak incidence occurs in the second decade of life when gut-associated lymphoid tissue is most prominent.",
+        "explanation": "In children and young adults, lymphoid follicular hyperplasia (often triggered by viral or bacterial enteric infection) is the leading cause of appendiceal luminal obstruction, whereas fecaliths become increasingly common in older patients. Closed-loop obstruction raises intraluminal pressure, impairing venous outflow, arterial perfusion, and mucosal integrity."
+      },
+      {
+        "pts": 30,
+        "q": "Why does early acute appendicitis classically begin as poorly localized periumbilical pain before shifting to the right iliac fossa?",
+        "options": [
+          "A) Visceral afferent fibers from the midgut appendix enter the T10 spinal cord segment before parietal peritoneal inflammation stimulates somatic nerves",
+          "B) Early mucosal ischemia irritates the right obturator nerve directly",
+          "C) Retroperitoneal fluid tracks along the psoas fascia to the umbilicus",
+          "D) Gastric acid hypersecretion accompanies early appendiceal distension"
+        ],
+        "correct": 0,
+        "hint": "Distinguish embryological midgut visceral referral (T10 dermatome) from localized somatic parietal peritoneal irritation.",
+        "explanation": "The appendix is an embryological midgut derivative whose visceral nociceptive afferents travel with sympathetic fibers to the T10 spinal cord segment, producing dull periumbilical pain. Once transmural inflammation irritates the overlying parietal peritoneum in the right lower quadrant, somatic afferent fibers localize sharp pain to McBurney's point."
+      },
+      {
+        "pts": 40,
+        "q": "During physical examination for suspected retrocecal or pelvic appendicitis, which maneuver specifically elicits pain by passive internal rotation of a flexed right hip?",
+        "options": [
+          "A) Rovsing's sign",
+          "B) Obturator sign",
+          "C) Psoas sign",
+          "D) Dunphy's sign"
+        ],
+        "correct": 1,
+        "hint": "Internal rotation of the flexed thigh stretches the obturator internus muscle adjacent to a pelvic appendix.",
+        "explanation": "The obturator sign is elicited by flexing the patient's right hip and knee to 90 degrees and passively internally rotating the hip, stretching the obturator internus muscle and irritating an adjacent inflamed pelvic appendix. Rovsing's sign involves left iliac fossa palpation, the psoas sign involves passive hip extension, and Dunphy's sign is increased pain on coughing."
+      },
+      {
+        "pts": 50,
+        "q": "A 26-year-old man presents with a 5-day history of right iliac fossa pain and low-grade fever. Examination reveals a well-circumscribed, tender 6 cm mass in the right lower quadrant without generalized peritonitis. Contrast CT confirms a walled-off phlegmonous appendiceal mass without a drainable abscess. What is the safest initial management strategy?",
+        "options": [
+          "A) Conservative non-operative management with IV antibiotics, bowel rest, and close clinical monitoring (Ochsner-Sherren regimen)",
+          "B) Immediate emergency midline laparotomy and right hemicolectomy",
+          "C) Immediate open appendectomy with primary skin closure",
+          "D) High-dose oral corticosteroids and discharge home"
+        ],
+        "correct": 0,
+        "hint": "Operating acutely on a dense inflammatory phlegmon risks dense bowel injury and fecal fistula formation.",
+        "explanation": "When a patient presents several days after symptom onset with a localized appendiceal phlegmon (inflammatory mass) and no generalized peritonitis or large drainable abscess, immediate surgery carries a high risk of iatrogenic ileocecal injury and fecal fistula. Initial conservative therapy with IV fluids, broad-spectrum antibiotics, and serial observation (Ochsner-Sherren regimen) allows inflammation to resolve safely, followed by colonoscopy/imaging in patients >= 40 years to exclude underlying cecal neoplasm."
+      }
+    ]
+  },
+  {
+    "name": "Hepatobiliary & Gallstone Disease",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which anatomical boundaries define Calot's triangle (hepatocystic triangle), a critical landmark during laparoscopic cholecystectomy?",
+        "options": [
+          "A) Common hepatic duct medially, cystic duct inferiorly, and inferior surface of the liver superiorly",
+          "B) Portal vein posteriorly, common bile duct anteriorly, and duodenum inferiorly",
+          "C) Falciform ligament medially, right kidney posteriorly, and stomach anteriorly",
+          "D) Superior mesenteric artery medially, inferior vena cava posteriorly, and pancreas superiorly"
+        ],
+        "correct": 0,
+        "hint": "Identify the three borders framing the cystic artery and lymph node of Lund before clipping any tubular structures.",
+        "explanation": "The modern hepatocystic (Calot's) triangle is bounded medially by the common hepatic duct, inferiorly/laterally by the cystic duct, and superiorly by the inferior border of the liver. Achieving Strasberg's Critical View of Safety within this region prevents bile duct injury."
+      },
+      {
+        "pts": 20,
+        "q": "What is the primary pathophysiological mechanism responsible for the formation of cholesterol gallstones?",
+        "options": [
+          "A) Supersaturation of bile with cholesterol relative to bile salts and phospholipids, combined with gallbladder hypomotility and mucin hypersecretion",
+          "B) Chronic intravascular hemolysis elevating unconjugated bilirubin exclusively",
+          "C) Bacterial beta-glucuronidase deconjugation of bilirubin in the intrahepatic ducts",
+          "D) Excessive pancreatic lipase reflux into the gallbladder lumen"
+        ],
+        "correct": 0,
+        "hint": "Recall Admirand and Small's triangle: cholesterol precipitation occurs when solubilizing micelles are overwhelmed.",
+        "explanation": "Cholesterol gallstones form when hepatic cholesterol secretion exceeds the solubilizing capacity of bile salts and phosphatidylcholine (lecithin), causing cholesterol monohydrate crystals to nucleate in gallbladder mucin gel alongside impaired gallbladder emptying."
+      },
+      {
+        "pts": 30,
+        "q": "How is acute calculous cholecystitis reliably distinguished clinically and sonographically from uncomplicated biliary colic?",
+        "options": [
+          "A) Persistent right upper quadrant pain (>6 hours), fever, leukocytosis, positive Murphy's sign, and gallbladder wall thickening (>3 mm) with pericholecystic fluid",
+          "B) Transient postprandial pain lasting <30 minutes with normal white cell count and normal ultrasound",
+          "C) Painless progressive obstructive jaundice with a palpable non-tender gallbladder",
+          "D) Elevated serum amylase >1000 U/L with normal gallbladder wall thickness"
+        ],
+        "correct": 0,
+        "hint": "Biliary colic is transient cystic duct obstruction without inflammation; cholecystitis adds sustained pain, systemic inflammation, and sonographic wall edema.",
+        "explanation": "Biliary colic results from temporary cystic duct impaction that resolves within a few hours without systemic inflammation. Acute cholecystitis involves sustained obstruction leading to gallbladder wall ischemia and inflammation, producing persistent RUQ pain, fever, leukocytosis, inspiratory arrest on palpation (Murphy's sign), wall thickening (>3 mm), and pericholecystic fluid."
+      },
+      {
+        "pts": 40,
+        "q": "According to Courvoisier's law, a palpable, painless, distended gallbladder in a jaundiced patient is most likely caused by which underlying condition?",
+        "options": [
+          "A) Malignant distal biliary obstruction such as carcinoma of the head of the pancreas",
+          "B) Chronic fibrotic calculous cholecystitis with impacted cystic duct stone",
+          "C) Acute viral hepatitis A",
+          "D) Gilbert syndrome"
+        ],
+        "correct": 0,
+        "hint": "A chronically inflamed stone-filled gallbladder becomes fibrotic and non-distensible, whereas a normal gallbladder distends under malignant distal pressure.",
+        "explanation": "Courvoisier's law states that in the presence of jaundice, a palpable, non-tender gallbladder is unlikely to be due to gallstones (which cause chronic fibrosis and contraction of the gallbladder wall) and instead points toward malignant distal common bile duct obstruction, such as pancreatic head adenocarcinoma or ampullary carcinoma."
+      },
+      {
+        "pts": 50,
+        "q": "A 64-year-old woman presents with high fever (39.5°C), rigors, jaundice, right upper quadrant pain, hypotension (BP 84/50 mmHg), and new-onset confusion (Reynolds' pentad). After immediate IV fluid resuscitation and broad-spectrum IV antibiotics, what is the definitive urgent intervention?",
+        "options": [
+          "A) Urgent biliary decompression via endoscopic retrograde cholangiopancreatography (ERCP) with sphincterotomy/stenting",
+          "B) Elective outpatient laparoscopic cholecystectomy in 6 weeks",
+          "C) Oral ursodeoxycholic acid dissolution therapy",
+          "D) Diagnostic barium meal follow-through"
+        ],
+        "correct": 0,
+        "hint": "Severe suppurative cholangitis with septic shock requires prompt drainage of the obstructed, infected biliary tree.",
+        "explanation": "Reynolds' pentad (Charcot's triad plus hypotension and altered mental status) signifies severe acute suppurative cholangitis with biliary sepsis. Alongside aggressive IV fluids and empiric antibiotics, urgent biliary drainage—preferably via ERCP (or percutaneous transhepatic biliary drainage if ERCP fails)—is life-saving."
+      }
+    ]
+  },
+  {
+    "name": "Intestinal Obstruction & Hernias",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the single most common cause of mechanical small bowel obstruction in adults who have previously undergone abdominal surgery?",
+        "options": [
+          "A) Postoperative peritoneal adhesions",
+          "B) Incarcerated femoral hernia",
+          "C) Sigmoid volvulus",
+          "D) Gallstone ileus"
+        ],
+        "correct": 0,
+        "hint": "Accounts for roughly 60–70% of small bowel obstructions in industrialized settings.",
+        "explanation": "Postoperative fibrous adhesions are the leading cause of mechanical small bowel obstruction in patients with prior abdominal or pelvic surgery, followed by incarcerated hernias and neoplasms."
+      },
+      {
+        "pts": 20,
+        "q": "How does a femoral hernia differ anatomically from an indirect inguinal hernia in relation to the pubic tubercle and inguinal ligament?",
+        "options": [
+          "A) A femoral hernia exits below and lateral to the pubic tubercle beneath the inguinal ligament, whereas an inguinal hernia emerges above and medial to the pubic tubercle",
+          "B) A femoral hernia passes through the deep inguinal ring above the inguinal ligament",
+          "C) A femoral hernia lies medial to the lacunar ligament",
+          "D) A femoral hernia is bounded anteriorly by the posterior wall of the rectus sheath"
+        ],
+        "correct": 0,
+        "hint": "Palpate the pubic tubercle: inguinal hernias lie superomedial, while femoral hernias lie inferolateral.",
+        "explanation": "A femoral hernia protrudes through the femoral ring into the femoral canal, lying inferior and lateral to the pubic tubercle and below the inguinal ligament. Because the femoral ring is narrow and rigid, femoral hernias carry a high risk of incarceration and strangulation."
+      },
+      {
+        "pts": 30,
+        "q": "On a supine plain abdominal radiograph, which radiologic features distinguish small bowel obstruction from large bowel obstruction?",
+        "options": [
+          "A) Centrally located dilated loops (>3 cm) with valvulae conniventes completely traversing the lumen",
+          "B) Peripherally located dilated loops (>6 cm) with incomplete haustral markings",
+          "C) A single massive gas-filled loop arising from the pelvis toward the right upper quadrant ('coffee bean' sign)",
+          "D) Air outlining the biliary tree (pneumobilia) alone"
+        ],
+        "correct": 0,
+        "hint": "Compare central valvulae conniventes (complete transverse folds) against peripheral haustra (incomplete folds).",
+        "explanation": "Small bowel obstruction typically produces central dilated loops (>3 cm) crossed completely by valvulae conniventes (plicae circulares), whereas large bowel obstruction demonstrates peripheral dilated loops (>6 cm, >9 cm in the cecum) with incomplete haustral folds."
+      },
+      {
+        "pts": 40,
+        "q": "Why does a closed-loop large bowel obstruction in the presence of a competent ileocecal valve represent a surgical emergency?",
+        "options": [
+          "A) Gas and fluid cannot decompress proximally into the ileum, causing rapid cecal distension (>9–12 cm) and high risk of cecal ischemia and perforation",
+          "B) It immediately causes severe hyperkalemic metabolic acidosis from gastric reflux",
+          "C) It prevents portal venous blood from entering the liver",
+          "D) It inevitably leads to spontaneous intussusception of the jejunum"
+        ],
+        "correct": 0,
+        "hint": "Apply Laplace's law: the cecum has the largest diameter and highest wall tension in the colon.",
+        "explanation": "When a distal colonic obstruction (e.g., obstructing left-sided colon cancer) occurs with a competent ileocecal valve, luminal contents are trapped in a closed loop. By Laplace's law, wall tension is greatest in the wide-diameter cecum, predisposing it to venous congestion, gangrene, and perforation once cecal diameter exceeds 9–12 cm."
+      },
+      {
+        "pts": 50,
+        "q": "A 78-year-old resident with chronic constipation presents with marked abdominal distension, obstipation, and a plain abdominal X-ray showing a massive, inverted U-shaped dilated colonic loop arising from the left lower quadrant toward the right upper quadrant ('coffee bean' sign) without peritoneal signs. What is the initial therapeutic procedure of choice?",
+        "options": [
+          "A) Endoscopic decompression via flexible sigmoidoscopy with placement of a rectal decompression tube, followed by semi-elective resection",
+          "B) Immediate barium enema with high-pressure insufflation",
+          "C) Oral osmotic laxative loading and observation",
+          "D) Immediate right hemicolectomy"
+        ],
+        "correct": 0,
+        "hint": "In viable sigmoid volvulus without perforation or peritonitis, endoscopic detorsion decompresses the bowel safely before definitive surgery.",
+        "explanation": "The 'coffee bean' sign is classic for sigmoid volvulus. Provided there are no clinical or radiologic signs of bowel gangrene or perforation, initial management is fluid resuscitation followed by flexible endoscopic detorsion and placement of a decompression tube, with subsequent elective sigmoid resection to prevent high recurrence rates."
+      }
+    ]
+  },
+  {
+    "name": "Trauma & ATLS Primary Survey",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "In the Advanced Trauma Life Support (ATLS) primary survey, what is the correct sequential order of assessment and resuscitation?",
+        "options": [
+          "A) Airway with cervical spine protection, Breathing, Circulation with hemorrhage control, Disability, Exposure/Environment",
+          "B) Circulation, Airway, Breathing, Exposure, Disability",
+          "C) Disability, Airway, Breathing, Circulation, Exposure",
+          "D) Breathing, Circulation, Airway, Disability, Exposure"
+        ],
+        "correct": 0,
+        "hint": "Follow the standard ABCDE sequence prioritizing immediate life threats first.",
+        "explanation": "ATLS follows the ABCDE sequence—Airway (with cervical spine restriction), Breathing and ventilation, Circulation with hemorrhage control, Disability (neurological status), and Exposure/Environmental control—addressing the greatest immediate threat to life first."
+      },
+      {
+        "pts": 20,
+        "q": "What is the underlying physiological mechanism of obstructive shock in a patient with a tension pneumothorax?",
+        "options": [
+          "A) Rising intrapleural pressure shifts the mediastinum to the opposite side, kinking the superior and inferior vena cavae and collapsing venous return to the heart",
+          "B) Direct myocardial contusion causes primary left ventricular pump failure",
+          "C) Massive sympathetic vasodilation reduces systemic vascular resistance",
+          "D) Acute alveolar surfactant loss causes primary pulmonary edema"
+        ],
+        "correct": 0,
+        "hint": "A one-way valve air leak builds positive intrathoracic pressure that compresses the great veins entering the right atrium.",
+        "explanation": "In tension pneumothorax, a one-way pleural defect allows air to enter the pleural space on inspiration without escaping. Progressive positive intrathoracic pressure collapses the ipsilateral lung and pushes the mediastinum contralaterally, compressing the vena cavae and severely impairing cardiac preload."
+      },
+      {
+        "pts": 30,
+        "q": "A trauma patient arrives with severe respiratory distress, absent breath sounds and hyperresonance on the left hemithorax, distended neck veins, tracheal deviation to the right, and BP 78/46 mmHg. What is the immediate life-saving action?",
+        "options": [
+          "A) Immediate needle/finger thoracostomy decompression followed by tube thoracostomy without waiting for a chest radiograph",
+          "B) Obtain a portable anteroposterior chest X-ray first to confirm the diagnosis",
+          "C) Perform an urgent contrast-enhanced CT pulmonary angiogram",
+          "D) Administer IV furosemide and positive-pressure non-invasive ventilation"
+        ],
+        "correct": 0,
+        "hint": "Tension pneumothorax is a clinical diagnosis; delaying for imaging can cause cardiac arrest.",
+        "explanation": "Tension pneumothorax is a clinical diagnosis requiring immediate decompression (finger thoracostomy or large-bore needle decompression followed by chest tube insertion) prior to obtaining any chest radiograph."
+      },
+      {
+        "pts": 40,
+        "q": "Which clinical triad characterizes acute cardiac tamponade (Beck's triad) in penetrating thoracic trauma?",
+        "options": [
+          "A) Hypotension, distended neck veins (elevated JVP), and muffled heart sounds",
+          "B) Hypertension, bradycardia, and irregular respirations",
+          "C) Fever, pleuritic chest pain, and pericardial friction rub",
+          "D) Hypoxia, petechial rash, and confusion"
+        ],
+        "correct": 0,
+        "hint": "Distinguish Beck's triad of pericardial fluid compression from Cushing's triad of raised intracranial pressure.",
+        "explanation": "Beck's triad—hypotension, jugular venous distension, and muffled heart sounds—reflects impaired diastolic ventricular filling caused by blood accumulating within the non-compliant fibrous pericardial sac."
+      },
+      {
+        "pts": 50,
+        "q": "A 31-year-old man sustains blunt abdominal trauma in a high-speed motor vehicle collision. He is tachycardic (HR 132 bpm) and hypotensive (BP 82/48 mmHg) despite an initial crystalloid bolus. Bedside eFAST ultrasound demonstrates large-volume free fluid in Morison's pouch (hepatorenal recess) and the splenorenal recess. What is the definitive management?",
+        "options": [
+          "A) Immediate transfer to the operating room for emergency exploratory laparotomy and activation of massive transfusion protocol",
+          "B) Transfer to the radiology suite for a multiphasic abdominal CT scan",
+          "C) Serial hemoglobin checks every 6 hours in the general surgical ward",
+          "D) Diagnostic peritoneal lavage followed by outpatient follow-up"
+        ],
+        "correct": 0,
+        "hint": "Hemodynamic instability with a positive FAST exam is an absolute indication for immediate surgical hemorrhage control, not CT scanning.",
+        "explanation": "A hemodynamically unstable blunt trauma patient with a positive FAST exam showing free intraperitoneal fluid requires immediate emergency laparotomy for surgical hemorrhage control alongside balanced blood-product resuscitation (massive transfusion protocol). Unstable patients must never be sent to the CT scanner."
+      }
+    ]
+  },
+  {
+    "name": "Colorectal Carcinoma & Lower GI Bleeding",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which serum glycoprotein tumor marker is primarily used for postoperative surveillance to detect recurrence after curative resection of colorectal adenocarcinoma?",
+        "options": [
+          "A) Carcinoembryonic antigen (CEA)",
+          "B) Alpha-fetoprotein (AFP)",
+          "C) CA-125",
+          "D) Prostate-specific antigen (PSA)"
+        ],
+        "correct": 0,
+        "hint": "Not sensitive enough for population screening, but valuable for tracking post-resection recurrence.",
+        "explanation": "Carcinoembryonic antigen (CEA) is measured preoperatively and serially after curative colorectal cancer resection to monitor for disease recurrence or hepatic metastasis."
+      },
+      {
+        "pts": 20,
+        "q": "In the adenoma-carcinoma sequence of sporadic colorectal cancer, which early tumor suppressor gene mutation on chromosome 5q initiates mucosal hyperproliferation and polyp formation?",
+        "options": [
+          "A) APC (Adenomatous Polyposis Coli) gene loss",
+          "B) BRCA1 gene mutation",
+          "C) RET proto-oncogene activation",
+          "D) BCR-ABL translocation"
+        ],
+        "correct": 0,
+        "hint": "The 'first hit' in Vogelstein's multistep model—also mutated in the germline in Familial Adenomatous Polyposis.",
+        "explanation": "Inactivation of the APC tumor suppressor gene on chromosome 5q is the classic initiating 'first hit' in the adenoma-carcinoma sequence, leading to beta-catenin accumulation and dysplastic adenoma formation before subsequent KRAS and TP53 mutations."
+      },
+      {
+        "pts": 30,
+        "q": "How does the clinical presentation of a right-sided (cecal/ascending) colon carcinoma classically differ from that of a left-sided (descending/sigmoid) colon carcinoma?",
+        "options": [
+          "A) Right-sided tumors grow as exophytic masses in a wide lumen with liquid stool, presenting with occult bleeding and iron-deficiency anemia; left-sided tumors grow annularly ('apple-core'), causing altered bowel habits and obstruction",
+          "B) Right-sided tumors present early with bright red hematochezia and tenesmus, whereas left-sided tumors present solely with weight gain",
+          "C) Right-sided tumors always cause acute small bowel intussusception, whereas left-sided tumors never metastasize to the liver",
+          "D) Both present exclusively with painless obstructive jaundice"
+        ],
+        "correct": 0,
+        "hint": "Compare proximal wide lumen + liquid stool against distal narrow lumen + formed stool.",
+        "explanation": "Because the ascending colon has a large diameter and liquid fecal contents, right-sided tumors reach a large size before causing symptoms, typically presenting with insidious blood loss, iron-deficiency anemia, and a right iliac fossa mass. Left-sided tumors tend to infiltrate circumferentially in a narrower lumen with solid stool, causing progressive constipation, narrowed stools, and large bowel obstruction."
+      },
+      {
+        "pts": 40,
+        "q": "Which surgical technique, involving sharp dissection along the avascular 'holy plane' between the visceral and parietal pelvic fascia to remove the entire intact mesorectal envelope, dramatically reduced local recurrence in rectal cancer?",
+        "options": [
+          "A) Total mesorectal excision (TME)",
+          "B) Hartmann's reversal",
+          "C) Pyloromyotomy",
+          "D) Nissen fundoplication"
+        ],
+        "correct": 0,
+        "hint": "Popularized by Bill Heald, ensuring complete clearance of perirectal lymphovascular tissue while preserving pelvic autonomic nerves.",
+        "explanation": "Total mesorectal excision (TME) removes the rectum together with its intact mesorectal fat and lymphatics along the embryological avascular plane, preserving hypogastric/pelvic autonomic nerves and sharply lowering local recurrence rates."
+      },
+      {
+        "pts": 50,
+        "q": "A 69-year-old man presents with acute, painless, large-volume bright red rectal bleeding (hematochezia), orthostatic hypotension, and hemoglobin dropping from 13.4 to 8.9 g/dL. After hemodynamic stabilization, upper GI endoscopy is normal and CT angiography demonstrates active contrast extravasation into the descending colon. What is the most common etiology of acute severe lower GI bleeding in older adults, and what is the preferred targeted intervention?",
+        "options": [
+          "A) Colonic diverticular bleeding; transcatheter arterial embolization (or endoscopic hemostasis) before considering segmental colectomy",
+          "B) Internal hemorrhoids; immediate abdominoperineal resection",
+          "C) Meckel's diverticulum; oral proton pump inhibitor therapy alone",
+          "D) Ulcerative proctitis; immediate total proctocolectomy"
+        ],
+        "correct": 0,
+        "hint": "Asymmetric rupture of vasa recta at the dome or neck of a colonic diverticulum causes brisk painless hematochezia.",
+        "explanation": "Colonic diverticulosis is the most frequent cause of acute, brisk, painless lower gastrointestinal bleeding in older adults due to non-inflammatory rupture of the vasa recta overlying a diverticulum. Once localized by CT angiography in a stabilized patient, selective transcatheter arterial embolization or targeted colonoscopic hemostasis controls bleeding while avoiding emergency blind subtotal colectomy."
+      }
+    ]
+  }
+]
