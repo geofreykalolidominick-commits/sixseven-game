@@ -1,0 +1,702 @@
+[
+  {
+    "name": "Fracture Healing & Open Fractures",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What are the four classic sequential stages of secondary (indirect) fracture healing?",
+        "options": [
+          "A) Remodeling -> Soft callus -> Hematoma -> Hard callus",
+          "B) Hematoma/Inflammation -> Soft (fibrocartilaginous) callus -> Hard (bony) callus -> Remodeling",
+          "C) Hard callus -> Hematoma -> Remodeling -> Soft callus",
+          "D) Osteolysis -> Necrosis -> Fibrosis -> Calcification"
+        ],
+        "correct": 1,
+        "hint": "Bleeding and clot formation happen first, followed by cartilage bridging, woven bone mineralization, and lamellar reshaping.",
+        "explanation": "Secondary fracture healing progresses sequentially through hematoma/inflammatory phase, soft fibrocartilaginous callus formation, hard bony callus ossification, and final bone remodeling."
+      },
+      {
+        "pts": 20,
+        "q": "In the Gustilo-Anderson classification of open fractures, what characterizes a Type IIIB open fracture?",
+        "options": [
+          "A) Clean wound < 1 cm with minimal soft-tissue damage",
+          "B) Wound 1–10 cm without extensive soft-tissue flaps or periosteal stripping",
+          "C) Extensive soft-tissue loss with periosteal stripping and exposed bone requiring flap coverage",
+          "D) Open fracture with arterial injury requiring vascular repair"
+        ],
+        "correct": 2,
+        "hint": "Type IIIA allows adequate local soft-tissue coverage; Type IIIB requires rotational or free flap reconstruction; Type IIIC involves vascular repair.",
+        "explanation": "Gustilo-Anderson Type IIIB open fractures feature extensive soft-tissue injury and periosteal stripping leaving exposed bone that requires soft-tissue flap coverage."
+      },
+      {
+        "pts": 30,
+        "q": "Which immediate emergency department measures are most critical for reducing infection risk in a patient presenting with a Grade III open tibial shaft fracture?",
+        "options": [
+          "A) Immediate primary skin closure in the ED without irrigation",
+          "B) Early intravenous broad-spectrum antibiotics, tetanus prophylaxis, sterile moist dressing, splinting, and urgent surgical debridement",
+          "C) Oral amoxicillin and discharge for elective surgery in 2 weeks",
+          "D) Tight circumferential plaster casting without wound inspection"
+        ],
+        "correct": 1,
+        "hint": "Time to IV antibiotics is the single strongest modifiable predictor of infection in open fractures.",
+        "explanation": "Prompt IV antibiotics (covering Gram-positive and Gram-negative organisms), tetanus update, sterile dressing, splinting, and thorough operative irrigation and debridement are the pillars of open fracture management."
+      },
+      {
+        "pts": 40,
+        "q": "A 38-year-old man has persistent pain and gross motion at a midshaft tibial fracture site 9 months after injury. Radiographs show widened, sclerotic bone ends ('elephant-foot' appearance) with a persistent radiolucent fracture gap. What type of nonunion is this and what is its primary cause?",
+        "options": [
+          "A) Atrophic nonunion caused by avascularity and poor biology",
+          "B) Hypertrophic nonunion caused by adequate biological blood supply but inadequate mechanical stability",
+          "C) Infected nonunion caused by chronic osteomyelitis",
+          "D) Malunion caused by excessive immobilization"
+        ],
+        "correct": 1,
+        "hint": "Abundant callus ('elephant foot') proves good blood supply, but excessive motion prevented bridging.",
+        "explanation": "Hypertrophic nonunion ('elephant-foot' callus) indicates viable biological healing potential with excessive motion at the fracture site, treated by improving mechanical stability (e.g., rigid fixation)."
+      },
+      {
+        "pts": 50,
+        "q": "A 29-year-old motorcyclist sustains a Gustilo-Anderson Type IIIC open distal femur fracture with an absent dorsalis pedis pulse and cool, pale foot despite fracture alignment. Ankle-brachial index (ABI) is 0.45. What is the mandatory sequence of surgical priorities?",
+        "options": [
+          "A) Definitive intramedullary nailing first, followed by vascular assessment the next day",
+          "B) Immediate surgical debridement, rapid temporary external fixation (or vascular shunting first if warm ischemia > 4–6 hours), followed by definitive arterial repair and fasciotomy",
+          "C) Closed reduction in a long-leg cast and observation for 24 hours",
+          "D) Immediate primary below-knee amputation without vascular exploration"
+        ],
+        "correct": 1,
+        "hint": "Limb viability depends on restoring arterial perfusion within the 6-hour warm ischemia window while stabilizing bone.",
+        "explanation": "Type IIIC open fractures with limb ischemia require urgent operative debridement, rapid bony stabilization (external fixation) or temporary intravascular shunting if ischemia is prolonged, definitive vascular reconstruction, and prophylactic compartment fasciotomy."
+      }
+    ]
+  },
+  {
+    "name": "Acute Compartment Syndrome & Fat Embolism",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the earliest and most reliable clinical symptom of acute compartment syndrome in an alert patient?",
+        "options": [
+          "A) Pulselessness",
+          "B) Severe pain out of proportion to the injury, worsened by passive stretching of muscles in the compartment",
+          "C) Complete paralysis of the limb",
+          "D) Pallor and gangrene"
+        ],
+        "correct": 1,
+        "hint": "Pulselessness and paralysis are late signs indicating irreversible tissue damage.",
+        "explanation": "Pain out of proportion to clinical findings and severe pain on passive stretch of the involved compartment muscles are the earliest hallmark signs of acute compartment syndrome."
+      },
+      {
+        "pts": 20,
+        "q": "Which intracompartmental pressure threshold (delta pressure = diastolic blood pressure minus compartment pressure) is widely used to diagnose acute compartment syndrome and indicate emergency fasciotomy?",
+        "options": [
+          "A) Delta pressure (DBP - compartment pressure) <= 30 mmHg",
+          "B) Delta pressure >= 80 mmHg",
+          "C) Absolute compartment pressure < 10 mmHg",
+          "D) Systolic blood pressure > 140 mmHg"
+        ],
+        "correct": 0,
+        "hint": "Tissue perfusion fails when intracompartmental pressure rises within 30 mmHg of diastolic pressure.",
+        "explanation": "A differential (delta) pressure (Diastolic BP minus intracompartmental pressure) of <= 30 mmHg confirms acute compartment syndrome and mandates emergent fasciotomy."
+      },
+      {
+        "pts": 30,
+        "q": "Which classic clinical triad characterizes Fat Embolism Syndrome (FES) 24 to 72 hours after a long-bone (femoral/pelvic) fracture?",
+        "options": [
+          "A) Fever, right upper quadrant pain, and jaundice",
+          "B) Respiratory distress (hypoxemia), neurological abnormalities (confusion/drowsiness), and a petechial rash (axillae, neck, conjunctivae)",
+          "C) Hypertension, bradycardia, and irregular respirations",
+          "D) Pulselessness, pallor, and poikilothermia"
+        ],
+        "correct": 1,
+        "hint": "Lungs, brain, and anterior upper-body skin petechiae.",
+        "explanation": "Gurd's classic triad of Fat Embolism Syndrome comprises acute hypoxemic respiratory insufficiency, neurological dysfunction, and a non-palpable petechial rash over the upper torso, neck, axillae, and conjunctivae."
+      },
+      {
+        "pts": 40,
+        "q": "A 22-year-old man has a closed tibial shaft fracture immobilized in a circumferential plaster cast. Four hours later, he develops excruciating leg pain unrelieved by morphine and severe pain on passive dorsiflexion of the great toe. Dorsalis pedis pulse is palpable. What is the immediate first step?",
+        "options": [
+          "A) Elevate the leg high above heart level and apply ice",
+          "B) Immediately bivalve/remove all circumferential casts and dressings down to skin, keep limb at heart level, and prepare for emergent four-compartment fasciotomy",
+          "C) Reassure the patient because a palpable pulse rules out compartment syndrome",
+          "D) Administer intravenous heparin"
+        ],
+        "correct": 1,
+        "hint": "Circumferential casts dramatically restrict compartment expansion, and palpable pulses do NOT exclude compartment syndrome.",
+        "explanation": "Splitting and removing all circumferential casts and padding down to skin immediately reduces compartment pressure; the limb should be kept at heart level (not elevated, which lowers arterial inflow) while preparing for urgent fasciotomy."
+      },
+      {
+        "pts": 50,
+        "q": "Which anatomical compartment of the lower leg is most frequently involved in acute compartment syndrome following a tibial shaft fracture, and which nerve runs within it?",
+        "options": [
+          "A) Anterior compartment; deep peroneal (fibular) nerve (causing first dorsal web-space numbness and weak dorsiflexion)",
+          "B) Lateral compartment; tibial nerve",
+          "C) Superficial posterior compartment; femoral nerve",
+          "D) Deep posterior compartment; obturator nerve"
+        ],
+        "correct": 0,
+        "hint": "This compartment houses tibialis anterior, extensor hallucis longus, and extensor digitorum longus.",
+        "explanation": "The anterior compartment is the most commonly affected compartment in tibial fractures and contains the deep peroneal nerve, whose compression causes paresthesia in the first dorsal web space and weakness of toe/ankle dorsiflexion."
+      }
+    ]
+  },
+  {
+    "name": "Upper Extremity Fractures & Dislocations",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which nerve is most commonly injured in a midshaft humeral fracture (Holstein-Lewis pattern), resulting in wrist drop and loss of thumb/finger extension?",
+        "options": [
+          "A) Median nerve",
+          "B) Radial nerve",
+          "C) Ulnar nerve",
+          "D) Axillary nerve"
+        ],
+        "correct": 1,
+        "hint": "This nerve courses directly in the spiral groove along the posterior midshaft of the humerus.",
+        "explanation": "The radial nerve travels directly along the spiral groove of the humeral shaft and is vulnerable to traction or entrapment, causing wrist and metacarpophalangeal drop."
+      },
+      {
+        "pts": 20,
+        "q": "What defines a Monteggia fracture-dislocation of the forearm?",
+        "options": [
+          "A) Fracture of the distal radius with dislocation of the distal radioulnar joint (DRUJ)",
+          "B) Fracture of the proximal third of the ulna with dislocation of the radial head",
+          "C) Transverse fracture of the distal radius with dorsal angulation ('dinner-fork' deformity)",
+          "D) Intra-articular fracture of the base of the first metacarpal"
+        ],
+        "correct": 1,
+        "hint": "Use the MUGR mnemonic: Monteggia = Ulna fracture + Radial head dislocation.",
+        "explanation": "A Monteggia injury consists of a proximal ulnar shaft fracture associated with dislocation of the radial head at the elbow."
+      },
+      {
+        "pts": 30,
+        "q": "In an anterior glenohumeral (shoulder) dislocation—the most common direction of shoulder dislocation—which nerve should be tested over the lateral deltoid ('regimental badge' area) before and after reduction?",
+        "options": [
+          "A) Axillary nerve",
+          "B) Musculocutaneous nerve",
+          "C) Long thoracic nerve",
+          "D) Suprascapular nerve"
+        ],
+        "correct": 0,
+        "hint": "Passes through the quadrangular space just inferior to the humeral head.",
+        "explanation": "The axillary nerve wraps around the surgical neck of the humerus and is the most commonly injured nerve in anterior shoulder dislocations, innervating the deltoid and lateral shoulder skin."
+      },
+      {
+        "pts": 40,
+        "q": "A 68-year-old woman falls onto an outstretched hand and sustains a dorsally displaced, dorsally angulated extra-articular distal radius fracture ('dinner-fork' deformity). What is the eponymous name of this fracture and its classic associated nerve complication?",
+        "options": [
+          "A) Smith fracture; ulnar nerve palsy",
+          "B) Colles fracture; acute median nerve compression (carpal tunnel syndrome)",
+          "C) Barton fracture; radial artery thrombosis",
+          "D) Bennett fracture; posterior interosseous nerve palsy"
+        ],
+        "correct": 1,
+        "hint": "Dorsal displacement = Colles; volar displacement = Smith.",
+        "explanation": "A Colles fracture is an extra-articular distal radius fracture with dorsal angulation and displacement ('dinner-fork' deformity), frequently complicated by acute median nerve compression in the carpal tunnel."
+      },
+      {
+        "pts": 50,
+        "q": "A 7-year-old boy falls onto his extended arm and presents with a swollen, deformed elbow and a cool, pale, pulseless hand (Gartland Type III extension supracondylar humeral fracture). Which neurovascular structures are most commonly injured in extension-type supracondylar fractures?",
+        "options": [
+          "A) Brachial artery and Anterior Interosseous Nerve (AIN, branch of median nerve—inability to make an 'OK' sign)",
+          "B) Subclavian artery and long thoracic nerve",
+          "C) Ulnar artery and axillary nerve",
+          "D) Popliteal artery and sciatic nerve"
+        ],
+        "correct": 0,
+        "hint": "The distal humeral fragment displaces posteriorly while the sharp proximal shaft tents structures anteriorly.",
+        "explanation": "Extension supracondylar humeral fractures displace the proximal shaft anteriorly, risking injury to the brachial artery and the anterior interosseous nerve (tested by flexing the thumb IP and index DIP joints to form an 'OK' sign)."
+      }
+    ]
+  },
+  {
+    "name": "Pelvic, Hip & Lower Extremity Trauma",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the classic lower-extremity clinical position of a patient with a POSTERIOR hip dislocation following a dashboard motor vehicle injury?",
+        "options": [
+          "A) Hip flexed, adducted, and internally rotated (shortened limb)",
+          "B) Hip extended, abducted, and externally rotated",
+          "C) Knee hyperextended with foot dorsiflexed",
+          "D) Hip abducted and externally rotated with lengthened limb"
+        ],
+        "correct": 0,
+        "hint": "Think 'FAD-IR': Flexed, Adducted, Internally Rotated.",
+        "explanation": "Posterior hip dislocations (90% of hip dislocations) present with a shortened limb held in hip flexion, adduction, and internal rotation, and carry a risk of sciatic nerve injury."
+      },
+      {
+        "pts": 20,
+        "q": "Why do displaced intracapsular femoral neck fractures in adults carry a particularly high risk of avascular necrosis (AVN) of the femoral head?",
+        "options": [
+          "A) Because the femoral head is supplied solely by the ligamentum teres in adults",
+          "B) Because the retinacular branches of the medial femoral circumflex artery ascend along the femoral neck and are torn upon displacement",
+          "C) Because the femoral shaft has no periosteum",
+          "D) Because venous thrombosis never occurs in the hip joint"
+        ],
+        "correct": 1,
+        "hint": "Retrograde capsular blood supply runs tightly along the intracapsular neck.",
+        "explanation": "The medial femoral circumflex artery supplies the femoral head via ascending retinacular vessels along the femoral neck; displaced intracapsular fractures disrupt these vessels, risking femoral head AVN and nonunion."
+      },
+      {
+        "pts": 30,
+        "q": "Which knee dislocation direction has the highest incidence (~30–40%) of popliteal artery injury requiring mandatory vascular assessment (ABI and CT angiography)?",
+        "options": [
+          "A) Anterior and posterior tibiofemoral knee dislocations",
+          "B) Isolated patellar dislocation",
+          "C) Medial meniscus tear",
+          "D) Prepatellar bursitis"
+        ],
+        "correct": 0,
+        "hint": "The popliteal artery is tethered proximally at the adductor hiatus and distally at the soleus arch.",
+        "explanation": "Complete tibiofemoral knee dislocations (especially anterior and posterior) stretch or tear the tethered popliteal artery, requiring emergent reduction, serial vascular checks, ABI measurement, and CTA."
+      },
+      {
+        "pts": 40,
+        "q": "A 45-year-old pedestrian struck by a car arrives hypotensive (BP 78/44 mmHg, HR 136 bpm) with pelvic instability and an 'open-book' pelvic ring disruption (pubic symphysis diastasis > 2.5 cm) on AP pelvic X-ray. What is the immediate bedside mechanical stabilization maneuver?",
+        "options": [
+          "A) Apply a pelvic binder or circumferential sheet centered over the greater trochanters to reduce pelvic volume and tamponade venous bleeding",
+          "B) Perform vigorous repeated pelvic rocking examinations",
+          "C) Apply the pelvic binder around the floating ribs",
+          "D) Place the patient in high Fowler's sitting position"
+        ],
+        "correct": 0,
+        "hint": "Reducing pelvic volume stops low-pressure retroperitoneal venous plexus bleeding; center over the trochanters, not the iliac crests.",
+        "explanation": "An open-book pelvic fracture causes life-threatening retroperitoneal venous plexus hemorrhage; applying a pelvic binder centered over the greater trochanters closes the pelvic ring and promotes tamponade."
+      },
+      {
+        "pts": 50,
+        "q": "A 79-year-old woman with osteoporosis falls at home and presents with groin pain and a shortened, externally rotated right leg. Radiographs show a displaced Garden Stage IV subcapital femoral neck fracture. What is the preferred surgical treatment to allow immediate full weight-bearing and avoid nonunion/AVN?",
+        "options": [
+          "A) Non-operative bed rest for 12 weeks",
+          "B) Hip arthroplasty (hemiarthroplasty or total hip arthroplasty)",
+          "C) Long-leg plaster spica cast",
+          "D) External fixation across the knee"
+        ],
+        "correct": 1,
+        "hint": "Displaced intracapsular fractures in elderly patients have poor union rates with internal fixation.",
+        "explanation": "In elderly patients with displaced (Garden III/IV) femoral neck fractures, prosthetic replacement (hemiarthroplasty or total hip arthroplasty) avoids the high rates of AVN/nonunion and enables immediate mobilization."
+      }
+    ]
+  },
+  {
+    "name": "Spine Trauma & Degenerative Spinal Disorders",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which spinal cord syndrome—commonly seen in elderly patients with cervical spondylosis after a hyperextension injury—causes disproportionately greater motor weakness in the UPPER extremities than in the LOWER extremities?",
+        "options": [
+          "A) Anterior cord syndrome",
+          "B) Central cord syndrome",
+          "C) Brown-Séquard (hemicord) syndrome",
+          "D) Posterior cord syndrome"
+        ],
+        "correct": 1,
+        "hint": "Medially located corticospinal tracts serving the hands/arms are injured most.",
+        "explanation": "Central cord syndrome results from hyperextension injury in a stenotic cervical canal, damaging medial corticospinal fibers and producing greater upper-limb than lower-limb weakness."
+      },
+      {
+        "pts": 20,
+        "q": "What is the clinical distinction between 'spinal shock' and 'neurogenic shock' following acute cervical spinal cord injury?",
+        "options": [
+          "A) Spinal shock is temporary loss of spinal reflexes below the injury; neurogenic shock is distributive hemodynamic shock (hypotension + bradycardia) from loss of sympathetic tone",
+          "B) Spinal shock causes hypertension and tachycardia; neurogenic shock causes hyperreflexia",
+          "C) Both terms refer to hypovolemic bleeding from lumbar arteries",
+          "D) Neurogenic shock occurs only in lumbar L4–L5 disc herniations"
+        ],
+        "correct": 0,
+        "hint": "One is electrophysiological areflexia; the other is cardiovascular hypotension with unopposed vagal bradycardia.",
+        "explanation": "Spinal shock is transient loss of sensorimotor function and reflexes (bulbocavernosus reflex) below the lesion, whereas neurogenic shock is hypotension with bradycardia caused by disrupted sympathetic outflow above T6."
+      },
+      {
+        "pts": 30,
+        "q": "In a posterolateral L4–L5 intervertebral disc herniation, which nerve root is typically compressed and what clinical deficit results?",
+        "options": [
+          "A) L4 nerve root; loss of patellar reflex",
+          "B) L5 nerve root; weakness of great toe/ankle dorsiflexion (foot drop) and numbness over the dorsal foot/first web space",
+          "C) S1 nerve root; loss of Achilles reflex and plantarflexion weakness",
+          "D) C6 nerve root; biceps weakness"
+        ],
+        "correct": 1,
+        "hint": "Posterolateral lumbar disc herniations compress the traversing nerve root (the lower-numbered level).",
+        "explanation": "A posterolateral L4–L5 disc herniation compresses the traversing L5 nerve root, leading to weak great toe extension (EHL)/dorsiflexion and dorsal foot sensory loss."
+      },
+      {
+        "pts": 40,
+        "q": "A 41-year-old man presents with acute severe low back pain, bilateral sciatica, saddle anesthesia in the perineum, and new-onset urinary retention with overflow incontinence. What is the diagnosis and mandatory management?",
+        "options": [
+          "A) Lumbar muscle strain; physical therapy and NSAIDs for 6 weeks",
+          "B) Cauda equina syndrome; emergent lumbosacral MRI and urgent surgical decompression",
+          "C) Piriformis syndrome; corticosteroid injection",
+          "D) Ankylosing spondylitis; outpatient rheumatology referral"
+        ],
+        "correct": 1,
+        "hint": "Saddle anesthesia + bladder/bowel dysfunction + bilateral leg symptoms is a neurosurgical/orthopedic emergency.",
+        "explanation": "Cauda equina syndrome—characterized by saddle anesthesia, sphincter/bladder dysfunction, and lower extremity neurological deficits—requires emergent MRI and urgent surgical decompression to prevent permanent paralysis and incontinence."
+      },
+      {
+        "pts": 50,
+        "q": "In the Denis three-column model of thoracolumbar spine fractures, what defines an UNSTABLE burst fracture compared with a stable anterior wedge compression fracture?",
+        "options": [
+          "A) Involvement of the anterior column alone with < 20% height loss",
+          "B) Axial loading failure of BOTH the anterior and middle columns (retropulsion of posterior vertebral body wall into the spinal canal)",
+          "C) Isolated spinous process avulsion (clay-shoveler fracture)",
+          "D) Transverse process fracture without vertebral body involvement"
+        ],
+        "correct": 1,
+        "hint": "Middle column integrity (posterior vertebral body cortex and posterior longitudinal ligament) determines stability.",
+        "explanation": "A burst fracture involves axial failure of both the anterior and middle columns, often retropulsing bone fragments into the spinal canal and rendering the spine potentially unstable."
+      }
+    ]
+  },
+  {
+    "name": "Bone & Joint Infections",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the single most common causative bacterial pathogen in acute hematogenous osteomyelitis and septic arthritis across most age groups?",
+        "options": [
+          "A) Staphylococcus aureus",
+          "B) Escherichia coli",
+          "C) Clostridium tetani",
+          "D) Mycoplasma pneumoniae"
+        ],
+        "correct": 0,
+        "hint": "Gram-positive cocci in clusters; also remember Salmonella in sickle cell disease.",
+        "explanation": "Staphylococcus aureus is the leading cause of both acute hematogenous osteomyelitis and native joint septic arthritis across all age groups."
+      },
+      {
+        "pts": 20,
+        "q": "In chronic osteomyelitis, what are the terms for (1) a piece of dead, avascular necrotic bone and (2) the surrounding sheath of newly formed reactive periosteal bone?",
+        "options": [
+          "A) Involucrum (dead bone) and Sequestrum (new bone)",
+          "B) Sequestrum (dead avascular bone) and Involucrum (new reactive bone)",
+          "C) Osteophyte and Syndesmophyte",
+          "D) Epiphysis and Diaphysis"
+        ],
+        "correct": 1,
+        "hint": "'Sequestrum' is sequestered dead bone; 'Involucrum' envelops it.",
+        "explanation": "In chronic osteomyelitis, a sequestrum is a fragment of necrotic, devascularized bone harboring bacteria, while the involucrum is the layer of new periosteal bone forming around it."
+      },
+      {
+        "pts": 30,
+        "q": "Which synovial fluid analysis finding is most characteristic of acute bacterial septic arthritis?",
+        "options": [
+          "A) Clear straw-colored fluid with WBC < 200 cells/mm3",
+          "B) Turbid/purulent fluid with WBC > 50,000 cells/mm3 (> 75% neutrophils) and low synovial glucose",
+          "C) Negatively birefringent needle-shaped crystals with WBC 15,000 cells/mm3",
+          "D) Positively birefringent rhomboid crystals"
+        ],
+        "correct": 1,
+        "hint": "Marked polymorphonuclear leukocytosis (>50,000/mm3) and positive Gram stain/culture.",
+        "explanation": "Septic arthritis typically yields purulent synovial fluid with WBC > 50,000/mm3 (predominantly PMNs > 75–90%), low glucose, and positive Gram stain/culture."
+      },
+      {
+        "pts": 40,
+        "q": "Which four clinical and laboratory parameters make up the Kocher criteria used to differentiate septic arthritis of the hip from transient synovitis in a limping child?",
+        "options": [
+          "A) Fever > 38.5°C, inability to bear weight, ESR > 40 mm/hr, and serum WBC > 12,000/mm3",
+          "B) Rash, conjunctivitis, strawberry tongue, and cervical lymphadenopathy",
+          "C) Hypothermia, bradycardia, platelet count < 50,000, and low ESR",
+          "D) Morning stiffness, rheumatoid factor positivity, subcutaneous nodules, and symmetric wrist swelling"
+        ],
+        "correct": 0,
+        "hint": "Two clinical findings (fever, non-weight-bearing) and two inflammatory markers (ESR, WBC).",
+        "explanation": "Kocher's four predictors for pediatric septic hip arthritis are fever > 38.5°C, non-weight-bearing on the affected side, ESR > 40 mm/hr, and WBC > 12,000/mm3 (having all 4 carries >93% probability)."
+      },
+      {
+        "pts": 50,
+        "q": "A 62-year-old diabetic man presents with an acutely hot, swollen, erythematous right knee with severe pain on minimal passive range of motion and a temperature of 39.2°C. Arthrocentesis reveals 88,000 WBC/mm3 (92% neutrophils) and Gram-positive cocci in clusters. Why is urgent surgical joint drainage (arthroscopy/arthrotomy) mandatory alongside IV antibiotics?",
+        "options": [
+          "A) To prevent spontaneous ligament hypertrophy",
+          "B) Because bacterial toxins and neutrophil proteolytic enzymes destroy articular hyaline cartilage within 24–48 hours if purulent fluid is not evacuated",
+          "C) Because IV antibiotics cannot cross into synovial fluid",
+          "D) To induce ankylosis of the knee joint"
+        ],
+        "correct": 1,
+        "hint": "Articular cartilage is avascular and rapidly digested by lysosomal enzymes in pus.",
+        "explanation": "Purulent joint fluid contains proteolytic enzymes and bacterial toxins that cause irreversible destruction of articular cartilage within hours to days; emergent surgical washout plus targeted IV antibiotics is mandatory."
+      }
+    ]
+  },
+  {
+    "name": "Pediatric Orthopedics",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What are the four classic deformities of Congenital Talipes Equinovarus (Clubfoot), remembered by the mnemonic 'CAVE'?",
+        "options": [
+          "A) Cavus, Adductus (forefoot), Varus (hindfoot), and Equinus",
+          "B) Coxa vara, Anteversion, Valgus, and Extension",
+          "C) Calcaneus, Abduction, Valgus, and Eversion",
+          "D) Kyphosis, Lordosis, Scoliosis, and Spondylolisthesis"
+        ],
+        "correct": 0,
+        "hint": "CAVE describes the sequential order corrected by the Ponseti serial casting method.",
+        "explanation": "Clubfoot involves midfoot Cavus, forefoot Adductus, hindfoot Varus, and ankle Equinus (CAVE), which are corrected sequentially using the Ponseti serial casting technique."
+      },
+      {
+        "pts": 20,
+        "q": "Which physical examination maneuvers are used in newborns to screen for Developmental Dysplasia of the Hip (DDH), and what is the preferred diagnostic imaging test before 4–6 months of age?",
+        "options": [
+          "A) Barlow and Ortolani maneuvers; Hip Ultrasound (before femoral head ossification)",
+          "B) Lachman and McMurray tests; Knee MRI",
+          "C) Phalen and Tinel tests; Nerve conduction study",
+          "D) Thomas and Trendelenburg tests; Bone scan"
+        ],
+        "correct": 0,
+        "hint": "Barlow dislocates an unstable hip; Ortolani relocates a dislocated hip; cartilage is best seen on ultrasound.",
+        "explanation": "Barlow (provocative dislocation) and Ortolani (reduction clunk) maneuvers screen for DDH in neonates, and hip ultrasound is the imaging test of choice under 4–6 months because the femoral head is primarily cartilaginous."
+      },
+      {
+        "pts": 30,
+        "q": "Which pediatric hip disorder represents idiopathic avascular necrosis of the capital femoral epiphysis typically presenting in boys aged 4 to 8 years with a painless limp?",
+        "options": [
+          "A) Legg-Calvé-Perthes disease",
+          "B) Osgood-Schlatter disease",
+          "C) Slipped Capital Femoral Epiphysis (SCFE)",
+          "D) Sever disease"
+        ],
+        "correct": 0,
+        "hint": "Idiopathic osteonecrosis of the pediatric femoral head in early school-age children.",
+        "explanation": "Legg-Calvé-Perthes disease is idiopathic avascular necrosis of the femoral head epiphysis occurring most commonly in boys aged 4–8 years, presenting with an insidious limp and limited hip abduction/internal rotation."
+      },
+      {
+        "pts": 40,
+        "q": "An obese 13-year-old boy presents with a 3-week history of right knee/thigh pain and an antalgic limp. On physical examination, passive flexion of the right hip causes obligatory external rotation of the thigh (Drehmann sign). Radiographs show posterior-inferior displacement of the femoral head epiphysis ('ice cream slipping off a cone'). What is the diagnosis and treatment?",
+        "options": [
+          "A) Transient synovitis; ibuprofen and observation",
+          "B) Slipped Capital Femoral Epiphysis (SCFE); non-weight-bearing and urgent surgical in-situ screw fixation",
+          "C) Developmental dysplasia of the hip; Pavlik harness",
+          "D) Osteoid osteoma; radiofrequency ablation"
+        ],
+        "correct": 1,
+        "hint": "Adolescent obesity + referred knee pain + obligatory external rotation during hip flexion.",
+        "explanation": "Slipped Capital Femoral Epiphysis (SCFE) occurs in adolescents (often obese) when the metaphysis displaces anterosuperiorly relative to the epiphysis through the hypertrophic zone of the physis; urgent in-situ pinning prevents slip progression and AVN."
+      },
+      {
+        "pts": 50,
+        "q": "In Ponseti serial casting for idiopathic congenital clubfoot, why must the forefoot abduction/supination (cavus, adductus, varus) be corrected BEFORE performing percutaneous Achilles tenotomy for residual equinus?",
+        "options": [
+          "A) Attempting dorsiflexion before unlocking the subtalar joint creates an iatrogenic 'rocker-bottom' foot deformity",
+          "B) Early tenotomy causes femoral neck fracture",
+          "C) Forefoot adduction resolves automatically after tenotomy",
+          "D) Casting cannot be applied after tenotomy"
+        ],
+        "correct": 0,
+        "hint": "Forcing dorsiflexion through a locked hindfoot breaks the midfoot instead of rotating the ankle.",
+        "explanation": "Correcting cavus, adductus, and heel varus first unlocks the calcaneus beneath the talus; forcing dorsiflexion prematurely causes midfoot break ('rocker-bottom' deformity) rather than true tibiotalar dorsiflexion."
+      }
+    ]
+  },
+  {
+    "name": "Bone Tumors & Musculoskeletal Oncology",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "What is the most common benign bone tumor in children and adolescents, presenting as a cartilage-capped bony projection growing away from the metaphysis?",
+        "options": [
+          "A) Osteochondroma (exostosis)",
+          "B) Ewing sarcoma",
+          "C) Chondrosarcoma",
+          "D) Multiple myeloma"
+        ],
+        "correct": 0,
+        "hint": "Its cortex and medullary cavity are continuous with the underlying host bone.",
+        "explanation": "Osteochondroma is the most common benign bone tumor, characterized by a cartilage-capped bony outgrowth with cortical and medullary continuity with the parent metaphysis."
+      },
+      {
+        "pts": 20,
+        "q": "Which benign bone-forming tumor—most common in young males—presents with nocturnal bone pain dramatically relieved by NSAIDs/aspirin and shows a small (< 1.5–2 cm) radiolucent nidus surrounded by dense reactive cortical sclerosis?",
+        "options": [
+          "A) Osteoid osteoma",
+          "B) Giant cell tumor",
+          "C) Enchondroma",
+          "D) Simple unicameral bone cyst"
+        ],
+        "correct": 0,
+        "hint": "The tiny nidus produces high levels of prostaglandins, explaining the classic aspirin/NSAID relief.",
+        "explanation": "Osteoid osteoma features a prostaglandin-producing radiolucent nidus (< 2 cm) with surrounding cortical sclerosis, causing night pain promptly relieved by aspirin or NSAIDs."
+      },
+      {
+        "pts": 30,
+        "q": "Which benign but locally aggressive bone tumor classically arises in the EPIPHYSIS of skeletally mature young adults (ages 20–40) around the knee and exhibits a 'soap-bubble' eccentric lytic appearance?",
+        "options": [
+          "A) Giant Cell Tumor (osteoclastoma)",
+          "B) Ewing sarcoma",
+          "C) Osteoid osteoma",
+          "D) Non-ossifying fibroma"
+        ],
+        "correct": 0,
+        "hint": "One of the few bone tumors located directly in the epiphysis extending to subchondral bone.",
+        "explanation": "Giant cell tumor occurs after physeal closure in the epiphysis (most commonly distal femur/proximal tibia), producing an eccentric, expansile 'soap-bubble' lytic lesion."
+      },
+      {
+        "pts": 40,
+        "q": "A 14-year-old boy presents with painful swelling of the mid-femoral diaphysis, fever, elevated ESR, and leukocytosis. Radiographs show a permeative diaphyseal lesion with concentric 'onion-skin' periosteal reaction, and biopsy reveals small round blue cells with t(11;22) EWSR1-FLI1 translocation. What is the diagnosis?",
+        "options": [
+          "A) Ewing sarcoma",
+          "B) Osteochondroma",
+          "C) Fibrous dysplasia",
+          "D) Paget disease of bone"
+        ],
+        "correct": 0,
+        "hint": "Diaphyseal location + 'onion-skin' periosteal layering + small round blue cells + t(11;22).",
+        "explanation": "Ewing sarcoma is a malignant small round blue cell tumor (t(11;22)) typically arising in the diaphysis of long bones or pelvis in children/adolescents, classically showing lamellated 'onion-skin' periosteal reaction and systemic symptoms mimicking infection."
+      },
+      {
+        "pts": 50,
+        "q": "Before performing a biopsy on a suspected primary malignant bone sarcoma of the distal femur, why must the biopsy tract be planned directly in line with the future definitive surgical incision by the orthopedic oncologist?",
+        "options": [
+          "A) To avoid seeding tumor cells into uninvolved compartments and neurovascular bundles, allowing en-bloc excision of the biopsy tract during limb-salvage surgery",
+          "B) Because transverse incisions heal faster over bone tumors",
+          "C) To ensure the biopsy enters the knee joint space",
+          "D) Because bone sarcomas never recur in biopsy tracts"
+        ],
+        "correct": 0,
+        "hint": "Tumor cells contaminate the entire biopsy tract and must be completely excised at definitive resection.",
+        "explanation": "Biopsy tracts become seeded with malignant cells and must be excised en bloc during definitive limb-salvage resection; an improperly placed biopsy can contaminate major neurovascular structures and force amputation."
+      }
+    ]
+  },
+  {
+    "name": "Arthritis, Metabolic Bone Disease & Soft-Tissue Disorders",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which four cardinal radiographic signs characterize Osteoarthritis (OA) on plain joint radiographs?",
+        "options": [
+          "A) Joint space narrowing, subchondral sclerosis, osteophytes, and subchondral cysts",
+          "B) Periarticular osteopenia, marginal erosions, symmetrical joint space loss, and ulnar deviation",
+          "C) Bamboo spine, sacroiliitis, and syndesmophytes",
+          "D) Punched-out overhanging rat-bite erosions"
+        ],
+        "correct": 0,
+        "hint": "Remember 'LOSS': Loss of joint space, Osteophytes, Subchondral sclerosis, Subchondral cysts.",
+        "explanation": "Osteoarthritis manifests radiographically with asymmetric joint space narrowing, subchondral sclerosis, marginal osteophytes, and subchondral cysts."
+      },
+      {
+        "pts": 20,
+        "q": "Which crystal arthropathy is confirmed on polarized light microscopy of synovial fluid by strongly NEGATIVELY birefringent, needle-shaped monosodium urate (MSU) crystals?",
+        "options": [
+          "A) Gout",
+          "B) Pseudogout (CPPD)",
+          "C) Septic arthritis",
+          "D) Rheumatoid arthritis"
+        ],
+        "correct": 0,
+        "hint": "Needle-shaped, yellow when parallel to the compensator axis (negatively birefringent).",
+        "explanation": "Gout is caused by monosodium urate crystal deposition, appearing as needle-shaped, strongly negatively birefringent crystals under compensated polarized light."
+      },
+      {
+        "pts": 30,
+        "q": "Which clinical test diagnoses De Quervain tenosynovitis (stenosing tenosynovitis of the abductor pollicis longus and extensor pollicis brevis tendons in the first dorsal compartment)?",
+        "options": [
+          "A) Finkelstein test (pain over the radial styloid with passive ulnar deviation of the wrist while the thumb is tucked in the fist)",
+          "B) McMurray test",
+          "C) Anterior drawer test",
+          "D) Spurling test"
+        ],
+        "correct": 0,
+        "hint": "Stretching the first dorsal extensor compartment over the radial styloid reproduces sharp radial wrist pain.",
+        "explanation": "The Finkelstein maneuver stretches the abductor pollicis longus and extensor pollicis brevis tendons within the first dorsal compartment, reproducing radial styloid tenderness in De Quervain tenosynovitis."
+      },
+      {
+        "pts": 40,
+        "q": "A 66-year-old postmenopausal woman undergoes DEXA bone mineral density testing showing a lumbar spine T-score of -2.8. How is this interpreted under WHO criteria, and what distinguishes osteoporosis from osteomalacia?",
+        "options": [
+          "A) Osteopenia; osteoporosis has abnormal mineralization while osteomalacia has normal mineralization",
+          "B) Osteoporosis (T-score <= -2.5); osteoporosis is decreased bone mass with normal mineralization, whereas osteomalacia is defective mineralization of osteoid (vitamin D deficiency)",
+          "C) Normal bone density; both conditions are caused by excess growth hormone",
+          "D) Paget disease; characterized by hypercalcemia and low alkaline phosphatase"
+        ],
+        "correct": 1,
+        "hint": "WHO defines osteoporosis as T-score <= -2.5; compare bone quantity vs. mineral-to-matrix quality.",
+        "explanation": "A DEXA T-score <= -2.5 defines osteoporosis (reduced bone mass with normal mineral-to-osteoid ratio), whereas osteomalacia represents impaired mineralization of osteoid matrix, typically due to vitamin D deficiency."
+      },
+      {
+        "pts": 50,
+        "q": "A 52-year-old woman with long-standing seropositive Rheumatoid Arthritis is scheduled for elective total knee arthroplasty under general anesthesia. Why is preoperative flexion-extension lateral cervical spine radiography mandatory before endotracheal intubation?",
+        "options": [
+          "A) To screen for atlantoaxial (C1–C2) instability caused by transverse ligament destruction, which risks catastrophic cervical spinal cord compression during neck extension",
+          "B) To measure lumbar lordosis",
+          "C) To rule out clavicle fracture",
+          "D) To assess thyroid cartilage calcification"
+        ],
+        "correct": 0,
+        "hint": "Rheumatoid pannus frequently erodes the transverse ligament of the atlas (C1).",
+        "explanation": "Rheumatoid synovitis frequently destroys the transverse ligament of C1, causing atlantoaxial instability; hyperextending the neck during laryngoscopy can cause fatal odontoid subluxation into the cervical spinal cord."
+      }
+    ]
+  },
+  {
+    "name": "Peripheral Nerve Entrapments & Soft-Tissue Injuries",
+    "questions": [
+      {
+        "pts": 10,
+        "q": "Which peripheral nerve is compressed within the carpal tunnel at the wrist, causing nocturnal paresthesias in the thumb, index, middle, and radial half of the ring finger and thenar eminence atrophy?",
+        "options": [
+          "A) Ulnar nerve",
+          "B) Median nerve",
+          "C) Radial nerve",
+          "D) Musculocutaneous nerve"
+        ],
+        "correct": 1,
+        "hint": "Travels alongside nine flexor tendons beneath the transverse carpal ligament.",
+        "explanation": "Carpal tunnel syndrome results from compression of the median nerve beneath the flexor retinaculum, affecting the lateral 3.5 digits and thenar muscles (while sparing the palmar cutaneous branch over the thenar skin)."
+      },
+      {
+        "pts": 20,
+        "q": "Compression of the ulnar nerve at the elbow (cubital tunnel) or wrist (Guyon canal) produces sensory loss in the little finger and ulnar half of the ring finger along with which characteristic positive physical sign?",
+        "options": [
+          "A) Froment sign (flexion of the thumb interphalangeal joint when pinching a piece of paper due to adductor pollicis weakness)",
+          "B) Trendelenburg sign",
+          "C) Babinski sign",
+          "D) Ortolani clunk"
+        ],
+        "correct": 0,
+        "hint": "The median-innervated flexor pollicis longus compensates for a weak ulnar-innervated adductor pollicis.",
+        "explanation": "Froment's sign demonstrates weakness of the ulnar-innervated adductor pollicis; the patient compensates by flexing the thumb IP joint via the median-innervated flexor pollicis longus."
+      },
+      {
+        "pts": 30,
+        "q": "Which clinical examination test has the highest sensitivity and specificity for diagnosing an acute Anterior Cruciate Ligament (ACL) tear of the knee?",
+        "options": [
+          "A) Lachman test (anterior tibial translation at 20–30 degrees of knee flexion)",
+          "B) Valgus stress test at 0 degrees",
+          "C) Thompson calf-squeeze test",
+          "D) Ober test"
+        ],
+        "correct": 0,
+        "hint": "Performed with the knee slightly flexed (20–30°), avoiding hamstring spasm and posterior horn meniscal blocking.",
+        "explanation": "The Lachman test is the most sensitive bedside clinical maneuver for detecting ACL rupture, assessing anterior translation and endpoint quality at 20–30 degrees of flexion."
+      },
+      {
+        "pts": 40,
+        "q": "A 36-year-old recreational basketball player feels a sudden 'pop' and sharp pain in the back of his lower leg while pushing off to jump, as if kicked in the calf. On exam, there is a palpable gap proximal to the calcaneus and squeezing the gastrocnemius-soleus calf muscle fails to plantarflex the foot (positive Thompson test). What is the diagnosis?",
+        "options": [
+          "A) Acute Achilles tendon rupture",
+          "B) Plantar fasciitis",
+          "C) Anterior tibialis tendonitis",
+          "D) Lateral ankle sprain"
+        ],
+        "correct": 0,
+        "hint": "Absence of passive plantarflexion during calf squeeze confirms complete loss of continuity.",
+        "explanation": "Sudden push-off injury, a palpable tendon defect 2–6 cm above the calcaneal insertion, and a positive Thompson test confirm an acute complete Achilles tendon rupture."
+      },
+      {
+        "pts": 50,
+        "q": "A 27-year-old athlete sustains a twisting valgus injury to a planted knee during football and develops immediate hemarthrosis. MRI reveals disruption of the Anterior Cruciate Ligament (ACL), Medial Collateral Ligament (MCL), and Medial Meniscus. What is this classic combined injury pattern called and what is the primary biomechanical function of the ACL?",
+        "options": [
+          "A) O'Donoghue 'unhappy triad'; the ACL prevents anterior translation and internal rotation of the tibia relative to the femur",
+          "B) Terrible triad of the elbow; prevents posterior elbow subluxation",
+          "C) Maisonneuve injury; stabilizes the syndesmosis",
+          "D) Segond injury; prevents posterior tibial translation"
+        ],
+        "correct": 0,
+        "hint": "ACL + MCL + medial meniscus from a valgus-external rotation force on a planted foot.",
+        "explanation": "O'Donoghue's unhappy triad consists of ACL, MCL, and medial meniscus tears (often with lateral meniscal involvement acutely); the ACL is the primary restraint against anterior tibial translation on the femur."
+      }
+    ]
+  }
+]
