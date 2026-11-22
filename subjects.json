@@ -1,0 +1,8 @@
+[
+  { "id": "surgery", "label": "Surgery" },
+  { "id": "obgy", "label": "OBGY" },
+  { "id": "internal_medicine", "label": "Internal Medicine" },
+  { "id": "paediatric", "label": "Paediatric" },
+  { "id": "radiology", "label": "Radiology" },
+  { "id": "orthopedic", "label": "Orthopedic" }
+]
