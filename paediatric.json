@@ -1,0 +1,702 @@
+[
+{
+"name": "Pediatric Shock",
+"questions": [
+{
+"pts": 10,
+"q": "What is the earliest and most consistent clinical sign of compensatory shock in children?",
+"options": [
+"A) Hypotension",
+"B) Tachycardia",
+"C) Bradycardia",
+"D) Anuria"
+],
+"correct": 1,
+"hint": "Think about the earliest autonomic response activated to preserve cardiac output before blood pressure drops.",
+"explanation": "Tachycardia is the earliest and most consistent compensatory mechanism activated to maintain cardiac output in pediatric shock. Hypotension is a late, ominous sign indicating imminent decompensation and cardiovascular collapse."
+},
+{
+"pts": 20,
+"q": "What is the formula for calculating SIPA (Shock Index Pediatric Age-Adjusted)?",
+"options": [
+"A) Systolic Blood Pressure / Heart Rate",
+"B) Heart Rate / Systolic Blood Pressure",
+"C) Mean Arterial Pressure / Heart Rate",
+"D) Heart Rate / Diastolic Blood Pressure"
+],
+"correct": 1,
+"hint": "It divides the pulse rate by the top blood pressure reading.",
+"explanation": "SIPA is calculated as Heart Rate (bpm) divided by Systolic Blood Pressure (mmHg). It is age-adjusted because traditional adult Shock Index thresholds trigger false positives due to children's higher baseline heart rates and lower blood pressures."
+},
+{
+"pts": 30,
+"q": "In pediatric cardiogenic shock, why is initial fluid resuscitation modified to cautious 5 mL/kg boluses rather than the standard 10–20 mL/kg boluses used in other types of shock?",
+"options": [
+"A) To prevent rapid renal clearance of intravenous fluids",
+"B) Because myocardial contractility is impaired, risking pulmonary overload and cardiac failure",
+"C) Because fluid boluses lower systemic vascular resistance",
+"D) To prevent systemic hypertension"
+],
+"correct": 1,
+"hint": "Consider what happens to the lungs when a failing heart pump is overloaded with rapid intravascular volume.",
+"explanation": "In cardiogenic shock, primary pump failure leads to systolic or diastolic dysfunction. Large fluid boluses can worsen pulmonary overload (causing tachypnea, hepatomegaly, and pulmonary edema), so fluid boluses are restricted to 5 mL/kg alongside early inotropic support."
+},
+{
+"pts": 40,
+"q": "A 5-year-old child presents with high fever, lethargy, warm peripheries, bounding peripheral pulses, and rapid capillary refill ("blushing"). What underlying hemodynamic state and shock classification does this represent?",
+"options": [
+"A) Cold hypovolemic shock with high systemic vascular resistance (SVR)",
+"B) Warm distributive shock with systemic vasodilation and reduced SVR",
+"C) Obstructive shock secondary to tension pneumothorax",
+"D) Cardiogenic shock with low cardiac output"
+],
+"correct": 1,
+"hint": "Cytokine-mediated systemic vasodilation creates warm extremities and wide pulse pressure.",
+"explanation": "Distributive shock (e.g., early septic or anaphylactic shock) is caused by systemic vasodilation due to cytokine release. This maldistribution of blood volume manifests clinically as "warm shock" with warm extremities, bounding pulses, and rapid capillary refill."
+},
+{
+"pts": 50,
+"q": "A 10-year-old boy (weight 30 kg) involved in a motor vehicle collision arrives with severe abdominal pain. Vital signs: HR 140 bpm, BP 100/60 mmHg (SIPA = 1.4), CRT 4 seconds, and cool extremities. After receiving two 20 mL/kg crystalloid boluses (1200 mL total), his BP drops to 82/45 mmHg and CRT remains 4 seconds. What is the most appropriate immediate management step?",
+"options": [
+"A) Administer high-dose oral fluids and observe for 2 hours",
+"B) Initiate rapid blood product transfusion, prepare vasoactive support, and escalate to PICU",
+"C) Administer a third 20 mL/kg crystalloid bolus and recheck in 1 hour",
+"D) Discharge home with outpatient surgical follow-up"
+],
+"correct": 1,
+"hint": "After 40 mL/kg of crystalloids in trauma-related shock with worsening hypotension, shift from crystalloids to oxygen-carrying volume and critical care.",
+"explanation": "The child has hemorrhagic shock with an elevated SIPA (>1.00 threshold for ages 7–12) that has progressed to uncompensated shock (hypotension). Refractory hemorrhagic shock despite 40 mL/kg crystalloid resuscitation requires immediate blood product administration, inotropic/vasopressor support, and PICU transfer."
+}
+]
+},
+{
+"name": "Altered Mental Status and Coma",
+"questions": [
+{
+"pts": 10,
+"q": "On the Modified Glasgow Coma Scale (GCS) for infants and children, what total score threshold indicates severe brain injury/coma requiring emergency endotracheal intubation?",
+"options": [
+"A) 13 to 15",
+"B) 9 to 12",
+"C) 8 or below",
+"D) 14 or below"
+],
+"correct": 2,
+"hint": "Remember the classic airway protection threshold: 'less than or equal to 8, intubate'.",
+"explanation": "A GCS score of 8 or below defines severe head injury/coma and strongly indicates the need for emergency airway protection via endotracheal intubation and mechanical ventilation."
+},
+{
+"pts": 20,
+"q": "In the diagnostic mnemonic "AEIOU TIPS" for altered mental status, what do the letters 'I' and 'T' represent?",
+"options": [
+"A) Ischemia and Trauma",
+"B) Insulin (Hypoglycemia/DKA) / Inborn errors of metabolism, and Trauma / Tumors / Temperature",
+"C) Infection and Toxicology",
+"D) Intussusception and Thyroid"
+],
+"correct": 1,
+"hint": "Focus on metabolic/endocrine derangements for 'I' and physical/structural/thermal insults for 'T'.",
+"explanation": "Under the AEIOU TIPS mnemonic, 'I' stands for Insulin (hypoglycemia, DKA) and Inborn errors of metabolism, while 'T' stands for Trauma, Tumors (space-occupying lesions), and Temperature abnormalities."
+},
+{
+"pts": 30,
+"q": "How does the FOUR (Full Outline of Unresponsiveness) score differ from the Modified Glasgow Coma Scale (GCS) in evaluating critically ill pediatric patients?",
+"options": [
+"A) The FOUR score excludes motor assessment",
+"B) The FOUR score lacks a verbal component, making it superior for intubated patients",
+"C) The FOUR score is scored from 0 to 30",
+"D) The FOUR score does not assess brainstem reflexes"
+],
+"correct": 1,
+"hint": "Consider which GCS domain cannot be accurately tested when an endotracheal tube is in place.",
+"explanation": "Unlike the GCS, the 16-point FOUR score does not include a verbal response component. Instead, it evaluates Eye, Motor, Brainstem reflexes, and Respiration (0–4 each), making it far more reliable in intubated or critically ill children."
+},
+{
+"pts": 40,
+"q": "An unarousable 6-year-old child presents with unreactive, bilaterally enlarged (dilated) pupils and decerebrate posturing (rigid extension of arms and legs). What anatomical pathology is indicated by these combined findings?",
+"options": [
+"A) Isolated cortical sedation with intact midbrain function",
+"B) Severe brainstem herniation syndrome or midbrain destruction",
+"C) Unilateral Horner syndrome",
+"D) Reversible drug-induced metabolic encephalopathy"
+],
+"correct": 1,
+"hint": "Fixed dilated pupils paired with abnormal extensor posturing point to downward brainstem compression.",
+"explanation": "Bilaterally enlarged, unreactive pupils indicate brainstem herniation syndrome or midbrain destruction. Decerebrate posturing (abnormal extension) indicates severe functional brainstem disruption below the red nucleus."
+},
+{
+"pts": 50,
+"q": "A 3-year-old child presents with fever, severe lethargy, a bulging anterior fontanelle, and a FOUR score of 8. Bacterial meningitis is suspected, but papilledema and focal neurological deficits are present on examination. What is the correct priority management sequence regarding Lumbar Puncture (LP)?",
+"options": [
+"A) Perform an immediate LP before any stabilization or neuroimaging",
+"B) Stabilize ABCs, initiate empiric IV antibiotics, and obtain a cranial CT scan prior to LP to rule out brain herniation",
+"C) Perform LP immediately and withhold all antibiotics for 48 hours",
+"D) Defer all investigations and observe for 24 hours"
+],
+"correct": 1,
+"hint": "Never delay antibiotics for imaging, and never perform an LP before neuroimaging when signs of raised ICP or focal deficits exist.",
+"explanation": "In patients with altered mental status and suspected raised intracranial pressure (ICP) or focal deficits, lumbar puncture is contraindicated prior to neuroimaging due to the risk of fatal brain herniation. Immediate resuscitation and empiric antimicrobial therapy must precede CT scanning."
+}
+]
+},
+{
+"name": "Acute Seizures",
+"questions": [
+{
+"pts": 10,
+"q": "What is the classic age range for Simple Febrile Seizures in children?",
+"options": [
+"A) Birth to 2 months",
+"B) 6 months to 5 years",
+"C) 2 years to 10 years",
+"D) 5 years to 12 years"
+],
+"correct": 1,
+"hint": "It begins in mid-infancy and resolves by early school age.",
+"explanation": "Simple febrile seizures occur between 6 months and 5 years of age in the presence of fever (≥ 38°C) without intracranial infection or prior afebrile seizures."
+},
+{
+"pts": 20,
+"q": "What is the maximum number of benzodiazepine doses (including pre-hospital doses) that should be administered to a seizing child before initiating second-line anticonvulsants?",
+"options": [
+"A) 1 dose",
+"B) 2 doses",
+"C) 4 doses",
+"D) 5 doses"
+],
+"correct": 1,
+"hint": "More than two doses increases respiratory depression risk without improving seizure termination.",
+"explanation": "Acute seizure protocols dictate that a maximum of 2 appropriate doses of benzodiazepine (e.g., diazepam or midazolam) should be given before escalating to second-line intravenous agents."
+},
+{
+"pts": 30,
+"q": "Which second-line intravenous anticonvulsant is explicitly contraindicated in children with Dravet syndrome?",
+"options": [
+"A) Levetiracetam",
+"B) Phenytoin",
+"C) Phenobarbitone",
+"D) Sodium Valproate"
+],
+"correct": 1,
+"hint": "Sodium channel blockers worsen seizures in SCN1A-related severe myoclonic epilepsy of infancy.",
+"explanation": "Phenytoin is a sodium channel blocker that can exacerbate seizure frequency and is explicitly contraindicated in Dravet syndrome (Severe Myoclonic Epilepsy of Infancy)."
+},
+{
+"pts": 40,
+"q": "A 2-year-old girl experiences a seizure during a viral illness with a temperature of 39.1°C. The seizure involved rhythmic twitching restricted to her left arm, lasted 18 minutes, and recurred 3 hours later. How is this seizure classified?",
+"options": [
+"A) Simple febrile seizure",
+"B) Complex febrile seizure",
+"C) Absence seizure",
+"D) Symptomatic afebrile epilepsy"
+],
+"correct": 1,
+"hint": "Focal onset, duration > 15 minutes, or recurrence within 24 hours moves a febrile seizure out of the simple category.",
+"explanation": "A febrile seizure is classified as complex if it exhibits focal features, lasts longer than 15 minutes, or recurs more than once within a 24-hour period."
+},
+{
+"pts": 50,
+"q": "An 18-month-old boy is brought to the ED with an ongoing generalized tonic-clonic seizure lasting 12 minutes. His parents administered 1 dose of rectal diazepam at home 10 minutes ago. In the ED, his airway is opened, oxygen is applied, and capillary blood glucose is 4.8 mmol/L. The child continues to seize. What is the most appropriate immediate pharmacological step?",
+"options": [
+"A) Administer a second dose of benzodiazepine (e.g., IV Lorazepam 0.1 mg/kg or buccal/IN Midazolam) and prepare IV Levetiracetam or Phenytoin if seizure continues past 5 minutes",
+"B) Immediately induce general anesthesia with continuous Thiopental infusion",
+"C) Administer oral paracetamol syrup",
+"D) Wait 30 minutes without further medication"
+],
+"correct": 0,
+"hint": "He has already received 1 pre-hospital benzodiazepine dose; count it toward the 2-dose maximum before second-line infusion.",
+"explanation": "The child has received 1 pre-hospital benzodiazepine dose. The protocol requires administering a 2nd benzodiazepine dose; if the seizure persists 5 minutes after this dose, a 2nd-line agent (Levetiracetam 40–60 mg/kg or Phenytoin 18 mg/kg) must be infused."
+}
+]
+},
+{
+"name": "Congestive Cardiac Failure (CCF)",
+"questions": [
+{
+"pts": 10,
+"q": "What is the most common physiological cause of Congestive Heart Failure (CHF) in pediatric patients?",
+"options": [
+"A) Primary diastolic stiffness",
+"B) Volume overload",
+"C) Cor pulmonale",
+"D) Systemic hypertension"
+],
+"correct": 1,
+"hint": "Think about structural left-to-right shunts such as VSD and PDA.",
+"explanation": "Volume overload (commonly secondary to congenital left-to-right structural shunts like VSD or PDA) is the single most common cause of CHF in children."
+},
+{
+"pts": 20,
+"q": "What is the primary cellular mechanism of action of Digitalis (Digoxin) in managing heart failure?",
+"options": [
+"A) Inhibits Angiotensin-Converting Enzyme (ACE)",
+"B) Inhibits membrane Na+,K+-ATPase, increasing intracellular Ca2+ to improve myocardial contractility",
+"C) Blocks beta-1 adrenergic receptors to reduce heart rate",
+"D) Promotes potassium loss in the loop of Henle"
+],
+"correct": 1,
+"hint": "Blocking the sodium-potassium pump indirectly boosts intracellular calcium available for actin-myosin cross-bridging.",
+"explanation": "Digitalis inhibits the Na+,K+-ATPase pump, resulting in increased intracellular calcium concentration, which enhances myocardial contractility (positive inotropic effect)."
+},
+{
+"pts": 30,
+"q": "Which clinical sign is specifically indicative of RIGHT-sided venous congestion in a child with heart failure?",
+"options": [
+"A) Pulmonary edema and crackles",
+"B) Hepatomegaly",
+"C) Grunting and intercostal retractions",
+"D) Tachypnea"
+],
+"correct": 1,
+"hint": "Systemic venous backup in infants is most reliably detected by palpating below the right costal margin.",
+"explanation": "Right-sided heart failure leads to systemic venous congestion, manifesting as hepatomegaly, ascites, jugular venous distension, and peripheral edema. Left-sided failure causes pulmonary venous congestion (tachypnea, grunting, retractions, pulmonary edema)."
+},
+{
+"pts": 40,
+"q": "A 2-month-old infant with a large Ventricular Septal Defect (VSD) exhibits feeding intolerance, forehead sweating, tachypnea, and cardiomegaly. Which pharmacological combination directly addresses reducing PRELOAD and AFTERLOAD respectively?",
+"options": [
+"A) Digoxin and Dopamine",
+"B) Furosemide (loop diuretic) and Captopril (ACE inhibitor)",
+"C) Spironolactone and Dobutamine",
+"D) Propranolol and Epinephrine"
+],
+"correct": 1,
+"hint": "Pair a loop diuretic to lower intravascular volume with an ACE inhibitor to dilate systemic arterioles.",
+"explanation": "Furosemide promotes renal salt/water excretion to reduce intravascular volume (preload reduction). Captopril inhibits angiotensin II production, causing arterial vasodilation and reducing systemic vascular resistance (afterload reduction)."
+},
+{
+"pts": 50,
+"q": "A full-term 2-week-old neonate presents with sudden circulatory collapse, severe tachypnea, weak femoral pulses, and hepatomegaly. Upper extremity blood pressure is 88/56 mmHg, while lower extremity blood pressure is 52/30 mmHg. Echocardiography reveals left-sided pressure overload. What structural lesion is responsible for this acute presentation?",
+"options": [
+"A) Large Atrial Septal Defect (ASD)",
+"B) Coarctation of the Aorta",
+"C) Tetralogy of Fallot",
+"D) Acute Rheumatic Carditis"
+],
+"correct": 1,
+"hint": "Ductal closure unmasks an aortic narrowing distal to the left subclavian artery, producing upper-to-lower extremity BP discrepancy.",
+"explanation": "Coarctation of the Aorta is a severe left-sided obstructive lesion that causes acute pressure overload and heart failure in full-term neonates upon ductal closure. It produces a characteristic blood pressure gradient and pulse discrepancy between upper and lower extremities."
+}
+]
+},
+{
+"name": "Cardiopulmonary Resuscitation (CPR)",
+"questions": [
+{
+"pts": 10,
+"q": "What is the recommended compression-to-ventilation ratio for TWO-rescuer pediatric Basic Life Support (BLS)?",
+"options": [
+"A) 30:2",
+"B) 15:2",
+"C) 5:1",
+"D) 20:2"
+],
+"correct": 1,
+"hint": "Because pediatric arrest is frequently asphyxial, two rescuers deliver breaths twice as often as a lone rescuer.",
+"explanation": "For two-rescuer CPR in pediatric patients (infants and children), the compression-to-ventilation ratio is 15:2. For single-rescuer CPR, the ratio is 30:2."
+},
+{
+"pts": 20,
+"q": "What is the target chest compression rate and depth for an infant (<1 year) during high-quality CPR?",
+"options": [
+"A) 80–100/min; depth of 2 cm",
+"B) 100–120/min; depth of 1/3 AP diameter (≈ 4 cm / 1.5 inches)",
+"C) 120–140/min; depth of 6 cm",
+"D) 60–80/min; depth of 5 cm"
+],
+"correct": 1,
+"hint": "Target 100–120 compressions per minute and one-third of the chest's anterior-posterior depth.",
+"explanation": "Chest compressions in pediatric CPR must be delivered at a rate of 100 to 120 compressions per minute and depress the chest at least one-third of the anteroposterior diameter (≈ 4 cm in infants)."
+},
+{
+"pts": 30,
+"q": "Where should a single rescuer assess for a pulse in an unresponsive, non-breathing infant (<1 year) for no longer than 10 seconds?",
+"options": [
+"A) Carotid artery",
+"B) Radial artery",
+"C) Brachial artery",
+"D) Popliteal artery"
+],
+"correct": 2,
+"hint": "Palpate the medial aspect of the infant's upper arm rather than the short neck.",
+"explanation": "In infants (<1 year), the pulse is assessed at the brachial artery on the inside of the upper arm. In older children, the carotid or femoral artery is used."
+},
+{
+"pts": 40,
+"q": "During resuscitation of a child in cardiac arrest, the monitor displays Ventricular Fibrillation (VF). The team delivers a manual defibrillation shock at 2 J/kg. What is the immediate next step in the algorithm?",
+"options": [
+"A) Immediately pause to check the carotid pulse for 60 seconds",
+"B) Resume high-quality CPR immediately for 2 minutes",
+"C) Administer IV Atropine 0.02 mg/kg",
+"D) Deliver a second shock at 10 J/kg immediately"
+],
+"correct": 1,
+"hint": "Minimize interruptions in chest compressions immediately after shock delivery.",
+"explanation": "Immediately following defibrillation delivery for a shockable rhythm (VF/pVT), rescuers must resume chest compressions/CPR for 2 minutes before re-evaluating the cardiac rhythm or checking pulses."
+},
+{
+"pts": 50,
+"q": "A 5-year-old child in the Emergency Department experiences cardiac arrest. CPR is ongoing with bag-valve-mask ventilation. The cardiac monitor displays Asystole. Intraosseous (IO) access is secured. According to PALS guidelines, what is the primary drug of choice, dosage, and administration frequency?",
+"options": [
+"A) Epinephrine 0.01 mg/kg IV/IO given as soon as possible, repeated every 3 to 5 minutes",
+"B) Amiodarone 5 mg/kg IO bolus repeated every 2 minutes",
+"C) Atropine 0.02 mg/kg IO given every 10 minutes",
+"D) Sodium Bicarbonate 1 mEq/kg IO given continuously"
+],
+"correct": 0,
+"hint": "Non-shockable rhythms require immediate alpha-adrenergic vasoconstriction every 3–5 minutes.",
+"explanation": "For non-shockable rhythms (Asystole and Pulseless Electrical Activity), Epinephrine (0.01 mg/kg IV/IO) is the drug of choice and should be administered as early as possible after arrest recognition, repeated every 3 to 5 minutes during ongoing CPR."
+}
+]
+},
+{
+"name": "Intrauterine (TORCH) Infections",
+"questions": [
+{
+"pts": 10,
+"q": "Which congenital TORCH infection is classically associated with the triad of Cataracts, Sensorineural Hearing Loss, and Cardiac defects (e.g., PDA)?",
+"options": [
+"A) Congenital Cytomegalovirus",
+"B) Congenital Rubella Syndrome",
+"C) Congenital Toxoplasmosis",
+"D) Congenital Syphilis"
+],
+"correct": 1,
+"hint": "Remember Gregg's triad affecting eyes, ears, and heart following first-trimester maternal viral infection.",
+"explanation": "Congenital Rubella Syndrome presents with the classic triad of Eye defects (cataracts, glaucoma), Ear defects (sensorineural hearing loss in 80%), and Heart defects (PDA, pulmonary artery stenosis)."
+},
+{
+"pts": 20,
+"q": "What is the gold standard diagnostic test to confirm Congenital Cytomegalovirus (cCMV) in a newborn?",
+"options": [
+"A) Maternal serum IgG ELISA at 6 months",
+"B) Viral PCR or spin-enhanced culture of neonatal urine or saliva within the first 3 weeks of life",
+"C) Skull X-ray at 1 year of age",
+"D) Tzanck smear of umbilical cord blood"
+],
+"correct": 1,
+"hint": "Testing must be performed within the first 21 days of life to distinguish congenital from postnatal acquisition.",
+"explanation": "Gold standard diagnosis of cCMV requires viral detection via PCR or spin-enhanced culture of urine or saliva obtained within the first 21 days (3 weeks) of life."
+},
+{
+"pts": 30,
+"q": "Which clinical constellation forms the "Hutchinson Triad" seen in Late Congenital Syphilis?",
+"options": [
+"A) Blueberry muffin spots, microcephaly, and cataracts",
+"B) Hutchinson incisors, Interstitial keratitis, and Eighth nerve deafness",
+"C) Snuffles, palmar vesiculobullous rash, and pseudoparalysis",
+"D) Chorioretinitis, hydrocephalus, and intracranial calcifications"
+],
+"correct": 1,
+"hint": "Think of notched peg-shaped upper central teeth, corneal inflammation, and CN VIII hearing loss.",
+"explanation": "Late congenital syphilis (manifesting after 2 years of life) is characterized by the Hutchinson Triad: Hutchinson incisors, interstitial keratitis, and 8th cranial nerve sensorineural deafness."
+},
+{
+"pts": 40,
+"q": "A newborn exhibits intrauterine growth restriction, hepatosplenomegaly, jaundice, and purpuric "blueberry muffin" skin lesions. Ophthalmic exam shows "cottage cheese with ketchup" peripheral chorioretinitis. Head CT reveals periventricular calcifications. What is the diagnosis and WHO-recommended 6-month treatment regimen?",
+"options": [
+"A) Congenital Toxoplasmosis; treat with oral Pyrimethamine, Sulfadiazine, and Folinic acid",
+"B) Congenital Cytomegalovirus (cCMV); treat with oral Valganciclovir (16 mg/kg BID for 6 months)",
+"C) Congenital Syphilis; treat with single-dose Benzathine Penicillin",
+"D) Congenital Varicella; treat with topical Acyclovir"
+],
+"correct": 1,
+"hint": "Periventricular (rather than diffuse cortical) calcifications point to CMV.",
+"explanation": "Periventricular calcifications, "cottage cheese with ketchup" chorioretinitis, and blueberry muffin spots are characteristic of cCMV. WHO guidelines recommend a 6-month course of oral Valganciclovir (16 mg/kg BID)."
+},
+{
+"pts": 50,
+"q": "A 2-week-old infant born via normal vaginal delivery presents with clusters of cutaneous vesicles on an erythematous base, lethargy, poor feeding, and focal motor seizures. CSF analysis reveals hemorrhagic fluid with mononuclear pleocytosis. What is the diagnosis, primary route of transmission, and emergency antiviral regimen?",
+"options": [
+"A) Congenital Syphilis via transplacental route; Benzylpenicillin IV for 10 days",
+"B) Neonatal Herpes Simplex Virus (HSV) CNS/disseminated disease acquired intrapartum; IV Acyclovir (20 mg/kg Q8H for 21 days) followed by oral acyclovir for 6 months",
+"C) Congenital Rubella acquired postpartum; oral Valganciclovir",
+"D) Congenital Toxoplasmosis acquired via cat litter; Pyrimethamine"
+],
+"correct": 1,
+"hint": "Vesicular skin lesions and temporal/hemorrhagic meningoencephalitis in a 2-week-old neonate point to intrapartum HSV.",
+"explanation": "Most neonatal HSV infections (85%) are acquired intrapartum during transit through an infected birth canal. Vesicular clusters, seizures, and hemorrhagic CSF signify CNS/disseminated HSV disease requiring high-dose IV Acyclovir (20 mg/kg Q8H for 21 days), followed by 6 months of suppressive oral acyclovir."
+}
+]
+},
+{
+"name": "Pediatric Immunization",
+"questions": [
+{
+"pts": 10,
+"q": "According to routine national childhood immunization schedules (e.g., EPI/IVD Tanzania), which vaccines are administered AT BIRTH?",
+"options": [
+"A) Pentavalent 1 and PCV 1",
+"B) BCG and OPV 0",
+"C) Measles-Rubella 1",
+"D) Rotavac 1 and IPV"
+],
+"correct": 1,
+"hint": "One protects against severe childhood tuberculosis and the other is the zero-dose oral polio vaccine.",
+"explanation": "At birth, newborns receive BCG (0.05 mL intradermally on the right upper arm) and OPV 0 (2 drops orally)."
+},
+{
+"pts": 20,
+"q": "How is the Tetanus or Diphtheria component of routine childhood vaccines classified by vaccine type?",
+"options": [
+"A) Live-attenuated viral vaccine",
+"B) Inactivated whole-cell vaccine",
+"C) Toxoid vaccine",
+"D) mRNA vaccine"
+],
+"correct": 2,
+"hint": "These vaccines target inactivated bacterial exotoxins rather than the whole organism.",
+"explanation": "Toxoid vaccines use an inactivated bacterial toxin (harmful product made by the germ) rather than the germ itself to induce protective immunity."
+},
+{
+"pts": 30,
+"q": "What is the WHO definition of a "Missed Opportunity for Vaccination" (MOV)?",
+"options": [
+"A) An eligible child who develops an anaphylactic reaction to a vaccine",
+"B) Any contact with health services by an individual who is eligible for vaccination that does not result in receiving the vaccine doses for which they are eligible",
+"C) Vaccine vial spoilage due to cold-chain failure",
+"D) Failure of parents to attend a scheduled immunization clinic"
+],
+"correct": 1,
+"hint": "It occurs when an eligible child visits a health facility (for illness or checkup) and leaves without receiving due vaccines.",
+"explanation": "WHO defines MOV as any health service visit by an unvaccinated or under-vaccinated child (free of contraindications) where health workers fail to administer eligible routine vaccine doses."
+},
+{
+"pts": 40,
+"q": "Which clinical condition represents a TRUE absolute contraindication to administering live-attenuated vaccines (e.g., BCG, OPV, Rotavirus, Measles-Rubella)?",
+"options": [
+"A) Mild upper respiratory tract infection without fever",
+"B) Current antibiotic therapy",
+"C) Severe immunocompromised status (e.g., SCID, active chemotherapy, severe immunosuppression)",
+"D) Mild local swelling from a prior dose"
+],
+"correct": 2,
+"hint": "Live vaccines can replicate uncontrollably when cellular immunity is profoundly impaired.",
+"explanation": "Live-attenuated vaccines (BCG, OPV, Rotavirus, MR) are strictly contraindicated in severely immunocompromised children due to the risk of uncontrolled replication and severe disease caused by the vaccine strain. Conditions like mild colds or antibiotic use are NOT contraindications."
+},
+{
+"pts": 50,
+"q": "Four infants vaccinated at the same rural health facility with Pentavalent 2 from a single reconstituted multi-dose vial develop high fever and localized sterile abscesses 24 hours later. How is this Adverse Event Following Immunization (AEFI) classified under WHO cause-specific categories?",
+"options": [
+"A) Vaccine product-related reaction",
+"B) Immunization error-related reaction (AEFI Cluster)",
+"C) Coincidental event",
+"D) Immunization anxiety-related reaction"
+],
+"correct": 1,
+"hint": "Multiple cases linked to a single vial or facility point to improper handling, storage, or administration technique.",
+"explanation": "An AEFI cluster involving multiple recipients receiving vaccine from a single vial that was inappropriately stored, prepared, or contaminated represents an Immunization error-related reaction (caused by improper handling, preparation, or administration)."
+}
+]
+},
+{
+"name": "Immunological Disorders",
+"questions": [
+{
+"pts": 10,
+"q": "Which hypersensitivity mechanism involves preformed IgE antibodies bound to mast cells and basophils, resulting in degranulation and histamine release upon antigen exposure?",
+"options": [
+"A) Type I (Immediate)",
+"B) Type II (Cytotoxic)",
+"C) Type III (Immune Complex)",
+"D) Type IV (Delayed)"
+],
+"correct": 0,
+"hint": "Anaphylaxis and acute urticaria occur within minutes via IgE-mediated mast cell degranulation.",
+"explanation": "Type I (Immediate) hypersensitivity is mediated by allergen cross-linking of IgE antibodies on mast cells and basophils, triggering rapid release of histamine and inflammatory mediators."
+},
+{
+"pts": 20,
+"q": "The Mantoux tuberculin skin test for tuberculosis and allergic contact dermatitis (e.g., nickel allergy) are clinical examples of which type of hypersensitivity?",
+"options": [
+"A) Type I IgE-mediated",
+"B) Type II Antibody-mediated cytotoxic",
+"C) Type III Immune complex-mediated",
+"D) Type IV Delayed (T-cell mediated)"
+],
+"correct": 3,
+"hint": "This reaction takes 48–72 hours to peak because it relies on T lymphocytes rather than circulating antibodies.",
+"explanation": "Type IV hypersensitivity is mediated by presensitized T lymphocytes releasing cytokines to activate macrophages and cytotoxic T cells, typically producing a delayed reaction (24–72 hours)."
+},
+{
+"pts": 30,
+"q": "How do Primary Immunodeficiencies differ fundamentally from Secondary Immunodeficiencies?",
+"options": [
+"A) Primary immunodeficiencies are acquired late in life due to toxic exposures",
+"B) Primary immunodeficiencies stem from intrinsic, inherited genetic defects, whereas secondary immunodeficiencies result from external factors (e.g., HIV, malnutrition, immunosuppressive drugs)",
+"C) Secondary immunodeficiencies occur exclusively in neonates",
+"D) Primary immunodeficiencies affect only phagocytic cells"
+],
+"correct": 1,
+"hint": "Compare congenital gene mutations with acquired environmental, infectious, or iatrogenic causes.",
+"explanation": "Primary immunodeficiencies are congenital disorders caused by gene mutations (e.g., XLA, SCID). Secondary immunodeficiencies are acquired states resulting from external diseases or treatments (e.g., AIDS, severe malnutrition, chemotherapy)."
+},
+{
+"pts": 40,
+"q": "What immunological mechanism causes tissue damage in Type III Hypersensitivity reactions, such as Systemic Lupus Erythematosus (SLE) and Post-Streptococcal Glomerulonephritis?",
+"options": [
+"A) Direct lysis of target cells by Natural Killer cells",
+"B) Circulation and tissue deposition of IgG/IgM antigen-antibody complexes, which activate complement and recruit neutrophils",
+"C) IgE-mediated smooth muscle constriction",
+"D) Destruction of thyroid tissue by TSH receptor autoantibodies"
+],
+"correct": 1,
+"hint": "Soluble antigen-antibody complexes lodge in small vessels and glomeruli, triggering complement-mediated inflammation.",
+"explanation": "Type III hypersensitivity involves IgG antibodies binding circulating antigens to form immune complexes that deposit in tissue capillary beds, activating complement and recruiting neutrophils that release lysosomal enzymes."
+},
+{
+"pts": 50,
+"q": "A 6-month-old male infant presents with recurrent severe bacterial pneumonia, persistent Candida diaper rash, chronic diarrhea, and failure to thrive. Laboratory evaluation reveals marked lymphopenia, total absence of T cells, and undetectable serum IgG, IgA, and IgM. What is the diagnosis and definitive curative therapy?",
+"options": [
+"A) X-Linked Agammaglobulinemia (XLA); treat with oral antibiotics alone",
+"B) Severe Combined Immunodeficiency (SCID); treat with Hematopoietic Stem Cell Transplantation (HSCT)",
+"C) Common Variable Immunodeficiency (CVID); treat with antihistamines",
+"D) Isolated IgA Deficiency; treat with whole blood transfusion"
+],
+"correct": 1,
+"hint": "Combined absence of both T-cell and B-cell immunity in early infancy requires immune system reconstitution.",
+"explanation": "SCID is a primary immunodeficiency involving severe defects in both cellular (T cells) and humoral (B cells/immunoglobulins) immunity, presenting early with opportunistic infections. Stem cell transplantation is the definitive curative treatment."
+}
+]
+},
+{
+"name": "Low Birth Weight (LBW) Infants",
+"questions": [
+{
+"pts": 10,
+"q": "According to the World Health Organization (WHO), what is the definition of a Low Birth Weight (LBW) infant?",
+"options": [
+"A) Birth weight <1000 g",
+"B) Birth weight <1500 g",
+"C) Birth weight <2500 g",
+"D) Birth weight <3000 g"
+],
+"correct": 2,
+"hint": "This universal cutoff applies regardless of gestational age at delivery.",
+"explanation": "WHO defines a Low Birth Weight infant as any baby born with a birth weight of less than 2500 g (measured within the first hour of life) regardless of gestational age."
+},
+{
+"pts": 20,
+"q": "How is a Very Low Birth Weight (VLBW) infant defined by birth weight?",
+"options": [
+"A) 1500 g to 2500 g",
+"B) 1000 g to <1500 g",
+"C) <1000 g",
+"D) <500 g"
+],
+"correct": 1,
+"hint": "It sits between LBW (<2500 g) and Extremely Low Birth Weight (<1000 g).",
+"explanation": "Very Low Birth Weight (VLBW) is defined as a birth weight between 1000 g and <1500 g. Extremely Low Birth Weight (ELBW) is <1000 g."
+},
+{
+"pts": 30,
+"q": "Which standardized clinical scoring tool evaluates physical and neuromuscular maturity to estimate gestational age postnatally?",
+"options": [
+"A) Apgar score",
+"B) New Ballard Score",
+"C) Phoenix Score",
+"D) FOUR Score"
+],
+"correct": 1,
+"hint": "It combines 6 neuromuscular signs (like scarf sign and square window) with 6 physical maturity signs.",
+"explanation": "The New Ballard Score assesses 6 neuromuscular and 6 physical characteristics to accurately determine post-delivery gestational age."
+},
+{
+"pts": 40,
+"q": "How do Symmetric IUGR and Asymmetric IUGR differ in etiology and parameter involvement?",
+"options": [
+"A) Symmetric IUGR occurs in late 3rd trimester and spares head circumference",
+"B) Symmetric IUGR results from 1st-trimester early insults (infections/genetics) affecting weight, length, and head circumference equally; Asymmetric IUGR results from late placental insufficiency sparing head growth",
+"C) Asymmetric IUGR affects all organs equally",
+"D) Symmetric IUGR is caused solely by maternal smoking in late pregnancy"
+],
+"correct": 1,
+"hint": "Early global growth arrest reduces all dimensions proportionately, whereas late uteroplacental insufficiency preserves brain growth ('head-sparing').",
+"explanation": "Symmetric IUGR occurs early in gestation (Stage I hyperplasia), reducing total cell count across all parameters. Asymmetric IUGR occurs late (2nd/3rd trimester Stage III) secondary to uteroplacental insufficiency, causing cell shrinkage that disproportionately affects weight while sparing brain/head growth."
+},
+{
+"pts": 50,
+"q": "A preterm infant born at 28 weeks gestation (1100 g) develops grunting, intercostal retractions, nasal flaring, and cyanosis shortly after birth. Chest X-ray displays a diffuse reticulogranular "ground-glass" pattern with air bronchograms. What is the primary cause of respiratory distress, and what thermal management target must be maintained to prevent further compromise?",
+"options": [
+"A) Meconium aspiration syndrome; cool infant to 32°C",
+"B) Surfactant deficiency causing Respiratory Distress Syndrome (RDS); maintain neutral thermal environment (36.5°C–37.5°C)",
+"C) Transient tachypnea of the newborn; keep room temperature at 18°C",
+"D) Congenital heart failure; restrict room humidity"
+],
+"correct": 1,
+"hint": "Alveolar collapse in a 28-week preterm infant stems from lack of surfactant, and cold stress rapidly worsens hypoxia and acidosis.",
+"explanation": "Prematurity (<34 weeks) leads to structural lung immaturity and surfactant deficiency, causing widespread alveolar atelectasis and RDS ("ground-glass" CXR). Hypothermia increases metabolic demand, exacerbates hypoxia and metabolic acidosis, and inhibits surfactant production; thus, maintaining a neutral thermal environment (36.5°C–37.5°C) is vital."
+}
+]
+},
+{
+"name": "Pediatric Sepsis and Septic Shock",
+"questions": [
+{
+"pts": 10,
+"q": "According to the international Phoenix Pediatric Sepsis Criteria, what Phoenix Sepsis Score threshold defines pediatric sepsis in a child with suspected infection?",
+"options": [
+"A) At least 1 point",
+"B) At least 2 points",
+"C) At least 5 points",
+"D) At least 10 points"
+],
+"correct": 1,
+"hint": "Suspected infection plus a minimum score of 2 across respiratory, cardiovascular, coagulation, and neurological domains.",
+"explanation": "Under the Phoenix criteria, pediatric sepsis is defined as suspected or confirmed infection accompanied by a total Phoenix Sepsis Score of 2 points or greater."
+},
+{
+"pts": 20,
+"q": "How is Septic Shock specifically operationalized under the Phoenix Pediatric Sepsis Criteria?",
+"options": [
+"A) Sepsis plus at least 1 point in the cardiovascular organ system component",
+"B) Positive blood culture with normal vital signs",
+"C) Fever >38.5°C alone",
+"D) Isolated leukocytosis without organ dysfunction"
+],
+"correct": 0,
+"hint": "It requires sepsis plus circulatory dysfunction (severe hypotension, elevated lactate >5 mmol/L, or vasoactive therapy).",
+"explanation": "Septic shock is defined as sepsis with cardiovascular dysfunction, operationalized as at least 1 cardiovascular point on the Phoenix score (severe hypotension for age, blood lactate >5 mmol/L, or vasoactive medication requirement)."
+},
+{
+"pts": 30,
+"q": "Which pathogens are the most common bacterial causes of Early-Onset Neonatal Sepsis (<7 days of life)?",
+"options": [
+"A) Neisseria meningitidis and Pseudomonas aeruginosa",
+"B) Streptococcus agalactiae (Group B Strep), Escherichia coli, and Listeria monocytogenes",
+"C) Staphylococcus aureus and Haemophilus influenzae type b",
+"D) Streptococcus pneumoniae and Salmonella species"
+],
+"correct": 1,
+"hint": "Think of organisms colonizing the maternal rectovaginal tract transmitted vertically around birth.",
+"explanation": "Early-onset neonatal sepsis is caused by pathogens acquired vertically from the maternal genital tract during birth, predominantly Group B Streptococcus, E. coli, and Listeria monocytogenes."
+},
+{
+"pts": 40,
+"q": "According to pediatric resuscitation bundles, broad-spectrum empiric intravenous antibiotics must be administered within what maximum time window after recognition of Septic Shock?",
+"options": [
+"A) Within 1 hour",
+"B) Within 6 hours",
+"C) Within 12 hours",
+"D) Within 24 hours"
+],
+"correct": 0,
+"hint": "Every hour of antimicrobial delay in septic shock sharply increases pediatric mortality.",
+"explanation": "Resuscitation bundles mandate that broad-spectrum empiric intravenous antimicrobial therapy must be initiated within the first hour of recognition of septic shock."
+},
+{
+"pts": 50,
+"q": "A 3-year-old girl with suspected pneumonia presents with fever, severe lethargy, cool mottled extremities, capillary refill time of 5 seconds, BP of 60/35 mmHg (severe hypotension), and blood lactate of 6.8 mmol/L. She receives a 20 mL/kg bolus of isotonic saline over 15 minutes, but her BP remains 62/36 mmHg and CRT remains 5 seconds. What is the diagnosis under the Phoenix criteria, and what immediate pharmacological bundle must be executed within the 1st hour?",
+"options": [
+"A) Compensated sepsis; administer oral rehydration fluids",
+"B) Septic Shock; initiate vasoactive infusion (e.g., Epinephrine/Norepinephrine/Dobutamine) and administer empiric broad-spectrum IV antibiotics within 1 hour",
+"C) Cardiogenic shock; give high-dose furosemide alone",
+"D) Simple viral fever; observe for 12 hours without medication"
+],
+"correct": 1,
+"hint": "Fluid-refractory hypotension with lactate >5 mmol/L requires immediate vasoactive support alongside first-hour IV antimicrobials.",
+"explanation": "Sepsis with cardiovascular organ dysfunction (severe hypotension, lactate >5 mmol/L, cardiovascular points ≥ 1) meets the criteria for Septic Shock. In fluid-refractory septic shock, vasoactive infusions (epinephrine/norepinephrine/dobutamine) and broad-spectrum IV antibiotics must be instituted immediately within the first hour of resuscitation."
+}
+]
+}
+]
