@@ -939,8 +939,9 @@
     const MIN_MULTI_PLAYERS = 2;
     const MAX_MULTI_PLAYERS = 6;
     const QUESTION_DURATION_SECONDS = 90; // 1 minute 30 seconds
+    const LOCAL_SESSION_KEY = "sixseven_active_session_v1";
 
-    const SUBJECTS = [
+    let SUBJECTS = [
       { id: "surgery", label: "Surgery" },
       { id: "obgy", label: "OBGY" },
       { id: "internal_medicine", label: "Internal Medicine" },
@@ -949,82 +950,7 @@
       { id: "orthopedic", label: "Orthopedic" }
     ];
 
-    const FALLBACK_INTERNAL_MEDICINE_TOPICS = [
-      {
-        name: "Thyroid Disorders",
-        questions: [
-          {
-            pts: 10,
-            q: "Which of the following is the most common cause of primary hypothyroidism in iodine-sufficient populations?",
-            options: [
-              "A) Subacute (de Quervain) thyroiditis",
-              "B) Hashimoto thyroiditis",
-              "C) Toxic multinodular goitre",
-              "D) Graves' disease"
-            ],
-            correct: 1,
-            hint: "Think of a chronic autoimmune thyroiditis with lymphocytic infiltration and anti-TPO antibodies.",
-            explanation: "Hashimoto thyroiditis is a chronic autoimmune thyroiditis characterized by lymphocytic infiltration and progressive follicular destruction, making it the most common cause of primary hypothyroidism in iodine-replete populations."
-          },
-          {
-            pts: 20,
-            q: "Routine blood work for a 68-year-old asymptomatic patient shows a serum TSH level of 8.5 mIU/L (elevated) and a Free T4 level within the normal reference range. Subsequent testing confirms persistent TSH elevation with normal Free T4. What is the correct classification of this biochemical pattern?",
-            options: [
-              "A) Central hypothyroidism",
-              "B) Overt primary hypothyroidism",
-              "C) Subclinical hypothyroidism",
-              "D) Overt primary thyrotoxicosis"
-            ],
-            correct: 2,
-            hint: "Elevated TSH with normal circulating free thyroid hormones defines an early/compensated thyroid state.",
-            explanation: "Subclinical hypothyroidism is defined biochemically as a raised serum TSH level accompanied by Free T4 and Free T3 levels within their normal reference ranges."
-          },
-          {
-            pts: 30,
-            q: "A patient evaluated for clinical signs of excessive circulating thyroid hormone is confirmed to have thyrotoxicosis. Which of the following best distinguishes whether this patient has true hyperthyroidism rather than another etiology of thyrotoxicosis?",
-            options: [
-              "A) Demonstration of increased de novo hormone synthesis and secretion by the thyroid gland",
-              "B) Presence of clinical adrenergic symptoms such as sinus tachycardia and fine distal tremor",
-              "C) Complete suppression of circulating serum TSH levels on laboratory testing",
-              "D) Elevation of circulating serum Free T4 and Free T3 concentrations"
-            ],
-            correct: 0,
-            hint: "Compare active gland biosynthesis versus passive hormone leakage from inflamed follicles.",
-            explanation: "True hyperthyroidism specifically refers to increased de novo synthesis and secretion of thyroid hormones by the thyroid gland itself."
-          },
-          {
-            pts: 40,
-            q: "A patient with severe thyrotoxicosis develops high fever (39.8°C), delirium, marked tachycardia, and jaundice (thyroid storm). Which pharmacological sequence is essential?",
-            options: [
-              "A) Give inorganic iodine first, then PTU 1 hour later, and use aspirin for fever",
-              "B) Give a thionamide (PTU or methimazole) at least 1 hour before inorganic iodine, and use paracetamol while avoiding aspirin",
-              "C) Give radioactive iodine immediately and apply active heating blankets",
-              "D) Give IV Levothyroxine alone and withhold steroids"
-            ],
-            correct: 1,
-            hint: "Block new hormone synthesis first before giving iodine; avoid salicylates.",
-            explanation: "Thionamides must be given at least 1 hour before inorganic iodine to block new hormone synthesis before stored hormone release is inhibited."
-          },
-          {
-            pts: 50,
-            q: "A 72-year-old patient is admitted in myxoedema coma with hypothermia (31.8°C), bradycardia, and altered mental status. Which initial management sequence is required?",
-            options: [
-              "A) High-dose IV Levothyroxine alone plus aggressive active peripheral warming",
-              "B) Stress-dose IV hydrocortisone before or with IV Levothyroxine, plus passive rewarming",
-              "C) Oral PTU first plus active heating lamps",
-              "D) Delay steroids and levothyroxine until a 24-hour test finishes"
-            ],
-            correct: 1,
-            hint: "Thyroid hormone accelerates cortisol clearance, and rapid peripheral warming can trigger shock.",
-            explanation: "Stress-dose IV hydrocortisone is given before or with IV Levothyroxine to prevent adrenal crisis, and passive rewarming prevents sudden vasodilation."
-          }
-        ]
-      }
-    ];
-
-    let QUESTION_BANK = {
-      internal_medicine: FALLBACK_INTERNAL_MEDICINE_TOPICS
-    };
+    let QUESTION_BANK = {};
 
     function buildStarterTopicsForSubject(subjectLabel) {
       const pointLevels = [10, 20, 30, 40, 50];
@@ -1032,7 +958,7 @@
         name: `${subjectLabel} — Topic ${tNum}`,
         questions: pointLevels.map((pts) => ({
           pts,
-          q: `Edit this ${subjectLabel} (${pts} marks) question in questions.json under "${subjectLabel}" -> "Topic ${tNum}".`,
+          q: `Edit this ${subjectLabel} (${pts} marks) question in ${subjectLabel.toLowerCase().replace(/[^a-z0-9]+/g, "_")}.json under "Topic ${tNum}".`,
           options: [
             `A) Primary ${subjectLabel} option A`,
             `B) Primary ${subjectLabel} option B`,
@@ -1040,19 +966,19 @@
             `D) Primary ${subjectLabel} option D`
           ],
           correct: 0,
-          hint: `Clinical cue for ${subjectLabel} (${pts} marks). Update in questions.json.`,
-          explanation: `Explanation for ${subjectLabel} (${pts} marks). Update this text anytime in questions.json.`
+          hint: `Clinical cue for ${subjectLabel} (${pts} marks).`,
+          explanation: `Explanation for ${subjectLabel} (${pts} marks).`
         }))
       }));
     }
 
     function getTopicsForSubject(subjectId) {
-      const subjObj = SUBJECTS.find((s) => s.id === subjectId) || SUBJECTS[2];
+      const subjObj = SUBJECTS.find((s) => s.id === subjectId) || SUBJECTS[0];
       const bankList = QUESTION_BANK[subjectId];
       if (Array.isArray(bankList) && bankList.length > 0) {
         return bankList;
       }
-      return buildStarterTopicsForSubject(subjObj.label);
+      return buildStarterTopicsForSubject(subjObj ? subjObj.label : "Subject");
     }
 
     function makePlayers(count, existingPlayers = []) {
@@ -1069,7 +995,7 @@
 
     const state = {
       page: "setup", // "setup" or "board"
-      selectedSubject: "internal_medicine",
+      selectedSubject: "surgery",
       pendingSubject: null,
       mode: "1p", // "1p" or "multi" (2 to 6 players)
       players: makePlayers(MIN_MULTI_PLAYERS),
@@ -1178,7 +1104,7 @@
     }
 
     function getSubjectLabel(id) {
-      return SUBJECTS.find((s) => s.id === id)?.label || "Internal Medicine";
+      return SUBJECTS.find((s) => s.id === id)?.label || "Subject";
     }
 
     function getActiveRoster() {
@@ -1216,6 +1142,44 @@
       }
       const seatPlayer = getPlayerByIndex(mySeat);
       return seatPlayer ? seatPlayer.name : `Player ${mySeat}`;
+    }
+
+    function persistLocalSession() {
+      try {
+        const payload = {
+          mySeat,
+          chatMinimized,
+          snapshot: getSnapshot()
+        };
+        localStorage.setItem(LOCAL_SESSION_KEY, JSON.stringify(payload));
+      } catch (_) {}
+    }
+
+    function restoreLocalSession() {
+      try {
+        const raw = localStorage.getItem(LOCAL_SESSION_KEY);
+        if (!raw) return false;
+        const parsed = JSON.parse(raw);
+        if (!parsed || !parsed.snapshot) return false;
+
+        if (typeof parsed.mySeat === "number" && parsed.mySeat >= 1 && parsed.mySeat <= MAX_MULTI_PLAYERS) {
+          mySeat = parsed.mySeat;
+        }
+        if (typeof parsed.chatMinimized === "boolean") {
+          chatMinimized = parsed.chatMinimized;
+          els.floatingChat.classList.toggle("minimized", chatMinimized);
+          els.toggleChatBtn.textContent = chatMinimized ? "Expand" : "Minimize";
+          els.toggleChatBtn.setAttribute("aria-expanded", String(!chatMinimized));
+        }
+
+        applyRemoteState(parsed.snapshot, { skipSync: true });
+        if (state.mode === "multi" && state.roomCode && state.roomCode.length === 4) {
+          subscribeToRoom(state.roomCode, false, { preserveLocalSeat: true });
+        }
+        return true;
+      } catch (_) {
+        return false;
+      }
     }
 
     function renderChat() {
@@ -1258,7 +1222,7 @@
         const hasCustom = Array.isArray(QUESTION_BANK[subj.id]) && QUESTION_BANK[subj.id].length > 0;
         tile.innerHTML = `
           <span class="subject-tile-name">${subj.label}</span>
-          <span class="subject-tile-sub">${hasCustom ? "Question bank ready" : "Starter board ready"}</span>
+          <span class="subject-tile-sub">${hasCustom ? `${subj.id}.json loaded` : "Starter board ready"}</span>
         `;
         tile.addEventListener("click", () => {
           state.pendingSubject = subj.id;
@@ -1614,6 +1578,7 @@
       renderScoresGrid();
       renderBoard();
       syncQuestionModalFromState();
+      persistLocalSession();
     }
 
     function checkTurnLimitAndWinner() {
@@ -1738,7 +1703,7 @@
       syncOut();
     }
 
-    function applyRemoteState(incoming) {
+    function applyRemoteState(incoming, options = {}) {
       if (!incoming || typeof incoming !== "object") return;
       suppressBroadcast = true;
       state.page = incoming.page === "board" ? "board" : "setup";
@@ -1778,6 +1743,9 @@
         showWinnerModal();
       }
       suppressBroadcast = false;
+      if (!options.skipSync) {
+        persistLocalSession();
+      }
     }
 
     function getSnapshot() {
@@ -1802,6 +1770,7 @@
     }
 
     function syncOut() {
+      persistLocalSession();
       if (suppressBroadcast) return;
       const snap = getSnapshot();
       const keyCode = state.roomCode || "solo";
@@ -1818,7 +1787,7 @@
       }
     }
 
-    function subscribeToRoom(code, isJoiningExisting = false) {
+    function subscribeToRoom(code, isJoiningExisting = false, opts = {}) {
       const clean = normalizeCode(code);
       if (clean.length !== 4) return;
       state.roomCode = clean;
@@ -1834,11 +1803,11 @@
         const cached = localStorage.getItem(`sixseven_room_${clean}`);
         if (cached) {
           remoteFound = true;
-          applyRemoteState(JSON.parse(cached));
+          applyRemoteState(JSON.parse(cached), { skipSync: true });
         }
       } catch (_) {}
 
-      if (isJoiningExisting) {
+      if (!opts.preserveLocalSeat && isJoiningExisting) {
         const roster = getActiveRoster();
         const nextFreeSeat = Math.min(roster.length, 2);
         mySeat = nextFreeSeat;
@@ -1939,6 +1908,7 @@
       els.floatingChat.classList.toggle("minimized", chatMinimized);
       els.toggleChatBtn.textContent = chatMinimized ? "Expand" : "Minimize";
       els.toggleChatBtn.setAttribute("aria-expanded", String(!chatMinimized));
+      persistLocalSession();
     });
 
     els.chatForm.addEventListener("submit", (e) => {
@@ -2090,24 +2060,48 @@
       });
     }
 
-    async function loadQuestionBank() {
+    async function loadSubjectsManifest() {
       try {
-        const res = await fetch("./questions.json", { cache: "no-store" });
+        const res = await fetch("./subjects.json", { cache: "no-store" });
         if (res.ok) {
-          const data = await res.json();
-          if (data && typeof data === "object" && !Array.isArray(data)) {
-            QUESTION_BANK = { ...QUESTION_BANK, ...data };
-          } else if (Array.isArray(data) && data.length > 0) {
-            QUESTION_BANK.internal_medicine = data;
+          const manifest = await res.json();
+          if (Array.isArray(manifest) && manifest.length > 0) {
+            const valid = manifest.filter((item) => item && typeof item.id === "string" && typeof item.label === "string");
+            if (valid.length > 0) {
+              SUBJECTS = valid;
+              if (!SUBJECTS.some((s) => s.id === state.selectedSubject)) {
+                state.selectedSubject = SUBJECTS[0].id;
+              }
+            }
           }
         }
-      } catch (err) {
-        console.warn("Using fallback question bank until questions.json is added:", err);
-      }
+      } catch (_) {}
+    }
+
+    async function loadAllSubjectQuestionFiles() {
+      await Promise.all(
+        SUBJECTS.map(async (subj) => {
+          try {
+            const res = await fetch(`./${subj.id}.json`, { cache: "no-store" });
+            if (res.ok) {
+              const data = await res.json();
+              if (Array.isArray(data) && data.length > 0) {
+                QUESTION_BANK[subj.id] = data;
+              }
+            }
+          } catch (_) {}
+        })
+      );
+    }
+
+    async function initGame() {
+      restoreLocalSession();
+      await loadSubjectsManifest();
+      await loadAllSubjectQuestionFiles();
       updateUI();
     }
 
-    loadQuestionBank();
+    initGame();
   </script>
 </body>
 </html>
