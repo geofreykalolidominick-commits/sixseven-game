@@ -1,0 +1,434 @@
+{
+  "surgery": [
+    {
+      "name": "Acute Abdomen & Appendicitis",
+      "questions": [
+        {
+          "pts": 10,
+          "q": "Which classic point on the right lower quadrant is maximally tender in acute appendicitis?",
+          "options": [
+            "A) McBurney's point",
+            "B) Murphy's point",
+            "C) Courvoisier's point",
+            "D) Cullen's point"
+          ],
+          "correct": 0,
+          "hint": "Located one-third of the way from the anterior superior iliac spine (ASIS) to the umbilicus.",
+          "explanation": "McBurney's point lies one-third of the distance from the right ASIS to the umbilicus and is classically tender in acute appendicitis."
+        },
+        {
+          "pts": 20,
+          "q": "Which sign describes right lower quadrant pain elicited when palpating the left lower quadrant?",
+          "options": [
+            "A) Rovsing's sign",
+            "B) Obturator sign",
+            "C) Psoas sign",
+            "D) Murphy's sign"
+          ],
+          "correct": 0,
+          "hint": "Referred pain to the right iliac fossa during left iliac fossa pressure.",
+          "explanation": "Rovsing's sign is positive when pressure in the left lower quadrant causes pain in the right lower quadrant."
+        },
+        {
+          "pts": 30,
+          "q": "Which imaging modality is preferred first-line in a pregnant patient with suspected acute appendicitis?",
+          "options": [
+            "A) Graded compression ultrasound or MRI without gadolinium",
+            "B) Contrast-enhanced abdominal CT scan",
+            "C) Supine plain abdominal X-ray",
+            "D) Diagnostic laparoscopy before any imaging"
+          ],
+          "correct": 0,
+          "hint": "Avoid ionizing radiation when possible in pregnancy.",
+          "explanation": "Graded compression ultrasound (followed by non-contrast MRI if inconclusive) avoids ionizing radiation in pregnancy."
+        },
+        {
+          "pts": 40,
+          "q": "A patient with perforated peptic ulcer presents with sudden severe epigastric pain and rigid abdomen. What finding is commonly seen on an erect chest radiograph?",
+          "options": [
+            "A) Pneumoperitoneum (free air under the diaphragm)",
+            "B) Kerley B lines",
+            "C) Mediastinal widening",
+            "D) Coin lesion in the right lower lobe"
+          ],
+          "correct": 0,
+          "hint": "Look beneath the hemidiaphragms on an upright CXR.",
+          "explanation": "Perforated hollow viscus often demonstrates free intraperitoneal air (pneumoperitoneum) beneath the diaphragm on an erect chest X-ray."
+        },
+        {
+          "pts": 50,
+          "q": "Which triad characterizes acute cholangitis (Charcot's triad)?",
+          "options": [
+            "A) Fever, right upper quadrant pain, and jaundice",
+            "B) Hypotension, confusion, and hematuria",
+            "C) Ascites, spider nevi, and asterixis",
+            "D) Dysphagia, weight loss, and anemia"
+          ],
+          "correct": 0,
+          "hint": "Infection of an obstructed biliary tree produces systemic infection + biliary signs.",
+          "explanation": "Charcot's triad consists of fever/rigors, right upper quadrant pain, and jaundice."
+        }
+      ]
+    }
+  ],
+  "obgy": [
+    {
+      "name": "Antenatal Care & Hypertensive Disorders",
+      "questions": [
+        {
+          "pts": 10,
+          "q": "Which blood pressure threshold at >= 20 weeks gestation with new proteinuria or end-organ dysfunction defines preeclampsia?",
+          "options": [
+            "A) BP >= 140/90 mmHg on two occasions at least 4 hours apart",
+            "B) BP >= 110/70 mmHg once",
+            "C) BP >= 125/80 mmHg in the first trimester only",
+            "D) BP < 130/85 mmHg with edema alone"
+          ],
+          "correct": 0,
+          "hint": "Standard systolic/diastolic cutoff is 140/90 mmHg.",
+          "explanation": "Gestational hypertension and preeclampsia use a blood pressure threshold of >= 140/90 mmHg at or after 20 weeks of gestation."
+        },
+        {
+          "pts": 20,
+          "q": "Which medication is first-line to prevent and treat eclamptic seizures?",
+          "options": [
+            "A) Magnesium sulfate",
+            "B) Diazepam",
+            "C) Phenytoin",
+            "D) Mannitol"
+          ],
+          "correct": 0,
+          "hint": "Anticonvulsant of choice in severe preeclampsia and eclampsia.",
+          "explanation": "Magnesium sulfate is superior to phenytoin and diazepam for preventing and controlling eclamptic seizures."
+        },
+        {
+          "pts": 30,
+          "q": "Which three laboratory abnormalities form the HELLP syndrome acronym?",
+          "options": [
+            "A) Hemolysis, Elevated Liver enzymes, Low Platelets",
+            "B) Hypoglycemia, Elevated Lactate, Low Potassium",
+            "C) Hypercalcemia, Elevated Lipase, Low Phosphate",
+            "D) Hypoxia, Elevated Leukocytes, Low Sodium"
+          ],
+          "correct": 0,
+          "hint": "Think RBC breakdown, transaminases, and thrombocytopenia.",
+          "explanation": "HELLP stands for Hemolysis, Elevated Liver enzymes, and Low Platelets."
+        },
+        {
+          "pts": 40,
+          "q": "Which daily folic acid dose is recommended preconceptionally and in early pregnancy to reduce neural tube defects?",
+          "options": [
+            "A) 0.4 mg (400 mcg) daily for standard risk",
+            "B) 0.01 mg daily",
+            "C) 20 mg daily for all women",
+            "D) Only started after 28 weeks gestation"
+          ],
+          "correct": 0,
+          "hint": "Neural tube closure occurs early in the first month after conception.",
+          "explanation": "Standard daily folic acid supplementation is 400 mcg (0.4 mg) starting before conception through the first trimester."
+        },
+        {
+          "pts": 50,
+          "q": "Which presentation classically distinguishes abruptio placentae from placenta previa?",
+          "options": [
+            "A) Painful vaginal bleeding often with uterine tenderness/hypertonicity",
+            "B) Painless bright-red bleeding without uterine irritability",
+            "C) Absent fetal movement with painless watery discharge only",
+            "D) Bleeding strictly limited to the first 6 weeks"
+          ],
+          "correct": 0,
+          "hint": "Placental separation vs low-lying placenta covering the os.",
+          "explanation": "Placental abruption typically presents with painful bleeding and a tender or rigid uterus, whereas placenta previa classically causes painless bleeding."
+        }
+      ]
+    }
+  ],
+  "internal_medicine": [
+    {
+      "name": "Thyroid & Endocrine Basics",
+      "questions": [
+        {
+          "pts": 10,
+          "q": "Which hormone pattern is most typical of overt primary hypothyroidism?",
+          "options": [
+            "A) High TSH and low Free T4",
+            "B) Low TSH and high Free T4",
+            "C) Low TSH and low Free T4",
+            "D) Normal TSH and high Free T3"
+          ],
+          "correct": 0,
+          "hint": "Pituitary responds to low thyroid hormone by raising TSH.",
+          "explanation": "Primary hypothyroidism features low thyroid hormones (low Free T4) and elevated TSH due to loss of negative feedback."
+        },
+        {
+          "pts": 20,
+          "q": "Which test is best for initial screening of acromegaly?",
+          "options": [
+            "A) Serum IGF-1",
+            "B) Random cortisol",
+            "C) 24-hour urine calcium",
+            "D) Serum amylase"
+          ],
+          "correct": 0,
+          "hint": "Reflects sustained growth hormone exposure better than a single random GH.",
+          "explanation": "Serum IGF-1 is the preferred initial screening test for suspected acromegaly."
+        },
+        {
+          "pts": 30,
+          "q": "Which diagnostic cutoff for HbA1c supports a diagnosis of diabetes mellitus?",
+          "options": [
+            "A) >= 6.5%",
+            "B) >= 5.0%",
+            "C) >= 5.4%",
+            "D) >= 4.8%"
+          ],
+          "correct": 0,
+          "hint": "Prediabetes is typically 5.7%–6.4%.",
+          "explanation": "An HbA1c of 6.5% or higher (confirmed on repeat testing when asymptomatic) diagnoses diabetes mellitus."
+        },
+        {
+          "pts": 40,
+          "q": "In DKA with serum potassium 3.0 mmol/L, what must happen before starting an insulin infusion?",
+          "options": [
+            "A) Give IV fluids and potassium replacement first until K+ >= 3.3 mmol/L",
+            "B) Give an immediate high-dose insulin bolus without potassium",
+            "C) Give sodium bicarbonate first",
+            "D) Restrict all fluids"
+          ],
+          "correct": 0,
+          "hint": "Insulin shifts potassium into cells and can worsen severe hypokalemia.",
+          "explanation": "Potassium must be repleted prior to insulin infusion when K+ < 3.3 mmol/L to prevent life-threatening arrhythmias."
+        },
+        {
+          "pts": 50,
+          "q": "In suspected adrenal crisis, which immediate treatment should not be delayed for lab results?",
+          "options": [
+            "A) IV hydrocortisone and rapid IV isotonic saline",
+            "B) Oral spironolactone alone",
+            "C) Water restriction",
+            "D) Outpatient appointment next month"
+          ],
+          "correct": 0,
+          "hint": "Treat glucocorticoid deficiency and volume depletion immediately.",
+          "explanation": "Immediate IV/IM hydrocortisone and rapid isotonic saline resuscitation are essential in adrenal crisis."
+        }
+      ]
+    }
+  ],
+  "paediatric": [
+    {
+      "name": "Neonatology & Growth",
+      "questions": [
+        {
+          "pts": 10,
+          "q": "Which five components make up the Apgar score assessed at 1 and 5 minutes after birth?",
+          "options": [
+            "A) Appearance (color), Pulse, Grimace (reflex irritability), Activity (tone), Respiration",
+            "B) Airway, Breathing, Circulation, Disability, Exposure",
+            "C) Temperature, Weight, Length, Head circumference, Fontanelle",
+            "D) Heart rate, Blood glucose, Bilirubin, Oxygen sat, Hemoglobin"
+          ],
+          "correct": 0,
+          "hint": "Each letter of A-P-G-A-R corresponds to a clinical sign scored 0, 1, or 2.",
+          "explanation": "The Apgar score evaluates Appearance, Pulse, Grimace, Activity, and Respiration at 1 and 5 minutes."
+        },
+        {
+          "pts": 20,
+          "q": "Which vitamin is routinely administered shortly after birth to prevent hemorrhagic disease of the newborn?",
+          "options": [
+            "A) Vitamin K",
+            "B) Vitamin C",
+            "C) Vitamin D",
+            "D) Vitamin B12"
+          ],
+          "correct": 0,
+          "hint": "Required for hepatic synthesis of clotting factors II, VII, IX, and X.",
+          "explanation": "Prophylactic vitamin K prevents vitamin K deficiency bleeding (hemorrhagic disease of the newborn)."
+        },
+        {
+          "pts": 30,
+          "q": "Which sign in a child with acute dehydration indicates severe dehydration?",
+          "options": [
+            "A) Lethargy/unconsciousness, sunken eyes, very slow skin pinch (>2 sec), or unable to drink",
+            "B) Alert, drinking eagerly, normal skin pinch",
+            "C) Mild thirst only with normal pulse and tears",
+            "D) Isolated mild rhinorrhea"
+          ],
+          "correct": 0,
+          "hint": "Look for severe neurological or perfusion/skin turgor signs.",
+          "explanation": "Severe dehydration is marked by lethargy/altered consciousness, sunken eyes, poor skin turgor, and inability to drink or drinking poorly."
+        },
+        {
+          "pts": 40,
+          "q": "At approximately what age does a typically developing infant sit without support?",
+          "options": [
+            "A) Around 6 months",
+            "B) Around 1 month",
+            "C) Around 18 months",
+            "D) Around 3 years"
+          ],
+          "correct": 0,
+          "hint": "Gross motor milestone around the middle of the first year.",
+          "explanation": "Most infants sit unsupported around 6 months of age."
+        },
+        {
+          "pts": 50,
+          "q": "Which immunization is typically given at birth in routine national schedules alongside OPV0 and HepB0?",
+          "options": [
+            "A) BCG",
+            "B) Measles-Rubella second dose",
+            "C) HPV",
+            "D) Tdap booster"
+          ],
+          "correct": 0,
+          "hint": "Bacillus Calmette-Guerin.",
+          "explanation": "BCG is given at birth (or as soon as possible thereafter) in routine childhood immunization schedules."
+        }
+      ]
+    }
+  ],
+  "radiology": [
+    {
+      "name": "Chest & Abdominal Imaging Basics",
+      "questions": [
+        {
+          "pts": 10,
+          "q": "On a standard PA chest radiograph, which structure normally forms the right heart border?",
+          "options": [
+            "A) Right atrium",
+            "B) Left ventricle",
+            "C) Aortic arch",
+            "D) Left atrial appendage"
+          ],
+          "correct": 0,
+          "hint": "The left ventricle forms most of the lower left heart border.",
+          "explanation": "The right heart border on a PA chest X-ray is formed primarily by the right atrium."
+        },
+        {
+          "pts": 20,
+          "q": "Which CT modality is typically preferred to evaluate suspected acute renal colic / ureteric stones without IV contrast?",
+          "options": [
+            "A) Non-contrast CT KUB (kidneys, ureters, bladder)",
+            "B) Contrast-enhanced chest CT",
+            "C) Barium enema",
+            "D) Bone scan"
+          ],
+          "correct": 0,
+          "hint": "Most urinary calculi are radiopaque on unenhanced CT.",
+          "explanation": "Non-contrast CT of the kidneys, ureters, and bladder is highly sensitive and specific for detecting urinary tract calculi."
+        },
+        {
+          "pts": 30,
+          "q": "Which plain abdominal X-ray sign suggests pneumoperitoneum when free air outlines both sides of the bowel wall?",
+          "options": [
+            "A) Rigler's sign (double-wall sign)",
+            "B) Thumbprinting",
+            "C) Coffee-bean sign",
+            "D) Double-bubble sign"
+          ],
+          "correct": 0,
+          "hint": "Gas inside the lumen and gas outside the lumen make the wall visible on both sides.",
+          "explanation": "Rigler's sign occurs when free intraperitoneal air outlines the outer wall of a loop of bowel already containing intraluminal gas."
+        },
+        {
+          "pts": 40,
+          "q": "In suspected acute ischemic stroke within the early window, which imaging test is rapidly performed first to rule out hemorrhage?",
+          "options": [
+            "A) Non-contrast head CT",
+            "B) Abdominal ultrasound",
+            "C) Lumbar spine X-ray",
+            "D) DEXA scan"
+          ],
+          "correct": 0,
+          "hint": "Acute blood appears bright (hyperdense) on non-contrast CT.",
+          "explanation": "Non-contrast CT of the head is the rapid first-line imaging test in acute stroke to exclude intracranial hemorrhage before thrombolysis."
+        },
+        {
+          "pts": 50,
+          "q": "Which ultrasound feature typically helps differentiate a simple benign cyst from a solid mass?",
+          "options": [
+            "A) Anechoic interior with posterior acoustic enhancement and thin smooth wall",
+            "B) Marked internal vascularity on Doppler with irregular spiculated margins",
+            "C) Shadowing gallstones inside a thickened wall",
+            "D) Absent fluid component and dense bone shadowing"
+          ],
+          "correct": 0,
+          "hint": "Fluid transmits sound waves with less attenuation than surrounding tissue.",
+          "explanation": "A simple cyst on ultrasound is classically anechoic, has a thin smooth wall, and demonstrates posterior acoustic enhancement."
+        }
+      ]
+    }
+  ],
+  "orthopedic": [
+    {
+      "name": "Fractures & Musculoskeletal Trauma",
+      "questions": [
+        {
+          "pts": 10,
+          "q": "Which fracture is classically described as a distal radius fracture with dorsal angulation ('dinner fork' deformity)?",
+          "options": [
+            "A) Colles' fracture",
+            "B) Smith's fracture",
+            "C) Monteggia fracture",
+            "D) Galeazzi fracture"
+          ],
+          "correct": 0,
+          "hint": "Occurs typically after a fall onto an outstretched hand (FOOSH) with dorsal displacement.",
+          "explanation": "A Colles' fracture is a fracture of the distal radius with dorsal displacement/angulation of the distal fragment."
+        },
+        {
+          "pts": 20,
+          "q": "Tenderness in the anatomical snuffbox after a fall on an outstretched hand raises suspicion for fracture of which carpal bone?",
+          "options": [
+            "A) Scaphoid",
+            "B) Pisiform",
+            "C) Hamate",
+            "D) Triquetrum"
+          ],
+          "correct": 0,
+          "hint": "Blood supply enters distally, placing the proximal pole at risk of avascular necrosis.",
+          "explanation": "Anatomical snuffbox tenderness warrants evaluation for a scaphoid fracture, which carries risk of non-union and avascular necrosis."
+        },
+        {
+          "pts": 30,
+          "q": "Which combination of findings is classic for acute compartment syndrome?",
+          "options": [
+            "A) Severe pain out of proportion (especially with passive stretch), paresthesia, pallor, pulselessness, paralysis",
+            "B) Morning stiffness <30 minutes in DIP joints only",
+            "C) Chronic low back pain improving with exercise",
+            "D) painless clicking in the shoulder"
+          ],
+          "correct": 0,
+          "hint": "Pain on passive stretch is an early warning sign before late pulselessness.",
+          "explanation": "Acute compartment syndrome presents with severe pain (especially on passive stretch) and neurovascular deficits requiring urgent fasciotomy."
+        },
+        {
+          "pts": 40,
+          "q": "Which classification system is widely used for pediatric physeal (growth plate) fractures?",
+          "options": [
+            "A) Salter-Harris classification",
+            "B) Glasgow Coma Scale",
+            "C) NYHA classification",
+            "D) Child-Pugh score"
+          ],
+          "correct": 0,
+          "hint": "Grades I through V based on fracture involvement of the physis, metaphysis, and epiphysis.",
+          "explanation": "The Salter-Harris classification categorizes pediatric growth plate fractures (Types I–V) to guide management and prognosis."
+        },
+        {
+          "pts": 50,
+          "q": "A displaced mid-shaft humerus fracture can injure which nerve, causing wrist drop?",
+          "options": [
+            "A) Radial nerve",
+            "B) Femoral nerve",
+            "C) Obturator nerve",
+            "D) Pudendal nerve"
+          ],
+          "correct": 0,
+          "hint": "Runs along the radial groove of the humerus and innervates wrist/finger extensors.",
+          "explanation": "The radial nerve courses along the spiral/radial groove of the humerus and is vulnerable in humeral shaft fractures, leading to wrist drop."
+        }
+      ]
+    }
+  ]
+}
